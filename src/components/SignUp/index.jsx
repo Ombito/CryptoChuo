@@ -40,7 +40,7 @@ const [lastname, setLastName] = useState("");
                 <form onSubmit>
                     <label>
                         <div className="fullName">
-                            {/* <div className="firstname"> */}
+                            
                                <input className="firstname"
                                 type="text"
                                 placeholder="First Name"
@@ -49,9 +49,7 @@ const [lastname, setLastName] = useState("");
                                     setFirstName(e.target.value)
                                 }}>  
                                 </input>
-                            {/* </div> */}
 
-                            {/* <div className="lastname"> */}
                                <input className="lastname"
                                 type="text"
                                 placeholder="Last Name"
@@ -61,7 +59,6 @@ const [lastname, setLastName] = useState("");
                                 }}>  
                                 </input>
                             </div>
-                        {/* </div> */}
                        
                         <div className="email">
                             <input className="container"
