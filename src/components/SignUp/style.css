@@ -1,0 +1,82 @@
+body{
+    align-items: center;
+}
+
+
+h2{
+    align-items: center;
+    margin-top: 4%;
+}
+.form{
+    margin-left: 3%;
+}
+
+.signup{
+    color: #4A9E8A;
+    font-size: 280%;
+}
+.fullName{
+    display: flex;
+}
+.firstname{
+    height: 10px;
+    width: 300px;
+    margin-left: 26%;
+    padding-left: 5px;
+    padding-top: 1.8%;
+    padding-bottom: 1.8%;
+    border-color: #4A9E8A ;
+    border: none;
+    border: 2px #4A9E8A solid;
+    border-radius: 13px;
+}
+.lastname{
+    height: 10px;
+    width: 300px;
+    margin-left: 6%;
+    padding-left: 5px;
+    padding-top: 1.8%;
+    padding-bottom: 1.8%;
+    border-color: #4A9E8A ;
+    border: none;
+    border: 2px #4A9E8A solid;
+    border-radius: 13px;
+}
+.container{
+    height: 10px;
+    width: 700px;
+    padding-left: 5px;
+    padding-top: 1.8%;
+    padding-bottom: 1.8%;
+    border-color: #4A9E8A ;
+    border: none;
+    border: 2px #4A9E8A solid;
+    border-radius: 13px;
+    }
+.password{
+    margin-top: 3%;
+}
+
+.email {
+    margin-top: 3%;
+}
+
+.confirm_password{
+    margin-top: 3%;
+}
+button{
+    height: 50px;
+    margin-top: 5%;
+    width: 280px;
+    background-color: #4A9E8A;
+    border: none;
+    border-radius: 50px;
+    color: #FFFFFF;
+    font-size: 17px;
+}
+
+.main{
+    background-color: blue;
+    margin-top: 1%;
+    margin-left: 17%;
+}
