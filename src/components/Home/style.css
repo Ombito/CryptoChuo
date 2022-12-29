@@ -1,0 +1,47 @@
+.navbar{
+    display: flex;
+    margin-left: 45%;
+    margin-top: 2%;
+    font-size: 110%;
+    text-decoration: none;
+}
+#home{
+    padding-right: 5%;
+    text-decoration: none;
+    color: black;
+}
+#about{
+    padding-right: 5%;
+    text-decoration: none;
+    color: black;
+}
+#courses{
+    padding-right: 5%;
+    text-decoration: none;
+    color: black;
+}
+#markets{
+    padding-right: 5%;
+    text-decoration: none;
+    color: black;
+}
+#careers{
+    text-decoration: none;
+    padding-right: 5%;
+    color: black;
+}
+#shop{
+    text-decoration: none;
+    color: black;
+}
+.signin{
+    height: 40px;
+    margin-top: -5%;
+    width: 140px;
+    background-color: #4A9E8A;
+    border: none;
+    border-radius: 10px;
+    color: #FFFFFF;
+    font-size: 20px;
+    margin-left: 40%;
+}

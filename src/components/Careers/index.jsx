@@ -1,10 +1,10 @@
 import React from 'react';
-import "../Home/style.css"
+import "../Careers/style.css"
 import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 
-const Home = () => {
+const Careers = () => {
   return (
     <div>
         
@@ -28,10 +28,7 @@ const Home = () => {
           <NavLink to='/shop' id='shop'>
             Shop
           </NavLink>
-
-          <Link to="/login">
-        <button className="signin" type='submit' >Sign In</button>
-    </Link>
+          
         
     </div>
     
@@ -46,4 +43,4 @@ const Home = () => {
   );
 };
   
-export default Home;
+export default Careers;

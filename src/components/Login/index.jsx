@@ -1,6 +1,7 @@
 import React from 'react';
 import "../Login/style.css"
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios'; 
 
 
@@ -40,7 +41,7 @@ const [password, setPassword] = useState("");
                         
                         <div className="email">
                             <input className="container"
-                                type="text"
+                                type="email"
                                 placeholder="Enter email"
                                 value={email}
                                 onChange={(e) => {
@@ -62,6 +63,8 @@ const [password, setPassword] = useState("");
                     </label>
                     <button className="button" type='submit' >Login</button>
                 </form>
+                <p className="account">Don't have an account?
+                    <a href="/login"><Link to="/signup">         Signup</Link></a> </p>
                 <p className="account"><a href="/Login"><span >   Forgot password?   </span> </a> 
                     </p>
             </div>

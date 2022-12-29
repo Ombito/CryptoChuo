@@ -29,6 +29,8 @@ h2{
     border: none;
     border: 2px #4A9E8A solid;
     border-radius: 13px;
+    font-size: 105%;
+
 }
 .lastname{
     height: 10px;
@@ -41,6 +43,7 @@ h2{
     border: none;
     border: 2px #4A9E8A solid;
     border-radius: 13px;
+    font-size: 105%;
 }
 .container{
     height: 10px;
@@ -52,19 +55,27 @@ h2{
     border: none;
     border: 2px #4A9E8A solid;
     border-radius: 13px;
+    font-size: 105%;
+
     }
 .password{
     margin-top: 3%;
+    font-size: 105%;
+
 }
 
 .email {
     margin-top: 3%;
+    font-size: 105%;
+
 }
 
 .confirm_password{
     margin-top: 3%;
+    font-size: 105%;
+
 }
-button{
+.button{
     height: 50px;
     margin-top: 5%;
     width: 280px;
@@ -72,7 +83,7 @@ button{
     border: none;
     border-radius: 50px;
     color: #FFFFFF;
-    font-size: 17px;
+    font-size: 20px;
 }
 
 .main{

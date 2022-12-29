@@ -1,0 +1,151 @@
+.navbar{
+    display: flex;
+    margin-left: 59%;
+    margin-top: 2%;
+    font-size: 110%;
+    text-decoration: none;
+}
+#home{
+    padding-right: 5%;
+    text-decoration: none;
+    color: black;
+}
+#about{
+    padding-right: 5%;
+    text-decoration: none;
+    color: black;
+}
+#courses{
+    padding-right: 5%;
+    text-decoration: none;
+    color: black;
+}
+#markets{
+    padding-right: 5%;
+    text-decoration: none;
+    color: black;
+}
+#careers{
+    text-decoration: none;
+    padding-right: 5%;
+    color: black;
+}
+#shop{
+    text-decoration: none;
+    color: black;
+}
+.header{
+    color: #4A9E8A;
+    font-size: 270%;
+    
+}
+h3{
+    color: black;
+}
+.fundamentals{
+background-color: rgb(245, 168, 75);
+border-radius: 14%;
+height: 250px;
+width: 18%;
+
+}
+.nft{
+    background-color: rgb(245, 168, 75);
+    border-radius: 14%;
+    height: 250px;
+    width: 18%;
+}
+.trading{
+    background-color: rgb(245, 168, 75);
+    border-radius: 14%;
+    height: 250px;
+    width: 18%;
+}
+.blochchain{
+    background-color: rgb(245, 168, 75);
+    border-radius: 14%;
+    height: 250px;
+    width: 18%;
+}
+.gaming{
+    background-color: rgb(245, 168, 75);
+    border-radius: 14%;
+    height: 250px;
+    width: 18%;
+}
+.investing{
+    background-color: rgb(245, 168, 75);
+    border-radius: 14%;
+    height: 250px;
+    width: 18%;
+}
+.timeline{
+    display: flex;
+    margin-left: 7%;
+}
+.threeweeks{
+    /* margin-right: 20%; */
+    margin-left: 10%;
+    margin-top: 1%;
+}
+.hourweekly{
+    display: flex;
+    margin-left: 3%;
+
+}
+.hourly{
+    margin-left: 4%;
+    margin-top: 2%;
+}
+.courses{
+    display: flex;
+    /* margin-left: 15%; */
+}
+.nfttimeline{
+    display: flex;
+    margin-left: 7%;
+}
+.nfthourweekly{
+    display: flex;
+    margin-left: 3%;
+}
+.fourweeks{
+    margin-top: 1%;
+    margin-left: 10%;
+}
+.nfthourly{
+    margin-left: 4%;
+    margin-top: 2%;
+}
+.tradingtimeline{
+    display: flex;
+    margin-left: 7%;
+}
+.sixweeks{
+    margin-top: 1%;
+    margin-left: 10%; 
+}
+.tradinghourweekly{
+    display: flex;
+    margin-left: 3%;
+}
+.tradinghourly{
+    margin-left: 4%;
+    margin-top: 2%;
+}
+.blockchaintimeline{
+    display: flex;
+    margin-left: 7%;
+}
+.twelveweeks{
+    margin-top: 1%;
+    margin-left: 10%; 
+}
+.blockchainhourweekly{
+    display: flex;
+    margin-left: 3%;
+}
+.blockchainhourly{
+    margin-left: 4%;
+    margin-top: 2%;
+}

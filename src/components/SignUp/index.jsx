@@ -1,6 +1,7 @@
 import React from 'react';
 import "../SignUp/style.css"
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios'; 
 
 
@@ -43,7 +44,7 @@ const [lastname, setLastName] = useState("");
                             
                                <input className="firstname"
                                 type="text"
-                                placeholder="First Name"
+                                placeholder="First Name" 
                                 value={firstname}
                                 onChange={(e) => {
                                     setFirstName(e.target.value)
@@ -92,10 +93,12 @@ const [lastname, setLastName] = useState("");
                                 }
                             ></input><br></br></div>
                     </label>
+                    <Link to="/courses">
                     <button className="button" type='submit' >SignUp</button>
+                    </Link>
                 </form>
                 <p className="account">Have an account?
-                    <a href="/Login"><span className='Login'>   Login   </span> </a> </p>
+                    <a href="/login"><Link to="/login">        Login</Link></a> </p>
             </div>
     
   )}
