@@ -61,7 +61,9 @@ const [password, setPassword] = useState("");
                             ></input><br></br></div>
                         
                     </label>
-                    <button className="button" type='submit' >Login</button>
+                    <Link to="/courses">
+                    <button className="loginbutton" type='submit' >Login</button>
+                    </Link>
                 </form>
                 <p className="account">Don't have an account?
                     <a href="/login"><Link to="/signup">         Signup</Link></a> </p>

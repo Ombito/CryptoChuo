@@ -34,7 +34,7 @@
     text-decoration: none;
     color: black;
 }
-.signin{
+#button{
     height: 40px;
     margin-top: -5%;
     width: 140px;
@@ -44,4 +44,78 @@
     color: #FFFFFF;
     font-size: 20px;
     margin-left: 40%;
+}
+.enrollbutton{
+    height: 50px;
+    margin-top: 8%;
+    width: 240px;
+    background-color: #4A9E8A;
+    border: none;
+    border-radius: 50px;
+    color: #FFFFFF;
+    font-size: 20px;
+}
+.homepage{
+    margin-right: 50%;
+    margin-top: 10%;
+}
+.paragraph{
+    padding: 4%;
+    font-size: 120%;
+    font-style: italic;
+    
+
+}
+h2{
+    font-size: 200%;
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-weight: bolder;
+    /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;     */
+}
+.crypto{
+    color: #4A9E8A;
+}
+.homecrypto{
+    margin-left: 50%;
+    margin-top: -32%;
+}
+.ff{
+    color: #4A9E8A;
+}
+.footer{
+    text-decoration: none;
+    display: flex;
+}
+.contactinfo{
+    margin-left: 8%;
+
+}
+.faqsupport{
+    margin-top: 2%;
+    margin-left: 40%;
+}
+.socialmedia{
+    margin-top: 8%;
+    margin-left: -12%;
+}
+.faq{
+    text-decoration: none;
+    color: black;
+}
+.support{
+    text-decoration: none;
+    color: black;
+    margin-left: 50%;
+}
+.twitter{
+    text-decoration: none;
+    
+}
+.telegram{
+    text-decoration: none;
+    padding-left: 5%;
+}
+.discord{
+    text-decoration: none;
+    padding-left: 5%;
 }

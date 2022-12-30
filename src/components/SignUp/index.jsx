@@ -94,7 +94,7 @@ const [lastname, setLastName] = useState("");
                             ></input><br></br></div>
                     </label>
                     <Link to="/courses">
-                    <button className="button" type='submit' >SignUp</button>
+                    <button className="signupbutton" type='submit' >SignUp</button>
                     </Link>
                 </form>
                 <p className="account">Have an account?

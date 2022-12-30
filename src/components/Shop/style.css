@@ -1,0 +1,89 @@
+.header{
+    color: #4A9E8A;
+    font-size: 270%;
+    
+}
+/* .bitcointshirt{
+    margin-left: 20%;
+} */
+.button{
+    height: 45px;
+    margin-left: 260%;
+    /* margin-right: 70%; */
+    margin-top: 3%;
+    width: 200px;
+    background-color: #4A9E8A;
+    border: none;
+    border-radius: 40px;
+    color: #FFFFFF;
+    font-size: 17px;
+}
+.buynowbutton{
+    height: 45px;
+    margin-left: 260%;
+    margin-top: 1%;
+    width: 200px;
+    background-color: #4A9E8A;
+    border: none;
+    border-radius: 40px;
+    color: #FFFFFF;
+    font-size: 17px;
+}
+.tshirt{
+    margin-bottom: 3%;
+    margin-left: 260%;
+    /* margin-right: 75%; */
+
+}
+.bitcoin{
+    display: flex;
+}
+.bookbutton{
+    height: 45px;
+    margin-top: 5%;
+    width: 200px;
+    background-color: #4A9E8A;
+    border: none;
+    border-radius: 40px;
+    color: #FFFFFF;
+    font-size: 17px;
+}
+.bookbuynowbutton{
+    height: 45px;
+    /* margin-left: 1%; */
+    margin-top: 1%;
+    width: 200px;
+    background-color: #4A9E8A;
+    border: none;
+    border-radius: 40px;
+    color: #FFFFFF;
+    font-size: 17px;
+}
+.bitcoinbook{
+    margin-left: 3%;
+}
+
+.hoodiebutton{
+    height: 45px;
+    margin-top: 5%;
+    width: 200px;
+    background-color: #4A9E8A;
+    border: none;
+    border-radius: 40px;
+    color: #FFFFFF;
+    font-size: 17px;
+}
+.hoodiebuynowbutton{
+    height: 45px;
+    /* margin-left: 1%; */
+    margin-top: 1%;
+    width: 200px;
+    background-color: #4A9E8A;
+    border: none;
+    border-radius: 40px;
+    color: #FFFFFF;
+    font-size: 17px;
+}
+.bitcoinhoodie{
+    margin-left: 30%;
+}
