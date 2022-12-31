@@ -3,6 +3,7 @@ import "../SignUp/style.css"
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios'; 
+// import 'font-awesome/css/font-awesome.min.css';
 
 
 
@@ -10,56 +11,10 @@ const Signup = () => {
 
 const [email, setEmail] = useState("");
 const [password, setPassword] = useState("");
-const [confirm_Password, setConfirmPassword] = useState("");
+const [confirm_password, setConfirmPassword] = useState("");
 const [first_name, setFirstName] = useState("");
 const [last_name, setLastName] = useState("");
 const [message, setMessage] = useState("");
-
-
-
-// const submitting = (event) => {
-//     event.preventDefault()
-//     const user = {first_name, last_name, email,password, confirm_password }
-//     var myHeaders = new Headers();
-//     myHeaders.append("Content-Type", "application/json");
-//     const requestOptions = {
-//         method: 'POST',
-//         headers: myHeaders,
-//         body: JSON.stringify(
-//             user
-//         ),
-//         redirect: 'login'
-//     };
-let handleSubmit = async(e) => {
-    e.preventDefault();
-    try{let res = await fetch('http://127.0.0.1:8000/api/signup/', {
-      method: 'POST',
-    
-      body: JSON.stringify({
-        first_name: first_name,
-        last_name: last_name,
-        email: email,
-        password: password,
-        confirm_Password: confirm_Password
-      })
-    });
-    let resJson = await res.json();
-    if (res.status === 200){
-        setFirstName("");
-        setLastName("");
-        setEmail("");
-        setPassword("");
-        setConfirmPassword("");
-        setMessage("User created successfully");
-
-    }else {
-        setMessage("Error");
-    }
-  }catch (err){
-    console.log(err)
-  }
-
-}
 
 
 
@@ -109,13 +64,14 @@ let handleSubmit = async(e) => {
                                     setPassword(e.target.value);
                                 }
                                 }
-                            ></input><br></br></div>
+                            />
+                            </div>
                         <div className="confirm_password">
                             <h5> </h5>
                             <input className="container"
                                 type="password"
                                 placeholder="Confirm Password"
-                                value={confirm_Password}
+                                value={confirm_password}
                                 onChange={(e) => {
                                     setConfirmPassword(e.target.value);
                                 }
@@ -138,7 +94,7 @@ let handleSubmit = async(e) => {
   )}
     
     
-
+                            
 
    
 export default Signup;

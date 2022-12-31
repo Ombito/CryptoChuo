@@ -102,3 +102,10 @@ h2{
     text-align: center;
     color: black;
   }
+  .fa-eye{
+    position: absolute;
+    top: 52%;
+    right: 26%;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+  }
