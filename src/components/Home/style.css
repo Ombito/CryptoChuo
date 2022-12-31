@@ -80,11 +80,12 @@ h2{
     margin-top: -32%;
 }
 .ff{
-    color: #4A9E8A;
+    color: white;
 }
 .footer{
     text-decoration: none;
     display: flex;
+    background-color: #4A9E8A;
 }
 .contactinfo{
     margin-left: 8%;

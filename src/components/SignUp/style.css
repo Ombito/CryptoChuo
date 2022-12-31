@@ -85,6 +85,9 @@ h2{
     color: #FFFFFF;
     font-size: 20px;
 }
+.signupbutton:hover {
+    background-color: gold;
+  }
 
 .main{
     background-color: blue;
@@ -94,3 +97,8 @@ h2{
 .Login{
     color: #4A9E8A;
 }
+.message {
+    font-size: 1.2em;
+    text-align: center;
+    color: black;
+  }
