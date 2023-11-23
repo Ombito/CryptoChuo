@@ -3,6 +3,7 @@ import "../Markets/style.css";
 import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Navbar from '../Navbar/navbar.jsx';
+import Footer from '../Footer/index.jsx';
 
 const Markets = () => {
   return (
@@ -12,6 +13,7 @@ const Markets = () => {
     <div className='navbar'>       
       <Navbar />
     </div>
+    <Footer />
     
           
 </div>

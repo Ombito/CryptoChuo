@@ -4,6 +4,8 @@ import { NavLink } from 'react-router-dom';
 import calendar from "../Assets/calendar.png";
 import clock from "../Assets/wall-clock.png";
 import Navbar from '../Navbar/navbar.jsx';
+import Footer from '../Footer/index.jsx';
+
 
 
 const Courses = () => {
@@ -95,6 +97,7 @@ const Courses = () => {
                 </div>
             </div>
           </div>
+          <Footer />
 
         </div>
 

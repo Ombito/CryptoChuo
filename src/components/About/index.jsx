@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 // import team1 from "../Images/team1.jpg"
 import team2 from "../Assets/team2.png"
 import Navbar from "../Navbar/navbar.jsx";
+import Footer from "../Footer/index.jsx";
 
 
 const About = () => {
@@ -52,6 +53,7 @@ const About = () => {
 
       </div>
     </div>
+    <Footer />
     
           
 </div>

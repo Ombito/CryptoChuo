@@ -6,6 +6,7 @@ import tshirt from '../Assets/download.jpeg'
 import book from '../Assets/book.jpg'
 import hoodie from '../Assets/bitcoinhoodie.jpg'
 import Navbar from '../Navbar/navbar.jsx';
+import Footer from '../Footer/index.jsx';
 
 const Shop = () => {
   return (
@@ -47,6 +48,7 @@ const Shop = () => {
 
         </div>
       </section>
+      <Footer />
 
     
           

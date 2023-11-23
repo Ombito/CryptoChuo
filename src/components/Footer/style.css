@@ -1,0 +1,38 @@
+.footer{
+    text-decoration: none;
+    display: flex;
+    background-color: #4A9E8A;
+}
+.contactinfo{
+    margin-left: 8%;
+
+}
+.faqsupport{
+    margin-top: 2%;
+    margin-left: 40%;
+}
+.socialmedia{
+    margin-top: 8%;
+    margin-left: -12%;
+}
+.faq{
+    text-decoration: none;
+    color: black;
+}
+.support{
+    text-decoration: none;
+    color: black;
+    margin-left: 50%;
+}
+.twitter{
+    text-decoration: none;
+    
+}
+.telegram{
+    text-decoration: none;
+    padding-left: 5%;
+}
+.discord{
+    text-decoration: none;
+    padding-left: 5%;
+}
