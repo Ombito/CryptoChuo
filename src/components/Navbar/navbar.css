@@ -2,47 +2,50 @@
     display: flex;
     position: fixed;
     top: 0;
-    height: 10vh;
+    height: 11vh;
     width: 100%;
     margin-left: 0%;
     margin-top: 0%;
     justify-content: space-between;
     text-decoration: none;
-    background-color: yellow;
+    background-color: #456cf6;
 }
 .navigation-container {
     display: flex;
-    padding-top: 1%;
+    padding-top: 1.5%;
     font-size: 1.2em;
-    justify-content: space-around;
 }
 .navlinks {
-    width: 100%;
+    margin-left: -150%;
+    width: 190%;
+    justify-content: space-around;
+    padding-right: 10%;
+    color: #ffffff;
 }
 #home{
-    padding-right: 5%;
     text-decoration: none;
     color: black;
+    padding-right: 6%;
 }
 #about{
-    padding-right: 5%;
     text-decoration: none;
     color: black;
+    padding-right: 6%;
 }
 #courses{
-    padding-right: 5%;
     text-decoration: none;
     color: black;
+    padding-right: 6%;
 }
 #markets{
-    padding-right: 5%;
     text-decoration: none;
     color: black;
+    padding-right: 6%;
 }
 #careers{
     text-decoration: none;
-    padding-right: 5%;
     color: black;
+    padding-right: 6%;
 }
 #shop{
     text-decoration: none;
@@ -60,6 +63,7 @@
     margin-left: 40%;
 }
 .logo {
-    height: 10vh;
-    width: 100%;
+    height: 11vh;
+    width: 120%;
+    padding-left: 100%;
 }
