@@ -1,39 +1,3 @@
-.navbar{
-    display: flex;
-    margin-left: 59%;
-    margin-top: 2%;
-    font-size: 110%;
-    text-decoration: none;
-}
-#home{
-    padding-right: 5%;
-    text-decoration: none;
-    color: black;
-}
-#about{
-    padding-right: 5%;
-    text-decoration: none;
-    color: black;
-}
-#courses{
-    padding-right: 5%;
-    text-decoration: none;
-    color: black;
-}
-#markets{
-    padding-right: 5%;
-    text-decoration: none;
-    color: black;
-}
-#careers{
-    text-decoration: none;
-    padding-right: 5%;
-    color: black;
-}
-#shop{
-    text-decoration: none;
-    color: black;
-}
 .header{
     color: #4A9E8A;
     font-size: 270%;
