@@ -3,41 +3,13 @@ import "../Home/style.css"
 import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import bitcoin from '../Images/homepage.jpg'
+import Navbar from '../Navbar/navbar.jsx';
 
 
 const Home = () => {
   return (
     <div>
-        
-
-    <div className='navbar'>
-          <NavLink to='/' id='home'>
-            Home
-          </NavLink>
-          <NavLink to='/about' id='about'>
-            About Us
-          </NavLink>
-          <NavLink to='/courses' id='courses'>
-            Courses
-          </NavLink>
-          <NavLink to='/markets' id='markets'>
-            Markets
-          </NavLink>
-          <NavLink to='/careers' id='careers'>
-            Careers
-          </NavLink>
-          <NavLink to='/shop' id='shop'>
-            Shop
-          </NavLink>
-
-          <div >
-          <Link to="/login">
-          <button id='button' type='submit'>Sign In</button>
-          </Link>
-          </div>
-        
-    </div>
-
+    <Navbar />
     <div className='content'>
       <div className='homepage'>
         <h2> Trusted platform <br/> for, <span className='crypto'>Crypto</span> Education.</h2>
@@ -45,12 +17,11 @@ const Home = () => {
         <Link to="/signup">
         <button className="enrollbutton" type='submit' >Enroll Now</button>
         </Link>
-
       </div>
 
-      <div>
-      <img className='homecrypto' src={bitcoin} width="500" height="600" />
-      </div>
+      {/* <div>
+        <img className='homecrypto' src={bitcoin} width="500" height="600" />
+      </div> */}
     </div>
 
     <footer className='footer'>
