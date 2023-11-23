@@ -1,33 +1,18 @@
 import React from 'react';
 import "../Courses/style.css"
 import { NavLink } from 'react-router-dom';
-import calendar from "../Images/calendar.png"
-import clock from "../Images/wall-clock.png"
+import calendar from "../Assets/calendar.png";
+import clock from "../Assets/wall-clock.png";
+import Navbar from '../Navbar/navbar.jsx';
+
+
 const Courses = () => {
   return (
     <div>
 
-    <div className='navbar'>
-          <NavLink to='/' id='home'>
-            Home
-          </NavLink>
-          <NavLink to='/about' id='about'>
-            About Us
-          </NavLink>
-          <NavLink to='/courses' id='courses'>
-            Courses
-          </NavLink>
-          <NavLink to='/markets' id='markets'>
-            Markets
-          </NavLink>
-          <NavLink to='/careers' id='careers'>
-            Careers
-          </NavLink>
-          <NavLink to='/shop' id='shop'>
-            Shop
-          </NavLink>
-        
-          </div>
+    <div className='navbar'>  
+      <Navbar />      
+    </div>
           <h2 className='header'>Courses</h2>
 
           <div className='courses'>

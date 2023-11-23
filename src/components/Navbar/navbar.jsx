@@ -2,7 +2,7 @@ import React from 'react';
 import "../Navbar/navbar.css"
 import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import bitcoin from '../Images/homepage.jpg'
+import bitcoin from '../Assets/homepage.jpg'
 
 const Navbar = () => {
     return (

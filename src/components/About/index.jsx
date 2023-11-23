@@ -3,8 +3,8 @@ import "../About/style.css"
 import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 // import team1 from "../Images/team1.jpg"
-import team2 from "../Images/team2.png"
-// import team3 from "../Images/team3.jpg"
+import team2 from "../Assets/team2.png"
+import Navbar from "../Navbar/navbar.jsx";
 
 
 const About = () => {
@@ -13,24 +13,7 @@ const About = () => {
         
 
     <div className='navbar'>
-          <NavLink to='/' id='home'>
-            Home
-          </NavLink>
-          <NavLink to='/about' id='about'>
-            About Us
-          </NavLink>
-          <NavLink to='/courses' id='courses'>
-            Courses
-          </NavLink>
-          <NavLink to='/markets' id='markets'>
-            Markets
-          </NavLink>
-          <NavLink to='/careers' id='careers'>
-            Careers
-          </NavLink>
-          <NavLink to='/shop' id='shop'>
-            Shop
-          </NavLink>
+          <Navbar />
           
         
     </div>

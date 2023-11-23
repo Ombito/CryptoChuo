@@ -2,9 +2,10 @@ import React from 'react';
 import "../Shop/style.css"
 import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import tshirt from '../Images/download.jpeg'
-import book from '../Images/book.jpg'
-import hoodie from '../Images/bitcoinhoodie.jpg'
+import tshirt from '../Assets/download.jpeg'
+import book from '../Assets/book.jpg'
+import hoodie from '../Assets/bitcoinhoodie.jpg'
+import Navbar from '../Navbar/navbar.jsx';
 
 const Shop = () => {
   return (
@@ -12,24 +13,7 @@ const Shop = () => {
         
 
     <div className='navbar'>
-          <NavLink to='/' id='home'>
-            Home
-          </NavLink>
-          <NavLink to='/about' id='about'>
-            About Us
-          </NavLink>
-          <NavLink to='/courses' id='courses'>
-            Courses
-          </NavLink>
-          <NavLink to='/markets' id='markets'>
-            Markets
-          </NavLink>
-          <NavLink to='/careers' id='careers'>
-            Careers
-          </NavLink>
-          <NavLink to='/shop' id='shop'>
-            Shop
-          </NavLink>
+        <Navbar />
     </div>
     
     <section id="popular" class="popular">
