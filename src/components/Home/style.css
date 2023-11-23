@@ -1,7 +1,6 @@
 .content {
-    background: url(../Assets/homepage.jpg);
     height: 100vh;
-    margin-top: -9%;
+    margin-top: 0%;
     background-size: cover;
 }
 .enrollbutton{
