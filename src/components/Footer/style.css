@@ -3,10 +3,20 @@
     display: flex;
     background-color: #4A9E8A;
     gap: 8%;
-    /* justify-content: space-around; */
 }
 .contactinfo {
     margin-left: 15%;
+    display: flex;
+    flex-direction: column;
+    gap: 8%;
+    font-size: 1.1em;
+}
+.contactinfo a {
+    text-decoration: none;
+    color: black;
+}
+.contactinfo a:hover {
+    color: red;
 }
 .faqsupport{
     margin-top: 2%;
