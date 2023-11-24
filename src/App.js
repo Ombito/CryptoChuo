@@ -4,7 +4,7 @@ import Home from './components/Home';
 import LogIn from './components/Login';
 import About from './components/About';
 import Markets from './components/Markets';
-import Careers from './components/Careers';
+import News from './components/News';
 import Shop from './components/Shop';
 import router from 'route-cli';
 import {BrowserRouter, Route,Routes} from 'react-router-dom';
@@ -20,7 +20,7 @@ function App() {
               <Route path="login" element={<LogIn />} />
               <Route path="about" element={<About />} />
               <Route path="markets" element={<Markets />} />
-              <Route path="careers" element={<Careers />} />
+              <Route path="news" element={<News />} />
               <Route path="shop" element={<Shop />} />
       </Routes>
       </BrowserRouter>

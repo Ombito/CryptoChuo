@@ -16,7 +16,7 @@
     font-size: 1.2em;
 }
 .navlinks {
-    margin-left: -150%;
+    margin-left: -180%;
     width: 190%;
     justify-content: space-around;
     padding-right: 10%;
@@ -25,27 +25,27 @@
 #home{
     text-decoration: none;
     color: black;
-    padding-right: 6%;
+    padding-right: 10%;
 }
 #about{
     text-decoration: none;
     color: black;
-    padding-right: 6%;
+    padding-right: 10%;
 }
 #courses{
     text-decoration: none;
     color: black;
-    padding-right: 6%;
+    padding-right: 10%;
 }
 #markets{
     text-decoration: none;
     color: black;
-    padding-right: 6%;
+    padding-right: 10%;
 }
 #careers{
     text-decoration: none;
     color: black;
-    padding-right: 6%;
+    padding-right: 10%;
 }
 #shop{
     text-decoration: none;

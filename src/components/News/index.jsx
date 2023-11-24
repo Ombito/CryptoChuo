@@ -1,11 +1,11 @@
 import React from 'react';
-import "../Careers/style.css"
+import "./style.css"
 import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Navbar from '../Navbar/navbar.jsx';
 import Footer from '../Footer/index.jsx';
 
-const Careers = () => {
+const News = () => {
   return (
     <div>
     <div className='navbar'>
@@ -24,4 +24,4 @@ const Careers = () => {
   );
 };
   
-export default Careers;
+export default News;
