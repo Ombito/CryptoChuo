@@ -2,10 +2,11 @@
     text-decoration: none;
     display: flex;
     background-color: #4A9E8A;
+    gap: 8%;
+    /* justify-content: space-around; */
 }
-.contactinfo{
-    margin-left: 8%;
-
+.contactinfo {
+    margin-left: 15%;
 }
 .faqsupport{
     margin-top: 2%;
