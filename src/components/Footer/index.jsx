@@ -19,10 +19,10 @@ const Footer = () => {
         <NavLink to='/shop'>FAQs</NavLink>
         <NavLink to='/shop'>Privacy policy</NavLink>
       </div>
-      <div class="contactinfo">
-        <p><i class="name">info@cryptochuo.com</i></p>
-        <p><i class="email"></i> <span>+254 721 857 213</span></p>
-        <p><i class="phone"></i>Kilimani, Nairobi</p>        
+      <div class="footer-contact">
+        <p class="" >info@cryptochuo.com</p>
+        <p class="" >+254 721 857 213</p>
+        <p class="s" >Kilimani, Nairobi</p>        
         <div>
           <a href="https://www.ins" target="blank" className='twitter'>Twitter</a>
             

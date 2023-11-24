@@ -15,11 +15,17 @@
     text-decoration: none;
     color: black;
 }
+.email-address {
+    font-size: 1em;
+}
 .contactinfo a:hover {
     color: red;
 }
+.footer-contact {
+    margin: auto;
+    margin-left: 10%;
+}
 .faqsupport{
-    margin-top: 2%;
     margin-left: 40%;
 }
 .socialmedia{
