@@ -2,7 +2,9 @@
     text-decoration: none;
     display: flex;
     background-color: #4A9E8A;
-    gap: 8%;
+    padding: 1% 8%;
+    gap: 9%;
+    height: auto;
 }
 .contactinfo {
     margin-left: 15%;
@@ -24,6 +26,12 @@
 .footer-contact {
     margin: auto;
     margin-left: 10%;
+    padding-bottom: 3%;
+}
+.footer-container {
+    background-color: #4A9E8A;
+    display: flex;
+    flex-direction: row;
 }
 .faqsupport{
     margin-left: 40%;
