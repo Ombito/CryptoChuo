@@ -15,7 +15,7 @@ const Home = () => {
       <div className='homepage'>
         <h2> Trusted platform <br/> for, <span className='crypto'>Crypto</span> Education.</h2>
         <p className='paragraph'> Start learning to buy and sell <br/> cryptocurrency with the best quality.</p>
-        <Link to="/login">
+        <Link to="/signup">
         <button className="enrollbutton" type='submit' >Enroll Now</button>
         </Link>
       </div>
