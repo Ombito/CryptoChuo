@@ -60,7 +60,7 @@ const Signup = () => {
                 <div className='message'>{message ? <p>{message}</p> : null}</div>
             </form>
             <p className="account">
-                Have an account? <Link to="/login">Login</Link>
+                Do you have an account? <Link to="/login">Login</Link>
             </p>
         </div>
     );

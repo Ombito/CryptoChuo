@@ -1,4 +1,4 @@
-.content {
+/* .content {
     height: 100vh;
     margin-top: 0%;
     background-size: cover;
@@ -28,8 +28,8 @@ h2{
     font-size: 200%;
     font-family: "Lucida Console", "Courier New", monospace;
     font-weight: bolder;
-    /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;     */
-}
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;     */
+/* }
 .crypto{
     color: #4A9E8A;
 }
@@ -39,4 +39,56 @@ h2{
 }
 .ff{
     color: white;
+}  */
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
 }
+
+.homepage {
+    max-width: 600px;
+    text-align: left;
+    margin-left: 4%;
+}
+
+.homepage h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.crypto {
+    color: #007bff;
+}
+
+.paragraph {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.enrollbutton {
+    background-color: #007bff;
+    color: #fff;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.enrollbutton:hover {
+    background-color: #0056b3;
+}
+
+.homecrypto {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin-top: 12%;
+}
+
+/* Additional styles for Navbar and Footer */
