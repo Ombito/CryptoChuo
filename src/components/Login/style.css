@@ -40,13 +40,11 @@
 .login-button:hover {
     color: blue; 
 }
-
 .checkbox-div {
     display: flex;
     justify-content: space-between;
 
 }
-
 .account {
     text-align: center;
     margin-top: 20px;

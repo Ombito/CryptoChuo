@@ -11,7 +11,8 @@
     color: #fff;
 }
 .logo-container img {
-    height: 11vh; 
+    height: 12vh; 
+    width: 110%;
 }
 .navigation-container {
     display: flex;
