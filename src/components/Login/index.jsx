@@ -40,9 +40,10 @@ const [password, setPassword] = useState("");
                     <label>
                         
                         <div className="email">
+                            <label>Email address</label>
                             <input className="container"
                                 type="email"
-                                placeholder="Enter email"
+                                placeholder="Enter email address"
                                 value={email}
                                 onChange={(e) => {
                                     setEmail(e.target.value);
@@ -50,9 +51,10 @@ const [password, setPassword] = useState("");
                                 }
                             ></input></div>
                         <div className="password">
+                            <label>Password</label>
                             <input className="container"
                                 type="password"
-                                placeholder="Password"
+                                placeholder="Enter your password"
                                 value={password}
                                 onChange={(e) => {
                                     setPassword(e.target.value);
@@ -61,14 +63,16 @@ const [password, setPassword] = useState("");
                             ></input><br></br></div>
                         
                     </label>
-                    <div>
-                        <input type="checkbox" />
-                        <label>Remember me</label>
-                        <p className="account"><a href="/Login"><span >   Forgot password?   </span> </a> 
+                    <div className="checkbox-div">
+                        <div>
+                            <input type="checkbox" />
+                            <label>Remember me</label>
+                        </div>
+                        <p className="account"><a href="/Login"><span >Forgot password?   </span> </a> 
                     </p>
                     </div>
                     <Link to="/courses">
-                    <button className="loginbutton" type='submit' >Login</button>
+                    <button className="login-button" type='submit' >Login</button>
                     </Link>
                 </form>
                 <p className="account">Don't have an account?

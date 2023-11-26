@@ -1,86 +1,61 @@
-body{
-    align-items: center;
-}
-
-
-h2{
-    align-items: center;
-    margin-top: 4%;
-}
-.form{
-    margin-left: 3%;
-}
-
-.signup{
-    color: #4A9E8A;
-    font-size: 280%;
-}
-.fullName{
-    display: flex;
-}
-.firstname{
-    height: 10px;
-    width: 300px;
-    margin-left: 26%;
-    padding-left: 5px;
-    padding-top: 1.8%;
-    padding-bottom: 1.8%;
-    border-color: #4A9E8A ;
-    border: none;
-    border: 2px #4A9E8A solid;
-    border-radius: 13px;
-}
-.lastname{
-    height: 10px;
-    width: 300px;
-    margin-left: 6%;
-    padding-left: 5px;
-    padding-top: 1.8%;
-    padding-bottom: 1.8%;
-    border-color: #4A9E8A ;
-    border: none;
-    border: 2px #4A9E8A solid;
-    border-radius: 13px;
-}
-.container{
-    height: 10px;
-    width: 700px;
-    padding-left: 5px;
-    padding-top: 1.8%;
-    padding-bottom: 1.8%;
-    border-color: #4A9E8A ;
-    border: none;
-    border: 2px #4A9E8A solid;
-    border-radius: 13px;
-    }
-.password{
-    margin-top: 3%;
-}
-
-.email {
-    margin-top: 3%;
-}
-
-.confirm_password{
-    margin-top: 3%;
-}
-.loginbutton{
-    height: 50px;
+.form {
+    max-width: 400px;
+    margin: 0 auto;
     margin-top: 5%;
-    width: 280px;
-    background-color: #4A9E8A;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #e6f7ff; 
+}
+.container {
+    width: 100%;
+    height: 5vh;
+}
+.password {
+    margin: 3% 0 2% 0;
+}
+.login {
+    text-align: center;
+    color: #004080;
+}
+.input-group {
+    margin-bottom: 20px;
+}
+.input-field {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #e5e8ee; 
+    border-radius: 15%;
+}
+.login-button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 15px;
     border: none;
-    border-radius: 50px;
-    color: #FFFFFF;
-    font-size: 20px;
-    margin-left: 2%;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.login-button:hover {
+    color: blue; 
 }
 
-/* .main{
-    background-color: blue;
-    margin-top: 1%;
-    margin-left: 17%;
-} */
-.account{
-    color: #4A9E8A;
+.checkbox-div {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.account {
+    text-align: center;
+    margin-top: 20px;
+    color: #555;
+}
+.account a {
+    color: #004080; 
+    text-decoration: none;
+}
+.account a:hover {
+    text-decoration: underline;
 }
