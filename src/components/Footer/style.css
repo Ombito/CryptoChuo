@@ -1,12 +1,16 @@
 .footer {
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     background-color: #333;
     color: #fff;
-    padding: 20px 0;
+    padding: 20px 0; 
 }
-.footer-section {
+.footer-container {
     text-align: left;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0;
 }
 .footer-heading {
     font-size: 1.2rem;
@@ -36,4 +40,8 @@ a:hover {
 }
 .social-links a:hover {
     color: #55acee; 
+}
+#copyright {
+    text-align: center;
+    padding: 1% 0;
 }
