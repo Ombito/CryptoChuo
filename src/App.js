@@ -1,4 +1,5 @@
 import './App.css';
+import {BrowserRouter, Route ,Routes} from 'react-router-dom';
 import Courses from './components/Courses';
 import Home from './components/Home';
 import LogIn from './components/Login';
@@ -11,7 +12,7 @@ import Events from './components/Events';
 import Careers from './components/Careers';
 import Sponsorship from './components/Sponsorship';
 import router from 'route-cli';
-import {BrowserRouter, Route,Routes} from 'react-router-dom';
+
 
 
 function App() {
@@ -20,17 +21,17 @@ function App() {
       <BrowserRouter>
           <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="courses" element={<Courses />} />
-              <Route path="login" element={<LogIn />} />
-              <Route path="signup" element={<Signup />} />
-              <Route path="about" element={<About />} />
-              <Route path="markets" element={<Markets />} />
-              <Route path="news" element={<News />} />
+              <Route path="/courses" element={<Courses />} />
+              <Route path="/login" element={<LogIn />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/signup" element={<Signup />} />
+              <Route path="/markets" element={<Markets />} />
+              <Route path="/news" element={<News />} />
               <Route path="shop" element={<Shop />} />
-              <Route path="events" element={<Events />} />
-              <Route path="careers" element={<Careers />} />
-              <Route path="sponsorship" element={<Sponsorship />} />
-              <Route path="shop" element={<Shop />} />
+              <Route path="/events" element={<Events />} />
+              <Route path="/careers" element={<Careers />} />
+              <Route path="/sponsorship" element={<Sponsorship />} />
+              <Route path="/shop" element={<Shop />} />
       </Routes>
       </BrowserRouter>
 

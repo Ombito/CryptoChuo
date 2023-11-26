@@ -1,0 +1,57 @@
+.form {
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 5%;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.signup {
+    text-align: center;
+    color: #333;
+}
+.input-group {
+    margin-bottom: 20px;
+    width: 94%;
+}
+.input-field {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+#consent {
+    font-size: 0.8em;
+}
+span {
+    color: blue;
+}
+.signup-button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.signup-button:hover {
+    background-color: #45a049;
+}
+.message {
+    margin-top: 10px;
+    color: #ff0000;
+}
+.account {
+    text-align: center;
+    margin-top: 20px;
+    color: #555;
+}
+.account a {
+    color: #007bff;
+    text-decoration: none;
+}
+.account a:hover {
+    text-decoration: underline;
+}
