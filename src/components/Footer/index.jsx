@@ -1,6 +1,5 @@
 import "../Footer/style.css"
 import { NavLink } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -23,7 +22,7 @@ const Footer = () => {
         <p class="" >info@cryptochuo.com</p>
         <p class="" >+254 721 857 213</p>
         <p class="s" >Kilimani, Nairobi</p>        
-        <div>
+        <div className='social-links'>
           <a href="https://www.ins" target="blank" className='twitter'>Twitter</a>
             
             <a href="https://t.me/cryptochuo" target="blank" className='telegram'>Telegram</a>
