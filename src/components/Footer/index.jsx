@@ -6,18 +6,18 @@ const Footer = () => {
     return (
     <footer className='footer'>
       <div class="contactinfo">
-        <NavLink to='/shop'>Courses</NavLink>
-        <NavLink to='/shop'>About Us</NavLink>
+        <NavLink to='/courses'>Courses</NavLink>
+        <NavLink to='/about'>About Us</NavLink>
         <NavLink to='/shop'>Shop</NavLink>
-        <NavLink to='/shop'>Markets</NavLink>
-        <NavLink to='/shop'>Contact</NavLink>
+        <NavLink to='/markets'>Markets</NavLink>
+        <NavLink to='/contact'>Contact</NavLink>
       </div>
       <div class="contactinfo">
-        <NavLink to='/shop'>Events</NavLink>
-        <NavLink to='/shop'>Careers</NavLink>
-        <NavLink to='/shop'>Sponsorship</NavLink>
-        <NavLink to='/shop'>FAQs</NavLink>
-        <NavLink to='/shop'>Privacy policy</NavLink>
+        <NavLink to='/events'>Events</NavLink>
+        <NavLink to='/careers'>Careers</NavLink>
+        <NavLink to='/sponsorship'>Sponsorship</NavLink>
+        <NavLink to='/faqs'>FAQs</NavLink>
+        <NavLink to='/privacypolicy'>Privacy policy</NavLink>
       </div>
       <div class="footer-contact">
         <p class="" >info@cryptochuo.com</p>

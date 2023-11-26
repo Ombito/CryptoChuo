@@ -2,7 +2,7 @@ import React from 'react';
 import "../Home/style.css"
 import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import bitcoin from '../Assets/homepage.jpg'
+import bitcoin from '../Assets/banner.jpg'
 import Navbar from '../Navbar/navbar.jsx';
 import Footer from '../Footer/index.jsx';
 

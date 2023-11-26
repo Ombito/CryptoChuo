@@ -61,14 +61,19 @@ const [password, setPassword] = useState("");
                             ></input><br></br></div>
                         
                     </label>
+                    <div>
+                        <input type="checkbox" />
+                        <label>Remember me</label>
+                        <p className="account"><a href="/Login"><span >   Forgot password?   </span> </a> 
+                    </p>
+                    </div>
                     <Link to="/courses">
                     <button className="loginbutton" type='submit' >Login</button>
                     </Link>
                 </form>
                 <p className="account">Don't have an account?
                     <a href="/login"><Link to="/signup">         Signup</Link></a> </p>
-                <p className="account"><a href="/Login"><span >   Forgot password?   </span> </a> 
-                    </p>
+                
             </div>
     
   )}
