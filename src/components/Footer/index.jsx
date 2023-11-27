@@ -24,7 +24,7 @@ const Footer = () => {
           <p class="" >+254 721 857 213</p>
           <p class="s" >Kilimani, Nairobi</p>        
           <div className='social-links'>
-            <a href="https://www.ins" target="blank" className='twitter'>Twitter</a>
+            <a href="https://www.ins" target="blank" className='twitter'>X</a>
               
               <a href="https://t.me/cryptochuo" target="blank" className='telegram'>Telegram</a>
                 

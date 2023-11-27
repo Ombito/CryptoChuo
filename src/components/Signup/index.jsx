@@ -51,6 +51,16 @@ const Signup = () => {
                             onChange={(e) => setPassword(e.target.value)}
                         />
                     </div>
+                    <div className="password">
+                        <label>Confirm password</label>
+                        <input
+                            className="input-field"
+                            type="password"
+                            placeholder="Enter password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
+                    </div>
                 </div>
                 <p id="consent">By creating an account, you agree to our <span>Terms & Conditions</span></p>
                 <Link to="/courses">

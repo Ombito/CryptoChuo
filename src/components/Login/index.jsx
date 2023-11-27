@@ -35,7 +35,7 @@ const [password, setPassword] = useState("");
   return(
 
       <div className='form'>
-                <h2 className='signup'>LogIn</h2>
+                <h2 className='signup'>Login</h2>
                 <form onSubmit>
                     <label>
                         
