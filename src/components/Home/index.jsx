@@ -47,34 +47,69 @@ const Home = () => {
                 <button>More About</button>
             </div>
             <div>
-                <h2>Choose your subscription plan</h2>
+                <h3>Latest Releases</h3>
                 <div>
-                    <h4>Basic</h4>
-                    <p>$9.99/ month</p>
-                    <p>Email support</p>
-                    <button>Get Plan</button>
+                    <img src="" />
+                    <p>5 ways to improve your wallet security</p>
+                    <p>Intermediate</p>
+                    <p>4 hours</p>
                 </div>
                 <div>
-                    <h4>Advanced</h4>
-                    <p>$19.99/ month</p>
-                    <p>Email support</p>
-                    <p>Download videos</p>
-                    <p>Export projects</p>
-                    <button>Get Plan</button>
+                    <img src="" />
+                    <p>The relationship between blockchain and ai</p>
+                    <p>Intermediate</p>
+                    <p>4 hours</p>
                 </div>
                 <div>
-                    <h4>Premium</h4>
-                    <p>$29.99/ month</p>
-                    <p>Full support</p>
-                    <p>Download videos</p>
-                    <p>Export projects</p>
-                    <p>Premium</p>
-                    <button>Get Plan</button>
+                    <img src="" />
+                    <p>What is hash rate</p>
+                    <p>Intermediate</p>
+                    <p>4 hours</p>
                 </div>
+                <div>
+                    <img src="" />
+                    <p>What is web 3 wallet</p>
+                    <p>Intermediate</p>
+                    <p>4 hours</p>
+                </div>
+                <div>
+                    <img src="" />
+                    <p>% wats to improve your wallet security</p>
+                    <p>Intermediate</p>
+                    <p>4 hours</p>
+                </div>
+                <div>
+                    <img src="" />
+                    <p>% wats to improve your wallet security</p>
+                    <p>Intermediate</p>
+                    <p>4 hours</p>
+                </div>
+            </div>
+            <div>
+                <h1>Join the Crypto Academy</h1>
+                <p>Registration is now open!</p>
+                <div>
+                    <div>
+                        <img src="" />
+                        <p>learn in a cohort</p>
+                    </div>
+                    <div>
+                        <img src="" />
+                        <p>Join a community</p>
+                    </div>
+                    <div>
+                        <img src="" />
+                        <p>Invest in your career</p>
+                    </div>
+                </div>
+                <button>Enroll now</button>
             </div>
             <div>
                 <h5>Subscribe to our newsletter</h5>
                 <input type="text" placeholder="Enter your email address" />
+                <input type="checkbox" />
+                <label>I have read and aggred to CrptoChuos terms of Service</label>
+                <button>Subscribe</button>
             </div>
             <Footer />
         </div>

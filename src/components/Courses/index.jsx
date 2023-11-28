@@ -97,6 +97,32 @@ const Courses = () => {
                 </div>
             </div>
           </div>
+          <div>
+                <h2>Choose your subscription plan</h2>
+                <div>
+                    <h4>Basic</h4>
+                    <p>$9.99/ month</p>
+                    <p>Email support</p>
+                    <button>Get Plan</button>
+                </div>
+                <div>
+                    <h4>Advanced</h4>
+                    <p>$19.99/ month</p>
+                    <p>Email support</p>
+                    <p>Download videos</p>
+                    <p>Export projects</p>
+                    <button>Get Plan</button>
+                </div>
+                <div>
+                    <h4>Premium</h4>
+                    <p>$29.99/ month</p>
+                    <p>Full support</p>
+                    <p>Download videos</p>
+                    <p>Export projects</p>
+                    <p>Premium</p>
+                    <button>Get Plan</button>
+                </div>
+            </div>
           <Footer />
 
         </div>
