@@ -105,6 +105,13 @@ const Home = () => {
                 <button>Enroll now</button>
             </div>
             <div>
+                <h3>Frequently Asked Questions</h3>
+                <p>What is bloackchain</p>
+                <p>What is bloackchain</p>
+                <p>What is bloackchain</p>
+                <p>What is bloackchain</p>
+            </div>
+            <div>
                 <h5>Subscribe to our newsletter</h5>
                 <input type="text" placeholder="Enter your email address" />
                 <input type="checkbox" />
