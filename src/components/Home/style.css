@@ -37,6 +37,32 @@
 .homecrypto {
     width: 100%;
     max-width: 600px;
+    height: 80vh;
+    margin-top: 15%;
+}
+#stats {
+    display: flex;
+    gap: 40px;
+    margin-top: 5%;
+}
+.numbers {
+    font-weight: bold;
+}
+.content-img {
+    height: 50vh;
+    border-radius: 50%;
+}
+.home-hero {
+    display: flex;
+    justify-content: space-between;
+}
+.home-card {
     height: auto;
-    margin-top: 12%;
+}
+.home-card img {
+    height: 7vh;
+}
+#home-card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 }

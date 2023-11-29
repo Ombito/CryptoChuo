@@ -1,7 +1,6 @@
 .header{
     color: #4A9E8A;
-    font-size: 270%;
-    
+    font-size: 270%; 
 }
 h3{
     color: black;
@@ -11,7 +10,6 @@ background-color: rgb(245, 168, 75);
 border-radius: 14%;
 height: 250px;
 width: 18%;
-
 }
 .nft{
     background-color: rgb(245, 168, 75);
@@ -112,4 +110,8 @@ width: 18%;
 .blockchainhourly{
     margin-left: 4%;
     margin-top: 2%;
+}
+#course-subscription {
+    display: flex;
+    gap: 10%;
 }

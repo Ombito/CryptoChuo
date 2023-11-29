@@ -16,17 +16,17 @@ const Home = () => {
                     <Link to="/signup">
                         <button className="enroll-button" type='submit'>Enroll Now</button>
                     </Link>
-                    <div>
+                    <div id="stats">
                         <div>
-                            <p>40K+</p>
+                            <p className="numbers">40K+</p>
                             <p>Happy Students</p>
                         </div>
                         <div>
-                            <p>10K+</p>
+                            <p className="numbers">10K+</p>
                             <p>Online Classes</p>
                         </div>
                         <div>
-                            <p>20K+</p>
+                            <p className="numbers">20K+</p>
                             <p>Total Courses</p>
                         </div>
                     </div>
@@ -40,45 +40,47 @@ const Home = () => {
                 <h3>Trusted by 5,000+ Companies Worldwide</h3>
 
             </div>
-            <div>
-                <img src={bitcoin} alt="" />
-                <h4>Welcome to Web3.0 Learning Center</h4>
-                <p>Bridging the relationship between</p>
-                <button>More About</button>
-            </div>
-            <div>
-                <h3>Latest Releases</h3>
+            <div className="home-hero">
+                <img className="content-img" src={bitcoin} alt="" />
                 <div>
+                    <h4>Welcome to Web3.0 Learning Center</h4>
+                    <p>Bridging the relationship between</p>
+                    <button>More About</button>
+                </div>
+            </div>
+            <div id="home-card-container">
+                {/* <h3>Latest Releases</h3> */}
+                <div className="home-card">
                     <img src="" />
                     <p>5 ways to improve your wallet security</p>
                     <p>Intermediate</p>
                     <p>4 hours</p>
                 </div>
-                <div>
+                <div className="home-card">
                     <img src="" />
                     <p>The relationship between blockchain and ai</p>
                     <p>Intermediate</p>
                     <p>4 hours</p>
                 </div>
-                <div>
+                <div className="home-card">
                     <img src="" />
                     <p>What is hash rate</p>
                     <p>Intermediate</p>
                     <p>4 hours</p>
                 </div>
-                <div>
+                <div className="home-card">
                     <img src="" />
                     <p>What is web 3 wallet</p>
                     <p>Intermediate</p>
                     <p>4 hours</p>
                 </div>
-                <div>
+                <div className="home-card">
                     <img src="" />
                     <p>% wats to improve your wallet security</p>
                     <p>Intermediate</p>
                     <p>4 hours</p>
                 </div>
-                <div>
+                <div className="home-card">
                     <img src="" />
                     <p>% wats to improve your wallet security</p>
                     <p>Intermediate</p>
@@ -114,8 +116,10 @@ const Home = () => {
             <div>
                 <h5>Subscribe to our newsletter</h5>
                 <input type="text" placeholder="Enter your email address" />
-                <input type="checkbox" />
-                <label>I have read and aggred to CrptoChuos terms of Service</label>
+                <div>
+                    <input type="checkbox" />
+                    <label>I have read and aggred to CrptoChuos terms of Service</label>
+                </div>
                 <button>Subscribe</button>
             </div>
             <Footer />

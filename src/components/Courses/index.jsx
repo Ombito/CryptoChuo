@@ -97,9 +97,9 @@ const Courses = () => {
                 </div>
             </div>
           </div>
-          <div>
-                <h2>Choose your subscription plan</h2>
-                <div>
+          <h2>Choose your subscription plan</h2>
+          <div id="course-subscription">
+                <div className="subscription-c">
                     <h4>Basic</h4>
                     <p>$9.99/ month</p>
                     <p>Email support</p>
