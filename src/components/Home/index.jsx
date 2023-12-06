@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "../Home/style.css";
 import { Link } from 'react-router-dom';
 import bitcoin from '../Assets/banner.jpg';
@@ -6,6 +6,20 @@ import Navbar from '../Navbar/navbar.jsx';
 import Footer from '../Footer/index.jsx';
 
 const Home = () => {
+    const faqData = [
+        { question: 'What is blockchain?', answer: 'Blockchain is...' },
+        { question: 'Another question', answer: 'Corresponding answer...' },
+        { question: 'What is blockchain?', answer: 'Blockchain is...' },
+        { question: 'Another question', answer: 'Corresponding answer...' },
+        { question: 'What is blockchain?', answer: 'Blockchain is...' },
+        { question: 'Another question', answer: 'Corresponding answer...' },
+      ];
+    
+      const [expandedIndex, setExpandedIndex] = useState(null);
+    const handleToggleAnswer = (index) => {
+        setExpandedIndex(expandedIndex === index ? null : index);
+      };
+
     return (
         <div>
             <Navbar />
@@ -142,17 +156,24 @@ const Home = () => {
             </div>
             <div className='faq'>
                 <h3>Frequently Asked Questions</h3>
-                <p>What is bloackchain</p>
-                <p>What is bloackchain</p>
-                <p>What is bloackchain</p>
-                <p>What is bloackchain</p>
+                {faqData.map((item, index) => (
+                    <div key={index} className='faq-item'>
+                    <div className='question' onClick={() => handleToggleAnswer(index)}>
+                        {item.question}
+                        <span className={`plus ${expandedIndex === index ? 'minus' : 'plus'}`}>
+                        {expandedIndex === index ? '-' : '+'}
+                        </span>
+                    </div>
+                    {expandedIndex === index && <p className='answer'>{item.answer}</p>}
+                    </div>
+                ))}
             </div>
             <div className='subscribe'>
                 <h5>Subscribe to our newsletter</h5>
                 <input type="text" placeholder="Enter your email address" />
                 <div className='subscribe-checkbox'>
                     <input type="checkbox" />
-                    <label>I have read and aggred to CrptoChuos terms of Service</label>
+                    <label>I have read and agreed to CrptoChuos terms of Service</label>
                 </div>
                 <button>Subscribe</button>
             </div>
