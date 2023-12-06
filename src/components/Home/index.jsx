@@ -22,8 +22,8 @@ const Home = () => {
 
     return (
         <div>
-            <Navbar />
-            <div className='content'>
+            <Navbar/>
+            <div class="container" className='content'>
                 <div className='homepage'>
                     <h2>Trusted platform <br/> for, <span className='crypto'>Crypto</span> Education.</h2>
                     <p className='paragraph'>Start learning to buy and sell <br /> cryptocurrency with the best blockchain bootcamp.</p>
