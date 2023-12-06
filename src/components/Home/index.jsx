@@ -16,26 +16,33 @@ const Home = () => {
                     <Link to="/signup">
                         <button className="enroll-button" type='submit'>Enroll Now</button>
                     </Link>
-                    <div id="stats">
-                        <div>
-                            <p className="numbers">40K+</p>
-                            <p>Happy Students</p>
-                        </div>
-                        <div>
-                            <p className="numbers">10K+</p>
-                            <p>Online Classes</p>
-                        </div>
-                        <div>
-                            <p className="numbers">20K+</p>
-                            <p>Total Courses</p>
-                        </div>
-                    </div>
                 </div>
-
                 <div>
                     <img className='homecrypto' src={bitcoin} alt="Crypto Banner" />
                 </div>
             </div>
+            <div id="stats">
+                        <div>
+                            <p className="numbers">400+</p>
+                            <p>Students</p>
+                        </div>
+                        <div>
+                            <p className="numbers">1K+</p>
+                            <p>Online Classes</p>
+                        </div>
+                        <div>
+                            <p className="numbers">10K+</p>
+                            <p>Total Courses</p>
+                        </div>
+                        <div>
+                            <p className="numbers">124</p>
+                            <p>Mentors</p>
+                        </div>
+                        <div>
+                            <p className="numbers">50+</p>
+                            <p>Partners</p>
+                        </div>
+                    </div>
             <div>
                 <h3>Trusted by 5,000+ Companies Worldwide</h3>
 
@@ -44,12 +51,12 @@ const Home = () => {
                 <img className="content-img" src={bitcoin} alt="" />
                 <div>
                     <h4>Welcome to Web3.0 Learning Center</h4>
-                    <p>Bridging the relationship between</p>
-                    <button>More About</button>
+                    <p>Through it's online platform, Cryptochuo offers students the opportunity to access web 3.0 skill development, opportunities, mentorship and tailored curriculum to enable them learn and accelerate their activities and become global change makers</p>
+                    <button>Join our community</button>
                 </div>
             </div>
+            <h3>Trending</h3>
             <div id="home-card-container">
-                {/* <h3>Latest Releases</h3> */}
                 <div className="home-card">
                     <img src="" />
                     <p>5 ways to improve your wallet security</p>
@@ -85,6 +92,39 @@ const Home = () => {
                     <p>% wats to improve your wallet security</p>
                     <p>Intermediate</p>
                     <p>4 hours</p>
+                </div>
+            </div>
+            <div>
+                <h2>Topics</h2>
+                <div>
+                    <div>
+                        <h5>Basics</h5>
+                        <img src="" alt="" />
+                    </div>
+                    <div>
+                        <h5>Bitcoin</h5>
+                        <img src="" alt="" />
+                    </div>
+                    <div>
+                        <h5>DeFi</h5>
+                        <img src="" alt="" />
+                    </div>
+                    <div>
+                        <h5>Ethereum</h5>
+                        <img src="" alt="" />
+                    </div>
+                    <div>
+                        <h5>Security</h5>
+                        <img src="" alt="" />
+                    </div>
+                    <div>
+                        <h5>NFT</h5>
+                        <img src="" alt="" />
+                    </div>
+                    <div>
+                        <h5></h5>
+                        <img src="" alt="" />
+                    </div>
                 </div>
             </div>
             <div>

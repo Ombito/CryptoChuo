@@ -126,10 +126,6 @@ const Courses = () => {
           <Footer />
 
         </div>
-
-
-
-
   
   );
 };
