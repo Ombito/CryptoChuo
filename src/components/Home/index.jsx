@@ -58,37 +58,37 @@ const Home = () => {
             <h3>Trending</h3>
             <div id="home-card-container">
                 <div className="home-card">
-                    <img src="" />
+                    <img src="" alt=""/>
                     <p>5 ways to improve your wallet security</p>
                     <p>Intermediate</p>
                     <p>4 hours</p>
                 </div>
                 <div className="home-card">
-                    <img src="" />
+                    <img src="" alt=""/>
                     <p>The relationship between blockchain and ai</p>
                     <p>Intermediate</p>
                     <p>4 hours</p>
                 </div>
                 <div className="home-card">
-                    <img src="" />
+                    <img src="" alt=""/>
                     <p>What is hash rate</p>
                     <p>Intermediate</p>
                     <p>4 hours</p>
                 </div>
                 <div className="home-card">
-                    <img src="" />
+                    <img src="" alt=""/>
                     <p>What is web 3 wallet</p>
                     <p>Intermediate</p>
                     <p>4 hours</p>
                 </div>
                 <div className="home-card">
-                    <img src="" />
+                    <img src="" alt=""/>
                     <p>% wats to improve your wallet security</p>
                     <p>Intermediate</p>
                     <p>4 hours</p>
                 </div>
                 <div className="home-card">
-                    <img src="" />
+                    <img src="" alt=""/>
                     <p>% wats to improve your wallet security</p>
                     <p>Intermediate</p>
                     <p>4 hours</p>
@@ -128,23 +128,23 @@ const Home = () => {
                 </div>
             </div>
             <div className='join'>
-                <h1>Join the Crypto Academy</h1>
-                <p>Registration is now open!</p>
+                <h1>Partner with us to educate the world about Web3.</h1>
+                <p>CryptoChuo offers tools and resources for your organization to skill up and scale up. Become a partner and get access to all these tools and more</p>
                 <div className='join-container'>
                     <div className='join-item'>
-                        <img src="" />
+                        <img src="" alt=""/>
                         <p>learn in a cohort</p>
                     </div>
                     <div className='join-item'>
-                        <img src="" />
+                        <img src="" alt=""/>
                         <p>Join a community</p>
                     </div>
                     <div className='join-item'>
-                        <img src="" />
+                        <img src="" alt=""/>
                         <p>Invest in your career</p>
                     </div>
                 </div>
-                <button className='enroll-button'>Enroll now</button>
+                <button className='enroll-button'>Become a partner</button>
             </div>
             <div className='faq'>
                 <h3>Frequently Asked Questions</h3>
