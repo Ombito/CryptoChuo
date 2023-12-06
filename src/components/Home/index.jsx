@@ -22,27 +22,27 @@ const Home = () => {
                 </div>
             </div>
             <div id="stats">
-                        <div>
-                            <p className="numbers">400+</p>
-                            <p>Students</p>
-                        </div>
-                        <div>
-                            <p className="numbers">1K+</p>
-                            <p>Online Classes</p>
-                        </div>
-                        <div>
-                            <p className="numbers">10K+</p>
-                            <p>Total Courses</p>
-                        </div>
-                        <div>
-                            <p className="numbers">124</p>
-                            <p>Mentors</p>
-                        </div>
-                        <div>
-                            <p className="numbers">50+</p>
-                            <p>Partners</p>
-                        </div>
-                    </div>
+                <div>
+                    <p className="numbers">400+</p>
+                    <p>Students</p>
+                </div>
+                <div>
+                    <p className="numbers">1K+</p>
+                    <p>Online Classes</p>
+                </div>
+                <div>
+                    <p className="numbers">10K+</p>
+                    <p>Total Courses</p>
+                </div>
+                <div>
+                    <p className="numbers">124</p>
+                    <p>Mentors</p>
+                </div>
+                <div>
+                    <p className="numbers">50+</p>
+                    <p>Partners</p>
+                </div>
+            </div>
             <div>
                 <h3>Trusted by 5,000+ Companies Worldwide</h3>
 
@@ -94,69 +94,69 @@ const Home = () => {
                     <p>4 hours</p>
                 </div>
             </div>
-            <div>
+            <div className='topics'>
                 <h2>Topics</h2>
-                <div>
-                    <div>
+                <div className='topics-container'>
+                    <div className='topic'>
                         <h5>Basics</h5>
                         <img src="" alt="" />
                     </div>
-                    <div>
+                    <div className='topic'>
                         <h5>Bitcoin</h5>
                         <img src="" alt="" />
                     </div>
-                    <div>
+                    <div className='topic'>
                         <h5>DeFi</h5>
                         <img src="" alt="" />
                     </div>
-                    <div>
+                    <div className='topic'>
                         <h5>Ethereum</h5>
                         <img src="" alt="" />
                     </div>
-                    <div>
+                    <div className='topic'>
                         <h5>Security</h5>
                         <img src="" alt="" />
                     </div>
-                    <div>
-                        <h5>NFT</h5>
+                    <div className='topic'>
+                        <h5>NFT's</h5>
                         <img src="" alt="" />
                     </div>
-                    <div>
-                        <h5></h5>
+                    <div className='topic'>
+                        <h5>Yield farming</h5>
                         <img src="" alt="" />
                     </div>
                 </div>
             </div>
-            <div>
+            <div className='join'>
                 <h1>Join the Crypto Academy</h1>
                 <p>Registration is now open!</p>
-                <div>
-                    <div>
+                <div className='join-container'>
+                    <div className='join-item'>
                         <img src="" />
                         <p>learn in a cohort</p>
                     </div>
-                    <div>
+                    <div className='join-item'>
                         <img src="" />
                         <p>Join a community</p>
                     </div>
-                    <div>
+                    <div className='join-item'>
                         <img src="" />
                         <p>Invest in your career</p>
                     </div>
                 </div>
-                <button>Enroll now</button>
+                <button className='enroll-button'>Enroll now</button>
             </div>
-            <div>
+            <div className='faq'>
                 <h3>Frequently Asked Questions</h3>
                 <p>What is bloackchain</p>
                 <p>What is bloackchain</p>
                 <p>What is bloackchain</p>
                 <p>What is bloackchain</p>
             </div>
-            <div>
+            <div className='subscribe'>
                 <h5>Subscribe to our newsletter</h5>
                 <input type="text" placeholder="Enter your email address" />
-                <div>
+                <div className='subscribe-checkbox'>
                     <input type="checkbox" />
                     <label>I have read and aggred to CrptoChuos terms of Service</label>
                 </div>

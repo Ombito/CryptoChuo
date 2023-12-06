@@ -42,8 +42,12 @@
 }
 #stats {
     display: flex;
-    gap: 40px;
-    margin-top: 5%;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 50px 20px;
+  
 }
 .numbers {
     font-weight: bold;
@@ -66,3 +70,127 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
+
+
+
+.topics {
+    background-color: #fff;
+    padding: 50px 20px;
+  }
+  
+  .topics h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 50px;
+  }
+  
+  .topics-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .topic {
+    max-width: 200px;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  
+  .topic h5 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+ 
+  .join {
+    background-color: #f9f9f9;
+    padding: 50px 20px;
+  }
+  
+  .join h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .join p {
+    font-size: 24px;
+    margin-bottom: 40px;
+  }
+  
+  .join-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .join-item {
+    max-width: 200px;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  
+  .join-item p {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+ 
+  .faq {
+    background-color: #fff;
+    padding: 50px 20px;
+  }
+  
+  .faq h3 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 50px;
+  }
+  
+  .faq p {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  
+  .subscribe {
+    background-color: #f9f9f9;
+    padding: 50px 20px;
+  }
+  
+  .subscribe h5 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .subscribe input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .subscribe-checkbox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .subscribe-checkbox input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  
+  .subscribe-button {
+    background-color: #f9a826;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+  }
