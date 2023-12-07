@@ -66,6 +66,7 @@
 .home-hero {
     display: flex;  
     margin-top: 4%;
+    
 }
 .home-card {
     height: auto;
@@ -81,8 +82,12 @@
 #home-describe {
   display: flex;
   justify-content: space-between;
+  gap: 10%;
 }
-
+#describe-hero {
+  align-items: center;
+  text-align: center;
+}
 
 .topics {
     background-color: #fff;
@@ -114,7 +119,15 @@
     font-weight: bold;
     margin-bottom: 20px;
   }
-  
+  .join-community-btn {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
   .course-card {
     background-color: #fff;
     border-radius: 8px;
@@ -133,7 +146,9 @@
   
   margin-bottom: 10px;
 }
-
+.course-details {
+  padding: 4%;
+}
 .star {
   font-size: 1.2em;
   color: #f39c12;
@@ -217,8 +232,14 @@
   .subscribe {
     background-color: #f9f9f9;
     padding: 50px 20px;
+    margin-top: -12%;
+    background-color: #0056b3;
+    height: 40vh;
   }
+ #subscribe-div {
+  margin: auto;
   
+ } 
   .subscribe h5 {
     font-size: 24px;
     font-weight: bold;
@@ -226,7 +247,7 @@
   }
   
   .subscribe input[type="text"] {
-    width: 100%;
+    width: 30%;
     padding: 10px;
     margin-bottom: 20px;
     border: none;
@@ -248,7 +269,7 @@
     color: #fff;
     border: none;
     border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 18px;
+    padding: 5px 20px;
+    font-size: 16px;
     cursor: pointer;
   }

@@ -63,10 +63,10 @@ const Home = () => {
                 <div className="home-hero">
                     <div class="container" id="home-describe">
                         <img className="content-img" src={bitcoin} alt="" />
-                        <div>
+                        <div id="describe-hero">
                             <h4>Welcome to Web3.0 Learning Center</h4>
                             <p>Through it's online platform, Cryptochuo offers students the opportunity to access web 3.0 skill development, opportunities, mentorship and tailored curriculum to enable them learn and accelerate their activities and become global change makers</p>
-                            <button>Join our community</button>
+                            <button className='join-community-btn'>Join our community</button>
                         </div>
                     </div>
                 </div>
@@ -237,13 +237,15 @@ const Home = () => {
                     ))}
                 </div>
                 <div className='subscribe'>
-                    <h5>Subscribe to our newsletter</h5>
-                    <input type="text" placeholder="Enter your email address" />
-                    <div className='subscribe-checkbox'>
-                        <input type="checkbox" />
-                        <label>I have read and agreed to CrptoChuos terms of Service</label>
+                    <div class="container" id="subscribe-div">
+                        <h5>Subscribe to our newsletter</h5>
+                        <input type="text" placeholder="Enter your email address" />
+                        <div className='subscribe-checkbox'>
+                            <input type="checkbox" />
+                            <label>I have read and agreed to the Terms of Service.</label>
+                        </div>
+                        <button className="subscribe-button">Subscribe</button>
                     </div>
-                    <button>Subscribe</button>
                 </div>
                 <Footer />
             </div>
