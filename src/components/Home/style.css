@@ -180,7 +180,7 @@
   text-decoration: none;
 }
 #contact-div {
-  margin-top: -9%;
+  margin-top: -15%;
 }
 .contact-container {
   display: flex;
@@ -197,25 +197,38 @@
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
+#contact-img {
+  height: 14%;
+  width: 100%;
+}
 .contact-info h6 {
   font-size: 1.2em;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
 }
-
+.contact-info a{
+  color: black;
+}
+.contact-info a:hover {
+  text-decoration: none;
+  color: #0056b3;
+}
 .contact-info p {
   margin: 0;
   color: #555;
+  margin-bottom: 25px;
 }
-
+form.contact-form {
+  width: 50%;
+}
 .contact-form {
-  max-width: 80%;
   background-color: #fff;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
+.contact-p {
+  text-align: center;
+}
 label {
   display: block;
   margin: 10px 0 5px;
@@ -250,7 +263,15 @@ button {
 button:hover {
   background-color: #2980b9;
 }
-
+#contact-icons {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 8%;
+}
+.icons {
+  color: black;
+  font-size: 1.6em;
+}
   .join {
     background-color: #f9f9f9;
     padding: 50px 20px;
@@ -313,8 +334,8 @@ button:hover {
   .subscribe {
     background-color: #f9f9f9;
     padding: 50px 20px;
-    margin-top: 50%;
-    background-color: #0056b3;
+    margin-top: 55%;
+    background-color: #0057b3;
     height: 40vh;
   }
  #subscribe-div {

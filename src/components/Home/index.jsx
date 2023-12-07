@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import bitcoin from '../Assets/banner.jpg';
 import Navbar from '../Navbar/navbar.jsx';
 import Footer from '../Footer/index.jsx';
+import { FaTelegram, FaLinkedin, FaWhatsapp, FaDiscord } from  'react-icons/fa';
+import ContactUs from '../Assets/ContactUs.gif'
 
 const Home = () => {
     const faqData = [
@@ -87,7 +89,6 @@ const Home = () => {
                                 <span class="star">&#9733;</span>
                                 <span class="star">&#9734;</span>
                                 </p>
-                                <a href="#" class="btn">Enroll Now</a>
                             </div>
                         </div>
                         <div className="course-card">
@@ -103,7 +104,6 @@ const Home = () => {
                                 <span class="star">&#9733;</span>
                                 <span class="star">&#9734;</span>
                                 </p>
-                                <a href="#" class="btn">Enroll Now</a>
                             </div>
                         </div>
                         <div className="course-card">
@@ -119,7 +119,6 @@ const Home = () => {
                                 <span class="star">&#9733;</span>
                                 <span class="star">&#9734;</span>
                                 </p>
-                                <a href="#" class="btn">Enroll Now</a>
                             </div>
                         </div>
                         <div className="course-card">
@@ -135,7 +134,6 @@ const Home = () => {
                                 <span class="star">&#9733;</span>
                                 <span class="star">&#9734;</span>
                                 </p>
-                                <a href="#" class="btn">Enroll Now</a>
                             </div>
                         </div>
                         <div className="course-card">
@@ -151,7 +149,6 @@ const Home = () => {
                                 <span class="star">&#9733;</span>
                                 <span class="star">&#9734;</span>
                                 </p>
-                                <a href="#" class="btn">Enroll Now</a>
                             </div>
                         </div>
                         <div className="course-card">
@@ -167,7 +164,6 @@ const Home = () => {
                                 <span class="star">&#9733;</span>
                                 <span class="star">&#9734;</span>
                                 </p>
-                                <a href="#" class="btn">Enroll Now</a>
                             </div>
                         </div>
                     </div>
@@ -237,16 +233,28 @@ const Home = () => {
                 </div>
                 <div id="contact-div">
                     <div class="container">
-                        <h2>Contact Us</h2>
-                        <p>Reach out to us anytime, We are open fro training, partnership, industry events hosting and your questions.
+                        <h2 className="contact-p">Contact Us</h2>
+                        <p className="contact-p">Reach out to us anytime, We are open for training, partnership, industry events hosting and your questions.
                         </p>
                         <div class="contact-container">
                             <div class="contact-info">
-                                <h6>Administrative Support</h6>
-                                <p>admin@cryptochuo.com</p>
-                                <h6>Learner Support</h6>
-                                <p>student-support@cryptochuo.com</p>
-                                <p>Nairobi, Kenya</p>
+                                <img id="contact-img" src={ContactUs} alt="contact" />
+                                <div>
+                                    <h6>Administrative Support</h6>
+                                    <p><a href="mailto:admin@cryptochuo.com">admin@cryptochuo.com</a></p>
+                                    <h6>Learner Support</h6>
+                                    <p><a href="mailto:admin@cryptochuo.com">student-support@cryptochuo.com</a></p>
+                                    <h6>Nairobi, Kenya</h6>
+                                    <a href="">24/7 Chat Support</a>
+                                    <div>
+                                        <div id="contact-icons">
+                                            <a href=""><FaLinkedin className="icons"/></a>
+                                            <a href=""><FaWhatsapp className="icons"/></a>
+                                            <a href=""><FaTelegram className="icons"/></a>
+                                            <a href=""><FaDiscord className="icons"/></a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <form class="contact-form">
                                 <label for="fullName">Full Name</label>
