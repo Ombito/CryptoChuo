@@ -235,13 +235,39 @@ const Home = () => {
                         </div>
                     ))}
                 </div>
-                <div>
-                    {/* <div class="container">
+                <div id="contact-div">
+                    <div class="container">
                         <h2>Contact Us</h2>
-                        <div>
-                            <p>Reach out to us anytime</p>
+                        <p>Reach out to us anytime, We are open fro training, partnership, industry events hosting and your questions.
+                        </p>
+                        <div class="contact-container">
+                            <div class="contact-info">
+                                <h6>Administrative Support</h6>
+                                <p>admin@cryptochuo.com</p>
+                                <h6>Learner Support</h6>
+                                <p>student-support@cryptochuo.com</p>
+                                <p>Nairobi, Kenya</p>
+                            </div>
+                            <form class="contact-form">
+                                <label for="fullName">Full Name</label>
+                                <input type="text" id="fullName" placeholder="Your Full Name" required/>
+
+                                <label for="phoneNumber">Phone Number</label>
+                                <input type="text" id="phoneNumber" placeholder="Your Phone Number" required/>
+
+                                <label for="emailAddress">Email Address</label>
+                                <input type="text" id="emailAddress" placeholder="Your Email Address" required/>
+
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" placeholder="Email Subject" required/>
+
+                                <label for="message">Your message</label>
+                                <textarea id="message" placeholder="What can we help you with?" required></textarea>
+
+                                <button type="submit">Submit</button>
+                            </form>
                         </div>
-                    </div> */}
+                    </div>
                 </div>
                 <div className='subscribe'>
                     <div class="container" id="subscribe-div">
