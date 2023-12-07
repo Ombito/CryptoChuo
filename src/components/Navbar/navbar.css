@@ -2,7 +2,7 @@
     display: flex;
     position: fixed;
     top: 0;
-    height: 11vh;
+    height: 12vh;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -11,9 +11,14 @@
     color: #fff;
     z-index: 1;
 }
+.logo-container {
+    margin: 0 5%;
+    margin-top: -3%; 
+}
+
 .logo-container img {
     height: 12vh; 
-    width: 110%;
+    width: 115%;
 }
 .navigation-container {
     display: flex;

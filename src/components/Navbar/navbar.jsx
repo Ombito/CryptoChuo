@@ -8,7 +8,7 @@ const Navbar = () => {
     return (
         <div className='navbar'>
             <div className="logo-container">
-                <Link to="/"><img className='logo' src={bitcoin} alt="Bitcoin Logo" /></Link>
+                <Link class="container" to="/"><img className='logo' src={bitcoin} alt="Bitcoin Logo" /></Link>
             </div>
             <div className="navigation-container">
                 <div className="navlinks">

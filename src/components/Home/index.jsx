@@ -276,7 +276,6 @@ const Home = () => {
                                     <h6>Learner Support</h6>
                                     <p><a href="mailto:admin@cryptochuo.com">student-support@cryptochuo.com</a></p>
                                     <h6>Nairobi, Kenya</h6>
-                                    <a href="">24/7 Chat Support</a>
                                     <div>
                                         <div id="contact-icons">
                                             <a href=""><FaLinkedin className="icons"/></a>
