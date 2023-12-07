@@ -5,9 +5,13 @@ import bitcoin from '../Assets/banner.jpg';
 import Navbar from '../Navbar/navbar.jsx';
 import Footer from '../Footer/index.jsx';
 import { FaTelegram, FaLinkedin, FaWhatsapp, FaDiscord } from  'react-icons/fa';
-import ContactUs from '../Assets/ContactUs.gif'
+import ContactUs from '../Assets/ContactUs.gif';
+import Course1 from "../Assets/homepage.jpg";
+import ScrollTrigger from 'react-scroll-trigger';
+import CountUp from 'react-countup';
 
 const Home = () => {
+    const [ counterOn, setCounterOn ] = useState(false)
     const faqData = [
         { question: 'So your aim is educating people on Blockchain technology?', answer: "It's ok you can say it. Decentralization is important but what underpins it? That's the complication. Our strategy is to create grassroot level of mass awareness on cryptocurrencies and Blockchain." },
         { question: 'Who should attend these courses?', answer: 'The criteria is simple, are you willing to kickstart your Web3 career and achieve certifications? Yes? Good, welcome to CryptoChuo. ' },
@@ -16,7 +20,7 @@ const Home = () => {
         { question: 'What are smart contracts?', answer: "Smart contracts are lines of code that are stored on a blockchain and automatically execute when predetermined terms and conditions are met. At the most basic level, they are programs that run as they’ve been set up to run by the people who developed them. The benefits of smart contracts are most apparent in business collaborations, in which they are typically used to enforce some type of agreement so that all participants can be certain of the outcome without an intermediary’s involvement." },
         { question: 'What is Blockchain mining?', answer: "Blockchain mining, a peer-to-peer computer process, is used to secure and verify cryptographic secured transactions. Mining involves crypto miners who add cryptocurrency transaction data to global public ledger of past transactions. In the ledgers, blocks are secured by miners and are connected to each other forming a chain. Cryptocurrencies or tokens, such as Bitcoin or Ethereum, have no central clearing house. Transactions are generally verified in decentralized clearing systems wherein people contribute computing resources to verify the same. This process of verifying transactions in called mining." },
       ];
-    
+      
       const [expandedIndex, setExpandedIndex] = useState(null);
     const handleToggleAnswer = (index) => {
         setExpandedIndex(expandedIndex === index ? null : index);
@@ -41,26 +45,24 @@ const Home = () => {
                     </div>
                 </div>
                 <div class="container" id="stats">
-                    <div>
-                        <p className="numbers">400+</p>
-                        <p>Students</p>
-                    </div>
-                    <div>
-                        <p className="numbers">1K+</p>
-                        <p>Online Classes</p>
-                    </div>
-                    <div>
-                        <p className="numbers">10K+</p>
-                        <p>Total Courses</p>
-                    </div>
-                    <div>
-                        <p className="numbers">124</p>
-                        <p>Mentors</p>
-                    </div>
-                    <div>
-                        <p className="numbers">50+</p>
-                        <p>Partners</p>
-                    </div>
+                    <ScrollTrigger onEnter={()=> setCounterOn(true)} onExit={()=> setCounterOn(false)}>
+                        <div>
+                            <h5 className="numbers">{counterOn && <CountUp className="number-color" start={0} end={400} duration={5}/>}+<br></br><br></br>  Students</h5>
+                        </div>
+                        <div>
+                            <h5 className="numbers"> {counterOn && <CountUp className="number-color" start={0} end={200} duration={5}/>}+<br></br><br></br> Online Classes</h5>
+                        </div>
+                        <div>
+                            <h5 className="numbers"> {counterOn && <CountUp className="number-color" start={0} end={1000} duration={5}/>}+<br></br><br></br>  Total Courses</h5>
+                        </div>
+                        <div>
+                            <h5 className="numbers">{counterOn && <CountUp className="number-color" start={0} end={261} duration={5}/>}+<br></br><br></br>Mentors</h5>
+                            <p></p>
+                        </div>
+                        <div>
+                            <h5 className="numbers">{counterOn && <CountUp className="number-color" start={0} end={50} duration={5}/>}+<br></br><br></br>  Partners</h5>
+                        </div>
+                    </ScrollTrigger>
                 </div>
                 <div className="home-hero">
                     <div class="container" id="home-describe">
@@ -72,105 +74,134 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                <div class="container" >
-                    
+                <div class="container" id="course-div">
+                    <h3>Trending</h3>
                     <div id="home-card-container">
-                    {/* <h3>Trending</h3> */}
                         <div className="course-card">
-                            <img src="" alt=""/>
+                            <img src={Course1} alt="" className="course-img"/>
                             <div class="course-details">
-                                <h2>Course Title</h2>
-                                <p>Course Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                <p>Duration: 8 weeks</p>
-                                <p class="rating">Rating: 
-                                <span class="star">&#9733;</span>
-                                <span class="star">&#9733;</span>
-                                <span class="star">&#9733;</span>
-                                <span class="star">&#9733;</span>
-                                <span class="star">&#9734;</span>
-                                </p>
+                                <h4>Course Title</h4>
+                                <p>Course Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>  
+                                <p>Duration: 8 weeks</p>                             
+                                <div className="amount">
+                                    <h5>$100</h5>
+                                    <div>
+                                        <p class="rating"> 
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9734;</span>
+                                        </p>
+                                    </div>
+                                </div>      
                             </div>
                         </div>
                         <div className="course-card">
-                            <img src="" alt=""/>
+                            <img src={Course1} alt="" className="course-img"/>
                             <div class="course-details">
-                                <h2>Course Title</h2>
-                                <p>Course Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                <p>Duration: 8 weeks</p>
-                                <p class="rating">Rating: 
-                                <span class="star">&#9733;</span>
-                                <span class="star">&#9733;</span>
-                                <span class="star">&#9733;</span>
-                                <span class="star">&#9733;</span>
-                                <span class="star">&#9734;</span>
-                                </p>
+                                <h4>Course Title</h4>
+                                <p>Course Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>  
+                                <p>Duration: 8 weeks</p>                             
+                                <div className="amount">
+                                    <h5>$100</h5>
+                                    <div>
+                                        <p class="rating"> 
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9734;</span>
+                                        </p>
+                                    </div>
+                                </div>      
                             </div>
                         </div>
                         <div className="course-card">
-                            <img src="" alt=""/>
+                            <img src={Course1} alt="" className="course-img"/>
                             <div class="course-details">
-                                <h2>Course Title</h2>
-                                <p>Course Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                <p>Duration: 8 weeks</p>
-                                <p class="rating">Rating: 
-                                <span class="star">&#9733;</span>
-                                <span class="star">&#9733;</span>
-                                <span class="star">&#9733;</span>
-                                <span class="star">&#9733;</span>
-                                <span class="star">&#9734;</span>
-                                </p>
+                                <h4>Course Title</h4>
+                                <p>Course Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>  
+                                <p>Duration: 8 weeks</p>                             
+                                <div className="amount">
+                                    <h5>$100</h5>
+                                    <div>
+                                        <p class="rating"> 
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9734;</span>
+                                        </p>
+                                    </div>
+                                </div>      
                             </div>
                         </div>
                         <div className="course-card">
-                            <img src="" alt=""/>
+                            <img src={Course1} alt="" className="course-img"/>
                             <div class="course-details">
-                                <h2>Course Title</h2>
-                                <p>Course Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                <p>Duration: 8 weeks</p>
-                                <p class="rating">Rating: 
-                                <span class="star">&#9733;</span>
-                                <span class="star">&#9733;</span>
-                                <span class="star">&#9733;</span>
-                                <span class="star">&#9733;</span>
-                                <span class="star">&#9734;</span>
-                                </p>
+                                <h4>Course Title</h4>
+                                <p>Course Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>  
+                                <p>Duration: 8 weeks</p>                             
+                                <div className="amount">
+                                    <h5>$100</h5>
+                                    <div>
+                                        <p class="rating"> 
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9734;</span>
+                                        </p>
+                                    </div>
+                                </div>      
                             </div>
                         </div>
                         <div className="course-card">
-                            <img src="" alt=""/>
+                            <img src={Course1} alt="" className="course-img"/>
                             <div class="course-details">
-                                <h2>Course Title</h2>
-                                <p>Course Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                <p>Duration: 8 weeks</p>
-                                <p class="rating">Rating: 
-                                <span class="star">&#9733;</span>
-                                <span class="star">&#9733;</span>
-                                <span class="star">&#9733;</span>
-                                <span class="star">&#9733;</span>
-                                <span class="star">&#9734;</span>
-                                </p>
+                                <h4>Course Title</h4>
+                                <p>Course Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>  
+                                <p>Duration: 8 weeks</p>                             
+                                <div className="amount">
+                                    <h5>$100</h5>
+                                    <div>
+                                        <p class="rating"> 
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9734;</span>
+                                        </p>
+                                    </div>
+                                </div>      
                             </div>
                         </div>
                         <div className="course-card">
-                            <img src="" alt=""/>
+                            <img src={Course1} alt="" className="course-img"/>
                             <div class="course-details">
-                                <h2>Course Title</h2>
-                                <p>Course Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                <p>Duration: 8 weeks</p>
-                                <p class="rating">Rating: 
-                                <span class="star">&#9733;</span>
-                                <span class="star">&#9733;</span>
-                                <span class="star">&#9733;</span>
-                                <span class="star">&#9733;</span>
-                                <span class="star">&#9734;</span>
-                                </p>
+                                <h4>Course Title</h4>
+                                <p>Course Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>  
+                                <p>Duration: 8 weeks</p>                             
+                                <div className="amount">
+                                    <h5>$100</h5>
+                                    <div>
+                                        <p class="rating"> 
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9734;</span>
+                                        </p>
+                                    </div>
+                                </div>      
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="container" className='topics'>
                     <div class="container">
-                        <h2>Topics</h2>
+                        <h3>Topics</h3>
                         <div className='topics-container'>
                             <div className='topic'>
                                 <h5>Basics</h5>
