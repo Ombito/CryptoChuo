@@ -178,31 +178,30 @@ const Home = () => {
                         <div className='topics-container'>
                             <div className='topic'>
                                 <h5>Basics</h5>
-                                <img src="" alt="" />
                             </div>
                             <div className='topic'>
-                                <h5>Bitcoin</h5>
-                                <img src="" alt="" />
+                                <h5>Blockchain</h5>
                             </div>
                             <div className='topic'>
                                 <h5>DeFi</h5>
-                                <img src="" alt="" />
                             </div>
                             <div className='topic'>
                                 <h5>Ethereum</h5>
-                                <img src="" alt="" />
                             </div>
                             <div className='topic'>
                                 <h5>Security</h5>
-                                <img src="" alt="" />
                             </div>
                             <div className='topic'>
                                 <h5>NFT's</h5>
-                                <img src="" alt="" />
                             </div>
                             <div className='topic'>
                                 <h5>Yield farming</h5>
-                                <img src="" alt="" />
+                            </div>
+                            <div className='topic'>
+                                <h5>Regulatory</h5>
+                            </div>
+                            <div className='topic'>
+                                <h5>Gaming</h5>
                             </div>
                         </div>
                     </div>
@@ -235,6 +234,14 @@ const Home = () => {
                         {expandedIndex === index && <p className='answer'>{item.answer}</p>}
                         </div>
                     ))}
+                </div>
+                <div>
+                    {/* <div class="container">
+                        <h2>Contact Us</h2>
+                        <div>
+                            <p>Reach out to us anytime</p>
+                        </div>
+                    </div> */}
                 </div>
                 <div className='subscribe'>
                     <div class="container" id="subscribe-div">

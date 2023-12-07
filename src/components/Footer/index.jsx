@@ -1,5 +1,6 @@
 import "../Footer/style.css"
 import { NavLink } from 'react-router-dom';
+import { FaCopyright } from  'react-icons/fa'
 
 const Footer = () => {
     return (
@@ -33,7 +34,7 @@ const Footer = () => {
           </div>
         </div>     
       </div>
-      <div id="copyright">Copyright 2024 CryptoChuo | All Rights Reserved.</div>
+      <div id="copyright"><FaCopyright />CryptoChuo 2024. All Rights Reserved.</div>
     </footer>
     )
 }

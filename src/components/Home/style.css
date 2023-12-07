@@ -98,26 +98,37 @@
   .topics h2 {
     font-size: 36px;
     font-weight: bold;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
   }
   
   .topics-container {
-    display: flex;
+    display: grid;
     justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+    grid-template-columns: repeat(6, 1fr);
+    gap: -50px;    
   }
   
   .topic {
     max-width: 200px;
     margin-bottom: 40px;
     text-align: center;
+    border: 1px solid black;
+    color: #3498db;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
   }
-  
+  .topic:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+    color: #fff;
+}
   .topic h5 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
+    margin: auto;
+    font-size: 1em;
+    text-align: center;
+    align-items: center;
   }
   .join-community-btn {
     background-color: #4caf50;
