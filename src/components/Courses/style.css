@@ -1,8 +1,12 @@
 .courses {
-  margin-top: 10%;
+  margin: 10% 4.5%;
 }
 #searchcourse {
-  margin-right: 0;
+  margin-left: 75%;
+  width: 25%;
+  height: 5vh;
+  border-radius: 10px;
+  padding: 1%;
 }
 .tabs-container {
   display: flex;
@@ -59,18 +63,16 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
+#filter-container {
+  margin: 0 3% 0 0;
+}
 /* .checkbox-container {
   display: flex;
   color: black;
-  align-items: center;
-  text-align: center;
-}
-.checkbox-container input {
-  height: 4vh;
-  width: 40px;
 } */
+
 /* .checkbox-container label {
-  font-size: 1em;
+  font-size: 21em;
 } */
 .timeline,
 .hourweekly {
@@ -116,7 +118,9 @@
 .subscription-c button:hover {
   background-color: #2980b9;
 }
-
+.filter-div  {
+  margin-bottom: 14%;
+}
 
 .checkbox-container {
   display: flex;
@@ -143,5 +147,7 @@
 
 .checkbox-container label {
   margin: 0;
-  font-size: 1.2em; 
+  font-size: 1em; 
+  width: 130px;
+  margin-bottom: 3%;
 }

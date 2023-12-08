@@ -19,7 +19,7 @@ const Courses = () => {
   return (
     <div> 
       <Navbar />
-    <div>       
+    <div >       
     </div >
         <div className='courses'>
             <div className='tabs-container'>
@@ -33,9 +33,9 @@ const Courses = () => {
                     <p>This is the content for all courses.</p>
                     <input id="searchcourse" type="text" placeholder='Search for a Course...' />
                     <div className="allCourses-div">
-                        <div>
+                        <div id="filter-container">
                             <h3>Filter by</h3>
-                            <div>
+                            <div className="filter-div">
                                 <h4>Subject</h4>
                                 <div className="checkbox-container">
                                     <input type="checkbox" />
@@ -58,7 +58,7 @@ const Courses = () => {
                                     <label>NFT's</label>
                                 </div>
                             </div>
-                            <div>
+                            <div className="filter-div">
                                 <h4>Level</h4>
                                 <div className="checkbox-container">
                                     <input type="checkbox" />
@@ -77,7 +77,7 @@ const Courses = () => {
                                     <label>Pro</label>
                                 </div>
                             </div>
-                            <div>
+                            <div className="filter-div">
                                 <h4>Duration</h4>
                                 <div className="checkbox-container">
                                     <input type="checkbox" />
@@ -96,7 +96,7 @@ const Courses = () => {
                                     <label>3 - 6 Months</label>
                                 </div>
                             </div>
-                            <div>
+                            <div className="filter-div">
                                 <h4>Languages</h4>
                                 <div className="checkbox-container">
                                     <input type="checkbox" />
