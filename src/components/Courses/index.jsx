@@ -22,6 +22,17 @@ const Courses = () => {
     <div >       
     </div >
         <div className='courses'>
+            <div>
+                <h2>Featured Courses</h2>
+                <div className="featured-course-description">
+                    <img src={Course1} alt="course" id="featured-img"/>
+                    <div>
+                        <p>Course Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <h4>$50</h4>
+                        <button>Enroll Now</button>
+                    </div>                  
+                </div>
+            </div>
             <div className='tabs-container'>
                 <p className={`tab ${activeTab === 'allCourses' ? 'active' : ''}`} onClick={() => showTab('allCourses')}>All Courses</p>
                 <p className={`tab ${activeTab === 'inProgress' ? 'active' : ''}`} onClick={() => showTab('inProgress')}>In Progress</p>
@@ -31,10 +42,12 @@ const Courses = () => {
                 <div className={`tab-content ${activeTab === 'allCourses' ? 'active' : ''}`} id='allCoursesContent'>
                     <h2>All Courses</h2>
                     <p>This is the content for all courses.</p>
-                    <input id="searchcourse" type="text" placeholder='Search for a Course...' />
+                    <div id="filter">
+                        <h3>Filter by</h3>
+                        <input id="searchcourse"type="text" placeholder='Search for a Course...' />
+                    </div>
                     <div className="allCourses-div">
                         <div id="filter-container">
-                            <h3>Filter by</h3>
                             <div className="filter-div">
                                 <h4>Subject</h4>
                                 <div className="checkbox-container">
@@ -291,11 +304,10 @@ const Courses = () => {
                 </div>
             </div>
           </div>
-          <h2>Featured Courses</h2>
           <h2>Beginner Courses</h2>
           <h2>Intermediate Courses</h2>
           <h2>Choose your subscription plan</h2>
-          <div id="course-subscription">
+          <div id="subscription-plan">
                 <div className="subscription-c">
                     <h4>Basic Membership</h4>
                     <p>$9.99/ month</p>
