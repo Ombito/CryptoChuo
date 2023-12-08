@@ -1,5 +1,5 @@
 .courses {
-  margin: 10% 4.5%;
+  margin: 7.8% 4.5%;
 }
 .featured-course-description {
   display: flex;
@@ -23,6 +23,7 @@
   display: flex;
   background-color: #fff;
   margin-bottom: 20px;
+  margin-top: 29%;
 }
 .tab-content.active {
   max-width: 100%;

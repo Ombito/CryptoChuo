@@ -22,7 +22,7 @@ const Courses = () => {
     <div >       
     </div >
         <div className='courses'>
-            <div>
+            <div class="container">
                 <h2>Featured Courses</h2>
                 <div className="featured-course-description">
                     <img src={Course1} alt="course" id="featured-img"/>
@@ -239,74 +239,9 @@ const Courses = () => {
 
             </div>
 
-            <div className='nft'>
-            <h3>NFT's & Web3 <br/> Technologies </h3>
-                <div className='nfttimeline'>
-                    <img src={calendar} width="30" height="30" alt="Course"/>
-                    <p className='fourweeks'>4 Weeks</p>
-                </div>
-                <div className='nfthourweekly'>
-                   <img src={clock} width="30" height="30" alt="Course"/>
-                    <p className='nfthourly'>5-12 hours a week</p>
-
-                </div>
-            </div>
-
-            <div className='trading'>
-            <h3>Trading 101 </h3>
-                <div className='tradingtimeline'>
-                    <img src={calendar} width="30" height="30" alt="Course"/>
-                    <p className='sixweeks'>6 Weeks</p>
-                </div>
-                <div className='tradinghourweekly'>
-                   <img src={clock} width="30" height="30" alt="Course"/>
-                    <p className='tradinghourly'>5-12 hours a week</p>
-
-                </div>
-            </div>
-
-            <div className='blochchain'>
-            <h3>Blockchain Technologies </h3>
-                <div className='blockchaintimeline'>
-                    <img src={calendar} width="30" height="30" alt="Course"/>
-                    <p className='twelveweeks'>12 Weeks</p>
-                </div>
-                <div className='blockchainhourweekly'>
-                   <img src={clock} width="30" height="30" alt="Course"/>
-                    <p className='blockchainhourly'>5-12 hours a week</p>
-
-                </div>
-            </div>
-
-            <div className='gaming'>
-            <h3>Crypto gaming </h3>
-                <div className='timeline'>
-                    <img src={calendar} width="30" height="30" alt="Course"/>
-                    <p className='fourweeks'>4 Weeks</p>
-                </div>
-                <div className='hourweekly'>
-                   <img src={clock} width="30" height="30" alt="Course"/>
-                    <p className='hourly'>4 hours a week</p>
-
-                </div>
-            </div>
-
-            <div className='investing'>
-            <h3>Pro investing </h3>
-                <div className='timeline'>
-                    <img src={calendar} width="30" height="30" alt="Course"/>
-                    <p className='sixweeks'>6 Weeks</p>
-                </div>
-                <div className='hourweekly'>
-                   <img src={clock} width="30" height="30" alt="Course"/>
-                    <p className='hourly'>5-12 hours a week</p>
-
-                </div>
-            </div>
+           
           </div>
-          <h2>Beginner Courses</h2>
-          <h2>Intermediate Courses</h2>
-          <h2>Choose your subscription plan</h2>
+          <h2 style={{"text-align": "center"}}>Choose your subscription plan</h2>
           <div id="subscription-plan">
                 <div className="subscription-c">
                     <h4>Basic Membership</h4>
@@ -316,7 +251,7 @@ const Courses = () => {
                 </div>
                 <div>
                     <h4>Advanced Membership</h4>
-                    <p>$19.99/ month</p>
+                    <p>$299.99/ month</p>
                     <p>Email support</p>
                     <p>Download videos</p>
                     <p>Export projects</p>
@@ -325,7 +260,7 @@ const Courses = () => {
                 </div>
                 <div>
                     <h4>Premium Membership</h4>
-                    <p>$29.99/ month</p>
+                    <p>$499.99/ month</p>
                     <p>Full support</p>
                     <p>Download videos</p>
                     <p>Export projects</p>
