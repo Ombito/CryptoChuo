@@ -75,7 +75,7 @@ const Home = () => {
                     </div>
                 </div>
                 <div class="container" id="course-div">
-                    <h3>Trending</h3>
+                    <h3>Trending Courses</h3>
                     <div id="home-card-container">
                         <div className="course-card">
                             <img src={Course1} alt="" className="course-img"/>

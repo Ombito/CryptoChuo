@@ -31,169 +31,171 @@ const Courses = () => {
                 <div className={`tab-content ${activeTab === 'allCourses' ? 'active' : ''}`} id='allCoursesContent'>
                     <h2>All Courses</h2>
                     <p>This is the content for all courses.</p>
-                    <input type="text" placeholder='Search for a Course...' />
-                    <div>
-                        <h3>Filter by</h3>
+                    <input id="searchcourse" type="text" placeholder='Search for a Course...' />
+                    <div className="allCourses-div">
                         <div>
-                            <h4>Subject</h4>
-                            <div className="checkbox-container">
-                                <input type="checkbox" />
-                                <label>Blockchain</label>
+                            <h3>Filter by</h3>
+                            <div>
+                                <h4>Subject</h4>
+                                <div className="checkbox-container">
+                                    <input type="checkbox" />
+                                    <label>Blockchain</label>
+                                </div>
+                                <div className="checkbox-container">
+                                    <input type="checkbox" />
+                                    <label>Cryptocurrency</label>
+                                </div>
+                                <div className="checkbox-container">
+                                    <input type="checkbox" />
+                                    <label>Web3</label>
+                                </div>
+                                <div className="checkbox-container">
+                                    <input type="checkbox" />
+                                    <label>Smart Contracts</label>
+                                </div>
+                                <div className="checkbox-container">
+                                    <input type="checkbox" />
+                                    <label>NFT's</label>
+                                </div>
                             </div>
-                            <div className="checkbox-container">
-                                <input type="checkbox" />
-                                <label>Cryptocurrency</label>
+                            <div>
+                                <h4>Level</h4>
+                                <div className="checkbox-container">
+                                    <input type="checkbox" />
+                                    <label>Beginner</label>
+                                </div>
+                                <div className="checkbox-container">
+                                    <input type="checkbox" />
+                                    <label>Intermediate</label>
+                                </div>
+                                <div className="checkbox-container">
+                                    <input type="checkbox" />
+                                    <label>Advanced</label>
+                                </div>
+                                <div className="checkbox-container">
+                                    <input type="checkbox" />
+                                    <label>Pro</label>
+                                </div>
                             </div>
-                            <div className="checkbox-container">
-                                <input type="checkbox" />
-                                <label>Web3</label>
+                            <div>
+                                <h4>Duration</h4>
+                                <div className="checkbox-container">
+                                    <input type="checkbox" />
+                                    <label>Less than 4 Hours</label>
+                                </div>
+                                <div className="checkbox-container">
+                                    <input type="checkbox" />
+                                    <label>1 - 4 Weeks</label>
+                                </div>
+                                <div className="checkbox-container">
+                                    <input type="checkbox" />
+                                    <label>1 - 3 Months</label>
+                                </div>
+                                <div className="checkbox-container">
+                                    <input type="checkbox" />
+                                    <label>3 - 6 Months</label>
+                                </div>
                             </div>
-                            <div className="checkbox-container">
-                                <input type="checkbox" />
-                                <label>Smart Contracts</label>
-                            </div>
-                            <div className="checkbox-container">
-                                <input type="checkbox" />
-                                <label>NFT's</label>
-                            </div>
-                        </div>
-                        <div>
-                            <h4>Level</h4>
-                            <div className="checkbox-container">
-                                <input type="checkbox" />
-                                <label>Beginner</label>
-                            </div>
-                            <div className="checkbox-container">
-                                <input type="checkbox" />
-                                <label>Intermediate</label>
-                            </div>
-                            <div className="checkbox-container">
-                                <input type="checkbox" />
-                                <label>Advanced</label>
-                            </div>
-                            <div className="checkbox-container">
-                                <input type="checkbox" />
-                                <label>Pro</label>
-                            </div>
-                        </div>
-                        <div>
-                            <h4>Duration</h4>
-                            <div className="checkbox-container">
-                                <input type="checkbox" />
-                                <label>Less than 4 Hours</label>
-                            </div>
-                            <div className="checkbox-container">
-                                <input type="checkbox" />
-                                <label>1 - 4 Weeks</label>
-                            </div>
-                            <div className="checkbox-container">
-                                <input type="checkbox" />
-                                <label>1 - 3 Months</label>
-                            </div>
-                            <div className="checkbox-container">
-                                <input type="checkbox" />
-                                <label>3 - 6 Months</label>
-                            </div>
-                        </div>
-                        <div>
-                            <h4>Languages</h4>
-                            <div className="checkbox-container">
-                                <input type="checkbox" />
-                                <label>Chinese</label>
-                            </div>
-                            <div className="checkbox-container">
-                                <input type="checkbox" />
-                                <label>Swahili</label>
-                            </div>
-                            <div className="checkbox-container">
-                                <input type="checkbox" />
-                                <label>Arabic</label>
-                            </div>
-                            <div className="checkbox-container">
-                                <input type="checkbox" />
-                                <label>English</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="">
-                        <div className="course-card">
-                            <img src={Course1} alt="" className="course-img"/>
-                            <div class="course-details">
-                                <h4>Course Title</h4>
-                                <p>Course Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>  
-                                <p>Duration: 8 weeks</p>                             
-                                <div className="amount">
-                                    <h5>$100</h5>
-                                    <div>
-                                        <p class="rating"> 
-                                        <span class="star">&#9733;</span>
-                                        <span class="star">&#9733;</span>
-                                        <span class="star">&#9733;</span>
-                                        <span class="star">&#9733;</span>
-                                        <span class="star">&#9734;</span>
-                                        </p>
-                                    </div>
-                                </div>      
+                            <div>
+                                <h4>Languages</h4>
+                                <div className="checkbox-container">
+                                    <input type="checkbox" />
+                                    <label>Chinese</label>
+                                </div>
+                                <div className="checkbox-container">
+                                    <input type="checkbox" />
+                                    <label>Swahili</label>
+                                </div>
+                                <div className="checkbox-container">
+                                    <input type="checkbox" />
+                                    <label>Arabic</label>
+                                </div>
+                                <div className="checkbox-container">
+                                    <input type="checkbox" />
+                                    <label>English</label>
+                                </div>
                             </div>
                         </div>
-                        <div className="course-card">
-                            <img src={Course1} alt="" className="course-img"/>
-                            <div class="course-details">
-                                <h4>Course Title</h4>
-                                <p>Course Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>  
-                                <p>Duration: 8 weeks</p>                             
-                                <div className="amount">
-                                    <h5>$100</h5>
-                                    <div>
-                                        <p class="rating"> 
-                                        <span class="star">&#9733;</span>
-                                        <span class="star">&#9733;</span>
-                                        <span class="star">&#9733;</span>
-                                        <span class="star">&#9733;</span>
-                                        <span class="star">&#9734;</span>
-                                        </p>
-                                    </div>
-                                </div>      
+                        <div id="course-hero">
+                            <div className="course-card">
+                                <img src={Course1} alt="" className="course-img"/>
+                                <div class="course-details">
+                                    <h4>Course Title</h4>
+                                    <p>Course Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>  
+                                    <p>Duration: 8 weeks</p>                             
+                                    <div className="amount">
+                                        <h5>$100</h5>
+                                        <div>
+                                            <p class="rating"> 
+                                            <span class="star">&#9733;</span>
+                                            <span class="star">&#9733;</span>
+                                            <span class="star">&#9733;</span>
+                                            <span class="star">&#9733;</span>
+                                            <span class="star">&#9734;</span>
+                                            </p>
+                                        </div>
+                                    </div>      
+                                </div>
                             </div>
-                        </div>
-                        <div className="course-card">
-                            <img src={Course1} alt="" className="course-img"/>
-                            <div class="course-details">
-                                <h4>Course Title</h4>
-                                <p>Course Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>  
-                                <p>Duration: 8 weeks</p>                             
-                                <div className="amount">
-                                    <h5>$100</h5>
-                                    <div>
-                                        <p class="rating"> 
-                                        <span class="star">&#9733;</span>
-                                        <span class="star">&#9733;</span>
-                                        <span class="star">&#9733;</span>
-                                        <span class="star">&#9733;</span>
-                                        <span class="star">&#9734;</span>
-                                        </p>
-                                    </div>
-                                </div>      
+                            <div className="course-card">
+                                <img src={Course1} alt="" className="course-img"/>
+                                <div class="course-details">
+                                    <h4>Course Title</h4>
+                                    <p>Course Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>  
+                                    <p>Duration: 8 weeks</p>                             
+                                    <div className="amount">
+                                        <h5>$100</h5>
+                                        <div>
+                                            <p class="rating"> 
+                                            <span class="star">&#9733;</span>
+                                            <span class="star">&#9733;</span>
+                                            <span class="star">&#9733;</span>
+                                            <span class="star">&#9733;</span>
+                                            <span class="star">&#9734;</span>
+                                            </p>
+                                        </div>
+                                    </div>      
+                                </div>
                             </div>
-                        </div>
-                        <div className="course-card">
-                            <img src={Course1} alt="" className="course-img"/>
-                            <div class="course-details">
-                                <h4>Course Title</h4>
-                                <p>Course Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>  
-                                <p>Duration: 8 weeks</p>                             
-                                <div className="amount">
-                                    <h5>$100</h5>
-                                    <div>
-                                        <p class="rating"> 
-                                        <span class="star">&#9733;</span>
-                                        <span class="star">&#9733;</span>
-                                        <span class="star">&#9733;</span>
-                                        <span class="star">&#9733;</span>
-                                        <span class="star">&#9734;</span>
-                                        </p>
-                                    </div>
-                                </div>      
+                            <div className="course-card">
+                                <img src={Course1} alt="" className="course-img"/>
+                                <div class="course-details">
+                                    <h4>Course Title</h4>
+                                    <p>Course Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>  
+                                    <p>Duration: 8 weeks</p>                             
+                                    <div className="amount">
+                                        <h5>$100</h5>
+                                        <div>
+                                            <p class="rating"> 
+                                            <span class="star">&#9733;</span>
+                                            <span class="star">&#9733;</span>
+                                            <span class="star">&#9733;</span>
+                                            <span class="star">&#9733;</span>
+                                            <span class="star">&#9734;</span>
+                                            </p>
+                                        </div>
+                                    </div>      
+                                </div>
+                            </div>
+                            <div className="course-card">
+                                <img src={Course1} alt="" className="course-img"/>
+                                <div class="course-details">
+                                    <h4>Course Title</h4>
+                                    <p>Course Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>  
+                                    <p>Duration: 8 weeks</p>                             
+                                    <div className="amount">
+                                        <h5>$100</h5>
+                                        <div>
+                                            <p class="rating"> 
+                                            <span class="star">&#9733;</span>
+                                            <span class="star">&#9733;</span>
+                                            <span class="star">&#9733;</span>
+                                            <span class="star">&#9733;</span>
+                                            <span class="star">&#9734;</span>
+                                            </p>
+                                        </div>
+                                    </div>      
+                                </div>
                             </div>
                         </div>
                     </div>

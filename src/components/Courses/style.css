@@ -1,7 +1,9 @@
 .courses {
   margin-top: 10%;
 }
-
+#searchcourse {
+  margin-right: 0;
+}
 .tabs-container {
   display: flex;
   background-color: #fff;
@@ -49,6 +51,13 @@
 .course h3 {
   font-size: 1.5em;
   margin-bottom: 10px;
+}
+.allCourses-div {
+  display: flex;
+}
+#course-hero {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 /* .checkbox-container {
   display: flex;
