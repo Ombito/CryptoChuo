@@ -255,21 +255,25 @@ const Courses = () => {
                     <button>Get Plan</button>
                 </div>
             </div>
-            <div>
+            <div class="container" id="learnwithus">
                 <h5>Learn. Trade. Invest. Play</h5>
                 <p>Advance your knowledge for free through our fun, interactive courses. CryptoChuo presents the most comprehensive educational courses lineup for beginners, intermediate and advanced learners.</p>
-                <div>
-                    <img src="" alt="" />
-                    <h3>Complete support</h3>
-                    <p>Get full support</p>
-
-                    <img src="" alt="" />
-                    <h3>Earn certificate</h3>
-                    <p>Claim your certificate of achievent upon completion of a course</p>
-
-                    <img src="" alt="" />
-                    <h3>One-Stop learning hub</h3>
-                    <p>Join millions of learners in ou community</p>
+                <div id="learnandtrade">
+                    <div>
+                        <img src="" alt="" />
+                        <h3>Complete support</h3>
+                        <p>Get full support</p>
+                    </div>
+                    <div>
+                        <img src="" alt="" />
+                        <h3>Earn certificate</h3>
+                        <p>Claim your certificate of achievent upon completion of a course</p>
+                    </div>
+                    <div>
+                        <img src="" alt="" />
+                        <h3>One-Stop learning hub</h3>
+                        <p>Join millions of learners in ou community</p>
+                    </div>
                 </div>
                 <div>
                     <img src="" alt="Eth" />

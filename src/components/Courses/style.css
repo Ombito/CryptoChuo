@@ -156,3 +156,11 @@
   width: 130px;
   margin-bottom: 3%;font-weight: 400;
 }
+#learnwithus {
+  margin-bottom: 15%;
+}
+#learnandtrade {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+}
