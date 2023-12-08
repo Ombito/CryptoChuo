@@ -27,6 +27,7 @@ const Courses = () => {
                 <div className="featured-course-description">
                     <img src={Course1} alt="course" id="featured-img"/>
                     <div>
+                        <h3>Introduction to Bitcoin</h3>
                         <p>Course Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                         <h4>$50</h4>
                         <button>Enroll Now</button>
@@ -230,7 +231,7 @@ const Courses = () => {
           <div id="subscription-plan">
                 <div className="subscription-c">
                     <h4>Basic Membership</h4>
-                    <p>$9.99/ month</p>
+                    <p>$99.99/ month</p>
                     <p>Email support</p>
                     <button>Get Plan</button>
                 </div>
@@ -256,8 +257,8 @@ const Courses = () => {
                 </div>
             </div>
             <div class="container" id="learnwithus">
-                <h5>Learn. Trade. Invest. Play</h5>
-                <p>Advance your knowledge for free through our fun, interactive courses. CryptoChuo presents the most comprehensive educational courses lineup for beginners, intermediate and advanced learners.</p>
+                <h5 style={{"text-align": "center"}}>Learn. Trade. Invest. Play</h5>
+                <p style={{"text-align": "center"}}>Advance your knowledge for free through our fun, interactive courses. CryptoChuo presents the most comprehensive educational courses lineup for beginners, intermediate and advanced learners.</p>
                 <div id="learnandtrade">
                     <div>
                         <img src="" alt="" />
