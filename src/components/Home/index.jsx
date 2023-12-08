@@ -36,7 +36,7 @@ const Home = () => {
                             <h2>Trusted platform <br/> for, <span className='crypto'>Crypto</span> Education.</h2>
                             <p className='paragraph'>Start learning to buy and sell <br /> cryptocurrency with the best blockchain bootcamp.</p>
                             <Link to="/signup">
-                                <button className="enroll-button" type='submit'>Enroll Now</button>
+                                <button className="enroll-button" type='submit'>Get Started</button>
                             </Link>
                         </div>
                         <div>
@@ -204,7 +204,7 @@ const Home = () => {
                         <h3>Topics</h3>
                         <div className='topics-container'>
                             <div className='topic'>
-                                <h5>Basics</h5>
+                                <h5>Web3</h5>
                             </div>
                             <div className='topic'>
                                 <h5>Blockchain</h5>
@@ -213,7 +213,7 @@ const Home = () => {
                                 <h5>DeFi</h5>
                             </div>
                             <div className='topic'>
-                                <h5>Ethereum</h5>
+                                <h5>Metaverse</h5>
                             </div>
                             <div className='topic'>
                                 <h5>Security</h5>
@@ -222,13 +222,13 @@ const Home = () => {
                                 <h5>NFT's</h5>
                             </div>
                             <div className='topic'>
-                                <h5>Yield farming</h5>
+                                <h5>Cryptography</h5>
                             </div>
                             <div className='topic'>
-                                <h5>Regulatory</h5>
+                                <h5>Privacy</h5>
                             </div>
                             <div className='topic'>
-                                <h5>Gaming</h5>
+                                <h5>GameFi</h5>
                             </div>
                         </div>
                     </div>

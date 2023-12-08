@@ -1,117 +1,138 @@
-.header{
-    color: #4A9E8A;
-    font-size: 270%; 
+.courses {
+  margin-top: 10%;
 }
-h3{
-    color: black;
-}
-.fundamentals{
-background-color: rgb(245, 168, 75);
-border-radius: 14%;
-height: 250px;
-width: 18%;
-}
-.nft{
-    background-color: rgb(245, 168, 75);
-    border-radius: 14%;
-    height: 250px;
-    width: 18%;
-}
-.trading{
-    background-color: rgb(245, 168, 75);
-    border-radius: 14%;
-    height: 250px;
-    width: 18%;
-}
-.blochchain{
-    background-color: rgb(245, 168, 75);
-    border-radius: 14%;
-    height: 250px;
-    width: 18%;
-}
-.gaming{
-    background-color: rgb(245, 168, 75);
-    border-radius: 14%;
-    height: 250px;
-    width: 18%;
-}
-.investing{
-    background-color: rgb(245, 168, 75);
-    border-radius: 14%;
-    height: 250px;
-    width: 18%;
-}
-.timeline{
-    display: flex;
-    margin-left: 7%;
-}
-.threeweeks{
-    /* margin-right: 20%; */
-    margin-left: 10%;
-    margin-top: 1%;
-}
-.hourweekly{
-    display: flex;
-    margin-left: 3%;
 
+.tabs-container {
+  display: flex;
+  background-color: #fff;
+  margin-bottom: 20px;
 }
-.hourly{
-    margin-left: 4%;
-    margin-top: 2%;
+.tab-content.active {
+  max-width: 100%;
 }
-.courses{
-    display: flex;
-    /* margin-left: 15%; */
+.tab {
+  padding: 15px 20px;
+  margin: 0;
+  cursor: pointer;
+  transition: border-bottom 0.3s ease-in-out;
 }
-.nfttimeline{
-    display: flex;
-    margin-left: 7%;
+
+.tab:hover {
+  background-color: #f9f9f9;
 }
-.nfthourweekly{
-    display: flex;
-    margin-left: 3%;
+
+.active {
+  border-bottom: 2px solid #3498db;
 }
-.fourweeks{
-    margin-top: 1%;
-    margin-left: 10%;
+
+.tab-content {
+  max-width: 600px;
+  padding: 20px;
+  margin: 20px 0;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  display: none;
 }
-.nfthourly{
-    margin-left: 4%;
-    margin-top: 2%;
+
+.tab-content.active {
+  display: block;
 }
-.tradingtimeline{
-    display: flex;
-    margin-left: 7%;
+
+.course {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
 }
-.sixweeks{
-    margin-top: 1%;
-    margin-left: 10%; 
+
+.course h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
 }
-.tradinghourweekly{
-    display: flex;
-    margin-left: 3%;
+/* .checkbox-container {
+  display: flex;
+  color: black;
+  align-items: center;
+  text-align: center;
 }
-.tradinghourly{
-    margin-left: 4%;
-    margin-top: 2%;
+.checkbox-container input {
+  height: 4vh;
+  width: 40px;
+} */
+/* .checkbox-container label {
+  font-size: 1em;
+} */
+.timeline,
+.hourweekly {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
 }
-.blockchaintimeline{
-    display: flex;
-    margin-left: 7%;
+
+.timeline img,
+.hourweekly img {
+  margin-right: 5px;
 }
-.twelveweeks{
-    margin-top: 1%;
-    margin-left: 10%; 
+
+.subscription-plan {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
 }
-.blockchainhourweekly{
-    display: flex;
-    margin-left: 3%;
+
+.subscription-c {
+  text-align: center;
 }
-.blockchainhourly{
-    margin-left: 4%;
-    margin-top: 2%;
+
+.subscription-c h4 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
 }
-#course-subscription {
-    display: flex;
-    gap: 10%;
+
+.subscription-c p {
+  margin: 5px 0;
+}
+
+.subscription-c button {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.subscription-c button:hover {
+  background-color: #2980b9;
+}
+
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; 
+  color: black; 
+}
+
+.checkbox-container input[type="checkbox"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid black; 
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+  color: black;
+}
+
+.checkbox-container input[type="checkbox"]:checked {
+  background-color: #3498db; 
+  color: black;
+}
+
+.checkbox-container label {
+  margin: 0;
+  font-size: 1.2em; 
 }
