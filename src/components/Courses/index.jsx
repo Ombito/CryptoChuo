@@ -40,8 +40,7 @@ const Courses = () => {
             </div>
             <div>
                 <div className={`tab-content ${activeTab === 'allCourses' ? 'active' : ''}`} id='allCoursesContent'>
-                    <h2>All Courses</h2>
-                    <p>This is the content for all courses.</p>
+                    <h2 style={{"text-align": "center"}}>All Courses</h2>
                     <div id="filter">
                         <h3>Filter by</h3>
                         <input id="searchcourse"type="text" placeholder='Search for a Course...' />
@@ -223,20 +222,6 @@ const Courses = () => {
                     <h2>Completed</h2>
                     <p>This is the content for completed courses.</p>
                 </div>
-            </div>
-            
-            
-            <div className='fundamentals'>
-                <h3>Fundamentals of <br/>Bitcoin & Crypto </h3>
-                <div className='timeline'>
-                    <img src={calendar} width="30" height="30" alt="Course"/>
-                    <p className='threeweeks'>3 Weeks</p>
-                </div>
-                <div className='hourweekly'>
-                   <img src={clock} width="30" height="30" alt="Course"/>
-                    <p className='hourly'>3-10 hours a week</p>
-                </div>
-
             </div>
 
            
