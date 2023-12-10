@@ -8,20 +8,20 @@
   background-size: cover;
   height: 100vh;
   background-position: center;
-  animation: imageAnimation 15s linear infinite;
+  animation: imageAnimation 25s linear infinite;
 }
 @keyframes imageAnimation {
   0% {
     background: url(../Assets/banner2.jpg); 
   }
-  33.33% {
+  43.33% {
     background-image: url(../Assets/banner1.jpg); 
   }
   66.66% {
     background-image: url('../Assets/banner2.jpg'); 
   }
   100% {
-    background-image: url('../Assets/banner1.jpg'); 
+    background-image: url('../Assets/banner3.png'); 
   }
 }
 
