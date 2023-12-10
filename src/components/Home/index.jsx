@@ -39,9 +39,9 @@ const Home = () => {
                                 <button className="enroll-button" type='submit'>Get Started</button>
                             </Link>
                         </div>
-                        <div>
+                        {/* <div>
                             <img className='homecrypto' src={bitcoin} alt="Crypto Banner" />
-                        </div>
+                        </div> */}
                     </div>
                 </div>
                 <div class="container" id="stats">

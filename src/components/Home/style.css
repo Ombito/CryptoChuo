@@ -2,22 +2,46 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 15%;
+    margin-top: 4%;
     flex-direction: row;
+    
+  background-size: cover;
+  height: 100vh;
+  background-position: center;
+  animation: imageAnimation 15s linear infinite;
 }
+@keyframes imageAnimation {
+  0% {
+    background: url(../Assets/banner2.jpg); 
+  }
+  33.33% {
+    background-image: url(../Assets/banner1.jpg); 
+  }
+  66.66% {
+    background-image: url('../Assets/banner2.jpg'); 
+  }
+  100% {
+    background-image: url('../Assets/banner1.jpg'); 
+  }
+}
+
 #banner-div {
   display: flex;
   justify-content: space-between;
 }
 .homepage {
-    max-width: 600px;
-    text-align: left;
-    margin-left: 4%;
+  max-width: 600px;
+  text-align: left;
+  margin-left: 10%;
+  margin-top: -10%;
 }
 .homepage h2 {
     font-size: 2.5rem;
-    color: #333;
+    color: #ffffff;
     margin-bottom: 20px;
+}
+.homepage p {
+  color: white;
 }
 .crypto {
     color: #007bff;
@@ -50,7 +74,7 @@
     flex-direction: row;
     justify-content: space-between;
     gap: 20px;
-    margin-top: 30%;
+    margin-top: 4%;
     align-items: center;
     background-color: #f9f9f9;
     padding: 50px 20px;
@@ -72,7 +96,7 @@
 }
 .content-img {
     height: 50vh;
-    border-radius: 50%;
+    border-radius: 5px;
 }
 .home-hero {
     display: flex;  

@@ -30,7 +30,7 @@ const Navbar = () => {
                 </div>
                 <div className="auth-button">
                     <Link to="/login">
-                        <button id='button' type='submit'>Sign In</button>
+                        <button id='button' type='submit'>Sign in</button>
                     </Link>
                 </div>
             </div>
