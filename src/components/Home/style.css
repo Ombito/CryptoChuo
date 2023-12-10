@@ -8,7 +8,7 @@
   background-size: cover;
   height: 100vh;
   background-position: center;
-  animation: imageAnimation 25s linear infinite;
+  animation: imageAnimation 55s linear infinite;
 }
 @keyframes imageAnimation {
   0% {
