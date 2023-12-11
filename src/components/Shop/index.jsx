@@ -17,31 +17,155 @@ const Shop = () => {
         <Navbar />
     </div>
     
-    <section id="popular" class="popular">
-        <h2 className='header'>Shop</h2>
-
-        <div class="bitcoin">
-          <div class="bitcoinshirt">
-          <img className='tshirt' src={tshirt} width="250" height="250" />
-          <div className='buttons'>
-            <button className="button" type='submit' >Add to cart</button> <br/>
-            <button className="buynowbutton" type='submit' >Buy Now</button>
+    <section id="popular">
+        <div id="banner">
+          <div className="banner-hero">
+            <p>Explore our curated selection of sleek wearables and accessories that not only reflect your passion for blockchain but elevate your style to new heights. Embrace the future in style, only at cryptoChuo.</p>
+            <input type="text" placeholder="Search for a product" />
+          </div>
+        </div>
+        <div class="container" id="trending-container">
+          <h2>Trending products</h2>
+          <div className="trending-div">
+            <div>
+              <img src={tshirt} height="200" width="200" alt="" />
+              <p>By rubbark</p>
+              <h2>$25</h2>
+              <div>
+                <p class="rating"> 
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9734;</span>
+                </p>
+              </div>
+            </div>
+            <div>
+              <img src={tshirt} height="200" width="200" alt="" />
+              <p>By rubbark</p>
+              <h2>$25</h2>
+              <div>
+                <p class="rating"> 
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9734;</span>
+                </p>
+              </div>
+            </div>
+            <div>
+              <img src={hoodie} height="200" width="200" alt="" />
+              <p>By rubbark</p>
+              <h2>$25</h2>
+              <div>
+                <p class="rating"> 
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9734;</span>
+                </p>
+              </div>
             </div>
           </div>
-
-          <div class="bitcoinbook">
-          <img className='book' src={book} width="250" height="250" />
-          <div className='buttons'>
-            <button className="bookbutton" type='submit' >Add to cart</button> <br/>
-            <button className="bookbuynowbutton" type='submit' >Buy Now</button>
+        </div>
+        <div class="container" id="accessories">
+          <h3>Accessories</h3>
+          <div className="trending-div">
+            <div>
+              <img src={book} height="200" width="200" alt="" />
+              <p>By rubbark</p>
+              <h2>$25</h2>
+              <div>
+                <p class="rating"> 
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9734;</span>
+                </p>
+              </div>
+            </div>
+            <div>
+              <img src={tshirt} height="200" width="200" alt="" />
+              <p>By rubbark</p>
+              <h2>$25</h2>
+              <div>
+                <p class="rating"> 
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9734;</span>
+                </p>
+              </div>
+            </div>
+            <div>
+              <img src={hoodie} height="200" width="200" alt="" />
+              <p>By rubbark</p>
+              <h2>$25</h2>
+              <div>
+                <p class="rating"> 
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9734;</span>
+                </p>
+              </div>
             </div>
           </div>
-
-          <div class="bitcoinhoodie">
-          <img className='hoodie' src={hoodie} width="250" height="250" />
-          <div className='buttons'>
-            <button className="hoodiebutton" type='submit' >Add to cart</button> <br/>
-            <button className="hoodiebuynowbutton" type='submit' >Buy Now</button>
+        </div>
+        <div id="discount-div">
+          <h4>Up to 35% off discount</h4>
+          <p>SHOP NOW</p>
+        </div>
+        <div class="container" id="best-sellers">
+          <h2>Best sellers</h2>
+          <div className="trending-div">
+            <div>
+              <img src={hoodie} height="200" width="200" alt="" />
+              <p>By rubbark</p>
+              <h2>$25</h2>
+              <div>
+                <p class="rating"> 
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9734;</span>
+                </p>
+              </div>
+            </div>
+            <div>
+              <img src={hoodie} height="200" width="200" alt="" />
+              <p>By rubbark</p>
+              <h2>$25</h2>
+              <div>
+                <p class="rating"> 
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9734;</span>
+                </p>
+              </div>
+            </div>
+            <div>
+              <img src={hoodie} height="200" width="200" alt="" />
+              <p>By rubbark</p>
+              <h2>$25</h2>
+              <div>
+                <p class="rating"> 
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9734;</span>
+                </p>
+              </div>
             </div>
           </div>
           

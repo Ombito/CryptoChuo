@@ -11,7 +11,7 @@
   animation: imageAnimation 55s linear infinite;
 }
 @keyframes imageAnimation {
-  0% {
+  0% { 
     background: url(../Assets/banner2.jpg); 
   }
   43.33% {
