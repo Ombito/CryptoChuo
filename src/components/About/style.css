@@ -71,7 +71,7 @@
 #testimonials-container {
     display: flex;
     gap: 30px;
-    align-items: center;
+    margin-left: 15%;
 }
 .testimonials {
     width: 40%;
