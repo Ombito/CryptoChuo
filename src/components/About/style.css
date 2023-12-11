@@ -45,9 +45,22 @@
 }
 .why-us-div {
     display: flex;
+    text-align: center;
+    gap: 40px;
+}
+.why-us-cards {
+    background-color: aliceblue;
+    border-radius: 8px;
+    height: 25vh;
+    padding: 1% 0;
+}
+.why-icons {
+    font-size: 2em;
+    color: blue;
 }
 #our-success {
-    margin-top: 15%;
+    margin-top: 18%;
+    margin-bottom: 20%;
 }
 #our-success h3 {
     text-align: center;

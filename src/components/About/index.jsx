@@ -13,10 +13,9 @@ import bybit from "../Assets/bybit.png";
 import avalanche from "../Assets/avalanche.png";
 import polygon from "../Assets/polygon.png";
 import opensea from "../Assets/opensea.png";
-import kraken from "../Assets/kraken.png";
 import ledger from "../Assets/ledger.png";
 import gemini from "../Assets/gemini.png";
-
+import { FaUserFriends, FaGraduationCap, FaBookOpen, FaCertificate } from  'react-icons/fa';
 
 
 const About = () => {
@@ -56,11 +55,11 @@ const About = () => {
                 <p>Lorem ipsum dolor sit amet consectetur adipiscing elit, mollis ultricies aliquet aptent augue blandit, urna diam sociosqu  est suspendisse fusce turpis montes quam eget sollicitudin</p>
               </div>
               <div id="logo-div">
-                <img src={binance} alt="" height="150" width="230" />
+                <img src={binance} alt="" height="150" width="200" />
                 <img src={opensea} alt="" height="100" width="150" />
                 <img src={avalanche} alt="" height="90" width="100" />
                 <img src={polygon} alt="" height="90" width="100" />
-                <img src={ledger} alt="" height="60" width="150" />
+                <img src={ledger} alt="" height="70" width="160" />
                 <img src={gemini} alt="" height="70" width="150" />
               </div>
             </div>
@@ -70,19 +69,23 @@ const About = () => {
               <h3>Why CryptoChuo</h3>
               <p>Lorem ipsum dolor sit amet consectetur adipiscing elit, mollis ultricies aliquet aptent augue blandit, urna diam sociosqu faucibus consequat. Malesuada est suspendisse fusce turpis montes quam eget sollicitudin</p>
               <div className="why-us-div">
-                <div>
+                <div className="why-us-cards">
+                  <FaGraduationCap className="why-icons"/>
                   <p>Award winning education</p>
                   <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
                 </div>
-                <div>
+                <div className="why-us-cards">
+                  <FaBookOpen className="why-icons"/>
                   <p>Dynamic innovative learning</p>
                   <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
                 </div>
-                <div>
+                <div className="why-us-cards">
+                  <FaCertificate className="why-icons"/>
                   <p>Career growth</p>
                   <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
                 </div>
-                <div>
+                <div className="why-us-cards">
+                  <FaUserFriends className="why-icons"/>
                   <p>Access to CryptoChuos Alumni network</p>
                   <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
                 </div>
@@ -93,32 +96,6 @@ const About = () => {
             <h3>OUR SUCCESS</h3>
             <h2>What Our Students Say About Us</h2>
           </div>
-      <div className='ourteam'>
-      <h2 className='header'>Our Team</h2>
-      <div className='profile'>
-
-        <div className='team1'>
-        <img id='team1' src={team2} width="230" height="230" />
-        <button id="ceo" type='submit' >Alvin Ombito<br/> CEO</button>
-
-        </div>
-
-        <div className='team2'>
-        <img id='team2' src={team2} width="230" height="230" />
-        <button id="ceo" type='submit' >Alvin Ombito<br/> CTO</button>
-
-        </div>
-
-        <div className='team3'>
-        <img id='team3' src={team2} width="230" height="230"  />
-        <button id="ceo" type='submit' >Alvin Ombito<br/> CIO</button>
-
-
-        </div>
-
-      </div>
-
-      </div>
     </div>
     <Footer />
     
