@@ -15,10 +15,9 @@
 }
 #our-story h2 {
     text-align: center;
-    color: #456cf6;
 }
 #partner-container {
-    background-color: #333333;
+    background-color: #252a43;
     height: 44vh;
 }
 #partners {
@@ -56,7 +55,7 @@
 }
 .why-icons {
     font-size: 2em;
-    color: blue;
+    color: #252a43;
 }
 #our-success {
     margin-top: 18%;
@@ -98,5 +97,9 @@
     justify-content: space-between;
     gap: 50px;
     font-size: 1em;
-    width: 30%;
+    width: 40%;
+}
+#about-contact button {
+    padding: 10px 10px;
+    width: 100px;
 }
