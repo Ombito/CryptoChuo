@@ -3,6 +3,7 @@ import "../Navbar/navbar.css";
 import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import bitcoin from '../Assets/homepage.jpg';
+import { FaShoppingCart } from  'react-icons/fa';
 
 const Navbar = () => {
     return (
@@ -29,6 +30,9 @@ const Navbar = () => {
                     </NavLink>
                 </div>
                 <div className="auth-button">
+                    <Link to="/cart">
+                        <FaShoppingCart id="cart-icon"/>
+                    </Link>
                     <Link to="/login">
                         <button id='button' type='submit'>Sign in</button>
                     </Link>

@@ -23,11 +23,11 @@
 .navigation-container {
     display: flex;
     align-items: center;
-    margin-right: 20px;
+    margin-right: 80px;
 }
 .navlinks {
     display: flex;
-    margin-right: 20px;
+    margin-right: 60px;
 }
 .navlinks a {
     color: #fff;
@@ -47,4 +47,12 @@
 }
 #button:hover {
     background-color: #4CAF50;
+}
+.auth-button {
+    display: flex;
+    gap: 50px;
+}
+#cart-icon {
+    font-size: 2.2em;
+    margin: 15% 0;
 }
