@@ -68,6 +68,16 @@
 #our-success h2 {
     text-align: center;
 }
+#testimonials-container {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+.testimonials {
+    width: 40%;
+    text-align: center;
+}
+/* }
 .about{
     font-size: 120%;
     font-weight: 370;
@@ -120,4 +130,4 @@
     height: 200px;
     border-radius: 50%;
     align-items: center;
-}
+} */

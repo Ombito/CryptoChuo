@@ -95,6 +95,38 @@ const About = () => {
           <div class="container" id="our-success">
             <h3>OUR SUCCESS</h3>
             <h2>What Our Students Say About Us</h2>
+            <div id="testimonials-container">
+              <div className="testimonials">
+                <img src={team2} alt="" height="80" width="80" />
+                <p>CryptoChuo helps see how many days you need to work to reach your financial goal for this month and year
+                </p>
+                <div>
+                  <p class="rating"> 
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9734;</span>
+                  </p>
+                </div>
+                <h5>Regina Wanjiru</h5>
+              </div>
+              <div className="testimonials">
+                <img src={team2} alt="" height="80" width="80" />
+                <p>CryptoChuo helps see how many days you need to work to reach your financial goal for this month and year
+                </p>
+                <div>
+                  <p class="rating"> 
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9734;</span>
+                  </p>
+                </div>
+                <h5>Timothy Omondi</h5>
+              </div>
+            </div>
           </div>
     </div>
     <Footer />
