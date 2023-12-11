@@ -60,7 +60,7 @@
 }
 #our-success {
     margin-top: 18%;
-    margin-bottom: 20%;
+    margin-bottom: 24%;
 }
 #our-success h3 {
     text-align: center;
@@ -72,62 +72,9 @@
     display: flex;
     gap: 30px;
     margin-left: 15%;
+    padding: 3% 0;
 }
 .testimonials {
     width: 40%;
     text-align: center;
 }
-/* }
-.about{
-    font-size: 120%;
-    font-weight: 370;
-    font-style: normal;
-    margin-top: 1%;
-}
-.header{
-    margin-top: 2%;
-    color: #4A9E8A;
-    font-size: 200%;
-    
-}
-.au{
-    color: #4A9E8A;
-    font-size: 200%; 
-}
-.profile{
-    display: flex;
-    margin-left: 10%;
-    margin-top: -1%;
-}
-#ceo{
-    height: 60px;
-    margin-top: 2%;
-    width: 200px;
-    background-color: #4A9E8A;
-    border: none;
-    border-radius: 50px;
-    color: #FFFFFF;
-    font-size: 20px;
-    margin-left: 2%;
-}
-#team1{
-    background: #4A9E8A;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    align-items: center;
-}
-#team2{
-    background: #4A9E8A;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    align-items: center;
-}
-#team3{
-    background: #4A9E8A;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    align-items: center;
-} */
