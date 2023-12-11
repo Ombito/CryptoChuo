@@ -1,18 +1,25 @@
-import React from 'react';
+import React, { useState }  from 'react';
 import "../Navbar/navbar.css";
 import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import bitcoin from '../Assets/homepage.jpg';
-import { FaShoppingCart } from  'react-icons/fa';
+import { FaShoppingCart, FaBars, FaTimes } from  'react-icons/fa';
 
 const Navbar = () => {
+    const [ active, setActive ] = useState(false);
+    const toggle = ()=> {
+        setActive(!active);
+    }
+
+
     return (
         <div className='navbar'>
             <div className="logo-container">
                 <Link class="container" to="/"><img className='logo' src={bitcoin} alt="Bitcoin Logo" /></Link>
             </div>
             <div className="navigation-container">
-                <div className="navlinks">
+                <button onClick={toggle} className='navbar-icons'>{active ? <FaTimes id="close"/> : <FaBars />}</button>
+                <div id="navlinks" className={active ? 'active' : '' } >
                     <NavLink to='/' id='home'>
                         Home
                     </NavLink>
