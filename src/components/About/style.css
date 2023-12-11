@@ -78,3 +78,25 @@
     width: 40%;
     text-align: center;
 }
+.testimonials img {
+    border-radius: 50%;
+}
+#about-contact-hero {
+    display: flex;
+    gap: 80px;
+    align-items: center;
+    background-color: #456cf6;
+    margin-bottom: 4%;
+    height: 20vh;
+    padding: 0 15%;
+}
+#about-contact-hero h6 {
+    font-size: 1.4em;
+} 
+#about-contact {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    font-size: 1em;
+    width: 30%;
+}

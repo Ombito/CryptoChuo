@@ -2,8 +2,8 @@ import React from 'react';
 import "../About/style.css"
 import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-// import team1 from "../Images/team1.jpg"
-import team2 from "../Assets/team2.png"
+import team3 from "../Assets/team3.jpg"
+import team2 from "../Assets/team2.png";
 import Navbar from "../Navbar/navbar.jsx";
 import Footer from "../Footer/index.jsx";
 import banner from "../Assets/school.png";
@@ -15,7 +15,7 @@ import polygon from "../Assets/polygon.png";
 import opensea from "../Assets/opensea.png";
 import ledger from "../Assets/ledger.png";
 import gemini from "../Assets/gemini.png";
-import { FaUserFriends, FaGraduationCap, FaBookOpen, FaCertificate } from  'react-icons/fa';
+import { FaUserFriends, FaGraduationCap, FaBookOpen, FaBriefcase } from  'react-icons/fa';
 
 
 const About = () => {
@@ -80,7 +80,7 @@ const About = () => {
                   <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
                 </div>
                 <div className="why-us-cards">
-                  <FaCertificate className="why-icons"/>
+                  <FaBriefcase className="why-icons"/>
                   <p>Career growth</p>
                   <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
                 </div>
@@ -97,7 +97,7 @@ const About = () => {
             <h2>What Our Students Say About Us</h2>
             <div id="testimonials-container">
               <div className="testimonials">
-                <img src={team2} alt="" height="80" width="80" />
+                <img src={team3} alt="" height="80" width="80" />
                 <p>CryptoChuo helps see how many days you need to work to reach your financial goal for this month and year
                 </p>
                 <div>
@@ -126,6 +126,13 @@ const About = () => {
                 </div>
                 <h5>Timothy Omondi</h5>
               </div>
+            </div>
+          </div>
+          <div class="container" id="about-contact-hero">
+            <h6>Ready to learn the world's most in-demand Blockchain, Web3 and AI skills?</h6>
+            <div id="about-contact">
+              <button>Join now</button>
+              <button>Contact</button>
             </div>
           </div>
     </div>
