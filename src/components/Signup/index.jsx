@@ -24,7 +24,7 @@ const Signup = () => {
                     <div className="full-name">
                         <label>Full name</label>
                         <input
-                            className="input-field"
+                            className="input-fields"
                             type="text"
                             placeholder="Enter Full Name"
                             value={first_name}
@@ -34,7 +34,7 @@ const Signup = () => {
                     <div className="email">
                         <label>Email address</label>
                         <input
-                            className="input-field"
+                            className="input-fields"
                             type="text"
                             placeholder="Enter email address"
                             value={email}
@@ -44,7 +44,7 @@ const Signup = () => {
                     <div className="password">
                         <label>Password</label>
                         <input
-                            className="input-field"
+                            className="input-fields"
                             type="password"
                             placeholder="Enter password"
                             value={password}
@@ -54,7 +54,7 @@ const Signup = () => {
                     <div className="password">
                         <label>Confirm password</label>
                         <input
-                            className="input-field"
+                            className="input-fields"
                             type="password"
                             placeholder="Enter password"
                             value={password}

@@ -43,8 +43,17 @@
 .checkbox-div {
     display: flex;
     justify-content: space-between;
-
 }
+#checkbox-container {
+    display: flex;
+    width: 120px;
+}
+#checkbox-container input{
+    height: 2vh;
+    align-items: center;
+    margin-top: 16%;
+}
+
 .account {
     text-align: center;
     margin-top: 20px;

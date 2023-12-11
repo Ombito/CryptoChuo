@@ -64,7 +64,7 @@ const [password, setPassword] = useState("");
                         
                     </label>
                     <div className="checkbox-div">
-                        <div>
+                        <div id="checkbox-container">
                             <input type="checkbox" />
                             <label>Remember me</label>
                         </div>
