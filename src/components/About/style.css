@@ -5,11 +5,24 @@
     display: flex;
     margin-top: 13%;
 }
-
-
-
-
-
+#why-us {
+    margin-top: 25%;
+}
+#why-us h3 {
+    text-align: center;
+}
+.why-us-div {
+    display: flex;
+}
+#our-success {
+    margin-top: 15%;
+}
+#our-success h3 {
+    text-align: center;
+}
+#our-success h2 {
+    text-align: center;
+}
 .about{
     font-size: 120%;
     font-weight: 370;

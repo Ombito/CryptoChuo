@@ -19,7 +19,7 @@ const About = () => {
             <br/>CryptoChuo graduates make more informed decisions around cryptocurrency, whether it brings 
             <br/>drafting regulations, creating compliance policies, and/or overseeing cryptocurrency-enabled <br/>financial crime investigations.</p>
           </div>
-          <div id="our-story">
+          <div id="our-story" class="container">
             <img src={team2} alt="" height="400" width="400"/>
             <div>
               <h2>Our Story</h2>
@@ -32,12 +32,11 @@ const About = () => {
               </p>
             </div>
           </div>
-          <div>
-            <img src={team2} width="300" height="300" alt="" />
-            <div>
+          <div >
+            <div class="container" id="why-us">
               <h3>Why CryptoChuo</h3>
               <p>Lorem ipsum dolor sit amet consectetur adipiscing elit, mollis ultricies aliquet aptent augue blandit, urna diam sociosqu faucibus consequat. Malesuada est suspendisse fusce turpis montes quam eget sollicitudin</p>
-              <div>
+              <div className="why-us-div">
                 <div>
                   <p>Award winning education</p>
                   <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
@@ -57,8 +56,8 @@ const About = () => {
               </div>
             </div>
           </div>
-          <div>
-            <h4>OUR SUCCESS</h4>
+          <div class="container" id="our-success">
+            <h3>OUR SUCCESS</h3>
             <h2>What Our Students Say About Us</h2>
           </div>
       <div className='ourteam'>
