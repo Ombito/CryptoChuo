@@ -1,12 +1,44 @@
 #about-banner {
     margin-top: 8%;
+    display: flex;
+    gap: 50px;
+    height: 18vh;
+    padding: 4%;
+}
+.about {
+    width: 90%;
 }
 #our-story {
     display: flex;
-    margin-top: 13%;
+    margin-top: 17%;
+    gap: 5%;
+}
+#our-story h2 {
+    text-align: center;
+    color: #456cf6;
+}
+#partner-container {
+    background-color: #333333;
+    height: 44vh;
+}
+#partners {
+    margin-top: 26%;
+    display: flex;
+    color: white;
+}
+.hero-partners {
+    align-items: center;
+    text-align: center;
+    padding-top: 8%;
+}
+#logo-div {
+    display: grid;
+    grid-template-columns: repeat(3, 3fr);
+    padding: 2% 0;
+    column-gap: 10px;
 }
 #why-us {
-    margin-top: 25%;
+    margin-top: 4%;
 }
 #why-us h3 {
     text-align: center;
