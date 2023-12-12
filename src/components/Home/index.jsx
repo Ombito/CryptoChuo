@@ -45,7 +45,7 @@ const Home = () => {
                     </div>
                 </div>
                 <div class="container" id="stats">
-                    <ScrollTrigger onEnter={()=> setCounterOn(true)} onExit={()=> setCounterOn(false)}>
+                    <ScrollTrigger id="stats1" onEnter={()=> setCounterOn(true)} onExit={()=> setCounterOn(false)}>
                         <div>
                             <h5 className="numbers">{counterOn && <CountUp className="number-color" start={0} end={400} duration={5}/>}+<br></br><br></br>  Students</h5>
                         </div>
