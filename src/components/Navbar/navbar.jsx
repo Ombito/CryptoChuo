@@ -11,6 +11,9 @@ const Navbar = () => {
         setActive(!active);
     }
 
+    const closeMenu = () => {
+        setActive(false);
+      };
 
     return (
         <div className='navbar'>
@@ -19,7 +22,7 @@ const Navbar = () => {
             </div>
             <div className="navigation-container">
                 <button onClick={toggle} className='navbar-icons'>{active ? <FaTimes id="close"/> : <FaBars />}</button>
-                <div id="navlinks" className={active ? 'active' : '' } >
+                <div id="navlinks" className={active ? 'active' : '' } onClick={closeMenu}>
                     <NavLink to='/' id='home'>
                         Home
                     </NavLink>

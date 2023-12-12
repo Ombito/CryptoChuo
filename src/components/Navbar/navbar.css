@@ -1,117 +1,87 @@
+/* navbar.css */
+
 .navbar {
-    display: flex;
-    position: fixed;
-    top: 0;
-    height: 12vh;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #252a43;
-    color: #fff;
-    z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
 }
+
 .logo-container {
-    margin: 0 5%;
-    margin-top: -3%; 
+  flex: 1;
 }
 
-.logo-container img {
-    height: 12vh; 
-    width: 115%;
+.logo {
+  width: 50px;
 }
+
 .navigation-container {
-    display: flex;
-    align-items: center;
-    margin-right: 80px;
-}
-.navbar-icons {
-    display: none;
-}
-#navlinks {
-    display: flex;
-    margin-right: 60px;
-}
-#navlinks a {
-    color: #fff;
-    text-decoration: none;
-    margin-right: 90px;
-    font-weight: bold;
-    font-size: 1.2em;
-}
-#button {
-    background-color: #4CAF50;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-}
-#button:hover {
-    background-color: #4CAF50;
-}
-.auth-button {
-    display: flex;
-    gap: 50px;
-}
-#cart-icon {
-    font-size: 2.2em;
-    margin: 15% 0;
+  display: flex;
+  align-items: center;
 }
 
-@media screen and (max-width: 768px) {
-    .navlinks {
-      display: none;
-    }
-  
-    .auth-button {
-      display: none;
-    }
-  
-    .menu-icon {
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-  
-    .mobile-menu {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      position: absolute;
-      top: 70px;
-      right: 10px;
-      background-color: #333;
-      border: 1px solid #555;
-      padding: 10px;
-      border-radius: 5px;
-    }
-  
-    .navbar.mobile {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  
-    .navbar.mobile .navigation-container {
-      width: 100%;
-      justify-content: space-between;
-      align-items: flex-start;
-    }
-  
-    .navbar.mobile .navlinks,
-    .navbar.mobile .auth-button {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .mobile-menu a {
-        color: white;
-        text-decoration: none;
-        font-size: 1rem;
-        transition: color 0.3s ease-in-out;
-      }
-    
-      .mobile-menu a:hover {
-        color: #4caf50;
-      }
-  }
+.navbar-icons {
+  display: block;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: white;
+}
+
+#navlinks {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background-color: #333;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  display: none;
+}
+
+#navlinks.active {
+  display: flex;
+}
+
+#navlinks a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  margin: 5px 0;
+  transition: background-color 0.3s;
+}
+
+#navlinks a:hover {
+  background-color: #555;
+}
+
+.auth-button {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+
+#cart-icon {
+  font-size: 1.5rem;
+  color: white;
+  margin-right: 10px;
+}
+
+button#button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button#button:hover {
+  background-color: #45a049;
+}
