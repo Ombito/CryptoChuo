@@ -422,8 +422,7 @@ button:hover {
     cursor: pointer;
   }
 
-
-  
+  /* mobile screen device  */
   @media (max-width: 768px) {
     #home-card-container {
       display: grid;
@@ -432,6 +431,9 @@ button:hover {
     #home-describe {
       display: flex;
       flex-direction: column;
+    }
+    #stats {
+      margin: 10% 0;
     }
     #stats1 {
       display: flex;
@@ -460,10 +462,48 @@ button:hover {
         color: #007bff; 
       }
 
-
-
+      #course-div {
+        margin-top: 150%;
+    } 
+.topics {
+  margin: 790% 0;
+}
     .topics-container {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .join {
+      margin-top: -740%;
+      height: 70vh;
+    }
+    form.contact-form {
+      width: 100%;
+      margin-top: 5%;
+    }
+    .subscribe {
+      margin-top: 330%;
+    }
+    #subscribe-checkbox {
+      width: 100%;
+    }
+  }
+  @media only screen and (min-width: 200px) and (max-width: 370px){
+    .course-card {
+      margin: 0;
+      width: 99%;
+    }
+    .course-details {
+      padding: 0%;
+    }
+    #course-div {
+      margin-top: 190%;
+    }
+    .join { 
+      margin-top: -682%;
+      height: 110vh;
+    }
+    .subscribe {
+      margin-top: 410%;
+      height: 55vh;
     }
   }

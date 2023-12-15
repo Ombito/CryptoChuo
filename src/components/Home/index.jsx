@@ -310,7 +310,7 @@ const Home = () => {
                 <div className='subscribe'>
                     <div class="container" id="subscribe-div">
                         <h5>Subscribe to our newsletter</h5>
-                        <input type="text" placeholder="Enter your email address" />
+                        <input type="text" placeholder="Enter your email address" id="subscribe-checkbox"/>
                         <div className='subscribe-checkbox'>
                             <input type="checkbox" />
                             <label>I have read and agreed to the Terms of Service.</label>
