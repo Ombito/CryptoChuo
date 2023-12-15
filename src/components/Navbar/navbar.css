@@ -28,9 +28,15 @@
 .navbar-icons {
     display: none;
 }
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  
+}
 #navlinks {
     display: flex;
-    margin-right: -20px;
+    margin-right: -50px;
+    gap: 30px;
 }
 #navlinks a {
     color: #fff;
@@ -53,7 +59,6 @@
 }
 .auth-button {
     display: flex;
-    gap: 50px;
 }
 #cart-icon {
     font-size: 2.2em;
