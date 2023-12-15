@@ -25,10 +25,8 @@ const About = () => {
         <div className='aboutus'>
           <div id="about-banner" class="container">
             <div> 
-              <p className='about'>CryptoChuo training provides a strong foundation for executives to understand cryptocurrency and blockchain. Participants learn the essentials behind blockchain and distributed ledger 
-              technology(DLT), how cryptocurrency transactions work, Virtual Asset Service Provider(VASP) typologies, industry needs, and the role blockchain analytics plays in the crypto ecosystem.
-              CryptoChuo graduates make more informed decisions around cryptocurrency, whether it brings 
-              drafting regulations, creating compliance policies, and/or overseeing cryptocurrency-enabled financial crime investigations.
+              <p className='about'>At CryptoChuo, we go beyond the basics. Our curriculum is designed to equip you with the knowledge and skills needed to navigate the complexities of the crypto ecosystem. Our cutting-edge program goes beyond the basics empowering participants to delve into the essentials of blockchain and distributed ledger technology (DLT). Gain insights into the pivotal role blockchain analytics plays in shaping the dynamics of the crypto ecosystem. Our graduates emerge as trailblazers, ready to tackle the challenges and opportunities presented by the dynamic world of cryptocurrency. But wait, there's more! Our program isn't just about learning; it's an immersive journey into the future of finance. Join a community of forward-thinkers, disruptors, and visionaries who are reshaping the narrative of cryptocurrency. At CryptoChuo, we believe that knowledge is power, and we're here to empower you.
+              
               </p>
             </div>
             <div>
