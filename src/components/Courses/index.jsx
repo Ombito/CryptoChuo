@@ -49,7 +49,7 @@ const Courses = () => {
                     <div className="allCourses-div">
                         <div id="filter-container">
                             <div className="filter-div">
-                                <h4>Subject</h4>
+                                <h4>Category</h4>
                                 <div className="checkbox-container">
                                     <input type="checkbox" />
                                     <label>Blockchain</label>
@@ -275,11 +275,6 @@ const Courses = () => {
                         <h3>One-Stop learning hub</h3>
                         <p>Join millions of learners in ou community</p>
                     </div>
-                </div>
-                <div>
-                    <img src="" alt="Eth" />
-                    <img src="" alt="Binance" />
-                    <img src="" alt="Bybit" />
                 </div>
             </div>
           <Footer />
