@@ -39,12 +39,7 @@ const About = () => {
             <img src={ourstory} alt="" height="400" width="400"/>
             <div>
               <h2>Our Story</h2>
-              <h1>We accelerate Your growth</h1>
-                <p>Founded in 2019, 101 Blockchains is the world’s leading research-based platform for Blockchain and Web3 Practitioners, with an existing community of over 60,000 professionals.
-
-                We offer world-class training courses and industry-recognized certification programs that help professionals upgrade their skills and reach the next level of success.
-
-                Our teams of researchers, instructors, and subject matter experts are real-world industry professionals with immense knowledge and significant experience.
+                <p>As we continue to lead the way in blockchain education, CryptoChuo remains dedicated to fostering a dynamic and supportive learning environment. Our journey since 2020 has been marked by a relentless pursuit of excellence in providing unparalleled resources for Blockchain and Web3 Practitioners. Our mission is to make blockchain education accessible and empower blockchain enthusiasts with the tools they need to thrive in a rapidly evolving digital landscape. Through our user-friendly platform, learners can engage with cutting-edge content, interactive modules, and collaborative discussions. We foster an environment where curiosity is encouraged, questions are welcomed, and knowledge is shared. Our industry-recognized certification programs are a testament to our dedication to excellence. These programs serve as a hallmark of proficiency and are widely acknowledged within the blockchain and Web3 communities. We take pride in being a catalyst for professional growth, enabling individuals to elevate their skills and advance to the next level of success. <br></br><br></br>What sets CryptoChuo apart is our team of seasoned researchers, instructors, and subject matter experts. Comprising real-world industry professionals, our team brings a wealth of knowledge and substantial experience to the table. This ensures that our courses and programs are not just theoretical but grounded in practical insights gained from hands-on industry involvement. Join us on this transformative journey, where knowledge meets innovation, and success knows no bounds.
               </p>
             </div>
           </div>
@@ -52,7 +47,7 @@ const About = () => {
             <div class="container" id="partners">
               <div className="hero-partners">
                 <h4>Our Partners</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit, mollis ultricies aliquet aptent augue blandit, urna diam sociosqu  est suspendisse fusce turpis montes quam eget sollicitudin</p>
+                <p>From industry giants to emerging startups, our partners represent a spectrum of expertise, contributing to the richness of our platform. Join our league of visionary partners and become an integral part of the global blockchain revolution. Together we'll unlock new horizons and set the stage for the next wave of blockchain innovation.</p>
               </div>
               <div id="logo-div">
                 <img src={binance} alt="" height="150" width="200" />
