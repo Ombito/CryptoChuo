@@ -2,7 +2,7 @@ import React, { useState }  from 'react';
 import "../Navbar/navbar.css";
 import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import bitcoin from '../Assets/homepage.jpg';
+import logo from '../Assets/logo1.jpeg';
 import { FaShoppingCart, FaBars, FaTimes } from  'react-icons/fa';
 
 const Navbar = () => {
@@ -18,7 +18,7 @@ const Navbar = () => {
     return (
         <div className='navbar'>
             <div className="logo-container">
-                <Link class="container" to="/"><img className='logo' src={bitcoin} alt="Bitcoin Logo" /></Link>
+                <Link class="container" to="/"><img className='logo' src={logo} alt="Bitcoin Logo" /></Link>
             </div>
             <div className="navigation-container">
                 <button onClick={toggle} className='navbar-icons'>{active ? <FaTimes id="close"/> : <FaBars />}</button>

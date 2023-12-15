@@ -8,7 +8,7 @@ import About from './components/About';
 import Markets from './components/Markets';
 import News from './components/News';
 import Shop from './components/Shop';
-import Navbar from './components/Navbar';
+import Navbar from './components/Navbar/navbar';
 import Checkout from './components/Checkout';
 import Cart from './components/Cart';
 import Signup from './components/Signup';
@@ -41,7 +41,7 @@ function App() {
       <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route element={<Navbar admin={admin} setAdmin={setAdmin} setUser={setUser} user={user}/>} />
+            <Route element={<Navbar setUser={setUser} user={user}/>} />
             <Route path="/courses" element={<Courses user={user} refresh={refresh} setRefresh={setRefresh}/>} />
             <Route path="/login" element={<LogIn setUser={setUser}/>} />
             <Route path="/about" element={<About />} />
