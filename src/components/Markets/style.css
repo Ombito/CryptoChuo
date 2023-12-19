@@ -1,7 +1,39 @@
 table {
-    margin-top: 10%;
+    margin-top: 9%;
 }
-#coin_img {
+/* #coin-img {
     height: 4vh;
     border-radius: 50%;
+} */
+.crypto-table {
+    margin-top: 9%;
+    width: 100%;
+    /* border-collapse: collapse; */
+    margin-top: 20px;
 }
+.crypto-table th, .crypto-table td {
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+.coin-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.coin-info img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+#coin-info div{
+    display: flex;
+    flex-direction: row;
+}
+.positive-change {
+    color: green;
+}
+.negative-change {
+    color: red;
+}
+  
