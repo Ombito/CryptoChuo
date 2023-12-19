@@ -57,10 +57,14 @@ const Markets = () => {
         {markets.map((i) => (
           <tr key={i.id}>
             <td>{i.market_cap_rank}</td>
-            <td><img src={i.image} id="coin_img"/> {i.name} {i.symbol.upper()} </td>
+            <td>
+              <img src={i.image} id="coin_img"/>
+               {i.name} 
+               {i.symbol.toUpperCase()} 
+            </td>
             <td>{i.current_price}</td>
-            <td>{i.price_change_percentage_1h_in_currency}</td>
-            <td>{i.price_change_percentage_24h_in_currency}</td>
+            <td>{i.price_change_percentage_1h_in_currency.toFixed(2)}%</td>
+            <td>{i.price_change_percentage_24h_in_currency.toFixed(2)}%</td>
             <td>{i.total_volume}</td>
             <td>{i.market_cap}</td>
             <td></td>
