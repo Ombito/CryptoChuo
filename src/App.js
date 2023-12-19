@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import {BrowserRouter, Route ,Routes} from 'react-router-dom';
+import { Route ,Routes} from 'react-router-dom';
 import Courses from './components/Courses';
 import Home from './components/Home';
 import LogIn from './components/Login';
@@ -38,27 +38,25 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
           <Routes>
             <Route path="/markets" element={<Markets />} />
             <Route path="/" element={<Home />} />
-            {/* <Route path="/" element={<Home />} />
-            <Route element={<Navbar setUser={setUser} user={user}/>} />
-            <Route path="/courses" element={<Courses user={user} refresh={refresh} setRefresh={setRefresh}/>} />
-            <Route path="/login" element={<LogIn setUser={setUser}/>} />
+            {/* <Route path="/" element={<Home />} /> */}
+            <Route element={<Navbar />} />
+            <Route path="/courses" element={<Courses />} />
+            <Route path="/login" element={<LogIn />} />
             <Route path="/about" element={<About />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/markets" element={<Markets />} />
             <Route path="/news" element={<News />} />
-            <Route path="shop" element={<Shop user={user} refresh={refresh} setRefresh={setRefresh}/>} />
-            <Route path="checkout" element={<Checkout user={user} refresh={refresh} setRefresh={setRefresh}/>} />
-            <Route path="cart" element={<Cart user={user} refresh={refresh} setRefresh={setRefresh}/>} />
+            <Route path="shop" element={<Shop />} />
+            <Route path="checkout" element={<Checkout />} />
+            <Route path="cart" element={<Cart />} />
             <Route path="/events" element={<Events />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/sponsorship" element={<Sponsorship />} />
-            <Route path="/shop" element={<Shop refresh={refresh} setRefresh={setRefresh}/>} /> */}
+            <Route path="/shop" element={<Shop />} />
       </Routes>
-      </BrowserRouter>
 
     </div>
   );

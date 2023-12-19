@@ -4,16 +4,20 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {SnackbarProvider} from  'notistack';
+import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <SnackbarProvider autoHideDuration={4000} anchorOrigin={{
-          vertical: 'top',
-          horizontal: 'center', 
-        }}>
-      <App />
-    </SnackbarProvider>
+    <BrowserRouter>
+      <SnackbarProvider autoHideDuration={4000} anchorOrigin={{
+            vertical: 'top',
+            horizontal: 'center', 
+          }}>
+        <App />
+      </SnackbarProvider>
+    </BrowserRouter>
+    
   </React.StrictMode>
 );
 
