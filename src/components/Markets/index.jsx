@@ -59,7 +59,7 @@ const Markets = () => {
         <td>{i.market_cap_rank}</td>
         <td>
           <div className="coin-info">
-            <img src={i.image} id="coin-img" alt="Coin Image" />
+            <img src={i.image} id="coin_img" alt="Coin Image" />
             <div>
               <p>{i.name}</p>
               <p>{i.symbol.toUpperCase()}</p>
