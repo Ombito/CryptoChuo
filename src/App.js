@@ -20,27 +20,29 @@ import Sponsorship from './components/Sponsorship';
 
 
 function App() {
-  const [user, setUser] = useState({});
-  const[refresh, setRefresh]=useState(false)
+  // const [user, setUser] = useState({});
+  // const[refresh, setRefresh]=useState(false)
 
 
-  useEffect(() => {
-    fetch("http://127.0.0.1:5555/session_user")
-    .then(response=>{
-      if (response.ok){
-        return response.json()
-      }
-    })
-    .then(data=>setUser(data))
-    .catch(error => console.log(error));
-  }, [refresh]); 
+  // useEffect(() => {
+  //   fetch("http://127.0.0.1:5555/session_user")
+  //   .then(response=>{
+  //     if (response.ok){
+  //       return response.json()
+  //     }
+  //   })
+  //   .then(data=>setUser(data))
+  //   .catch(error => console.log(error));
+  // }, [refresh]); 
 
 
   return (
     <div className="App">
       <BrowserRouter>
           <Routes>
+            <Route path="/markets" element={<Markets />} />
             <Route path="/" element={<Home />} />
+            {/* <Route path="/" element={<Home />} />
             <Route element={<Navbar setUser={setUser} user={user}/>} />
             <Route path="/courses" element={<Courses user={user} refresh={refresh} setRefresh={setRefresh}/>} />
             <Route path="/login" element={<LogIn setUser={setUser}/>} />
@@ -54,7 +56,7 @@ function App() {
             <Route path="/events" element={<Events />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/sponsorship" element={<Sponsorship />} />
-            <Route path="/shop" element={<Shop refresh={refresh} setRefresh={setRefresh}/>} />
+            <Route path="/shop" element={<Shop refresh={refresh} setRefresh={setRefresh}/>} /> */}
       </Routes>
       </BrowserRouter>
 
