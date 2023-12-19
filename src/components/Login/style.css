@@ -1,4 +1,4 @@
-.login-form {
+#login-form-container {
     width: 50%;
     max-width: 400px;
     margin: 0 auto;
@@ -9,7 +9,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background-color: #e6f7ff;
 }
-.login-form h2{
+#login-form-container h2{
     text-align: center;
 }
 .email input {
@@ -74,7 +74,6 @@
 }
 #checkbox-container input{
     height: 2vh;
-    align-items: center;
     margin-top: 16%;
 }
 

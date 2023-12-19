@@ -1,100 +1,74 @@
-import React from 'react';
-import { Formik, Field, Form, ErrorMessage } from 'formik';
-import * as Yup from 'yup';
-import "../Login/style.css";
+import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import "../Login/style.css";
 import { useSnackbar } from 'notistack';
-import bcrypt from 'bcryptjs';
 
 const LogIn = () => {
-  const { enqueueSnackbar } = useSnackbar();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+
   const navigate = useNavigate();
+  const { enqueueSnackbar } = useSnackbar();
 
-  const handleLogin = async (values) => {
-    // const { email, password } = values;
-
-    // setUser({});
-
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+  
     try {
-        const hashedPassword = await bcrypt.hash(values.password, 10);
-          const dataToSend = {
-            email: values.email,
-            password: hashedPassword,
-          };
       const response = await fetch('http://127.0.0.1:5555/login_user', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(dataToSend),
+        body: JSON.stringify({ email, password }),
       });
-
-      if (response.status === 201) {
-        enqueueSnackbar('Log in successful!', { variant: 'success' });
+  
+      if (response.ok) {
+        enqueueSnackbar('Login successful!', { variant: 'success' });
         navigate('/');
       } else {
-        const responseData = response.data;
-        console.log('Login error:', responseData);
-        enqueueSnackbar(responseData.message || 'Invalid email or password', { variant: 'error' });
+        console.log("Login failed!")
+        enqueueSnackbar('Wrong email address or password', { variant: 'error' });
       }
     } catch (error) {
-      console.error('Error during login:', error);
+      setError('Error: ' + error.message);
     }
   };
 
   return (
-    <div className="login-form-container">
+    <div id="login-form-container">
+      <h2>Login</h2>
       <div className="login-form">
-        <h2 className="signup">Login</h2>
-        <Formik
-          initialValues={{ email: '', password: '', rememberMe: false }}
-          validationSchema={Yup.object({
-            email: Yup.string().email('Invalid email address').required('Required'),
-            password: Yup.string().required('Required'),
-          })}
-          onSubmit={handleLogin}
-        >
-          <Form>
-            <div className="email">
-              <label htmlFor="email">Email address</label>
-              <Field
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Enter email address"
-                className="container"
-              />
-              <ErrorMessage name="email" component="div" className="error" />
-            </div>
-            <div className="password">
-              <label htmlFor="password">Password</label>
-              <Field
-                type="password"
-                id="password"
-                name="password"
-                placeholder="Enter your password"
-                className="container"
-              />
-              <ErrorMessage name="password" component="div" className="error" />
-            </div>
-
-            <div className="checkbox-div">
-              <div id="checkbox-container">
-                <Field type="checkbox" id="rememberMe" name="rememberMe" />
-                <label htmlFor="rememberMe">Remember me</label>
+        <form onSubmit={handleSubmit}>
+          <label>Email Address</label>
+          <input
+            type="email"
+            placeholder="Enter your email address"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <label>Password</label>
+          <input
+            type="password"
+            placeholder="Enter your password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <div className="checkbox-div">
+            <div id="checkbox-container">
+              <input type="checkbox" id="rememberMe" name="rememberMe" />
+              <label htmlFor="rememberMe">Remember me</label>
               </div>
               <p className="account">
                 <Link to="/forgot-password">Forgot password?</Link>
               </p>
             </div>
-
-            <button className="login-button" type="submit">Login</button>
-          </Form>
-        </Formik>
+          <button type="submit" >Login</button>
+          {error && <p>{error}</p>}
+        </form>
         <p className="account">Don't have an account? <Link to="/signup">Sign up</Link></p>
       </div>
     </div>
   );
 };
-
 export default LogIn;
