@@ -47,7 +47,6 @@ const Navbar = ({user,setUser}) => {
                         </Link>
                         <Link to="/login">
                             <img src={logo} alt="" height="30" width="30" />
-                            <button id='button' type='submit'>Sign in</button>
                         </Link>
                     </div>
                 </div>         

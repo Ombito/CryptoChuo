@@ -11,9 +11,9 @@ const LogIn = ({setUser}) => {
   const navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
 
-  const handleSubmit = async (user) => {
-    // e.preventDefault();
-    setUser(user)
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log('Logging in', email);
   
     try {
       const response = await fetch('http://127.0.0.1:5555/login_user', {
@@ -25,6 +25,9 @@ const LogIn = ({setUser}) => {
       });
   
       if (response.ok) {
+        const user = await response.json();
+        setUser(user);
+        localStorage.setItem('userData', JSON.stringify(user));
         enqueueSnackbar('Login successful!', { variant: 'success' });
         navigate('/');
       } else {
@@ -32,9 +35,9 @@ const LogIn = ({setUser}) => {
         enqueueSnackbar('Wrong email address or password', { variant: 'error' });
       }
     } catch (error) {
-      setError('Error: ' + error.message);
+      console.error('Login failed: ', error);
+      enqueueSnackbar('An error occurred while logging in', { variant: 'error' });
     }
-    console.log('User state:', user);
   };
 
   return (

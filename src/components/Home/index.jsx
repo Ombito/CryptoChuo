@@ -10,7 +10,8 @@ import Course1 from "../Assets/homepage.jpg";
 import ScrollTrigger from 'react-scroll-trigger';
 import CountUp from 'react-countup';
 
-const Home = () => {
+const Home = ({user}) => {
+    console.log(user)
     const [ counterOn, setCounterOn ] = useState(false)
     const faqData = [
         { question: 'So your aim is educating people on Blockchain technology?', answer: "It's ok you can say it. Decentralization is important but what underpins it? That's the complication. Our strategy is to create grassroot level of mass awareness on cryptocurrencies and Blockchain." },
