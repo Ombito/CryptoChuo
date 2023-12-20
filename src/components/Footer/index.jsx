@@ -1,6 +1,6 @@
 import "../Footer/style.css"
 import { NavLink } from 'react-router-dom';
-import { FaCopyright } from  'react-icons/fa'
+import { FaCopyright } from  'react-icons/fa';
 
 const Footer = () => {
     return (

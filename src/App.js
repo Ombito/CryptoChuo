@@ -42,20 +42,22 @@ function App() {
   return (
     <div className="App">
           <Routes>
-            <Route path="/" element={<Home user={user}/>} />
-            <Route element={<Navbar user={user}/>} />
-            <Route path="/courses" element={<Courses user={user} />} />
-            <Route path="/login" element={<LogIn setUser={setUser} />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/markets" element={<Markets />} />
-            <Route path="/news" element={<News />} />
-            <Route path="shop" element={<Shop />} />
-            <Route path="checkout" element={<Checkout user={user}/>} />
-            <Route path="cart" element={<Cart />} />
-            <Route path="/events" element={<Events />} />
-            <Route path="/careers" element={<Careers />} />
-            <Route path="/sponsorship" element={<Sponsorship />} />
+            <Route>
+              <Route path="/" element={<Home user={user}/>} />
+              <Route element={<Navbar user={user}/>} />
+              <Route path="/courses" element={<Courses user={user} />} />
+              <Route path="/login" element={<LogIn setUser={setUser} />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/signup" element={<Signup />} />
+              <Route path="/markets" element={<Markets />} />
+              <Route path="/news" element={<News />} />
+              <Route path="/shop" element={<Shop />} />
+              <Route path="checkout" element={<Checkout user={user}/>} />
+              <Route path="cart" element={<Cart />} />
+              <Route path="/events" element={<Events />} />
+              <Route path="/careers" element={<Careers />} />
+              <Route path="/sponsorship" element={<Sponsorship />} />
+            </Route>
       </Routes>
 
     </div>

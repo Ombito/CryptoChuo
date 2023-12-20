@@ -3,9 +3,10 @@ import "../Navbar/navbar.css";
 import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import logo from '../Assets/logo1.jpeg';
-import { FaShoppingCart, FaBars, FaTimes } from  'react-icons/fa';
+import { FaShoppingCart, FaBars, FaTimes, FaUser } from  'react-icons/fa';
 
-const Navbar = ({user,setUser}) => {
+const Navbar = ({ user }) => {
+
     const [ active, setActive ] = useState(false);
     const toggle = ()=> {
         setActive(!active);
@@ -14,43 +15,43 @@ const Navbar = ({user,setUser}) => {
     const closeMenu = () => {
         setActive(false);
       };
-
+    console.log('Navbar user:', user)
     return (
         <div className='navbar'>
             <div className="logo-container">
                 <Link class="container" to="/"><img className='logo' src={logo} alt="Bitcoin Logo" /></Link>
             </div>
             {user ? (
-            <div className="navigation-container">
-                <button onClick={toggle} className='navbar-icons'>{active ? <FaTimes id="close"/> : <FaBars />}</button>
-                <div id="navlinks" className={active ? 'active' : '' } onClick={closeMenu}>
-                    <div className="navbar-menu">
-                        <NavLink to='/' id='home'>
-                            Home
-                        </NavLink>
-                        <NavLink to='/about' id='about'>
-                            About Us
-                        </NavLink>
-                        <NavLink to='/courses' id='courses'>
-                            Courses
-                        </NavLink>
-                        <NavLink to='/markets' id='markets'>
-                            Markets
-                        </NavLink>
-                        <NavLink to='/shop' id='shop'>
-                            Shop
-                        </NavLink>
-                    </div>
-                    <div className="auth-button">
-                        <Link to="/cart">
-                            <FaShoppingCart id="cart-icon"/>
-                        </Link>
-                        <Link to="/login">
-                            <img src={logo} alt="" height="30" width="30" />
-                        </Link>
-                    </div>
-                </div>         
-            </div>
+                <div className="navigation-container">
+                    <button onClick={toggle} className='navbar-icons'>{active ? <FaTimes id="close"/> : <FaBars />}</button>
+                    <div id="navlinks" className={active ? 'active' : '' } onClick={closeMenu}>
+                        <div className="navbar-menu">
+                            <NavLink to='/' id='home'>
+                                Home
+                            </NavLink>
+                            <NavLink to='/about' id='about'>
+                                About Us
+                            </NavLink>
+                            <NavLink to='/courses' id='courses'>
+                                Courses
+                            </NavLink>
+                            <NavLink to='/markets' id='markets'>
+                                Markets
+                            </NavLink>
+                            <NavLink to='/shop' id='shop'>
+                                Shop
+                            </NavLink>
+                        </div>
+                        <div className="auth-button">
+                            <Link to="/cart">
+                                <FaShoppingCart id="cart-icon"/>
+                            </Link>
+                            <Link to="/login">
+                                <FaUser />
+                            </Link>
+                        </div>
+                    </div>         
+                </div>
             ) : (
                 <div className="navigation-container">
                 <button onClick={toggle} className='navbar-icons'>{active ? <FaTimes id="close"/> : <FaBars />}</button>
