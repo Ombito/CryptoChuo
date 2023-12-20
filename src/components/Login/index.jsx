@@ -3,7 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import "../Login/style.css";
 import { useSnackbar } from 'notistack';
 
-const LogIn = () => {
+const LogIn = ({setUser}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -11,8 +11,9 @@ const LogIn = () => {
   const navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async (user) => {
+    // e.preventDefault();
+    setUser(user)
   
     try {
       const response = await fetch('http://127.0.0.1:5555/login_user', {
@@ -33,6 +34,7 @@ const LogIn = () => {
     } catch (error) {
       setError('Error: ' + error.message);
     }
+    console.log('User state:', user);
   };
 
   return (

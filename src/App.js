@@ -17,45 +17,41 @@ import Careers from './components/Careers';
 import Sponsorship from './components/Sponsorship';
 
 
-
-
 function App() {
-  // const [user, setUser] = useState({});
-  // const[refresh, setRefresh]=useState(false)
+  const [user, setUser] = useState({});
+  const[refresh, setRefresh]=useState(false)
 
+  useEffect(() => {
+    fetch("http://127.0.0.1:5555/session_user")
+    .then(response=>{
+      if (response.ok){
+        return response.json()
+      }
+    })
+    .then(data=>setUser(data))
+    .catch(error => console.log(error));
+  }, [refresh]); 
 
-  // useEffect(() => {
-  //   fetch("http://127.0.0.1:5555/session_user")
-  //   .then(response=>{
-  //     if (response.ok){
-  //       return response.json()
-  //     }
-  //   })
-  //   .then(data=>setUser(data))
-  //   .catch(error => console.log(error));
-  // }, [refresh]); 
+ 
 
 
   return (
     <div className="App">
           <Routes>
-            <Route path="/markets" element={<Markets />} />
             <Route path="/" element={<Home />} />
-            {/* <Route path="/" element={<Home />} /> */}
-            <Route element={<Navbar />} />
-            <Route path="/courses" element={<Courses />} />
-            <Route path="/login" element={<LogIn />} />
+            <Route element={<Navbar user={user}/>} />
+            <Route path="/courses" element={<Courses user={user} />} />
+            <Route path="/login" element={<LogIn setUser={setUser} />} />
             <Route path="/about" element={<About />} />
             <Route path="/signup" element={<Signup />} />
-            <Route path="/markets" element={<Markets />} />
+            <Route path="/markets" element={<Markets refresh={refresh} setRefresh={setRefresh}/>} />
             <Route path="/news" element={<News />} />
             <Route path="shop" element={<Shop />} />
-            <Route path="checkout" element={<Checkout />} />
-            <Route path="cart" element={<Cart />} />
+            <Route path="checkout" element={<Checkout user={user}/>} />
+            <Route path="cart" element={<Cart refresh={refresh} setRefresh={setRefresh}/>} />
             <Route path="/events" element={<Events />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/sponsorship" element={<Sponsorship />} />
-            <Route path="/shop" element={<Shop />} />
       </Routes>
 
     </div>
