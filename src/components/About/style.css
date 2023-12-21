@@ -129,3 +129,9 @@
     padding: 10px 10px;
     width: 100px;
 }
+.subscription-card {
+    text-align: left;
+}
+.subscription-card:hover {
+    background-color: blue;
+}

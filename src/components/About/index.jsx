@@ -120,13 +120,48 @@ const About = () => {
               </div>
             </div>
           </div>
-          <div class="container" id="about-contact-hero">
+          <div>
+            <h2 style={{"text-align": "center"}}>Choose Your Subscription Plan</h2>
+            <div id="subscription-plan">
+              <div className="subscription-card">
+                <h4>Basic Membership</h4>
+                <h2>$99.99/ month</h2>
+                <p>Live Support</p>
+                <p>Web3, AI, Content Creation Masterclass</p>
+                <p>Weekly Live Session</p>
+                <p>Trading Indicators</p>
+                <button>Get Plan</button>
+              </div>
+              <div className="subscription-card">
+                <h4>Advanced Membership</h4>
+                <h2>$299.99/ month</h2>
+                <p>Live Support</p>
+                <p>Web3, AI, Content Creation Masterclass</p>
+                <p>Daily live session</p>
+                <p>Trading Indicators</p>
+                <p>VIP Stream</p>
+                <button>Get Plan</button>
+              </div>
+              <div className="subscription-card">
+                <h4>Premium Membership</h4>
+                <h2>$499.99/ month</h2>
+                <p>Full support</p>
+                <p>Web3, AI, Content Creation Masterclass</p>
+                <p>Daily live session</p>
+                <p>Trading indicators</p>
+                <p>VIP Stream</p>
+                <p>VIP Q&A</p>
+                <button>Get Plan</button>
+              </div>
+              </div>
+              <div class="container" id="about-contact-hero">
             <img src={join} alt="" height="100" width="130" />
             <h6>Ready to learn the world's most in-demand Blockchain, Web3 and AI skills?</h6>
             <div id="about-contact">
               <button>Join now</button>
               <button>Contact</button>
             </div>
+          </div>
           </div>
     </div>
     <Footer />
