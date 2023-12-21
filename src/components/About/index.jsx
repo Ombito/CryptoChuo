@@ -15,7 +15,7 @@ import polygon from "../Assets/polygon.png";
 import opensea from "../Assets/opensea.png";
 import ledger from "../Assets/ledger.png";
 import join from '../Assets/joinnow.png';
-import { FaUserFriends, FaGraduationCap, FaBookOpen, FaBriefcase } from  'react-icons/fa';
+import { FaUserFriends, FaGraduationCap, FaBookOpen, FaBriefcase, FaCheck } from  'react-icons/fa';
 
 
 const About = () => {
@@ -89,34 +89,42 @@ const About = () => {
             <h2>What Our Students Say About Us</h2>
             <div id="testimonials-container">
               <div className="testimonials">
-                <img src={team3} alt="" height="80" width="80" />
                 <p>CryptoChuo was specifically created to help people like you and me transition to a career in Web3 and just weeks after completing the course I accepted a full-time role at Grot.
                 </p>
-                <div>
-                  <p class="rating"> 
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9734;</span>
-                  </p>
+                <div style={{display: 'flex', gap: '30px'}}>
+                  <img src={team3} alt="" height="80" width="80" />
+                  <div>
+                    <h5>Regina Wanjiru</h5>
+                    <div>
+                      <p class="rating"> 
+                      <span class="star">&#9733;</span>
+                      <span class="star">&#9733;</span>
+                      <span class="star">&#9733;</span>
+                      <span class="star">&#9733;</span>
+                      <span class="star">&#9734;</span>
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <h5>Regina Wanjiru</h5>
               </div>
-              <div className="testimonials">
-                <img src={team2} alt="" height="80" width="80" />
+              <div className="testimonials">  
                 <p>The courses are good and very straightforward. Community support is great on Telegram and Discord where I share my trade experiences and take advise from others.
                 </p>
-                <div>
-                  <p class="rating"> 
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9734;</span>
-                  </p>
+                <div style={{display: 'flex', gap: '30px'}}>
+                  <img src={team2} alt="" height="80" width="80" />
+                  <div>
+                    <h5>Timothy Waswa</h5>
+                    <div>
+                      <p class="rating"> 
+                      <span class="star">&#9733;</span>
+                      <span class="star">&#9733;</span>
+                      <span class="star">&#9733;</span>
+                      <span class="star">&#9733;</span>
+                      <span class="star">&#9734;</span>
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <h5>Timothy Waswa</h5>
               </div>
             </div>
           </div>
@@ -125,43 +133,43 @@ const About = () => {
             <div id="subscription-plan">
               <div className="subscription-card">
                 <h4>Basic Membership</h4>
-                <h2>$99.99/ month</h2>
-                <p>Live Support</p>
-                <p>Web3, AI, Content Creation Masterclass</p>
-                <p>Weekly Live Session</p>
-                <p>Trading Indicators</p>
+                <h2>$99.99 / month</h2>
+                <p><FaCheck className="check"/> Live Support</p>
+                <p><FaCheck className="check"/> Web3, AI, Content Creation Masterclass</p>
+                <p><FaCheck className="check"/> Weekly Live Session</p>
+                <p><FaCheck className="check"/> Trading Indicators</p>
                 <button>Get Plan</button>
               </div>
               <div className="subscription-card">
                 <h4>Advanced Membership</h4>
-                <h2>$299.99/ month</h2>
-                <p>Live Support</p>
-                <p>Web3, AI, Content Creation Masterclass</p>
-                <p>Daily live session</p>
-                <p>Trading Indicators</p>
-                <p>VIP Stream</p>
+                <h2>$299.99 / month</h2>
+                <p><FaCheck className="check"/> Live Support</p>
+                <p> <FaCheck className="check"/> Web3, AI, Content Creation Masterclass</p>
+                <p><FaCheck className="check"/> Daily Live Session</p>
+                <p><FaCheck className="check"/> Trading Indicators</p>
+                <p><FaCheck className="check"/> VIP Stream</p>
                 <button>Get Plan</button>
               </div>
               <div className="subscription-card">
                 <h4>Premium Membership</h4>
-                <h2>$499.99/ month</h2>
-                <p>Full support</p>
-                <p>Web3, AI, Content Creation Masterclass</p>
-                <p>Daily live session</p>
-                <p>Trading indicators</p>
-                <p>VIP Stream</p>
-                <p>VIP Q&A</p>
+                <h2>$499.99 / month</h2>
+                <p><FaCheck className="check"/> Full Support</p>
+                <p><FaCheck className="check"/> Web3, AI, Content Creation Masterclass</p>
+                <p><FaCheck className="check"/> Daily Live Session</p>
+                <p><FaCheck className="check"/> Trading Indicators</p>
+                <p><FaCheck className="check"/> VIP Stream</p>
+                <p><FaCheck className="check"/> VIP Q&A</p>
                 <button>Get Plan</button>
               </div>
               </div>
               <div class="container" id="about-contact-hero">
-            <img src={join} alt="" height="100" width="130" />
-            <h6>Ready to learn the world's most in-demand Blockchain, Web3 and AI skills?</h6>
-            <div id="about-contact">
-              <button>Join now</button>
-              <button>Contact</button>
-            </div>
-          </div>
+                <img src={join} alt="" height="100" width="130" />
+                  <h6>Ready to learn the world's most in-demand Blockchain, Web3 and AI skills?</h6>
+                <div id="about-contact">
+                  <button>Join now</button>
+                  <button>Contact</button>
+                </div>
+              </div>
           </div>
     </div>
     <Footer />

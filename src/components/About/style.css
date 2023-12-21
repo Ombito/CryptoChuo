@@ -95,13 +95,20 @@
 }
 #testimonials-container {
     display: flex;
-    gap: 30px;
+    gap: 40px;
     margin-left: 15%;
     padding: 3% 0;
 }
 .testimonials {
     width: 40%;
     text-align: center;
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 1% 2%;
+    background-color: #eff4f0;
+}
+.testimonials div {
+    padding-top: 2%;
 }
 .testimonials img {
     border-radius: 50%;
@@ -129,9 +136,33 @@
     padding: 10px 10px;
     width: 100px;
 }
+#subscription-plan {
+    margin: 1% 7% 5% 7%;
+    gap: 5%;
+}
 .subscription-card {
     text-align: left;
+    width: 70%;
+    height: 60vh;
+    padding: 2% 3%;
+    border-radius: 10px;
+    border: 1px solid black;
 }
 .subscription-card:hover {
-    background-color: blue;
+    background-color: #252a43;
+    cursor: pointer;
+    color: white;
+}
+.subscription-card button {
+    width: 100%;
+    margin-bottom: 0;
+}
+.subscription-card button:hover {
+    background-color: #4caf50;
+}
+.subscription-card h4 {
+    text-align: center;
+}
+.check {
+    color: green;
 }
