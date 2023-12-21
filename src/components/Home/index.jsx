@@ -88,10 +88,10 @@ const Home = ({user}) => {
                         <div className="course-card">
                             <img src={Course1} alt="" className="course-img"/>
                             <div class="course-details">
-                                <h4>Course Title</h4>
-                                <p>Duration: 8 weeks</p>                             
+                                <h6>Blockchain Advanced Level: Industry Applications</h6>
+                                <p>Duration: 1 week</p>                             
                                 <div className="amount">
-                                    <h5>$100</h5>
+                                    <h6>$199.99</h6>
                                     <div>
                                         <p class="rating"> 
                                         <span class="star">&#9733;</span>
@@ -107,10 +107,10 @@ const Home = ({user}) => {
                         <div className="course-card">
                             <img src={Course2} alt="" className="course-img"/>
                             <div class="course-details">
-                                <h4>Course Title</h4>
-                                <p>Duration: 8 weeks</p>                             
+                                <h6>Cryptocurrencies Regulation: Accounting Rules For Crypto & Bitcoin</h6>
+                                <p>Duration: 4 hours</p>                             
                                 <div className="amount">
-                                    <h5>$100</h5>
+                                    <h6>$24.99</h6>
                                     <div>
                                         <p class="rating"> 
                                         <span class="star">&#9733;</span>
@@ -126,10 +126,10 @@ const Home = ({user}) => {
                         <div className="course-card">
                             <img src={Course3} alt="" className="course-img"/>
                             <div class="course-details">
-                                <h4>Course Title</h4>
-                                <p>Duration: 8 weeks</p>                             
+                                <h6>DeFi- Decentralized Finance - Future of Finance Masterclass</h6>
+                                <p>Duration: 6 hours</p>                             
                                 <div className="amount">
-                                    <h5>$100</h5>
+                                    <h6>$19.99</h6>
                                     <div>
                                         <p class="rating"> 
                                         <span class="star">&#9733;</span>
@@ -145,10 +145,10 @@ const Home = ({user}) => {
                         <div className="course-card">
                             <img src={Course4} alt="" className="course-img"/>
                             <div class="course-details">
-                                <h4>Course Title</h4>
-                                <p>Duration: 8 weeks</p> 
+                                <h6>Blockchain - Complete Blockchain Course for Beginners</h6>
+                                <p>Duration: 12 hours</p> 
                                 <div className="amount">
-                                    <h5>$100</h5>
+                                    <h6>$49.99</h6>
                                     <div>
                                         <p class="rating"> 
                                         <span class="star">&#9733;</span>
@@ -164,10 +164,10 @@ const Home = ({user}) => {
                         <div className="course-card">
                             <img src={Course5} alt="" className="course-img"/>
                             <div class="course-details">
-                                <h4>Course Title</h4>
-                                <p>Duration: 8 weeks</p>                             
+                                <h6>Create Your Own CryptoCurrency With ERC-20 Tokens on ETH</h6>
+                                <p>Duration: 8 hours</p>                             
                                 <div className="amount">
-                                    <h5>$100</h5>
+                                    <h6>$34.99</h6>
                                     <div>
                                         <p class="rating"> 
                                         <span class="star">&#9733;</span>
@@ -183,10 +183,10 @@ const Home = ({user}) => {
                         <div className="course-card">
                             <img src={Course6} alt="" className="course-img"/>
                             <div class="course-details">
-                                <h4>Course Title</h4>
-                                <p>Duration: 8 weeks</p>                             
+                                <h6>Staying Safe: Cryptocurrencies Security Guide</h6>
+                                <p>Duration: 12 hours</p>                             
                                 <div className="amount">
-                                    <h5>$100</h5>
+                                    <h6>$34.99</h6>
                                     <div>
                                         <p class="rating"> 
                                         <span class="star">&#9733;</span>
@@ -202,10 +202,10 @@ const Home = ({user}) => {
                         <div className="course-card">
                             <img src={Course7} alt="" className="course-img"/>
                             <div class="course-details">
-                                <h4>Course Title</h4>
-                                <p>Duration: 8 weeks</p> 
+                                <h6>Cryptocurrency Investing Guide: 2024-2025</h6>
+                                <p>Duration: 4 hours</p> 
                                 <div className="amount">
-                                    <h5>$100</h5>
+                                    <h6>$24.99</h6>
                                     <div>
                                         <p class="rating"> 
                                         <span class="star">&#9733;</span>
@@ -221,10 +221,10 @@ const Home = ({user}) => {
                         <div className="course-card">
                             <img src={Course8} alt="" className="course-img"/>
                             <div class="course-details">
-                                <h4>Course Title</h4>
-                                <p>Duration: 8 weeks</p> 
+                                <h6>Bitcoin Mining: Lightning Network In Bitcoin Explained</h6>
+                                <p>Duration: 8 hours</p> 
                                 <div className="amount">
-                                    <h5>$100</h5>
+                                    <h6>$32.99</h6>
                                     <div>
                                         <p class="rating"> 
                                         <span class="star">&#9733;</span>
