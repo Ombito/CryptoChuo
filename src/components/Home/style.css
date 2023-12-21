@@ -82,8 +82,7 @@
   color: white;
 }
 .numbers {
-  font-weight: bold;
-  
+  font-weight: bold; 
 }
 .content-img {
     height: 50vh;
@@ -95,7 +94,7 @@
     
 }
  #course-div {
-    margin-top: 25%;
+    margin-top: 23%;
 } 
 .home-card img {
     height: 7vh;
@@ -289,7 +288,7 @@ textarea {
 }
 
 button {
-  background-color: #3498db;
+  background-color: #4caf50;
   color: #fff;
   padding: 10px 20px;
   border: none;
@@ -299,7 +298,7 @@ button {
 }
 
 button:hover {
-  background-color: #2980b9;
+  background-color: #252a43;
 }
 #contact-icons {
   display: flex;
@@ -376,24 +375,20 @@ button:hover {
     margin-top: 53%;
     background-color: #252a43;
     color: white;
-    height: 40vh;
+    height: 32vh;
   }
- #subscribe-div {
-  margin: auto;
-  
- } 
   .subscribe h5 {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 20px;
   }
-  
   .subscribe input[type="text"] {
-    width: 30%;
+    width: 40%;
     padding: 10px;
     margin-bottom: 20px;
     border: none;
     border-radius: 5px;
+    margin-right: 30px;
   }
   
   .subscribe-checkbox {
@@ -411,10 +406,14 @@ button:hover {
     color: #fff;
     border: none;
     border-radius: 5px;
-    padding: 5px 20px;
+    padding: 9px 20px;
     font-size: 16px;
     cursor: pointer;
   }
+  .subscribe-button:hover {
+    background-color: #4caf50;
+  }
+
 
   /* mobile screen device  */
   @media (max-width: 768px) {

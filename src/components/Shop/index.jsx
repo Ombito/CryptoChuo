@@ -25,7 +25,7 @@ const Shop = () => {
           </div>
         </div>
         <div class="container" id="trending-container">
-          <h2>Trending products</h2>
+          <h2>Top Deals</h2>
           <div className="trending-div">
             <div>
               <img src={tshirt} height="200" width="200" alt="" />

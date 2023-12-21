@@ -45,7 +45,7 @@ const Home = ({user}) => {
                             <h2>Trusted platform <br/> for, <span className='crypto'>Web 3.0</span> Education.</h2>
                             <p className='paragraph'>Your one-stop place for learning everything from<br /> mastering the basics of blockchain to conquering the art of crypto trading and insightful on-chain analysis. Join us, and let's pioneer the future of decentralization together!
                             </p>
-                            <Link to="/signup">
+                            <Link to="/login">
                                 <button className="enroll-button" type='submit'>Get Started</button>
                             </Link>
                         </div>
@@ -346,7 +346,7 @@ const Home = ({user}) => {
                                 <label for="message">Your message</label>
                                 <textarea id="message" placeholder="What can we help you with?" required></textarea>
 
-                                <button type="submit">Submit</button>
+                                <button id="contact-btn" type="submit">Submit</button>
                             </form>
                         </div>
                     </div>
@@ -354,12 +354,15 @@ const Home = ({user}) => {
                 <div className='subscribe'>
                     <div class="container" id="subscribe-div">
                         <h5>Subscribe to our newsletter</h5>
-                        <input type="text" placeholder="Enter your email address" id="subscribe-checkbox"/>
+                        <div>
+                            <input type="text" placeholder="Enter your email address" id="subscribe-checkbox"/>
+                            <button className="subscribe-button">Subscribe</button>
+                        </div>
                         <div className='subscribe-checkbox'>
                             <input type="checkbox" />
                             <label>I have read and agreed to the Terms of Service.</label>
                         </div>
-                        <button className="subscribe-button">Subscribe</button>
+                        
                     </div>
                 </div>
                 <Footer />
