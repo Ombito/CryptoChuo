@@ -37,27 +37,31 @@
     text-align: center;
 }
 #partner-container {
-    background-color: #252a43;
-    height: 44vh;
+    height: 100vh;  background-image: url(../Assets/banner9.jpg);  
+    background-size: cover;
+    
 }
 #partners {
     margin-top: 26%;
     display: flex;
-    color: white;
+    color: black;
+    gap: 5%;
 }
 .hero-partners {
     align-items: center;
     text-align: center;
-    padding-top: 8%;
+    padding-top: 5%;
+    width: 600px;
 }
 #logo-div {
     display: grid;
     grid-template-columns: repeat(3, 3fr);
     padding: 2% 0;
-    column-gap: 10px;
+    column-gap: 20px;
+    row-gap: 20px;
 }
 #why-us {
-    margin-top: 4%;
+    margin-top: 20%;
 }
 #why-us h3 {
     text-align: center;
@@ -67,6 +71,8 @@
     text-align: center;
     gap: 40px;
 }
+
+
 .why-us-cards {
     background-color: aliceblue;
     border-radius: 8px;

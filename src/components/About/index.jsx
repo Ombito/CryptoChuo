@@ -14,7 +14,6 @@ import avalanche from "../Assets/avalanche.png";
 import polygon from "../Assets/polygon.png";
 import opensea from "../Assets/opensea.png";
 import ledger from "../Assets/ledger.png";
-import gemini from "../Assets/gemini.png";
 import join from '../Assets/joinnow.png';
 import { FaUserFriends, FaGraduationCap, FaBookOpen, FaBriefcase } from  'react-icons/fa';
 
@@ -50,42 +49,41 @@ const About = () => {
                 <p>From industry giants to emerging startups, our partners represent a spectrum of expertise, contributing to the richness of our platform. Join our league of visionary partners and become an integral part of the global blockchain revolution. Together we'll unlock new horizons and set the stage for the next wave of blockchain innovation.</p>
               </div>
               <div id="logo-div">
-                <img src={binance} alt="" height="150" width="200" />
+                <img src={binance} alt="" height="100" width="100" />
                 <img src={opensea} alt="" height="100" width="150" />
-                <img src={avalanche} alt="" height="90" width="100" />
-                <img src={polygon} alt="" height="90" width="100" />
-                <img src={ledger} alt="" height="70" width="160" />
-                <img src={gemini} alt="" height="70" width="150" />
+                <img src={avalanche} alt="" height="100" width="100" />
+                <img src={polygon} alt="" height="100" width="100" />
+                <img src={ledger} alt="" height="100" width="130" />
+                <img src={bybit} alt="" height="100" width="100" />
               </div>
             </div>
-          </div>
-          <div >
+            <div >
             <div class="container" id="why-us">
               <h3>Why CryptoChuo</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipiscing elit, mollis ultricies aliquet aptent augue blandit, urna diam sociosqu faucibus consequat. Malesuada est suspendisse fusce turpis montes quam eget sollicitudin</p>
               <div className="why-us-div">
                 <div className="why-us-cards">
                   <FaGraduationCap className="why-icons"/>
                   <p>Award winning education</p>
-                  <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+                  <p>Our certificates stand as a testament to the quality of education you receive. When you choose Cryptochuo, you're choosing a platform whose credentials are acknowledged and respected in the industry.</p>
                 </div>
                 <div className="why-us-cards">
                   <FaBookOpen className="why-icons"/>
                   <p>Dynamic innovative learning</p>
-                  <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+                  <p>The platform's commitment to personalized learning provides students with tailored curricula that align with their individual aspirations.</p>
                 </div>
                 <div className="why-us-cards">
                   <FaBriefcase className="why-icons"/>
                   <p>Career growth</p>
-                  <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+                  <p>Cryptochuo equips students with the expertise needed to thrive in the competitive job market with confidence.</p>
                 </div>
                 <div className="why-us-cards">
                   <FaUserFriends className="why-icons"/>
                   <p>Access to CryptoChuos Alumni network</p>
-                  <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+                  <p>As a Cryptochuo student, you become part of an extensive Alumni network, opening doors to a myriad of opportunities. This network serves as a valuable resource for connecting with like-minded professionals, industry leaders, and potential collaborators.</p>
                 </div>
               </div>
             </div>
+          </div>
           </div>
           <div class="container" id="our-success">
             <h3>OUR SUCCESS</h3>
