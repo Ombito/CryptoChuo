@@ -63,35 +63,34 @@ const About = () => {
               <div className="why-us-div">
                 <div className="why-us-cards">
                   <FaGraduationCap className="why-icons"/>
-                  <p>Award winning education</p>
+                  <h5>Award winning education</h5>
                   <p>Our certificates stand as a testament to the quality of education you receive. When you choose Cryptochuo, you're choosing a platform whose credentials are acknowledged and respected in the industry.</p>
                 </div>
                 <div className="why-us-cards">
                   <FaBookOpen className="why-icons"/>
-                  <p>Dynamic innovative learning</p>
-                  <p>The platform's commitment to personalized learning provides students with tailored curricula that align with their individual aspirations.</p>
+                  <h5>Dynamic innovative learning</h5>
+                  <p>Our platform provides students with tailored curricula that align with their individual aspirations. We leverage cutting-edge technologies through simulations, interactive projects, and collaborative exercises to create an immersive learning experience.</p>
                 </div>
                 <div className="why-us-cards">
                   <FaBriefcase className="why-icons"/>
-                  <p>Career growth</p>
-                  <p>Cryptochuo equips students with the expertise needed to thrive in the competitive job market with confidence.</p>
+                  <h5>Career growth</h5>
+                  <p>Cryptochuo equips students with the expertise needed to thrive in the competitive job market with confidence. Our commitment to staying current ensures that students are prepared for the challenges and opportunities of the future.</p>
                 </div>
                 <div className="why-us-cards">
                   <FaUserFriends className="why-icons"/>
-                  <p>Access to CryptoChuos Alumni network</p>
-                  <p>As a Cryptochuo student, you become part of an extensive Alumni network, opening doors to a myriad of opportunities. This network serves as a valuable resource for connecting with like-minded professionals, industry leaders, and potential collaborators.</p>
+                  <h5>Extensive Alumni network</h5>
+                  <p>With our thriving Alumni network opening doors to a myriad of opportunities, this network serves as a valuable resource for connecting with like-minded professionals, industry leaders, and potential collaborators.</p>
                 </div>
               </div>
             </div>
           </div>
           </div>
           <div class="container" id="our-success">
-            <h3>OUR SUCCESS</h3>
             <h2>What Our Students Say About Us</h2>
             <div id="testimonials-container">
               <div className="testimonials">
                 <img src={team3} alt="" height="80" width="80" />
-                <p>CryptoChuo helps see how many days you need to work to reach your financial goal for this month and year
+                <p>CryptoChuo was specifically created to help people like you and me transition to a career in Web3 and just weeks after completing the course I accepted a full-time role at Grot.
                 </p>
                 <div>
                   <p class="rating"> 
@@ -106,7 +105,7 @@ const About = () => {
               </div>
               <div className="testimonials">
                 <img src={team2} alt="" height="80" width="80" />
-                <p>CryptoChuo helps see how many days you need to work to reach your financial goal for this month and year
+                <p>The courses are good and very straightforward. Community support is great on Telegram and Discord where I share my trade experiences and take advise from others.
                 </p>
                 <div>
                   <p class="rating"> 
@@ -117,7 +116,7 @@ const About = () => {
                   <span class="star">&#9734;</span>
                   </p>
                 </div>
-                <h5>Timothy Omondi</h5>
+                <h5>Timothy Waswa</h5>
               </div>
             </div>
           </div>
