@@ -2,11 +2,18 @@ import React, { useState } from 'react';
 import "../Home/style.css";
 import { Link } from 'react-router-dom';
 import bitcoin from '../Assets/banner.jpg';
+import Course1 from '../Assets/Courses/science.jpeg';
+import Course2 from '../Assets/Courses/regulation.png';
+import Course3 from '../Assets/Courses/bitcoindecentralization.png';
+import Course4 from '../Assets/Courses/bitcoin.png';
+import Course5 from '../Assets/Courses/p2p.png';
+import Course6 from '../Assets/Courses/mobile.png';
+import Course7 from '../Assets/Courses/trading.jpeg';
+import Course8 from '../Assets/Courses/bitcoinmining.png';
 import Navbar from '../Navbar/navbar.jsx';
 import Footer from '../Footer/index.jsx';
 import { FaTelegram, FaLinkedin, FaWhatsapp, FaDiscord } from  'react-icons/fa';
-import ContactUs from '../Assets/ContactUs.gif';
-import Course1 from "../Assets/homepage.jpg";
+import ContactUs from '../Assets/contact.png';
 import ScrollTrigger from 'react-scroll-trigger';
 import CountUp from 'react-countup';
 
@@ -82,7 +89,6 @@ const Home = ({user}) => {
                             <img src={Course1} alt="" className="course-img"/>
                             <div class="course-details">
                                 <h4>Course Title</h4>
-                                <p>Course Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>  
                                 <p>Duration: 8 weeks</p>                             
                                 <div className="amount">
                                     <h5>$100</h5>
@@ -99,10 +105,9 @@ const Home = ({user}) => {
                             </div>
                         </div>
                         <div className="course-card">
-                            <img src={Course1} alt="" className="course-img"/>
+                            <img src={Course2} alt="" className="course-img"/>
                             <div class="course-details">
                                 <h4>Course Title</h4>
-                                <p>Course Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>  
                                 <p>Duration: 8 weeks</p>                             
                                 <div className="amount">
                                     <h5>$100</h5>
@@ -119,10 +124,9 @@ const Home = ({user}) => {
                             </div>
                         </div>
                         <div className="course-card">
-                            <img src={Course1} alt="" className="course-img"/>
+                            <img src={Course3} alt="" className="course-img"/>
                             <div class="course-details">
                                 <h4>Course Title</h4>
-                                <p>Course Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>  
                                 <p>Duration: 8 weeks</p>                             
                                 <div className="amount">
                                     <h5>$100</h5>
@@ -139,10 +143,28 @@ const Home = ({user}) => {
                             </div>
                         </div>
                         <div className="course-card">
-                            <img src={Course1} alt="" className="course-img"/>
+                            <img src={Course4} alt="" className="course-img"/>
                             <div class="course-details">
                                 <h4>Course Title</h4>
-                                <p>Course Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>  
+                                <p>Duration: 8 weeks</p> 
+                                <div className="amount">
+                                    <h5>$100</h5>
+                                    <div>
+                                        <p class="rating"> 
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9734;</span>
+                                        </p>
+                                    </div>
+                                </div>      
+                            </div>
+                        </div>
+                        <div className="course-card">
+                            <img src={Course5} alt="" className="course-img"/>
+                            <div class="course-details">
+                                <h4>Course Title</h4>
                                 <p>Duration: 8 weeks</p>                             
                                 <div className="amount">
                                     <h5>$100</h5>
@@ -159,10 +181,9 @@ const Home = ({user}) => {
                             </div>
                         </div>
                         <div className="course-card">
-                            <img src={Course1} alt="" className="course-img"/>
+                            <img src={Course6} alt="" className="course-img"/>
                             <div class="course-details">
                                 <h4>Course Title</h4>
-                                <p>Course Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>  
                                 <p>Duration: 8 weeks</p>                             
                                 <div className="amount">
                                     <h5>$100</h5>
@@ -179,11 +200,29 @@ const Home = ({user}) => {
                             </div>
                         </div>
                         <div className="course-card">
-                            <img src={Course1} alt="" className="course-img"/>
+                            <img src={Course7} alt="" className="course-img"/>
                             <div class="course-details">
                                 <h4>Course Title</h4>
-                                <p>Course Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>  
-                                <p>Duration: 8 weeks</p>                             
+                                <p>Duration: 8 weeks</p> 
+                                <div className="amount">
+                                    <h5>$100</h5>
+                                    <div>
+                                        <p class="rating"> 
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9734;</span>
+                                        </p>
+                                    </div>
+                                </div>      
+                            </div>
+                        </div>
+                        <div className="course-card">
+                            <img src={Course8} alt="" className="course-img"/>
+                            <div class="course-details">
+                                <h4>Course Title</h4>
+                                <p>Duration: 8 weeks</p> 
                                 <div className="amount">
                                     <h5>$100</h5>
                                     <div>
@@ -202,7 +241,7 @@ const Home = ({user}) => {
                 </div>
                 <div class="container" className='topics'>
                     <div class="container">
-                        <h3>Topics</h3>
+                        <h3>Our students also learn</h3>
                         <div className='topics-container'>
                             <div className='topic'>
                                 <h5>Web3</h5>

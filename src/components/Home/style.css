@@ -111,7 +111,7 @@
 }
 #home-card-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
    
 }
 #home-describe {
@@ -145,7 +145,7 @@
   
   .topic {
     max-width: 200px;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
     text-align: center;
     border: 1px solid black;
     color: #3498db;
@@ -179,13 +179,13 @@
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    width: 350px;
-    max-width: 100%;
-    margin: 20px;
+    width: 300px;
+    max-width: 90%;
+    margin: 20px 20px;
     transition: transform 0.3s ease-in-out;
 }
 .course-img {
-  height: 30vh;
+  height: 25vh;
   width: 100%;
   
 }
