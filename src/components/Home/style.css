@@ -1,47 +1,31 @@
 .content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 4%;
-    flex-direction: row;
-    
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4%;
+  flex-direction: row;
+  background-image: url(../Assets/banner10.jpg);  
   background-size: cover;
   height: 100vh;
   background-position: center;
-  animation: imageAnimation 55s linear infinite;
 }
-@keyframes imageAnimation {
-  0% { 
-    background: url(../Assets/banner2.jpg); 
-  }
-  43.33% {
-    background-image: url(../Assets/banner1.jpg); 
-  }
-  66.66% {
-    background-image: url('../Assets/banner2.jpg'); 
-  }
-  100% {
-    background-image: url('../Assets/banner3.png'); 
-  }
-}
-
 #banner-div {
   display: flex;
   justify-content: space-between;
 }
 .homepage {
-  max-width: 600px;
+  max-width: 750px;
   text-align: left;
-  margin-left: 10%;
-  margin-top: -10%;
+  margin-left: 15%;
+  margin-top: -15%;
 }
 .homepage h2 {
     font-size: 2.5rem;
-    color: #ffffff;
+    color: black;
     margin-bottom: 20px;
 }
 .homepage p {
-  color: white;
+  color: black;
 }
 .crypto {
     color: #007bff;
@@ -52,22 +36,27 @@
     margin-bottom: 30px;
 }
 .enroll-button {
-    background-color: #007bff;
+    background-color: #4caf50;
     color: #fff;
-    padding: 15px 25px;
+    padding: 10px 25px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1.2rem;
 }
 .enroll-button:hover {
-    background-color: #0056b3;
+  background-color: #252a43;
+}
+.enroll-button2 {
+  background-color: #4caf50;
+}
+.enroll-button2:hover {
+  background-color: white;
+  color: #252a43;
 }
 .homecrypto {
-    width: 100%;
-    max-width: 600px;
-    height: 70vh;
-    margin-top: -20%;
+    height: 40vh;
+    margin-top: -50%;
 }
 #stats {
     display: flex;

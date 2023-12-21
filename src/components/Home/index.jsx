@@ -14,6 +14,7 @@ import Navbar from '../Navbar/navbar.jsx';
 import Footer from '../Footer/index.jsx';
 import { FaTelegram, FaLinkedin, FaWhatsapp, FaDiscord } from  'react-icons/fa';
 import ContactUs from '../Assets/contact.png';
+import banner from '../Assets/Courses/basics.png';
 import ScrollTrigger from 'react-scroll-trigger';
 import CountUp from 'react-countup';
 
@@ -41,14 +42,15 @@ const Home = ({user}) => {
                 <div class="container" className='content'>
                     <div class="container"id="banner-div">
                         <div className='homepage'>
-                            <h2>Trusted platform <br/> for, <span className='crypto'>Crypto</span> Education.</h2>
-                            <p className='paragraph'>Start learning to buy and sell <br /> cryptocurrency with the best blockchain bootcamp.</p>
+                            <h2>Trusted platform <br/> for, <span className='crypto'>Web 3.0</span> Education.</h2>
+                            <p className='paragraph'>Your one-stop place for learning everything from<br /> mastering the basics of blockchain to conquering the art of crypto trading and insightful on-chain analysis. Join us, and let's pioneer the future of decentralization together!
+                            </p>
                             <Link to="/signup">
                                 <button className="enroll-button" type='submit'>Get Started</button>
                             </Link>
                         </div>
                         {/* <div>
-                            <img className='homecrypto' src={bitcoin} alt="Crypto Banner" />
+                            <img className='homecrypto' src={banner} alt="Crypto Banner" />
                         </div> */}
                     </div>
                 </div>
@@ -287,7 +289,7 @@ const Home = ({user}) => {
                                 <li>Enroll your school in our Student Ambassador program</li>
                             </ul>
                         </div>
-                        <button className='enroll-button'>Become a partner</button>
+                        <button className='enroll-button2'>Become a partner</button>
                     </div>
                 </div>
                 <div className='faq'>
