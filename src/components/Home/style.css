@@ -117,7 +117,7 @@
 #home-describe {
   display: flex;
   justify-content: space-between;
-  gap: 10%;
+  gap: 5%;
 }
 #describe-hero {
   align-items: center;
@@ -127,7 +127,7 @@
 .topics {
     background-color: #fff;
     padding: 50px 20px;
-    margin-top: 65%;
+    margin-top: 45%;
   }
   
   .topics h2 {
@@ -194,13 +194,14 @@
   transform: scale(1.05);
 }
 .rating { 
-  margin-bottom: 10px;
+  margin-bottom: 1px;
 }
 .course-details {
   padding: 3%;
 }
 .course-details p {
-  font-size: 1em;
+  font-size: 0.85em;
+  font-weight: 500;
 }
 .amount {
   display: flex;
@@ -244,7 +245,7 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 #contact-img {
-  height: 14%;
+  height: 40vh;
   width: 100%;
 }
 .contact-info h6 {
@@ -320,9 +321,9 @@ button:hover {
 }
   .join {
     background-color: #4caf50;
-    padding: 50px 20px;
-    margin-top: 8%;
-    height: 60vh;
+    padding: 30px 20px;
+    margin-top: 7%;
+    height: 55vh;
   }
   
   .join h1 {

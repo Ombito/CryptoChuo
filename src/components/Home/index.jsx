@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "../Home/style.css";
 import { Link } from 'react-router-dom';
-import bitcoin from '../Assets/banner.jpg';
+import online from '../Assets/online-meeting.jpeg';
 import Course1 from '../Assets/Courses/science.jpeg';
 import Course2 from '../Assets/Courses/regulation.png';
 import Course3 from '../Assets/Courses/bitcoindecentralization.png';
@@ -74,7 +74,7 @@ const Home = ({user}) => {
                 </div>
                 <div className="home-hero">
                     <div class="container" id="home-describe">
-                        <img className="content-img" src={bitcoin} alt="" />
+                        <img className="content-img" src={online} alt="" />
                         <div id="describe-hero">
                             <h4>Welcome to Web3.0 Learning Center</h4>
                             <p>Through it's online platform, Cryptochuo offers students the opportunity to access web 3.0 skill development, opportunities, mentorship and tailored curriculum to enable them learn and accelerate their activities and become global change makers</p>
@@ -117,7 +117,7 @@ const Home = ({user}) => {
                                         <span class="star">&#9733;</span>
                                         <span class="star">&#9733;</span>
                                         <span class="star">&#9733;</span>
-                                        <span class="star">&#9734;</span>
+                                        <span class="star">&#9733;</span>
                                         </p>
                                     </div>
                                 </div>      
@@ -173,7 +173,7 @@ const Home = ({user}) => {
                                         <span class="star">&#9733;</span>
                                         <span class="star">&#9733;</span>
                                         <span class="star">&#9733;</span>
-                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9734;</span>
                                         <span class="star">&#9734;</span>
                                         </p>
                                     </div>
@@ -211,7 +211,7 @@ const Home = ({user}) => {
                                         <span class="star">&#9733;</span>
                                         <span class="star">&#9733;</span>
                                         <span class="star">&#9733;</span>
-                                        <span class="star">&#9733;</span>
+                                        <span class="star">&#9734;</span>
                                         <span class="star">&#9734;</span>
                                         </p>
                                     </div>

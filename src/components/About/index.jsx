@@ -15,6 +15,7 @@ import polygon from "../Assets/polygon.png";
 import opensea from "../Assets/opensea.png";
 import ledger from "../Assets/ledger.png";
 import gemini from "../Assets/gemini.png";
+import join from '../Assets/joinnow.png';
 import { FaUserFriends, FaGraduationCap, FaBookOpen, FaBriefcase } from  'react-icons/fa';
 
 
@@ -122,6 +123,7 @@ const About = () => {
             </div>
           </div>
           <div class="container" id="about-contact-hero">
+            <img src={join} alt="" height="100" width="130" />
             <h6>Ready to learn the world's most in-demand Blockchain, Web3 and AI skills?</h6>
             <div id="about-contact">
               <button>Join now</button>
