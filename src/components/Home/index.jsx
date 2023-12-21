@@ -55,7 +55,7 @@ const Home = ({user}) => {
                 <div class="container" id="stats">
                     <ScrollTrigger id="stats1" onEnter={()=> setCounterOn(true)} onExit={()=> setCounterOn(false)}>
                         <div>
-                            <h5 className="numbers">{counterOn && <CountUp className="number-color" start={0} end={400} duration={5}/>}+<br></br><br></br>  Students</h5>
+                            <h5 className="numbers">{counterOn && <CountUp className="number-color" start={0} end={2000} duration={5}/>}+<br></br><br></br>  Students</h5>
                         </div>
                         <div>
                             <h5 className="numbers"> {counterOn && <CountUp className="number-color" start={0} end={200} duration={5}/>}+<br></br><br></br> Online Classes</h5>
@@ -77,7 +77,9 @@ const Home = ({user}) => {
                         <img className="content-img" src={online} alt="" />
                         <div id="describe-hero">
                             <h4>Welcome to Web3.0 Learning Center</h4>
-                            <p>Through it's online platform, Cryptochuo offers students the opportunity to access web 3.0 skill development, opportunities, mentorship and tailored curriculum to enable them learn and accelerate their activities and become global change makers</p>
+                            <p>Cryptochuo stands at the forefront of a revolutionary educational realm redefining how students engage with the digital frontier. Our online platform is not merely an educational portal but a dynamic space where learners embark on a journey of web 3.0 skill development, embracing opportunities, mentorship, and a customized curriculum. Cryptochuo goes beyond the traditional confines of education, fostering an environment where students become global change-makers.
+                            <br></br><br></br>Recognizing that each student is unique, the platform designs learning paths that cater to individual strengths, interests, and goals. This personalized approach ensures that students not only acquire knowledge but also develop skills that are relevant and impactful. Don't just adapt to the future, thrive in it. Join us on this exciting adventure towards a brighter and more empowered future.                  
+                            </p>
                             <button className='join-community-btn'>Join our community</button>
                         </div>
                     </div>
@@ -107,7 +109,7 @@ const Home = ({user}) => {
                         <div className="course-card">
                             <img src={Course2} alt="" className="course-img"/>
                             <div class="course-details">
-                                <h6>Cryptocurrencies Regulation: Accounting Rules For Crypto & Bitcoin</h6>
+                                <h6>Cryptocurrency Regulation: Accounting Rules For Crypto & Bitcoin</h6>
                                 <p>Duration: 4 hours</p>                             
                                 <div className="amount">
                                     <h6>$24.99</h6>
