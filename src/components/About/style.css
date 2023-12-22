@@ -149,11 +149,13 @@
     padding: 2% 3%;
     border-radius: 10px;
     border: 1px solid black;
+    transition: transform 0.3s ease-in-out;
 }
 .subscription-card:hover {
     background-color: #252a43;
     cursor: pointer;
     color: white;
+    transform: scale(1.05);
 }
 .subscription-card button {
     width: 100%;

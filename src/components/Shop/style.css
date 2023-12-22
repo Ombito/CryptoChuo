@@ -1,7 +1,7 @@
 #banner{
-    color: black;
+    color: white;
     font-size: 20px;
-    background-color:aqua;
+    background-color:#252a43;
     height: 50vh;
     margin-top: 4%;   
 }
@@ -9,15 +9,39 @@
     padding: 8% 20%;
 }
 .banner-hero input {
-    width: 40%;
+    width: 50%;
     border-radius: 10px;
+    height: 6vh;
 }
 .trending-div {
     display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
 }
 #accessories {
     margin-top: 25%;
     margin-bottom: 25%;
+}
+.shop-card {
+    width: 90%;
+    transition: transform 0.3s ease-in-out;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.shop-card:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+.shop-card img {
+    width: 100%;
+    height: 25vh;
+}
+.shop-card-amount {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 2%;
 }
 #discount-div {
     background-color: orange;
@@ -31,13 +55,10 @@
     margin-top: 2%;
     margin-bottom: 25%;
 }
-/* .bitcointshirt{
-    margin-left: 20%;
-} */
+
 .button{
     height: 45px;
     margin-left: 260%;
-    /* margin-right: 70%; */
     margin-top: 3%;
     width: 200px;
     background-color: #4A9E8A;
@@ -45,73 +66,4 @@
     border-radius: 40px;
     color: #FFFFFF;
     font-size: 17px;
-}
-.buynowbutton{
-    height: 45px;
-    margin-left: 260%;
-    margin-top: 1%;
-    width: 200px;
-    background-color: #4A9E8A;
-    border: none;
-    border-radius: 40px;
-    color: #FFFFFF;
-    font-size: 17px;
-}
-.tshirt{
-    margin-bottom: 3%;
-    margin-left: 260%;
-    /* margin-right: 75%; */
-
-}
-.bitcoin{
-    display: flex;
-}
-.bookbutton{
-    height: 45px;
-    margin-top: 5%;
-    width: 200px;
-    background-color: #4A9E8A;
-    border: none;
-    border-radius: 40px;
-    color: #FFFFFF;
-    font-size: 17px;
-}
-.bookbuynowbutton{
-    height: 45px;
-    /* margin-left: 1%; */
-    margin-top: 1%;
-    width: 200px;
-    background-color: #4A9E8A;
-    border: none;
-    border-radius: 40px;
-    color: #FFFFFF;
-    font-size: 17px;
-}
-.bitcoinbook{
-    margin-left: 3%;
-}
-
-.hoodiebutton{
-    height: 45px;
-    margin-top: 5%;
-    width: 200px;
-    background-color: #4A9E8A;
-    border: none;
-    border-radius: 40px;
-    color: #FFFFFF;
-    font-size: 17px;
-}
-.hoodiebuynowbutton{
-    height: 45px;
-    /* margin-left: 1%; */
-    margin-top: 1%;
-    width: 200px;
-    background-color: #4A9E8A;
-    border: none;
-    border-radius: 40px;
-    color: #FFFFFF;
-    font-size: 17px;
-}
-.bitcoinhoodie{
-    margin-left: 30%;
 }

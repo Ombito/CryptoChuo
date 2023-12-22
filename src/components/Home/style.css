@@ -102,7 +102,6 @@
 #home-card-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-   
 }
 #home-describe {
   display: flex;
@@ -177,7 +176,6 @@
 .course-img {
   height: 25vh;
   width: 100%;
-  
 }
 .course-card:hover {
   cursor: pointer;

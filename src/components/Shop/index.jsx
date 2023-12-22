@@ -11,12 +11,9 @@ import Footer from '../Footer/index.jsx';
 const Shop = () => {
   return (
     <div>
-        
-
     <div className='navbar'>
         <Navbar />
     </div>
-    
     <section id="popular">
         <div id="banner">
           <div className="banner-hero">
@@ -27,94 +24,146 @@ const Shop = () => {
         <div class="container" id="trending-container">
           <h2>Top Deals</h2>
           <div className="trending-div">
-            <div>
+            <div className="shop-card">
               <img src={tshirt} height="200" width="200" alt="" />
-              <p>By rubbark</p>
-              <h2>$25</h2>
-              <div>
-                <p class="rating"> 
-                <span class="star">&#9733;</span>
-                <span class="star">&#9733;</span>
-                <span class="star">&#9733;</span>
-                <span class="star">&#9733;</span>
-                <span class="star">&#9734;</span>
-                </p>
+              <h5>By rubbark</h5>
+              <div className="shop-card-amount">
+                <h5>$25</h5>
+                <div>
+                  <p class="rating"> 
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9734;</span>
+                  </p>
+                </div>
               </div>
+              <button>Add to Cart</button>
             </div>
-            <div>
+            <div className="shop-card">
               <img src={tshirt} height="200" width="200" alt="" />
-              <p>By rubbark</p>
-              <h2>$25</h2>
-              <div>
-                <p class="rating"> 
-                <span class="star">&#9733;</span>
-                <span class="star">&#9733;</span>
-                <span class="star">&#9733;</span>
-                <span class="star">&#9733;</span>
-                <span class="star">&#9734;</span>
-                </p>
+              <h5>By rubbark</h5>
+              <div className="shop-card-amount">
+                <h5>$25</h5>
+                <div>
+                  <p class="rating"> 
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9734;</span>
+                  </p>
+                </div>
               </div>
+              <button>Add to Cart</button>
             </div>
-            <div>
+            <div className="shop-card">
+              <img src={tshirt} height="200" width="200" alt="" />
+              <h5>By rubbark</h5>
+              <div className="shop-card-amount">
+                <h5>$25</h5>
+                <div>
+                  <p class="rating"> 
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9734;</span>
+                  </p>
+                </div>
+              </div>
+              <button>Add to Cart</button>
+            </div>
+            <div className="shop-card">
               <img src={hoodie} height="200" width="200" alt="" />
-              <p>By rubbark</p>
-              <h2>$25</h2>
-              <div>
-                <p class="rating"> 
-                <span class="star">&#9733;</span>
-                <span class="star">&#9733;</span>
-                <span class="star">&#9733;</span>
-                <span class="star">&#9733;</span>
-                <span class="star">&#9734;</span>
-                </p>
+              <h5>By rubbark</h5>
+              <div className="shop-card-amount">
+                <h5>$25</h5>
+                <div>
+                  <p class="rating"> 
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9734;</span>
+                  </p>
+                </div>
               </div>
+              <button>Add to Cart</button>
             </div>
           </div>
         </div>
         <div class="container" id="accessories">
           <h3>Accessories</h3>
           <div className="trending-div">
-            <div>
+            <div className="shop-card">
               <img src={book} height="200" width="200" alt="" />
-              <p>By rubbark</p>
-              <h2>$25</h2>
-              <div>
-                <p class="rating"> 
-                <span class="star">&#9733;</span>
-                <span class="star">&#9733;</span>
-                <span class="star">&#9733;</span>
-                <span class="star">&#9733;</span>
-                <span class="star">&#9734;</span>
-                </p>
+              <h5>By rubbark</h5>
+              <div className="shop-card-amount">
+                <h5>$25</h5>
+                <div>
+                  <p class="rating"> 
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9734;</span>
+                  </p>
+                </div>
               </div>
+              <button>Add to Cart</button>
             </div>
-            <div>
+            <div className="shop-card">
               <img src={tshirt} height="200" width="200" alt="" />
-              <p>By rubbark</p>
-              <h2>$25</h2>
-              <div>
-                <p class="rating"> 
-                <span class="star">&#9733;</span>
-                <span class="star">&#9733;</span>
-                <span class="star">&#9733;</span>
-                <span class="star">&#9733;</span>
-                <span class="star">&#9734;</span>
-                </p>
+              <h5>By rubbark</h5>
+              <div className="shop-card-amount">
+                <h5>$25</h5>
+                <div>
+                  <p class="rating"> 
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9734;</span>
+                  </p>
+                </div>
               </div>
+              <button>Add to Cart</button>
             </div>
-            <div>
-              <img src={hoodie} height="200" width="200" alt="" />
-              <p>By rubbark</p>
-              <h2>$25</h2>
-              <div>
-                <p class="rating"> 
-                <span class="star">&#9733;</span>
-                <span class="star">&#9733;</span>
-                <span class="star">&#9733;</span>
-                <span class="star">&#9733;</span>
-                <span class="star">&#9734;</span>
-                </p>
+            <div className="shop-card">
+              <img src={tshirt} height="200" width="200" alt="" />
+              <h5>By rubbark</h5>
+              <div className="shop-card-amount">
+                <h5>$25</h5>
+                <div>
+                  <p class="rating"> 
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9734;</span>
+                  </p>
+                </div>
               </div>
+              <button>Add to Cart</button>
+            </div>
+            <div className="shop-card">
+              <img src={hoodie} height="200" width="200" alt="" />
+              <h5>By rubbark</h5>
+              <div className="shop-card-amount">
+                <h5>$25</h5>
+                <div>
+                  <p class="rating"> 
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9734;</span>
+                  </p>
+                </div>
+              </div>
+              <button>Add to Cart</button>
             </div>
           </div>
         </div>
@@ -125,47 +174,73 @@ const Shop = () => {
         <div class="container" id="best-sellers">
           <h2>Best sellers</h2>
           <div className="trending-div">
-            <div>
+            <div className="shop-card">
               <img src={hoodie} height="200" width="200" alt="" />
-              <p>By rubbark</p>
-              <h2>$25</h2>
-              <div>
-                <p class="rating"> 
-                <span class="star">&#9733;</span>
-                <span class="star">&#9733;</span>
-                <span class="star">&#9733;</span>
-                <span class="star">&#9733;</span>
-                <span class="star">&#9734;</span>
-                </p>
+              <h5>By rubbark</h5>
+              <div className="shop-card-amount">
+                <h5>$25</h5>
+                <div>
+                  <p class="rating"> 
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9734;</span>
+                  </p>
+                </div>
               </div>
+              <button>Add to Cart</button>
             </div>
-            <div>
-              <img src={hoodie} height="200" width="200" alt="" />
-              <p>By rubbark</p>
-              <h2>$25</h2>
-              <div>
-                <p class="rating"> 
-                <span class="star">&#9733;</span>
-                <span class="star">&#9733;</span>
-                <span class="star">&#9733;</span>
-                <span class="star">&#9733;</span>
-                <span class="star">&#9734;</span>
-                </p>
+            <div className="shop-card">
+              <img src={tshirt} height="200" width="200" alt="" />
+              <h5>By rubbark</h5>
+              <div className="shop-card-amount">
+                <h5>$25</h5>
+                <div>
+                  <p class="rating"> 
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9734;</span>
+                  </p>
+                </div>
               </div>
+              <button>Add to Cart</button>
             </div>
-            <div>
+            <div className="shop-card">
               <img src={hoodie} height="200" width="200" alt="" />
-              <p>By rubbark</p>
-              <h2>$25</h2>
-              <div>
-                <p class="rating"> 
-                <span class="star">&#9733;</span>
-                <span class="star">&#9733;</span>
-                <span class="star">&#9733;</span>
-                <span class="star">&#9733;</span>
-                <span class="star">&#9734;</span>
-                </p>
+              <h5>By rubbark</h5>
+              <div className="shop-card-amount">
+                <h5>$25</h5>
+                <div>
+                  <p class="rating"> 
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9734;</span>
+                  </p>
+                </div>
               </div>
+              <button>Add to Cart</button>
+            </div>
+            <div className="shop-card">
+              <img src={hoodie} height="200" width="200" alt="" />
+              <h5>By rubbark</h5>
+              <div className="shop-card-amount">
+                <h5>$25</h5>
+                <div>
+                  <p class="rating"> 
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9733;</span>
+                  <span class="star">&#9734;</span>
+                  </p>
+                </div>
+              </div>
+              <button>Add to Cart</button>
             </div>
           </div>
           
