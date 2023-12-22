@@ -89,7 +89,7 @@ const About = () => {
             <h2>What Our Students Say About Us</h2>
             <div id="testimonials-container">
               <div className="testimonials">
-                <p>CryptoChuo was specifically created to help people like you and me transition to a career in Web3 and just weeks after completing the course I accepted a full-time role at Grot.
+                <p>"CryptoChuo was specifically created to help people like you and me transition to a career in Web3 and just weeks after completing the course I accepted a full-time role at Grot."
                 </p>
                 <div style={{display: 'flex', gap: '30px'}}>
                   <img src={team3} alt="" height="80" width="80" />
@@ -108,7 +108,7 @@ const About = () => {
                 </div>
               </div>
               <div className="testimonials">  
-                <p>The courses are good and very straightforward. Community support is great on Telegram and Discord where I share my trade experiences and take advise from others.
+                <p>"The courses are good and very straightforward. Community support is great on Telegram and Discord where I share my trade experiences and take advise from others."
                 </p>
                 <div style={{display: 'flex', gap: '30px'}}>
                   <img src={team2} alt="" height="80" width="80" />
@@ -129,7 +129,7 @@ const About = () => {
             </div>
           </div>
           <div>
-            <h2 style={{"text-align": "center"}}>Choose Your Subscription Plan</h2>
+            <h2 id="subscribe" style={{"text-align": "center"}}>Choose Your Subscription Plan</h2>
             <div id="subscription-plan">
               <div className="subscription-card">
                 <h4>Basic Membership</h4>
@@ -164,7 +164,7 @@ const About = () => {
               </div>
               <div class="container" id="about-contact-hero">
                 <img src={join} alt="" height="100" width="130" />
-                  <h6>Ready to learn the world's most in-demand Blockchain, Web3 and AI skills?</h6>
+                <h6>Ready to learn the world's most in-demand Blockchain, Web3 and AI skills?</h6>
                 <div id="about-contact">
                   <button>Join now</button>
                   <button>Contact</button>
