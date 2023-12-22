@@ -1,5 +1,5 @@
 table {
-    margin-top: 10%;
+  margin-top: 10%;
 }
 #coin_img {
     height: 4vh;
@@ -10,24 +10,34 @@ table {
   border-collapse: collapse;
   margin: 7% auto;
 }
-
-.crypto-table th, .crypto-table td {
+.crypto-table th {
   padding: 10px;
   text-align: center;
   border: 1px solid #ddd;
 }
-
+.crypto-table td {
+  padding: 7px 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+.crypto-table tr:hover {
+  background-color: #eff4f0;
+}
 .coin-info {
   display: flex;
   align-items: center;
+  padding: 0 0 0 3%;
 }
-
 .coin-info img {
   width: 30px;
   height: 30px;
   margin-right: 10px;
 }
-
+.coin-name {
+  display: flex;
+  text-align: center;
+  padding-top: 10px;
+}
 .positive-change {
   color: green;
 }

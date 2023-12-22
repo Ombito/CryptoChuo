@@ -41,41 +41,41 @@ const Markets = () => {
     </div>
     <div>
     <table className="crypto-table">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>Coin</th>
-      <th>Price</th>
-      <th>1h</th>
-      <th>24h</th>
-      <th>Total Volume</th>
-      <th>Market Cap</th>
-      <th>Last 7 Days</th>
-    </tr>
-  </thead>
-  <tbody>
-    {markets.map((i) => (
-      <tr key={i.id}>
-        <td>{i.market_cap_rank}</td>
-        <td>
-          <div className="coin-info">
-            <img src={i.image} id="coin_img" alt="Coin Image" />
-            <div>
-              <p>{i.name}</p>
-              <p>{i.symbol.toUpperCase()}</p>
-            </div>
-          </div>
-        </td>
-        <td>${i.current_price.toFixed(2)}</td>
-        <td className={i.price_change_percentage_1h_in_currency < 0 ? 'negative-change' : 'positive-change'}>{i.price_change_percentage_1h_in_currency.toFixed(2)}%
-        </td>
-        <td className={i.price_change_percentage_24h_in_currency < 0 ? 'negative-change' : 'positive-change'}>{i.price_change_percentage_24h_in_currency.toFixed(2)}%
-        </td>
-        <td>${i.total_volume}</td>
-        <td>${i.market_cap}</td>
-        <td></td>
-      </tr>
-    ))}
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Coin</th>
+          <th>Price</th>
+          <th>1h</th>
+          <th>24h</th>
+          <th>Total Volume</th>
+          <th>Market Cap</th>
+          <th>Last 7 Days</th>
+        </tr>
+      </thead>
+      <tbody>
+        {markets.map((i) => (
+          <tr key={i.id}>
+            <td>{i.market_cap_rank}</td>
+            <td>
+              <div className="coin-info">
+                <img src={i.image} id="coin_img" alt="Coin Image" />
+                <div className="coin-name">
+                  <p>{i.name}</p>
+                  <p>{i.symbol.toUpperCase()}</p>
+                </div>
+              </div>
+            </td>
+            <td>${i.current_price.toFixed(2)}</td>
+            <td className={i.price_change_percentage_1h_in_currency < 0 ? 'negative-change' : 'positive-change'}>{i.price_change_percentage_1h_in_currency.toFixed(2)}%
+            </td>
+            <td className={i.price_change_percentage_24h_in_currency < 0 ? 'negative-change' : 'positive-change'}>{i.price_change_percentage_24h_in_currency.toFixed(2)}%
+            </td>
+            <td>${i.total_volume}</td>
+            <td>${i.market_cap}</td>
+            <td></td>
+          </tr>
+        ))}
   </tbody>
 </table>
 

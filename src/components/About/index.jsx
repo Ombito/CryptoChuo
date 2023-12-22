@@ -20,7 +20,7 @@ import { FaUserFriends, FaGraduationCap, FaBookOpen, FaBriefcase, FaCheck } from
 
 const About = () => {
   return (
-    <div>
+    <div id="about">
         <Navbar /> 
         <div className='aboutus'>
           <div className="about-hero">
