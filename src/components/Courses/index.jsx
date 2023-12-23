@@ -6,6 +6,9 @@ import clock from "../Assets/wall-clock.png";
 import Navbar from '../Navbar/navbar.jsx';
 import Footer from '../Footer/index.jsx';
 import Course1 from "../Assets/homepage.jpg";
+import time from '../Assets/time.png';
+import certificate from '../Assets/certificate.png';
+import tick from '../Assets/tick.png';
 
 
 const Courses = () => {
@@ -28,8 +31,10 @@ const Courses = () => {
                     <img src={Course1} alt="course" id="featured-img"/>
                     <div>
                         <h3>Introduction to Bitcoin</h3>
-                        <p>Course Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        <h4>$50</h4>
+                        <p><img src={tick} alt="" height="20" width="25"/> Course Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <p><img src={time} alt="" height="30" width="35"/>4 hours</p>
+                        <p><img src={certificate} alt="" height="30" width="25"/> Earn a certificate upon completion</p>
+                        <h4>$49.99</h4>
                         <button>Enroll Now</button>
                     </div>                  
                 </div>
