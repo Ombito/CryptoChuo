@@ -1,14 +1,26 @@
-table {
-  margin-top: 10%;
+#market {
+  margin: 8% 7% 0 7%;
+  display: flex;
+  justify-content: space-between;
+}
+#market input {
+  width: 300px;
+  border-radius: 7px;
 }
 #coin_img {
     height: 4vh;
     border-radius: 50%;
 }
+.loading {
+  color: red;
+  padding-top: 4%;
+  font-size: 1.5em; 
+  text-align: center;
+}
 .crypto-table {
   width: 90%;
   border-collapse: collapse;
-  margin: 7% auto;
+  margin: 2% auto;
 }
 .crypto-table th {
   padding: 10px;
