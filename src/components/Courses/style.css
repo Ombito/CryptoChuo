@@ -4,10 +4,21 @@
 .featured-course-description {
   display: flex;
   gap: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
 #featured-img {
-  height: 50vh;
-  width: 50%;
+  height: 45vh;
+  width: 45%;
+  border-radius: 7px;
+}
+#featured-div {
+  padding: 1% 0;
+}
+#featured-div button{
+  margin-top: 2%;
 }
 #filter {
   display: flex;
