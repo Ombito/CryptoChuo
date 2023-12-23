@@ -57,6 +57,13 @@
 .negative-change {
   color: red;
 }
+.pagination {
+  margin: 0 45% 3% 45%;
+  gap: 10px;
+}
+.pagination button {
+  padding: 2px 8px;
+}
 
 /* mobile responsiveness   */
 @media (max-width: 768px) {

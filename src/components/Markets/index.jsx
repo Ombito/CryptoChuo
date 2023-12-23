@@ -5,12 +5,15 @@ import { Link } from 'react-router-dom';
 import Navbar from '../Navbar/navbar.jsx';
 import Footer from '../Footer/index.jsx';
 import { Line } from 'react-chartjs-2';
+import { FaSearch } from  'react-icons/fa';
 
 
 const Markets = () => {
   const [loading, setLoading] = useState(true);
   const [markets, setMarkets] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 50;
   
   useEffect(() => {
 
@@ -41,7 +44,18 @@ const Markets = () => {
 
   const handleSearch = (e) => {
     setSearchTerm(e.target.value);
+    setCurrentPage(1);
   };
+
+  const handlePageChange = (newPage) => {
+    setCurrentPage(newPage);
+  };
+
+  const totalPages = Math.ceil(filteredMarkets.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const currentItems = filteredMarkets.slice(startIndex, endIndex);
+
   return (
     <div>
       <div className='navbar'>
@@ -49,7 +63,7 @@ const Markets = () => {
       </div>
       <div id="market">
         <h3>Today's Cryptocurrency Prices by Market Cap</h3>
-        <input type="text" value={searchTerm} onChange={handleSearch}/>
+        <input type="text" value={searchTerm} onChange={handleSearch} placeholder="Search..."/>
       </div>
       <div>
         {loading || markets.length === 0 ? (
@@ -69,7 +83,7 @@ const Markets = () => {
               </tr>
             </thead>
             <tbody>
-              {filteredMarkets.map((i) => (
+              {currentItems.map((i) => (
                 <tr key={i.id}>
                   <td>{i.market_cap_rank}</td>
                   <td>
@@ -98,6 +112,15 @@ const Markets = () => {
             </tbody>
           </table>
         )}
+        <div className="pagination">
+          <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>
+                Previous
+          </button>
+          <span>{currentPage}</span>
+          <button onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === totalPages}>
+                Next
+          </button>
+        </div>
       </div>
       <Footer />
     </div>
