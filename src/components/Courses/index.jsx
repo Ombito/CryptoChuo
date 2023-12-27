@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import "./style.css"
-import { Link } from 'react-router-dom';
 import calendar from "../Assets/calendar.png";
 import clock from "../Assets/wall-clock.png";
 import Navbar from '../Navbar/navbar.jsx';
@@ -10,13 +9,16 @@ import Feature from '../Assets/Courses/bitcoinlogo.png';
 import time from '../Assets/time.png';
 import certificate from '../Assets/certificate.png';
 import tick from '../Assets/tick.png';
+import { useNavigate, Link } from 'react-router-dom';
 
 
 const Courses = () => {
     const [activeTab, setActiveTab] = useState('allCourses');
     const [loading, setLoading] = useState(true);
-    const[refresh, setRefresh]=useState(false);
+    const [refresh, setRefresh]=useState(false);
     const [courses, setCourses] = useState([]);
+    const [selectedCourse, setSelectedCourse] = useState(null);
+    const navigate = useNavigate();
 
     const showTab = (tabName) => {
         setActiveTab(tabName);
@@ -41,6 +43,11 @@ const Courses = () => {
           });
       }, [refresh]);
 
+
+    //   const handleCardClick = (course) => {
+    //     setSelectedCourse(course);
+    //     navigate('/courses/:id');
+    //   };
     
   return (
     <div> 
@@ -163,7 +170,7 @@ const Courses = () => {
                             ) : (
                                 <div id="all-courses">
                                 {courses.map((course) => (
-                                    <div key={course.id} className="course-card">
+                                    <div key={course.id} className="course-card" onClick={() => navigate(`/courses/${course.id}`)}>
                                     <img src={course.image} alt="" className="course-img" />
                                     <div className="course-details">
                                         <h4>{course.title}</h4>

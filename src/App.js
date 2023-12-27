@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import { Route ,Routes} from 'react-router-dom';
 import Courses from './components/Courses';
+import CourseDetails from './components/CourseDetails';
 import Home from './components/Home';
 import LogIn from './components/Login';
 import About from './components/About';
@@ -46,6 +47,7 @@ function App() {
               <Route path="/" element={<Home user={user}/>} />
               <Route element={<Navbar user={user}/>} />
               <Route path="/courses" element={<Courses user={user} />} />
+              <Route path="/courses/:id" element={<CourseDetails user={user} />} />
               <Route path="/login" element={<LogIn setUser={setUser} />} />
               <Route path="/about" element={<About />} />
               <Route path="/signup" element={<Signup />} />
