@@ -414,7 +414,7 @@ button:hover {
 
 
   /* mobile screen device  */
-  @media (max-width: 768px) {
+  @media screen and (min-width: 360px) and (max-width: 765px){
     #home-card-container {
       display: grid;
       grid-template-columns: repeat(1, 1fr);
@@ -422,9 +422,11 @@ button:hover {
     #home-describe {
       display: flex;
       flex-direction: column;
+      width: 100%;
     }
     #stats {
       margin: 10% 0;
+      height: 35vh;
     }
     #stats1 {
       display: flex;
@@ -450,51 +452,191 @@ button:hover {
       }
     
       .number-color {
-        color: #007bff; 
+        color: white; 
       }
 
       #course-div {
-        margin-top: 150%;
+        margin-top: 220%;
     } 
-.topics {
-  margin: 790% 0;
-}
+    #course-div h3{
+      text-align: center;
+    } 
+    .course-card{
+      width: 100%;
+    }
+    .topics {
+      margin: 740% 0;
+    }
+    .topics h3{
+      text-align: center;
+    } 
     .topics-container {
       display: flex;
       flex-wrap: wrap;
     }
     .join {
-      margin-top: -740%;
+      margin-top: -700%;
       height: 70vh;
+    }
+    .contact-container {
+      padding: 0;
     }
     form.contact-form {
       width: 100%;
       margin-top: 5%;
     }
     .subscribe {
-      margin-top: 330%;
+      margin-top: 350%;
     }
     #subscribe-checkbox {
       width: 100%;
     }
   }
-  @media only screen and (min-width: 200px) and (max-width: 370px){
+  @media only screen and (min-width: 320px) and (max-width: 380px){
+  .content {
+    height: 100vh;
+  }
+  .homepage {
+    margin: -54% 2% 0 2%;
+  }
+  #stats {
+    margin: 0 0;
+    height: 65vh;
+  }
+  #course-div {
+    margin-top: 270%;
+  }
+  .topics {
+    margin: 720% 0;
+  }
+  .join {
+    margin-top: -660%;
+    height: 80vh;
+  }
+  .join h1{
+    font-size: 1.3em;
+  }
+  .join p{
+    font-size: 1em;
+  }
+  .faq h3{
+    font-size: 1.3em;
+    text-align: center;
+  }
+  .subscribe {
+    margin-top: 370%;
+    padding-bottom: 75%;
+  }
+  #subscribe-div h5{
+    text-align: left;
+  }
+  }
+
+  @media only screen and (min-width: 200px) and (max-width: 320px){
+    .content {
+      height: 110vh;
+    }
+    .homepage {
+      margin: -75% 2% 0 2%;
+    }
+    #stats {
+      display: none;
+    }
+    #home-describe {
+      display: flex;
+      flex-direction: column;
+    }
+    #course-div {
+      margin-top: 310%;
+    }
     .course-card {
       margin: 0;
-      width: 99%;
+      max-width: 100%;
     }
     .course-details {
       padding: 0%;
     }
-    #course-div {
-      margin-top: 190%;
+    #home-card-container {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 20px;
     }
     .join { 
-      margin-top: -682%;
-      height: 110vh;
+      margin-top: -620%;
+      height: 90vh;
     }
     .subscribe {
-      margin-top: 410%;
+      margin-top: 430%;
       height: 55vh;
+    }
+    .subscribe-hero {
+      display: flex;
+      flex-direction: column;
+    }
+    #subscribe-checkbox {
+      width: 100%;
+    }
+    .subscribe-button {
+      width: 40%;
+    }
+    .topics {
+      padding: 0 10px;
+      margin-top: 745%;
+    }
+    .topics-container {
+      display: grid;
+      justify-content: space-between;
+      grid-template-columns: repeat(2, 1fr);
+      gap: -50px;    
+      column-gap: 5px;
+    }
+    .contact-container {
+      gap: 20px;
+      padding: 0;
+    }
+    form.contact-form {
+      width: 100%;
+    }
+  }
+  @media (max-width: 280px) {
+    #home-container {
+      width: 100%;
+      text-overflow: hidden;
+    }
+    #banner-div {
+      width: 100%;
+    }
+    #home-container {
+      max-width: 100%;
+    }
+    .course-card {
+      width: 100%;
+    }
+    #course-div {
+      margin-top: 390%;
+    }
+    .topics {
+      padding: 0;
+      max-width: 90%;
+      margin-top: 855%;
+      margin-right: 0;
+    }
+    .topic {
+      width: 120px;
+      padding: 6% 5%;
+    }
+    .join { 
+      margin-top: 115%;
+      height: 120vh;
+    }
+    .join h1 {
+      font-size: 1.3em;
+    } 
+    .faq h3 {
+      text-align: center;
+      font-size: 1.3em;
+    }
+    .subscribe {
+      margin-top: 490%;
     }
   }

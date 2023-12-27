@@ -354,7 +354,7 @@ const Home = ({user}) => {
                 <div className='subscribe'>
                     <div class="container" id="subscribe-div">
                         <h5>Subscribe to our newsletter</h5>
-                        <div>
+                        <div className="subscribe-hero">
                             <input type="text" placeholder="Enter your email address" id="subscribe-checkbox"/>
                             <button className="subscribe-button">Subscribe</button>
                         </div>

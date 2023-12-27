@@ -61,8 +61,8 @@
     display: flex;
 }
 #cart-icon {
-    font-size: 2em;
-    margin: 15% 0;
+    font-size: 1.8em;
+    margin: 19% 0;
 }
 
   @media (max-width: 768px) {
