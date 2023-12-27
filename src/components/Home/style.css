@@ -424,9 +424,12 @@ button:hover {
       flex-direction: column;
       width: 100%;
     }
-    #stats {
+    /* #stats {
       margin: 10% 0;
       height: 35vh;
+    } */
+    #stats {
+      display: none;
     }
     #stats1 {
       display: flex;
@@ -499,9 +502,12 @@ button:hover {
   .homepage {
     margin: -54% 2% 0 2%;
   }
-  #stats {
+  /* #stats {
     margin: 0 0;
     height: 65vh;
+  } */
+  #stats {
+    display: none;
   }
   #course-div {
     margin-top: 270%;
