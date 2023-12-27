@@ -431,7 +431,7 @@ button:hover {
     #stats {
       display: none;
     }
-    #stats1 {
+    /* #stats1 {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-around;
@@ -443,8 +443,8 @@ button:hover {
         text-align: center;
         animation: fadeInUp 1s ease-in-out;
       }
-    }
-      .stats-container {
+    } */
+      /* .stats-container {
         display: grid;
         justify-content: space-around;
       }
@@ -456,7 +456,7 @@ button:hover {
     
       .number-color {
         color: white; 
-      }
+      } */
 
       #course-div {
         margin-top: 220%;
@@ -614,6 +614,9 @@ button:hover {
     }
     #home-container {
       max-width: 100%;
+    }
+    #stats {
+      display: none;
     }
     .course-card {
       width: 100%;
