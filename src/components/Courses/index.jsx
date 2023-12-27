@@ -17,7 +17,6 @@ const Courses = () => {
     const [loading, setLoading] = useState(true);
     const [refresh, setRefresh]=useState(false);
     const [courses, setCourses] = useState([]);
-    const [selectedCourse, setSelectedCourse] = useState(null);
     const navigate = useNavigate();
 
     const showTab = (tabName) => {
@@ -43,11 +42,6 @@ const Courses = () => {
           });
       }, [refresh]);
 
-
-    //   const handleCardClick = (course) => {
-    //     setSelectedCourse(course);
-    //     navigate('/courses/:id');
-    //   };
     
   return (
     <div> 
