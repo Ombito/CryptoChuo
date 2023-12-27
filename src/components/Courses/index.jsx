@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "./style.css"
 import { Link } from 'react-router-dom';
 import calendar from "../Assets/calendar.png";
@@ -14,10 +14,32 @@ import tick from '../Assets/tick.png';
 
 const Courses = () => {
     const [activeTab, setActiveTab] = useState('allCourses');
+    const [loading, setLoading] = useState(true);
+    const[refresh, setRefresh]=useState(false);
+    const [courses, setCourses] = useState([]);
 
     const showTab = (tabName) => {
         setActiveTab(tabName);
     };
+
+    useEffect(() => {
+        const apiUrl = `http://127.0.0.1:5555/courses`;
+        fetch(apiUrl)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error(`Network response was not ok: ${response.status}`);
+            }
+            return response.json();
+          })
+          .then((data) => {
+            setCourses(data);
+            setLoading(false);
+          })
+          .catch((error) => {
+            console.error('Error fetching data:', error);
+            setLoading(false);
+          });
+      }, [refresh]);
 
     
   return (
@@ -136,86 +158,35 @@ const Courses = () => {
                             </div>
                         </div>
                         <div id="course-hero">
-                            <div className="course-card">
-                                <img src={Course1} alt="" className="course-img"/>
-                                <div class="course-details">
-                                    <h4>Course Title</h4>
-                                    <p>Course Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>  
-                                    <p>Duration: 8 weeks</p>                             
-                                    <div className="amount">
-                                        <h5>$100</h5>
+                            {loading ? (
+                                <p className="loading">Loading...</p>
+                            ) : (
+                                <div id="all-courses">
+                                {courses.map((course) => (
+                                    <div key={course.id} className="course-card">
+                                    <img src={course.image} alt="" className="course-img" />
+                                    <div className="course-details">
+                                        <h4>{course.title}</h4>
+                                        <p>{course.description}</p>
+                                        <p>Duration: {course.duration} weeks</p>
+                                        <div className="amount">
+                                        <h5>${course.price}</h5>
                                         <div>
-                                            <p class="rating"> 
-                                            <span class="star">&#9733;</span>
-                                            <span class="star">&#9733;</span>
-                                            <span class="star">&#9733;</span>
-                                            <span class="star">&#9733;</span>
-                                            <span class="star">&#9734;</span>
+                                            <p className="rating">
+                                            {Array.from({ length: Math.round(course.rating) }, (_, index) => (
+                                                <span key={index} className="star">&#9733;</span>
+                                            ))}
+                                            {Array.from({ length: 5 - Math.round(course.rating) }, (_, index) => (
+                                                <span key={index} className="star">&#9734;</span>
+                                            ))}
                                             </p>
                                         </div>
-                                    </div>      
-                                </div>
-                            </div>
-                            <div className="course-card">
-                                <img src={Course1} alt="" className="course-img"/>
-                                <div class="course-details">
-                                    <h4>Course Title</h4>
-                                    <p>Course Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>  
-                                    <p>Duration: 8 weeks</p>                             
-                                    <div className="amount">
-                                        <h5>$100</h5>
-                                        <div>
-                                            <p class="rating"> 
-                                            <span class="star">&#9733;</span>
-                                            <span class="star">&#9733;</span>
-                                            <span class="star">&#9733;</span>
-                                            <span class="star">&#9733;</span>
-                                            <span class="star">&#9734;</span>
-                                            </p>
                                         </div>
-                                    </div>      
-                                </div>
+                                    </div>
+                                    </div>
+                                ))}
                             </div>
-                            <div className="course-card">
-                                <img src={Course1} alt="" className="course-img"/>
-                                <div class="course-details">
-                                    <h4>Course Title</h4>
-                                    <p>Course Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>  
-                                    <p>Duration: 8 weeks</p>                             
-                                    <div className="amount">
-                                        <h5>$100</h5>
-                                        <div>
-                                            <p class="rating"> 
-                                            <span class="star">&#9733;</span>
-                                            <span class="star">&#9733;</span>
-                                            <span class="star">&#9733;</span>
-                                            <span class="star">&#9733;</span>
-                                            <span class="star">&#9734;</span>
-                                            </p>
-                                        </div>
-                                    </div>      
-                                </div>
-                            </div>
-                            <div className="course-card">
-                                <img src={Course1} alt="" className="course-img"/>
-                                <div class="course-details">
-                                    <h4>Course Title</h4>
-                                    <p>Course Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>  
-                                    <p>Duration: 8 weeks</p>                             
-                                    <div className="amount">
-                                        <h5>$100</h5>
-                                        <div>
-                                            <p class="rating"> 
-                                            <span class="star">&#9733;</span>
-                                            <span class="star">&#9733;</span>
-                                            <span class="star">&#9733;</span>
-                                            <span class="star">&#9733;</span>
-                                            <span class="star">&#9734;</span>
-                                            </p>
-                                        </div>
-                                    </div>      
-                                </div>
-                            </div>
+                        )}
                         </div>
                     </div>
                 </div>

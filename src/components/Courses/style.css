@@ -82,10 +82,12 @@
 .allCourses-div {
   display: flex;
 }
-#course-hero {
+#all-courses {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+
 }
+
 #filter-container {
   margin: 0 3% 0 0;
 }
