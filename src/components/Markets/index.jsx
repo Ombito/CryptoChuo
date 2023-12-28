@@ -62,7 +62,11 @@ const Markets = () => {
         <Navbar />
       </div>
       <div id="market">
-        <h3>Today's Cryptocurrency Prices by Market Cap</h3>
+        <div>
+          <h3>Today's Cryptocurrency Prices by Market Cap</h3>
+          <p>This page displays the latest prices, 24-hour trading volume, price changes, and market capitalizations for all cryptocurrencies on CoinmarketCap.          
+          </p>
+        </div>
         <input type="text" value={searchTerm} onChange={handleSearch} placeholder="Search..."/>
       </div>
       <div>

@@ -1,10 +1,11 @@
 #market {
-  margin: 8% 7% 0 7%;
+  margin: 8% 5% 0 5%;
   display: flex;
   justify-content: space-between;
 }
 #market input {
-  width: 300px;
+  height: 6vh;
+  width: 350px;
   border-radius: 7px;
 }
 #coin_img {
@@ -20,7 +21,7 @@
 .crypto-table {
   width: 90%;
   border-collapse: collapse;
-  margin: 2% auto;
+  margin: 0 auto;
 }
 .crypto-table th {
   padding: 10px;

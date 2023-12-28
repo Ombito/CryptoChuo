@@ -1,6 +1,5 @@
 #coursedetails {
-    margin-top: 2%;
-    margin-bottom: 855px;
+    margin-top: 8%;
     display: flex;
     justify-content: space-evenly;
 }
@@ -36,6 +35,10 @@
 .courseDetailsCard button {
     width: 100%;
 }
+p span {
+    color: black;
+    font-weight: bold;
+}
 .checkicon {
     color: #4caf50;
     font-size: 1.2em;
@@ -51,8 +54,11 @@
     margin-bottom: 50%;
     margin-left: 6%;
 }
+#upcoming-live {
+    margin: 530px 11% 2% 11%;
+}
 #feedback-hero {
-    padding-top: 25px;
+    margin: 0px 11% 3% 11%;
 }
 #feedback-btns {
     display: flex;
@@ -67,4 +73,31 @@
 }
 .like-button.active:hover {
     color:#4caf50;
+}
+
+/* mobile responsiveness   */
+@media (max-width: 768px) {
+    #coursedetails {
+        display: flex;
+        flex-direction: column;
+        margin-top: 175%;
+        gap: 20px;
+    }
+    #course-description img {
+        height: 27vh;
+        max-width: 100%;
+    }
+    #course-description button {
+        width: 40%;
+    }
+    .courseDetailsCard {
+        margin-bottom: 15px;
+        width: 100%;
+    }
+    #upcoming-live {
+        margin: 560px 4% 0 4%;
+    }
+    #feedback-hero {
+        margin: 0px 4% 4% 4%;
+    }
 }
