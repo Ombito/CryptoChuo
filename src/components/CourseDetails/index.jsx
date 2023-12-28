@@ -5,6 +5,8 @@ import Footer from '../Footer/index.jsx';
 import "./style.css"
 import { FaThumbsDown, FaThumbsUp, FaCheck } from 'react-icons/fa';
 import Course1 from "../Assets/homepage.jpg";
+import clock from "../Assets/wall-clock.png";
+import calendar from "../Assets/calendar.png";
 
 
 const CourseDetails = () => {
@@ -58,20 +60,29 @@ const CourseDetails = () => {
       <Navbar />
       <div id="coursedetails" class="container">
         <div id="course-description">
-          <button>Back</button>
+          {/* <button className="back-btn">Back</button> */}
           <img src={Course1} alt="Course" height="350" width="700"/>
           <h2>{course.title}</h2>
           <p>{course.description}</p>
           <h3>Upcoming LIVE Instruction Dates</h3>
           <p>There are no upcoming events.</p>
-          <button>Enroll Now</button>
+          <button id="enroll-btn">Enroll Now</button>
+          <div>
+            <h2>Feedback</h2>
+            <p>Was this page useful?</p>
+            <div>
+              <button onClick={handleLike} className={`like-button ${likeButtonClass}`}><FaThumbsUp /> Yes </button>
+              <button onClick={handleDislike} className={`like-button ${dislikeButtonClass}`}><FaThumbsDown /> No</button>
+            </div>
+           </div>
         </div>
         <div className="courseDetails-div">
           <div className="courseDetailsCard">
             <h5>Program Info</h5>
+            <p><img src={calendar} height="26" width="26" /> Dates: Rolling Enrollment </p>
             <p>Level: {course.level}</p>
             <p>Category: {course.category}</p>
-            <p>Duration: {course.duration}</p>
+            <p><img src={clock} height="30" width="30" /> Duration: {course.duration}</p>
             <p>Tuition: ${course.price}</p>
             <p>Tuition Assistance</p>
             <button>Enroll Now</button>
@@ -86,12 +97,6 @@ const CourseDetails = () => {
             <p>The content addressed in this course contributes to <span>100% of the Focus areas </span>outlined in the Exam Competencies by the Web3 Certification Association (W3CB).</p>
           </div>
         </div>
-      </div>
-      <div>
-        <h2>Feedback</h2>
-        <p>Was this page useful?</p>
-        <button onClick={handleLike} className={`like-button ${likeButtonClass}`}><FaThumbsUp /> Yes </button>
-        <button onClick={handleDislike} className={`like-button ${dislikeButtonClass}`}><FaThumbsDown /> No</button>
       </div>
       <Footer />
     </div>
