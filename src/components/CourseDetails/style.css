@@ -1,6 +1,12 @@
 #coursedetails {
     margin-top: 8%;
     margin-bottom: 34%;
+    display: flex;
+    gap: 20px;
+}
+#course-description {
+    display: flex;
+    flex-direction: column;
 }
 #loading {
     margin-top: 8%;
@@ -12,3 +18,11 @@
     margin-bottom: 50%;
     margin-left: 6%;
 }
+.like-button {
+    
+  }
+  
+  .like-button.active {
+    background-color: #252a43;
+    color:#ffffff;
+  }

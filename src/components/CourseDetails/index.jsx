@@ -3,12 +3,15 @@ import { useNavigate, useParams } from 'react-router-dom';
 import Navbar from '../Navbar/navbar.jsx';
 import Footer from '../Footer/index.jsx';
 import "./style.css"
+import { FaThumbsDown, FaThumbsUp, FaCheck } from 'react-icons/fa';
 
 
 const CourseDetails = () => {
   const { id } = useParams();
   const [course, setCourse] = useState(null);
   const navigate = useNavigate();
+  const [likeActive, setLikeActive] = useState(false);
+  const [dislikeActive, setDislikeActive] = useState(false);
 
   useEffect(() => {
     const apiUrl = `http://127.0.0.1:5555/courses/${id}`;
@@ -35,22 +38,59 @@ const CourseDetails = () => {
     </div>;
   }
 
+  const handleLike = () => {
+    setLikeActive(true);
+    setDislikeActive(false);
+  };
+
+  const handleDislike = () => {
+    setLikeActive(false);
+    setDislikeActive(true);
+  };
+
+  const likeButtonClass = likeActive ? 'active' : '';
+  const dislikeButtonClass = dislikeActive ? 'active' : '';
+
+
   return (
     <div>
       <Navbar />
       <div id="coursedetails" class="container">
-        <button>Back</button>
-        <img src={course.image} alt="Course" />
-        <h2>{course.title}</h2>
-        <p>{course.description}</p>
-        <p>Level: {course.level}</p>
-        <p>Category: {course.category}</p>
-        <p>Duration: {course.duration}</p>
-        <p>Price: ${course.price}</p>
+        <div id="course-description">
+          <button>Back</button>
+          <img src={course.image} alt="Course" />
+          <h2>{course.title}</h2>
+          <p>{course.description}</p>
+          <h3>Upcoming LIVE Instruction Dates</h3>
+          <p>There are no upcoming events.</p>
+          <button>Enroll Now</button>
+        </div>
+        <div>
+          <div className="courseDetailsCard">
+            <h5>Program Info</h5>
+            <p>Level: {course.level}</p>
+            <p>Category: {course.category}</p>
+            <p>Duration: {course.duration}</p>
+            <p>Tuition: ${course.price}</p>
+            <p>Tuition Assistance</p>
+            <button>Enroll Now</button>
+          </div>
+          <div className="courseDetailsCard">
+            <h5><FaCheck /> Additional Information</h5>
+            <p><FaCheck /> Module Quizzes and Knowledge Checks</p>
+            <p><FaCheck /> LIVE Online Instructor</p>
+            <p><FaCheck /> Student Orientation</p>
+            <p><FaCheck /> LIVE Workshops</p>
+            <h6><FaCheck /> 2 Exam Voucher</h6>
+            <p><FaCheck /> The content addressed in this course contributes to <span>100% of the Focus areas </span>outlined in the Exam Competencies by the Web3 Certification Association (W3CB).</p>
+          </div>
+        </div>
       </div>
       <div>
         <h2>Feedback</h2>
         <p>Was this page useful?</p>
+        <button onClick={handleLike} className={`like-button ${likeButtonClass}`}><FaThumbsUp /> Yes </button>
+        <button onClick={handleDislike} className={`like-button ${dislikeButtonClass}`}><FaThumbsDown /> No</button>
       </div>
       <Footer />
     </div>
