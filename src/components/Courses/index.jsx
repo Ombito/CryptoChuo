@@ -9,7 +9,8 @@ import Feature from '../Assets/Courses/bitcoinlogo.png';
 import time from '../Assets/time.png';
 import certificate from '../Assets/certificate.png';
 import tick from '../Assets/tick.png';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { FaCheck } from 'react-icons/fa';
 
 
 const Courses = () => {
@@ -205,34 +206,40 @@ const Courses = () => {
 
            
           </div>
-          <h2 style={{"text-align": "center"}}>Choose your subscription plan</h2>
-          <div id="subscription-plan">
-                <div className="subscription-c">
-                    <h4>Basic Membership</h4>
-                    <p>$99.99/ month</p>
-                    <p>Email support</p>
-                    <button>Get Plan</button>
-                </div>
-                <div>
-                    <h4>Advanced Membership</h4>
-                    <p>$299.99/ month</p>
-                    <p>Email support</p>
-                    <p>Download videos</p>
-                    <p>Export projects</p>
-                    <p>Weekly live session</p>
-                    <button>Get Plan</button>
-                </div>
-                <div>
-                    <h4>Premium Membership</h4>
-                    <p>$499.99/ month</p>
-                    <p>Full support</p>
-                    <p>Download videos</p>
-                    <p>Export projects</p>
-                    <p>Premium</p>
-                    <p>Trading indicators</p>
-                    <p>VIP Stream</p>
-                    <button>Get Plan</button>
-                </div>
+          <div id="subscription-div">
+            <h2 id="subscribe" style={{"text-align": "center"}}>Choose Your Subscription Plan</h2>
+            <div id="subscription-plan">
+              <div className="subscription-card">
+                <h4>Basic Membership</h4>
+                <h2>$99.99 / month</h2>
+                <p><FaCheck className="check"/> Live Support</p>
+                <p><FaCheck className="check"/> Web3, AI, Content Creation Masterclass</p>
+                <p><FaCheck className="check"/> Weekly Live Session</p>
+                <p><FaCheck className="check"/> Trading Indicators</p>
+                <button>Get Plan</button>
+              </div>
+              <div className="subscription-card">
+                <h4>Advanced Membership</h4>
+                <h2>$299.99 / month</h2>
+                <p><FaCheck className="check"/> Live Support</p>
+                <p> <FaCheck className="check"/> Web3, AI, Content Creation Masterclass</p>
+                <p><FaCheck className="check"/> Daily Live Session</p>
+                <p><FaCheck className="check"/> Trading Indicators</p>
+                <p><FaCheck className="check"/> VIP Stream</p>
+                <button>Get Plan</button>
+              </div>
+              <div className="subscription-card">
+                <h4>Premium Membership</h4>
+                <h2>$499.99 / month</h2>
+                <p><FaCheck className="check"/> Full Support</p>
+                <p><FaCheck className="check"/> Web3, AI, Content Creation Masterclass</p>
+                <p><FaCheck className="check"/> Daily Live Session</p>
+                <p><FaCheck className="check"/> Trading Indicators</p>
+                <p><FaCheck className="check"/> VIP Stream</p>
+                <p><FaCheck className="check"/> VIP Q&A</p>
+                <button>Get Plan</button>
+              </div>
+            </div>
             </div>
             <div class="container" id="learnwithus">
                 <h5 style={{"text-align": "center"}}>Learn. Trade. Invest. Play</h5>
