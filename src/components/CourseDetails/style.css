@@ -8,6 +8,23 @@
     display: flex;
     flex-direction: column;
 }
+#course-description img {
+    border-radius: 7px;
+}
+.courseDetails-div {
+    padding-bottom: 20px;
+    justify-content: space-between;
+}
+.courseDetailsCard {
+    width: 330px;
+    padding: 3% 5%;
+    border-radius: 8px;
+    border: 2px solid black;
+}
+.checkicon {
+    color: #4caf50;
+    font-size: 1.1em;
+}
 #loading {
     margin-top: 8%;
     margin-bottom: 54%;

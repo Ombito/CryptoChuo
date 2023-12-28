@@ -4,6 +4,7 @@ import Navbar from '../Navbar/navbar.jsx';
 import Footer from '../Footer/index.jsx';
 import "./style.css"
 import { FaThumbsDown, FaThumbsUp, FaCheck } from 'react-icons/fa';
+import Course1 from "../Assets/homepage.jpg";
 
 
 const CourseDetails = () => {
@@ -58,14 +59,14 @@ const CourseDetails = () => {
       <div id="coursedetails" class="container">
         <div id="course-description">
           <button>Back</button>
-          <img src={course.image} alt="Course" />
+          <img src={Course1} alt="Course" height="350" width="700"/>
           <h2>{course.title}</h2>
           <p>{course.description}</p>
           <h3>Upcoming LIVE Instruction Dates</h3>
           <p>There are no upcoming events.</p>
           <button>Enroll Now</button>
         </div>
-        <div>
+        <div className="courseDetails-div">
           <div className="courseDetailsCard">
             <h5>Program Info</h5>
             <p>Level: {course.level}</p>
@@ -76,13 +77,13 @@ const CourseDetails = () => {
             <button>Enroll Now</button>
           </div>
           <div className="courseDetailsCard">
-            <h5><FaCheck /> Additional Information</h5>
-            <p><FaCheck /> Module Quizzes and Knowledge Checks</p>
-            <p><FaCheck /> LIVE Online Instructor</p>
-            <p><FaCheck /> Student Orientation</p>
-            <p><FaCheck /> LIVE Workshops</p>
-            <h6><FaCheck /> 2 Exam Voucher</h6>
-            <p><FaCheck /> The content addressed in this course contributes to <span>100% of the Focus areas </span>outlined in the Exam Competencies by the Web3 Certification Association (W3CB).</p>
+            <h5>Additional Information</h5>
+            <p><FaCheck className="checkicon"/> Module Quizzes and Knowledge Checks</p>
+            <p><FaCheck className="checkicon"/> LIVE Online Instructor</p>
+            <p><FaCheck className="checkicon"/> Student Orientation</p>
+            <p><FaCheck className="checkicon"/> LIVE Workshops</p>
+            <h6><FaCheck className="checkicon"/> 2 Exam Voucher</h6>
+            <p>The content addressed in this course contributes to <span>100% of the Focus areas </span>outlined in the Exam Competencies by the Web3 Certification Association (W3CB).</p>
           </div>
         </div>
       </div>
