@@ -66,8 +66,8 @@
 
 .tab-content.active {
   display: block;
+  margin: 0 3%;
 }
-
 .course {
   display: flex;
   flex-direction: column;
@@ -85,7 +85,6 @@
 #all-courses {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-
 }
 
 #filter-container {

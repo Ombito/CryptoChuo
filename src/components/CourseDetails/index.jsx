@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import Navbar from '../Navbar/navbar.jsx';
 import Footer from '../Footer/index.jsx';
+import "./style.css"
+
 
 const CourseDetails = () => {
   const { id } = useParams();
@@ -26,17 +28,29 @@ const CourseDetails = () => {
   }, [id]);
 
   if (!course) {
-    return <p>Loading course details...</p>;
+    return <div id="loading">
+      <Navbar />
+      <p>Loading course details...</p>
+      <Footer />
+    </div>;
   }
 
   return (
     <div>
       <Navbar />
-      <div>
+      <div id="coursedetails" class="container">
+        <button>Back</button>
+        <img src={course.image} alt="Course" />
         <h2>{course.title}</h2>
         <p>{course.description}</p>
+        <p>Level: {course.level}</p>
+        <p>Category: {course.category}</p>
         <p>Duration: {course.duration}</p>
         <p>Price: ${course.price}</p>
+      </div>
+      <div>
+        <h2>Feedback</h2>
+        <p>Was this page useful?</p>
       </div>
       <Footer />
     </div>

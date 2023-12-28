@@ -1,0 +1,14 @@
+#coursedetails {
+    margin-top: 8%;
+    margin-bottom: 34%;
+}
+#loading {
+    margin-top: 8%;
+    margin-bottom: 54%;
+    color: red;
+    font-weight: bold;
+}
+#loading p{
+    margin-bottom: 50%;
+    margin-left: 6%;
+}

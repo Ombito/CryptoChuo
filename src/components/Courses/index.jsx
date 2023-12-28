@@ -160,30 +160,30 @@ const Courses = () => {
                         </div>
                         <div id="course-hero">
                             {loading ? (
-                                <p className="loading">Loading...</p>
+                                <p className="loading">Loading courses...</p>
                             ) : (
                                 <div id="all-courses">
                                 {courses.map((course) => (
                                     <div key={course.id} className="course-card" onClick={() => navigate(`/courses/${course.id}`)}>
-                                    <img src={course.image} alt="" className="course-img" />
-                                    <div className="course-details">
-                                        <h4>{course.title}</h4>
-                                        <p>{course.description}</p>
-                                        <p>Duration: {course.duration} weeks</p>
-                                        <div className="amount">
-                                        <h5>${course.price}</h5>
-                                        <div>
-                                            <p className="rating">
-                                            {Array.from({ length: Math.round(course.rating) }, (_, index) => (
-                                                <span key={index} className="star">&#9733;</span>
-                                            ))}
-                                            {Array.from({ length: 5 - Math.round(course.rating) }, (_, index) => (
-                                                <span key={index} className="star">&#9734;</span>
-                                            ))}
-                                            </p>
+                                        <img src={course.image} alt="Course" className="course-img" />
+                                        <div className="course-details">
+                                            <h4>{course.title}</h4>
+                                            <p>{course.description}</p>
+                                            <p>Duration: {course.duration} weeks</p>
+                                            <div className="amount">
+                                            <h5>${course.price}</h5>
+                                            <div>
+                                                <p className="rating">
+                                                {Array.from({ length: Math.round(course.rating) }, (_, index) => (
+                                                    <span key={index} className="star">&#9733;</span>
+                                                ))}
+                                                {Array.from({ length: 5 - Math.round(course.rating) }, (_, index) => (
+                                                    <span key={index} className="star">&#9734;</span>
+                                                ))}
+                                                </p>
+                                            </div>
+                                            </div>
                                         </div>
-                                        </div>
-                                    </div>
                                     </div>
                                 ))}
                             </div>
@@ -194,12 +194,12 @@ const Courses = () => {
 
                 <div className={`tab-content ${activeTab === 'inProgress' ? 'active' : ''}`} id='inProgressContent'>
                     <h2>In Progress</h2>
-                    <p>This is the content for courses in progress.</p>
+                    <p>Looks like you haven't registered for a course yet! Browse our selection of courses and enroll in one to get started.</p>
                 </div>
 
                 <div className={`tab-content ${activeTab === 'completed' ? 'active' : ''}`} id='completedContent'>
                     <h2>Completed</h2>
-                    <p>This is the content for completed courses.</p>
+                    <p>You haven't completed any courses yet enroll in a course and start learning today! </p>
                 </div>
             </div>
 
