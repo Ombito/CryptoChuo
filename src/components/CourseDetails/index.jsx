@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import Navbar from '../Navbar/navbar.jsx';
 import Footer from '../Footer/index.jsx';
 import "./style.css"
-import { FaThumbsDown, FaThumbsUp, FaCheck } from 'react-icons/fa';
+import { FaThumbsDown, FaThumbsUp, FaCheck, FaCalendar, FaBolt, FaClock, FaCreditCard, FaList, FaHandHoldingHeart, FaBackward } from 'react-icons/fa';
 import Course1 from "../Assets/homepage.jpg";
 import clock from "../Assets/wall-clock.png";
 import calendar from "../Assets/calendar.png";
@@ -41,6 +41,10 @@ const CourseDetails = () => {
     </div>;
   }
 
+  const goBack = () => {
+    navigate(-1);
+  };  
+
   const handleLike = () => {
     setLikeActive(true);
     setDislikeActive(false);
@@ -58,33 +62,34 @@ const CourseDetails = () => {
   return (
     <div>
       <Navbar />
+      <button onClick={goBack} className="back-btn"><FaBackward /> Back To Courses</button>
       <div id="coursedetails" class="container">
         <div id="course-description">
-          {/* <button className="back-btn">Back</button> */}
-          <img src={Course1} alt="Course" height="350" width="700"/>
+          
+          <img src={Course1} alt="Course" height="380" width="800"/>
           <h2>{course.title}</h2>
           <p>{course.description}</p>
+          <button id="enroll-btn">Enroll Now</button>
           <h3>Upcoming LIVE Instruction Dates</h3>
           <p>There are no upcoming events.</p>
-          <button id="enroll-btn">Enroll Now</button>
-          <div>
+          <div id="feedback-hero">
             <h2>Feedback</h2>
             <p>Was this page useful?</p>
-            <div>
+            <div id="feedback-btns">
               <button onClick={handleLike} className={`like-button ${likeButtonClass}`}><FaThumbsUp /> Yes </button>
               <button onClick={handleDislike} className={`like-button ${dislikeButtonClass}`}><FaThumbsDown /> No</button>
             </div>
-           </div>
+          </div>
         </div>
         <div className="courseDetails-div">
           <div className="courseDetailsCard">
             <h5>Program Info</h5>
-            <p><img src={calendar} height="26" width="26" /> Dates: Rolling Enrollment </p>
-            <p>Level: {course.level}</p>
-            <p>Category: {course.category}</p>
-            <p><img src={clock} height="30" width="30" /> Duration: {course.duration}</p>
-            <p>Tuition: ${course.price}</p>
-            <p>Tuition Assistance</p>
+            <p><FaCalendar className="checkicon"/> Rolling Enrollment </p>
+            <p><FaBolt className="checkicon"/> Level: {course.level}</p>
+            <p><FaList className="checkicon"/> Category: {course.category}</p>
+            <p><FaClock className="checkicon"/> Duration: {course.duration}</p>
+            <p><FaCreditCard className="checkicon"/> Tuition: ${course.price}</p>
+            <p><FaHandHoldingHeart  className="checkicon"/> Tuition Assistance</p>
             <button>Enroll Now</button>
           </div>
           <div className="courseDetailsCard">
