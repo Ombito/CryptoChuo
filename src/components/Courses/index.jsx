@@ -29,25 +29,22 @@ const Courses = () => {
     };
 
     useEffect(() => {
-        if (refresh) {
-            const apiUrl = `http://127.0.0.1:5555/courses`;
-            fetch(apiUrl)
-            .then((response) => {
-                if (!response.ok) {
-                throw new Error(`Network response was not ok: ${response.status}`);
-                }
-                return response.json();
-            })
-            .then((data) => {
-                setCourses(data);
-                setLoading(false);
-            })
-            .catch((error) => {
-                console.error('Error fetching data:', error);
-                setLoading(false);
-            });
-            setRefresh(false); 
-        }
+        const apiUrl = `http://127.0.0.1:5555/courses`;
+        fetch(apiUrl)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error(`Network response was not ok: ${response.status}`);
+            }
+            return response.json();
+          })
+          .then((data) => {
+            setCourses(data);
+            setLoading(false);
+          })
+          .catch((error) => {
+            console.error('Error fetching data:', error);
+            setLoading(false);
+          });
       }, [refresh]);
 
       const handleCategoryFilter = (category) => {
@@ -90,7 +87,7 @@ const Courses = () => {
                 return false;
             }
         }
-    
+
         // Filter by level
         if (Object.keys(levelFilters).length > 0 && !levelFilters[course.level]) {
             return false;
@@ -102,12 +99,10 @@ const Courses = () => {
             if (!Object.keys(durationFilters).some(duration => courseDuration.includes(duration))) {
                 return false;
             }
-        }
-    
+        } 
         return true;
     };
     
-
 
   return (
     <div> 
