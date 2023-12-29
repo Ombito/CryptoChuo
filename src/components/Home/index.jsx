@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "../Home/style.css";
 import { Link } from 'react-router-dom';
 import online from '../Assets/online-meeting.jpeg';
@@ -18,7 +18,32 @@ import banner from '../Assets/Courses/basics.png';
 import ScrollTrigger from 'react-scroll-trigger';
 import CountUp from 'react-countup';
 
+
+
 const Home = ({user}) => {
+    const [loading, setLoading] = useState(true);
+    const [courses, setCourses] = useState([]);
+
+  useEffect(() => {
+    const apiUrl = `http://127.0.0.1:5555/courses?is_trending=True`;
+    fetch(apiUrl)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Network response was not ok: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setCourses(data);
+        setLoading(false);
+        console.log(data);
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+        setLoading(false);
+      });
+  }, []);
+
     console.log(user)
     const [ counterOn, setCounterOn ] = useState(false)
     const faqData = [

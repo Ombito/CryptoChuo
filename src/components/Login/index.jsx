@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import "../Login/style.css";
+import "./style.css";
 import { useSnackbar } from 'notistack';
 
 const LogIn = ({setUser}) => {

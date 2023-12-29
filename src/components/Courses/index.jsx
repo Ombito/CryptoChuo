@@ -20,30 +20,95 @@ const Courses = () => {
     const [courses, setCourses] = useState([]);
     const navigate = useNavigate();
 
+    const [categoryFilters, setCategoryFilters] = useState({});
+    const [levelFilters, setLevelFilters] = useState({});
+    const [durationFilters, setDurationFilters] = useState({});
+
     const showTab = (tabName) => {
         setActiveTab(tabName);
     };
 
     useEffect(() => {
-        const apiUrl = `http://127.0.0.1:5555/courses`;
-        fetch(apiUrl)
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error(`Network response was not ok: ${response.status}`);
-            }
-            return response.json();
-          })
-          .then((data) => {
-            setCourses(data);
-            setLoading(false);
-          })
-          .catch((error) => {
-            console.error('Error fetching data:', error);
-            setLoading(false);
-          });
+        if (refresh) {
+            const apiUrl = `http://127.0.0.1:5555/courses`;
+            fetch(apiUrl)
+            .then((response) => {
+                if (!response.ok) {
+                throw new Error(`Network response was not ok: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then((data) => {
+                setCourses(data);
+                setLoading(false);
+            })
+            .catch((error) => {
+                console.error('Error fetching data:', error);
+                setLoading(false);
+            });
+            setRefresh(false); 
+        }
       }, [refresh]);
 
+      const handleCategoryFilter = (category) => {
+        setCategoryFilters((prevFilters) => ({
+            ...prevFilters,
+            [category]: !prevFilters[category],
+        }));
+        setRefresh(true);
+    };
+
+    const handleLevelFilter = (level) => {
+        setLevelFilters((prevFilters) => ({
+            ...prevFilters,
+            [level]: !prevFilters[level],
+        }));
+        setRefresh(true);
+    };
+
+    const handleDurationFilter = (duration) => {
+        setDurationFilters((prevFilters) => ({
+            ...prevFilters,
+            [duration]: !prevFilters[duration],
+        }));
+        setRefresh(true);
+    };
+
+
     
+    const applyFilters = (course) => {
+        // Filter by search
+        const searchQuery = document.getElementById('searchcourse').value.toLowerCase();
+        if (searchQuery && !course.title.toLowerCase().includes(searchQuery)) {
+            return false;
+        }
+    
+        // Filter by category
+        if (Object.keys(categoryFilters).length > 0) {
+            const courseCategories = course.category || [];
+            if (!Object.keys(categoryFilters).every(category => courseCategories.includes(category))) {
+                return false;
+            }
+        }
+    
+        // Filter by level
+        if (Object.keys(levelFilters).length > 0 && !levelFilters[course.level]) {
+            return false;
+        }
+    
+        // Filter by duration
+        if (Object.keys(durationFilters).length > 0) {
+            const courseDuration = course.duration || '';
+            if (!Object.keys(durationFilters).some(duration => courseDuration.includes(duration))) {
+                return false;
+            }
+        }
+    
+        return true;
+    };
+    
+
+
   return (
     <div> 
       <Navbar />
@@ -53,7 +118,7 @@ const Courses = () => {
             <div class="container">
                 <h2>Featured Courses</h2>
                 <div className="featured-course-description">
-                    <img src={Feature} alt="course" id="featured-img"/>
+                    <img src={Feature} alt="course" id="featured-img" />
                     <div id="featured-div">
                         <h3>Introduction to Bitcoin</h3>
                         <p><img src={tick} alt="" height="20" width="25"/> Course Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -78,93 +143,54 @@ const Courses = () => {
                     </div>
                     <div className="allCourses-div">
                         <div id="filter-container">
-                            <div className="filter-div">
-                                <h4>Category</h4>
-                                <div className="checkbox-container">
-                                    <input type="checkbox" />
-                                    <label>Blockchain</label>
+                        <div className="filter-div">
+                            <h4>Category</h4>
+                            {['Technology', 'Programming', 'Web3', 'Smart Contracts', 'NFTs'].map((category) => (
+                                <div key={category} className="checkbox-container">
+                                    <input
+                                        type="checkbox"
+                                        checked={categoryFilters[category] || false}
+                                        onChange={() => handleCategoryFilter(category)}
+                                    />
+                                    <label>{category}</label>
                                 </div>
-                                <div className="checkbox-container">
-                                    <input type="checkbox" />
-                                    <label>Cryptocurrency</label>
+                            ))}
+                        </div>
+                        <div className="filter-div">
+                            <h4>Level</h4>
+                            {['Beginner', 'Intermediate', 'Advanced', 'Pro'].map((level) => (
+                                <div key={level} className="checkbox-container">
+                                    <input
+                                        type="checkbox"
+                                        checked={levelFilters[level] || false}
+                                        onChange={() => handleLevelFilter(level)}
+                                    />
+                                    <label>{level}</label>
                                 </div>
-                                <div className="checkbox-container">
-                                    <input type="checkbox" />
-                                    <label>Web3</label>
+                            ))}
+                        </div>
+                        <div className="filter-div">
+                            <h4>Duration</h4>
+                            {['Less than 4 Hours', '1 - 4 Weeks', '1 - 3 Months', '3 - 6 Months'].map((duration) => (
+                                <div key={duration} className="checkbox-container">
+                                    <input
+                                        type="checkbox"
+                                        checked={durationFilters[duration] || false}
+                                        onChange={() => handleDurationFilter(duration)}
+                                    />
+                                    <label>{duration}</label>
                                 </div>
-                                <div className="checkbox-container">
-                                    <input type="checkbox" />
-                                    <label>Smart Contracts</label>
-                                </div>
-                                <div className="checkbox-container">
-                                    <input type="checkbox" />
-                                    <label>NFT's</label>
-                                </div>
-                            </div>
-                            <div className="filter-div">
-                                <h4>Level</h4>
-                                <div className="checkbox-container">
-                                    <input type="checkbox" />
-                                    <label>Beginner</label>
-                                </div>
-                                <div className="checkbox-container">
-                                    <input type="checkbox" />
-                                    <label>Intermediate</label>
-                                </div>
-                                <div className="checkbox-container">
-                                    <input type="checkbox" />
-                                    <label>Advanced</label>
-                                </div>
-                                <div className="checkbox-container">
-                                    <input type="checkbox" />
-                                    <label>Pro</label>
-                                </div>
-                            </div>
-                            <div className="filter-div">
-                                <h4>Duration</h4>
-                                <div className="checkbox-container">
-                                    <input type="checkbox" />
-                                    <label>Less than 4 Hours</label>
-                                </div>
-                                <div className="checkbox-container">
-                                    <input type="checkbox" />
-                                    <label>1 - 4 Weeks</label>
-                                </div>
-                                <div className="checkbox-container">
-                                    <input type="checkbox" />
-                                    <label>1 - 3 Months</label>
-                                </div>
-                                <div className="checkbox-container">
-                                    <input type="checkbox" />
-                                    <label>3 - 6 Months</label>
-                                </div>
-                            </div>
-                            <div className="filter-div">
-                                <h4>Languages</h4>
-                                <div className="checkbox-container">
-                                    <input type="checkbox" />
-                                    <label>Chinese</label>
-                                </div>
-                                <div className="checkbox-container">
-                                    <input type="checkbox" />
-                                    <label>Swahili</label>
-                                </div>
-                                <div className="checkbox-container">
-                                    <input type="checkbox" />
-                                    <label>Arabic</label>
-                                </div>
-                                <div className="checkbox-container">
-                                    <input type="checkbox" />
-                                    <label>English</label>
-                                </div>
-                            </div>
+                            ))}
+                        </div>
                         </div>
                         <div id="course-hero">
                             {loading ? (
                                 <p className="loading">Loading courses...</p>
                             ) : (
                                 <div id="all-courses">
-                                {courses.map((course) => (
+                                {courses
+                                    .filter(applyFilters)
+                                    .map((course) => (                                
                                     <div key={course.id} className="course-card" onClick={() => navigate(`/courses/${course.id}`)}>
                                         <img src={course.image} alt="Course" className="course-img" />
                                         <div className="course-details">
