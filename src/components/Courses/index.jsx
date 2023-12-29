@@ -19,6 +19,7 @@ const Courses = () => {
     const [refresh, setRefresh]=useState(false);
     const [courses, setCourses] = useState([]);
     const navigate = useNavigate();
+    const [searchQuery, setSearchQuery] = useState('');
 
     const [categoryFilters, setCategoryFilters] = useState({});
     const [levelFilters, setLevelFilters] = useState({});
@@ -70,13 +71,11 @@ const Courses = () => {
         }));
         setRefresh(true);
     };
-
-
     
     const applyFilters = (course) => {
         // Filter by search
-        const searchQuery = document.getElementById('searchcourse').value.toLowerCase();
-        if (searchQuery && !course.title.toLowerCase().includes(searchQuery)) {
+        const lowerCaseSearchQuery = searchQuery.toLowerCase();
+        if (lowerCaseSearchQuery && !course.title.toLowerCase().includes(lowerCaseSearchQuery)) {
             return false;
         }
     
@@ -134,13 +133,13 @@ const Courses = () => {
                     <h2 style={{"text-align": "center"}}>All Courses</h2>
                     <div id="filter">
                         <h3>Filter by</h3>
-                        <input id="searchcourse"type="text" placeholder='Search for a Course...' />
+                        <input id="searchcourse"type="text" placeholder='Search for a Course...' value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)}/>
                     </div>
                     <div className="allCourses-div">
                         <div id="filter-container">
                         <div className="filter-div">
                             <h4>Category</h4>
-                            {['Technology', 'Programming', 'Web3', 'Smart Contracts', 'NFTs'].map((category) => (
+                            {['Technology', 'Programming', 'Finance', 'Smart Contracts', 'Business', 'Art', 'Social Impact', 'Health'].map((category) => (
                                 <div key={category} className="checkbox-container">
                                     <input
                                         type="checkbox"
@@ -153,7 +152,7 @@ const Courses = () => {
                         </div>
                         <div className="filter-div">
                             <h4>Level</h4>
-                            {['Beginner', 'Intermediate', 'Advanced', 'Pro'].map((level) => (
+                            {['Beginner', 'Intermediate', 'Advanced'].map((level) => (
                                 <div key={level} className="checkbox-container">
                                     <input
                                         type="checkbox"
