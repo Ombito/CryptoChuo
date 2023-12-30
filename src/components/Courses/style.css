@@ -231,6 +231,15 @@
     column-gap: 30px;
     padding-top: 5px;
   }
+  .course-card {
+    max-width: 100%;
+    margin: 0% auto;
+    padding: 0;
+  }
+  #subscription-div {
+    margin-top: -580px;
+}
+
   /* #filter.filter-visible {
     height: 4vh; 
   } */
