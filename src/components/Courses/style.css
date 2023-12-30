@@ -235,10 +235,19 @@
     max-width: 100%;
     margin: 0% auto;
     padding: 0;
+    height: auto;
   }
   #subscription-div {
     margin-top: -580px;
-}
+    gap: 15px;
+  }
+  #learnwithus {
+    margin: 210px 0 560px 0;
+  }
+  #learnandtrade {
+    display: flex;
+    flex-direction: column;
+  }
 
   /* #filter.filter-visible {
     height: 4vh; 
