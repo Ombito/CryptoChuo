@@ -184,6 +184,15 @@
 
  /* mobile screen device  */
  @media screen and (min-width: 360px) and (max-width: 765px){
+  #featured-div {
+    padding: 5px 10px;
+  }
+  #featured-div p {
+    margin-bottom: 8px;
+  }
+  #featured-div button{
+    width: 100%;
+  }
   .courses {
     margin-top: 120px;
   }
