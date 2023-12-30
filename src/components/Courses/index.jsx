@@ -19,11 +19,12 @@ const Courses = () => {
     const [refresh, setRefresh]=useState(false);
     const [courses, setCourses] = useState([]);
     const navigate = useNavigate();
+    
     const [searchQuery, setSearchQuery] = useState('');
-
     const [categoryFilters, setCategoryFilters] = useState({});
     const [levelFilters, setLevelFilters] = useState({});
     const [durationFilters, setDurationFilters] = useState({});
+    const [filterVisible, setFilterVisible] = useState(true);
 
     const showTab = (tabName) => {
         setActiveTab(tabName);
@@ -73,13 +74,13 @@ const Courses = () => {
     };
     
     const applyFilters = (course) => {
-        // Filter by search
+        // filter by search
         const lowerCaseSearchQuery = searchQuery.toLowerCase();
         if (lowerCaseSearchQuery && !course.title.toLowerCase().includes(lowerCaseSearchQuery)) {
             return false;
         }
     
-        // Filter by category
+        // filter by category
         if (Object.keys(categoryFilters).length > 0) {
             const courseCategories = course.category || [];
             if (!Object.keys(categoryFilters).every(category => courseCategories.includes(category))) {
@@ -87,12 +88,12 @@ const Courses = () => {
             }
         }
 
-        // Filter by level
+        // filter by level
         if (Object.keys(levelFilters).length > 0 && !levelFilters[course.level]) {
             return false;
         }
     
-        // Filter by duration
+        // filter by duration
         if (Object.keys(durationFilters).length > 0) {
             const courseDuration = course.duration || '';
             if (!Object.keys(durationFilters).some(duration => courseDuration.includes(duration))) {
@@ -102,6 +103,10 @@ const Courses = () => {
         return true;
     };
     
+    const toggleFilterVisibility = () => {
+        setFilterVisible(!filterVisible);
+    };
+
 
   return (
     <div> 
@@ -131,52 +136,56 @@ const Courses = () => {
             <div>
                 <div className={`tab-content ${activeTab === 'allCourses' ? 'active' : ''}`} id='allCoursesContent'>
                     <h2 style={{"text-align": "center"}}>All Courses</h2>
-                    <div id="filter">
-                        <h3>Filter by</h3>
-                        <input id="searchcourse"type="text" placeholder='Search for a Course...' value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)}/>
+                    <div id="filter" className={filterVisible ? 'filter-visible' : ''}>
+                        <button id="toggleFilter" onClick={toggleFilterVisibility}>
+                            {filterVisible ? 'Filters' : 'Filters'}
+                        </button>
+                        <input id="searchcourse"type="text" placeholder='Search for a Course...' value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)}/>              
                     </div>
                     <div className="allCourses-div">
+                        {filterVisible && (
                         <div id="filter-container">
-                        <div className="filter-div">
-                            <h4>Category</h4>
-                            {['Technology', 'Programming', 'Finance', 'Smart Contracts', 'Business', 'Art', 'Social Impact', 'Health'].map((category) => (
-                                <div key={category} className="checkbox-container">
-                                    <input
-                                        type="checkbox"
-                                        checked={categoryFilters[category] || false}
-                                        onChange={() => handleCategoryFilter(category)}
-                                    />
-                                    <label>{category}</label>
-                                </div>
-                            ))}
+                            <div className="filter-div">
+                                <h4>Category</h4>
+                                {['Technology', 'Programming', 'Finance', 'Smart Contracts', 'Business', 'Art', 'Social Impact', 'Health'].map((category) => (
+                                    <div key={category} className="checkbox-container">
+                                        <input
+                                            type="checkbox"
+                                            checked={categoryFilters[category] || false}
+                                            onChange={() => handleCategoryFilter(category)}
+                                        />
+                                        <label>{category}</label>
+                                    </div>
+                                ))}
+                            </div>
+                            <div className="filter-div">
+                                <h4>Level</h4>
+                                {['Beginner', 'Intermediate', 'Advanced'].map((level) => (
+                                    <div key={level} className="checkbox-container">
+                                        <input
+                                            type="checkbox"
+                                            checked={levelFilters[level] || false}
+                                            onChange={() => handleLevelFilter(level)}
+                                        />
+                                        <label>{level}</label>
+                                    </div>
+                                ))}
+                            </div>
+                            <div className="filter-div">
+                                <h4>Duration</h4>
+                                {['4 hours', '8 hours', '24 hours', '1 week', '3 months'].map((duration) => (
+                                    <div key={duration} className="checkbox-container">
+                                        <input
+                                            type="checkbox"
+                                            checked={durationFilters[duration] || false}
+                                            onChange={() => handleDurationFilter(duration)}
+                                        />
+                                        <label>{duration}</label>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
-                        <div className="filter-div">
-                            <h4>Level</h4>
-                            {['Beginner', 'Intermediate', 'Advanced'].map((level) => (
-                                <div key={level} className="checkbox-container">
-                                    <input
-                                        type="checkbox"
-                                        checked={levelFilters[level] || false}
-                                        onChange={() => handleLevelFilter(level)}
-                                    />
-                                    <label>{level}</label>
-                                </div>
-                            ))}
-                        </div>
-                        <div className="filter-div">
-                            <h4>Duration</h4>
-                            {['Less than 4 Hours', '1 - 4 Weeks', '1 - 3 Months', '3 - 6 Months'].map((duration) => (
-                                <div key={duration} className="checkbox-container">
-                                    <input
-                                        type="checkbox"
-                                        checked={durationFilters[duration] || false}
-                                        onChange={() => handleDurationFilter(duration)}
-                                    />
-                                    <label>{duration}</label>
-                                </div>
-                            ))}
-                        </div>
-                        </div>
+                        )}
                         <div id="course-hero">
                             {loading ? (
                                 <p className="loading">Loading courses...</p>
@@ -190,7 +199,7 @@ const Courses = () => {
                                         <div className="course-details">
                                             <h4>{course.title}</h4>
                                             <p>{course.description}</p>
-                                            <p>Duration: {course.duration} weeks</p>
+                                            <p>Duration: {course.duration}</p>
                                             <div className="amount">
                                             <h5>${course.price}</h5>
                                             <div>

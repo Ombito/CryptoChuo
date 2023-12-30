@@ -24,6 +24,7 @@
   display: flex;
   justify-content: space-between;
 }
+
 #searchcourse {
   width: 25%;
   height: 5vh;
@@ -137,7 +138,12 @@
 .filter-div  {
   margin-bottom: 14%;
 }
-
+#filter #filter-container {
+  display: block; 
+}
+#toggleFilter {
+  display: none;
+}
 .checkbox-container {
   display: flex;
   align-items: center;
@@ -174,4 +180,55 @@
   display: flex;
   justify-content: space-between;
   width: 90%;
+}
+
+ /* mobile screen device  */
+ @media screen and (min-width: 360px) and (max-width: 765px){
+  .courses {
+    margin-top: 120px;
+  }
+  .allCourses-div {
+    display: flex;
+    flex-direction: column;
+  }
+  .featured-course-description {
+    display: flex;
+    flex-direction: column;
+  }
+  #toggleFilter {
+    display: block; 
+    }
+  #featured-img {
+    height: 30vh;
+    width: 100%;
+  }
+  #all-courses {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .tabs-container {
+    margin-top: 650px;
+  }
+  /* #filter-container {
+    display: none; 
+  }
+  .filter-visible #filter-container {
+    display: block; 
+  }
+  #toggleFilter {
+  display: block; 
+  }
+  .filter-visible {
+    display: none; 
+  }
+ 
+
+  .filter-visible #filter-container {
+    display: block;
+  }
+
+  .filter-visible #toggleFilter {
+    display: block;
+  } */
+  
 }
