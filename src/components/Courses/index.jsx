@@ -137,8 +137,8 @@ const Courses = () => {
                 <div className={`tab-content ${activeTab === 'allCourses' ? 'active' : ''}`} id='allCoursesContent'>
                     <h2 style={{"text-align": "center"}}>All Courses</h2>
                     <div id="filter" className={filterVisible ? 'filter-visible' : ''}>
-                        <button id="toggleFilter" onClick={toggleFilterVisibility}>
-                            {filterVisible ? 'Filters' : 'Filters'}
+                        <button id="toggleFilter" onClick={toggleFilterVisibility}><i className="fa fa-filter"> </i>
+                             {filterVisible ? 'Filters' : 'Filters'}
                         </button>
                         <input id="searchcourse"type="text" placeholder='Search for a Course...' value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)}/>              
                     </div>

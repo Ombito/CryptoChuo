@@ -197,7 +197,17 @@
   }
   #toggleFilter {
     display: block; 
-    }
+    padding: 0 auto;
+  }
+  #toggleFilter i{
+    font-size: 1.2em; 
+    padding-right: 4px;
+  }
+  #searchcourse {
+    width: 170px;
+    margin-right: -10px;
+    height: auto;
+  }
   #featured-img {
     height: 30vh;
     width: 100%;
@@ -209,6 +219,21 @@
   .tabs-container {
     margin-top: 650px;
   }
+  .tab-content.active {
+    margin: 0;
+  }
+  .filter-div {
+    margin-bottom: 10px;
+  }
+  #filter-container {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr); 
+    column-gap: 30px;
+    padding-top: 5px;
+  }
+  /* #filter.filter-visible {
+    height: 4vh; 
+  } */
   /* #filter-container {
     display: none; 
   }
