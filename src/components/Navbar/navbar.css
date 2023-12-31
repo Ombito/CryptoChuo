@@ -64,8 +64,8 @@
     font-size: 1.8em;
     margin: 19% 0;
 }
-
-  @media (max-width: 768px) {
+ /* mobile screen device  */
+ @media screen and (min-width: 360px) and (max-width: 765px){
     .navbar {
     position: fixed;
     top: 0;
