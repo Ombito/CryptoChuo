@@ -9,6 +9,34 @@ import Navbar from '../Navbar/navbar.jsx';
 import Footer from '../Footer/index.jsx';
 
 const Shop = () => {
+  const [items, setItems] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const filterItemsByCategory = (category) => {
+    return merchandiseItems.filter(item => item.category === category);
+  };
+
+
+  useEffect(() => {
+    const apiUrl = `http://127.0.0.1:5555/merchandises`;
+    fetch(apiUrl)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Network response was not ok: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setItems(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+        setLoading(false);
+      });
+  }, [refresh]);
+
+
   return (
     <div>
     <div className='navbar'>
@@ -24,147 +52,47 @@ const Shop = () => {
         <div class="container" id="trending-container">
           <h2>Top Deals</h2>
           <div className="trending-div">
-            <div className="shop-card">
-              <img src={tshirt} height="200" width="200" alt="" />
-              <h5>By rubbark</h5>
-              <div className="shop-card-amount">
-                <h5>$25</h5>
-                <div>
-                  <p class="rating"> 
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9734;</span>
+            {filterItemsByCategory('top_deals').map(item => (
+              <div className="shop-card" key={item.id}>
+                <img src={tshirt} height="200" width="200" alt="" />
+                <h5>{item.name}</h5>
+                <div className="shop-card-amount">
+                  <h5>${item.price}</h5>
+                  <p className="rating">
+                    {Array.from({ length: Math.round(item.rating) }, (_, index) => (
+                      <span key={index} className="star">&#9733;</span>
+                    ))}
+                    {Array.from({ length: 5 - Math.round(item.rating) }, (_, index) => (
+                      <span key={index} className="star">&#9734;</span>
+                    ))}
                   </p>
                 </div>
-              </div>
-              <button>Add to Cart</button>
-            </div>
-            <div className="shop-card">
-              <img src={tshirt} height="200" width="200" alt="" />
-              <h5>By rubbark</h5>
-              <div className="shop-card-amount">
-                <h5>$25</h5>
-                <div>
-                  <p class="rating"> 
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9734;</span>
-                  </p>
-                </div>
-              </div>
-              <button>Add to Cart</button>
-            </div>
-            <div className="shop-card">
-              <img src={tshirt} height="200" width="200" alt="" />
-              <h5>By rubbark</h5>
-              <div className="shop-card-amount">
-                <h5>$25</h5>
-                <div>
-                  <p class="rating"> 
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9734;</span>
-                  </p>
-                </div>
-              </div>
-              <button>Add to Cart</button>
-            </div>
-            <div className="shop-card">
-              <img src={hoodie} height="200" width="200" alt="" />
-              <h5>By rubbark</h5>
-              <div className="shop-card-amount">
-                <h5>$25</h5>
-                <div>
-                  <p class="rating"> 
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9734;</span>
-                  </p>
-                </div>
-              </div>
-              <button>Add to Cart</button>
-            </div>
-          </div>
+                <button>Add to Cart</button>
+              </div>              
+              ))}
+          </div>  
         </div>
         <div class="container" id="accessories">
           <h3>Accessories</h3>
           <div className="trending-div">
-            <div className="shop-card">
-              <img src={book} height="200" width="200" alt="" />
-              <h5>By rubbark</h5>
-              <div className="shop-card-amount">
-                <h5>$25</h5>
-                <div>
-                  <p class="rating"> 
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9734;</span>
+            {filterItemsByCategory('accessories').map(item => (
+              <div className="shop-card" key={item.id}>
+                <img src={book} height="200" width="200" alt="" />
+                <h5>{item.name}</h5>
+                <div className="shop-card-amount">
+                  <h5>${item.price}</h5>
+                  <p className="rating">
+                    {Array.from({ length: Math.round(item.rating) }, (_, index) => (
+                      <span key={index} className="star">&#9733;</span>
+                    ))}
+                    {Array.from({ length: 5 - Math.round(item.rating) }, (_, index) => (
+                      <span key={index} className="star">&#9734;</span>
+                    ))}
                   </p>
                 </div>
+                <button>Add to Cart</button>
               </div>
-              <button>Add to Cart</button>
-            </div>
-            <div className="shop-card">
-              <img src={tshirt} height="200" width="200" alt="" />
-              <h5>By rubbark</h5>
-              <div className="shop-card-amount">
-                <h5>$25</h5>
-                <div>
-                  <p class="rating"> 
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9734;</span>
-                  </p>
-                </div>
-              </div>
-              <button>Add to Cart</button>
-            </div>
-            <div className="shop-card">
-              <img src={tshirt} height="200" width="200" alt="" />
-              <h5>By rubbark</h5>
-              <div className="shop-card-amount">
-                <h5>$25</h5>
-                <div>
-                  <p class="rating"> 
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9734;</span>
-                  </p>
-                </div>
-              </div>
-              <button>Add to Cart</button>
-            </div>
-            <div className="shop-card">
-              <img src={hoodie} height="200" width="200" alt="" />
-              <h5>By rubbark</h5>
-              <div className="shop-card-amount">
-                <h5>$25</h5>
-                <div>
-                  <p class="rating"> 
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9734;</span>
-                  </p>
-                </div>
-              </div>
-              <button>Add to Cart</button>
-            </div>
+            ))}  
           </div>
         </div>
         <div id="discount-div">
@@ -174,74 +102,24 @@ const Shop = () => {
         <div class="container" id="best-sellers">
           <h2>Best sellers</h2>
           <div className="trending-div">
-            <div className="shop-card">
-              <img src={hoodie} height="200" width="200" alt="" />
-              <h5>By rubbark</h5>
-              <div className="shop-card-amount">
-                <h5>$25</h5>
-                <div>
-                  <p class="rating"> 
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9734;</span>
+            {filterItemsByCategory('flash_sales').map(item => (
+              <div className="shop-card" key={item.id}>
+                <img src={hoodie} height="200" width="200" alt="" />
+                <h5>{item.name}</h5>
+                <div className="shop-card-amount">
+                  <h5>${item.price}</h5>
+                  <p className="rating">
+                    {Array.from({ length: Math.round(item.rating) }, (_, index) => (
+                      <span key={index} className="star">&#9733;</span>
+                    ))}
+                    {Array.from({ length: 5 - Math.round(item.rating) }, (_, index) => (
+                      <span key={index} className="star">&#9734;</span>
+                    ))}
                   </p>
                 </div>
+                <button>Add to Cart</button>
               </div>
-              <button>Add to Cart</button>
-            </div>
-            <div className="shop-card">
-              <img src={tshirt} height="200" width="200" alt="" />
-              <h5>By rubbark</h5>
-              <div className="shop-card-amount">
-                <h5>$25</h5>
-                <div>
-                  <p class="rating"> 
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9734;</span>
-                  </p>
-                </div>
-              </div>
-              <button>Add to Cart</button>
-            </div>
-            <div className="shop-card">
-              <img src={hoodie} height="200" width="200" alt="" />
-              <h5>By rubbark</h5>
-              <div className="shop-card-amount">
-                <h5>$25</h5>
-                <div>
-                  <p class="rating"> 
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9734;</span>
-                  </p>
-                </div>
-              </div>
-              <button>Add to Cart</button>
-            </div>
-            <div className="shop-card">
-              <img src={hoodie} height="200" width="200" alt="" />
-              <h5>By rubbark</h5>
-              <div className="shop-card-amount">
-                <h5>$25</h5>
-                <div>
-                  <p class="rating"> 
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9733;</span>
-                  <span class="star">&#9734;</span>
-                  </p>
-                </div>
-              </div>
-              <button>Add to Cart</button>
-            </div>
+              ))}
           </div>
           
 

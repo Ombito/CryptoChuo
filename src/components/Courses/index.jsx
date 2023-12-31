@@ -14,7 +14,7 @@ import { FaCheck } from 'react-icons/fa';
 
 
 const Courses = () => {
-    const [activeTab, setActiveTab] = useState('allCourses');
+    const [activeTab, setActiveTab] = useState ('allCourses');
     const [loading, setLoading] = useState(true);
     const [refresh, setRefresh]=useState(false);
     const [courses, setCourses] = useState([]);
