@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import "../Shop/style.css"
 import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
@@ -9,8 +9,9 @@ import Navbar from '../Navbar/navbar.jsx';
 import Footer from '../Footer/index.jsx';
 
 const Shop = () => {
-  const [items, setItems] = useState([]);
+  const [merchandiseItems, setMerchandiseItems] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [refresh, setRefresh] = useState(true);
 
   const filterItemsByCategory = (category) => {
     return merchandiseItems.filter(item => item.category === category);
@@ -27,7 +28,7 @@ const Shop = () => {
         return response.json();
       })
       .then((data) => {
-        setItems(data);
+        setMerchandiseItems(data);
         setLoading(false);
       })
       .catch((error) => {
