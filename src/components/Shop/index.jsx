@@ -95,7 +95,7 @@ const Shop = () => {
           </div>  
         </div>
         <div class="container" id="accessories">
-          <h3>Accessories</h3>
+          <h2>Accessories</h2>
           <div className="trending-div">
             {filterItemsByCategory('accessories').map(item => (
               <div className="shop-card" key={item.id}>

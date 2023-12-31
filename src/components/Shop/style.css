@@ -86,3 +86,52 @@ section {
 .pagination button.active {
     background-color: blue;
 }
+
+ /* mobile screen device  */
+ @media screen and (min-width: 360px) and (max-width: 765px){
+    section {
+        margin-top: 100px;
+        margin-bottom: 4380px;
+    }
+    #banner {
+        height: 35vh;
+    }
+    .banner-hero {
+        padding: 8% 8%;
+    }
+    .banner-hero input {
+        width: 100%;
+        height: 4vh;
+    }
+    .trending-div {
+        display: flex;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 18px;
+        row-gap: 18px;
+    }
+    #trending-container {
+        margin-bottom: 80px;
+    }
+    #trending-container h2{
+        text-align: center;
+    }
+    #accessories {
+        margin-top: 1480px;
+        margin-bottom: 80px;
+    }
+    #accessories h2{
+        text-align: center;
+    }
+    #discount-div {
+        margin-top: 1460px;
+        padding-top: 47px;
+    }
+    #best-sellers {
+        margin-top: 30px;
+        margin-bottom: 80px;
+    }
+    #best-sellers h2{
+        text-align: center;
+    }
+}
