@@ -20,15 +20,16 @@ section {
     display: flex;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+    gap: 18px;
+    row-gap: 18px;
 }
 #accessories {
     margin-top: 25%;
     margin-bottom: 25%;
 }
 .shop-card {
-    width: 90%;
-    transition: transform 0.3s ease-in-out;
+    width: 100%;
+    transition: transform 0.1s ease-in-out;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -43,8 +44,17 @@ section {
 }
 .shop-card-amount {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    padding-bottom: 2%;
+    padding: 2px 6px;
+}
+.shop-card-amount button {
+    width: 50%;
+    margin: auto;
+}
+.shop-card-hero {
+    display: flex;
+    justify-content: space-between;
 }
 #discount-div {
     background-color: orange;
@@ -58,15 +68,21 @@ section {
     margin-top: 2%;
     margin-bottom: 25%;
 }
-
-.button{
-    height: 45px;
-    margin-left: 260%;
-    margin-top: 3%;
-    width: 200px;
-    background-color: #4A9E8A;
-    border: none;
-    border-radius: 40px;
-    color: #FFFFFF;
-    font-size: 17px;
+.pagination {
+    margin-top: 20px;
+    display: flex;
+}
+.pagination button {
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid #4CAF50;
+    padding: 3px 13px;
+    margin-right: -3px;
+    cursor: pointer;
+}
+.pagination button:hover {
+    background-color: #45a049;
+}
+.pagination button.active {
+    background-color: blue;
 }

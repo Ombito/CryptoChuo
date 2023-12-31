@@ -75,19 +75,21 @@ const Shop = () => {
             {filterItemsByCategory('top_deals').map(item => (
               <div className="shop-card" key={item.id}>
                 <img src={tshirt} height="200" width="200" alt="" />
-                <h5>{item.name}</h5>
                 <div className="shop-card-amount">
-                  <h5>${item.price}</h5>
-                  <p className="rating">
-                    {Array.from({ length: Math.round(item.rating) }, (_, index) => (
-                      <span key={index} className="star">&#9733;</span>
-                    ))}
-                    {Array.from({ length: 5 - Math.round(item.rating) }, (_, index) => (
-                      <span key={index} className="star">&#9734;</span>
-                    ))}
-                  </p>
+                  <h5>{item.name}</h5>
+                  <div className="shop-card-hero">
+                    <h5>${item.price}</h5>
+                    <p className="rating">
+                      {Array.from({ length: Math.round(item.rating) }, (_, index) => (
+                        <span key={index} className="star">&#9733;</span>
+                      ))}
+                      {Array.from({ length: 5 - Math.round(item.rating) }, (_, index) => (
+                        <span key={index} className="star">&#9734;</span>
+                      ))}
+                    </p>
+                  </div>
+                  <button>Add to Cart</button>
                 </div>
-                <button>Add to Cart</button>
               </div>            
               ))}
           </div>  
@@ -97,20 +99,22 @@ const Shop = () => {
           <div className="trending-div">
             {filterItemsByCategory('accessories').map(item => (
               <div className="shop-card" key={item.id}>
-                <img src={book} height="200" width="200" alt="" />
-                <h5>{item.name}</h5>
+                <img src={book} height="200" width="200" alt="" />   
                 <div className="shop-card-amount">
-                  <h5>${item.price}</h5>
-                  <p className="rating">
-                    {Array.from({ length: Math.round(item.rating) }, (_, index) => (
-                      <span key={index} className="star">&#9733;</span>
-                    ))}
-                    {Array.from({ length: 5 - Math.round(item.rating) }, (_, index) => (
-                      <span key={index} className="star">&#9734;</span>
-                    ))}
-                  </p>
+                  <h5>{item.name}</h5>
+                  <div className="shop-card-hero">
+                    <h5>${item.price}</h5>
+                    <p className="rating">
+                      {Array.from({ length: Math.round(item.rating) }, (_, index) => (
+                        <span key={index} className="star">&#9733;</span>
+                      ))}
+                      {Array.from({ length: 5 - Math.round(item.rating) }, (_, index) => (
+                        <span key={index} className="star">&#9734;</span>
+                      ))}
+                    </p>
+                  </div>
+                  <button>Add to Cart</button>
                 </div>
-                <button>Add to Cart</button>
               </div>
             ))}  
           </div>
@@ -126,26 +130,28 @@ const Shop = () => {
               item.name.toLowerCase().includes(searchTerm.toLowerCase()) && (
               <div className="shop-card" key={item.id}>
                 <img src={hoodie} height="200" width="200" alt="" />
-                <h5>{item.name}</h5>
                 <div className="shop-card-amount">
-                  <h5>${item.price}</h5>
-                  <p className="rating">
-                    {Array.from({ length: Math.round(item.rating) }, (_, index) => (
-                      <span key={index} className="star">&#9733;</span>
-                    ))}
-                    {Array.from({ length: 5 - Math.round(item.rating) }, (_, index) => (
-                      <span key={index} className="star">&#9734;</span>
-                    ))}
-                  </p>
+                  <h5>{item.name}</h5>
+                  <div className="shop-card-hero">
+                    <h5>${item.price}</h5>
+                    <p className="rating">
+                      {Array.from({ length: Math.round(item.rating) }, (_, index) => (
+                        <span key={index} className="star">&#9733;</span>
+                      ))}
+                      {Array.from({ length: 5 - Math.round(item.rating) }, (_, index) => (
+                        <span key={index} className="star">&#9734;</span>
+                      ))}
+                    </p>
+                  </div>
+                  <button>Add to Cart</button>
                 </div>
-                <button>Add to Cart</button>
               </div>
               )
               ))}
           </div>
           <div className="pagination">
             {Array.from({ length: Math.ceil(filterItemsByCategory('flash_sales').length / itemsPerPage) }, (_, index) => (
-              <button key={index} onClick={() => handlePageChange(index + 1)}>{index + 1}</button>
+              <button key={index} className={currentPage === index + 1 ? 'active' : ''} onClick={() => handlePageChange(index + 1)}>{index + 1}</button>
             ))}
           </div>
 
