@@ -12,10 +12,25 @@ const Shop = () => {
   const [merchandiseItems, setMerchandiseItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [refresh, setRefresh] = useState(true);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 12;
 
   const filterItemsByCategory = (category) => {
     return merchandiseItems.filter(item => item.category === category);
   };
+
+  const filterItemsByName = () => {
+    return merchandiseItems.filter(item => item.name.toLowerCase().includes(searchTerm.toLowerCase()));
+  };
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
+
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentFlashSales = filterItemsByCategory('flash_sales').slice(indexOfFirstItem, indexOfLastItem);
 
 
   useEffect(() => {
@@ -37,6 +52,10 @@ const Shop = () => {
       });
   }, [refresh]);
 
+  const handleSearch = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
 
   return (
     <div>
@@ -47,7 +66,7 @@ const Shop = () => {
         <div id="banner">
           <div className="banner-hero">
             <p>Explore our curated selection of sleek wearables and accessories that not only reflect your passion for blockchain but elevate your style to new heights. Embrace the future in style, only at cryptoChuo.</p>
-            <input type="text" placeholder="Search for a product" />
+            <input type="text" placeholder="Search for a product" value={searchTerm} onChange={handleSearch}/>
           </div>
         </div>
         <div class="container" id="trending-container">
@@ -69,7 +88,7 @@ const Shop = () => {
                   </p>
                 </div>
                 <button>Add to Cart</button>
-              </div>              
+              </div>            
               ))}
           </div>  
         </div>
@@ -101,9 +120,10 @@ const Shop = () => {
           <p>SHOP NOW</p>
         </div>
         <div class="container" id="best-sellers">
-          <h2>Best sellers</h2>
+          <h2>Flash sales</h2>
           <div className="trending-div">
-            {filterItemsByCategory('flash_sales').map(item => (
+            {currentFlashSales.map(item => (
+              item.name.toLowerCase().includes(searchTerm.toLowerCase()) && (
               <div className="shop-card" key={item.id}>
                 <img src={hoodie} height="200" width="200" alt="" />
                 <h5>{item.name}</h5>
@@ -120,23 +140,19 @@ const Shop = () => {
                 </div>
                 <button>Add to Cart</button>
               </div>
+              )
               ))}
           </div>
-          
+          <div className="pagination">
+            {Array.from({ length: Math.ceil(filterItemsByCategory('flash_sales').length / itemsPerPage) }, (_, index) => (
+              <button key={index} onClick={() => handlePageChange(index + 1)}>{index + 1}</button>
+            ))}
+          </div>
 
         </div>
       </section>
-      <Footer />
-
-    
-          
-</div>
-
-
-
-
-
-  
+      <Footer />       
+</div> 
   );
 };
   
