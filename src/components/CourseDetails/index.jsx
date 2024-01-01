@@ -61,7 +61,7 @@ const CourseDetails = () => {
       <Navbar />
       <div id="coursedetails" class="container">
         <div id="course-description">
-          <img src={Course1} alt="Course" height="380" width="800"/>
+          <img src={course.image} alt="Course" height="380" width="800"/>
           <h2>{course.title}</h2>
           <p>{course.description}</p>
           <button id="enroll-btn">Enroll Now</button>

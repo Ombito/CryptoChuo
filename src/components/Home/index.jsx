@@ -18,6 +18,7 @@ import banner from '../Assets/Courses/basics.png';
 import ScrollTrigger from 'react-scroll-trigger';
 import CountUp from 'react-countup';
 import { useSnackbar } from 'notistack';
+import { useNavigate } from 'react-router-dom';
 
 
 const Home = ({user}) => {
@@ -26,6 +27,7 @@ const Home = ({user}) => {
     const [ counterOn, setCounterOn ] = useState(false)
     const [error, setError] = useState('');
     const { enqueueSnackbar } = useSnackbar();
+    const navigate = useNavigate();
 
     const [name, setName] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
@@ -111,8 +113,6 @@ const Home = ({user}) => {
         }
       };
 
-      
-
     const faqData = [
         { question: 'So your aim is educating people on Blockchain technology?', answer: "It's ok you can say it. Decentralization is important but what underpins it? That's the complication. Our strategy is to create grassroot level of mass awareness on cryptocurrencies and Blockchain." },
         { question: 'Who should attend these courses?', answer: 'The criteria is simple, are you willing to kickstart your Web3 career and achieve certifications? Yes? Good, welcome to CryptoChuo. ' },
@@ -182,8 +182,8 @@ const Home = ({user}) => {
                     <h3>Trending Courses</h3>
                     <div id="home-card-container">
                         {filterItemsByCategory('true').map(course => (
-                        <div className="course-card" key={course.id}>
-                            <img src={Course1} alt="" className="course-img"/>
+                        <div className="course-card" key={course.id} onClick={() => navigate(`/courses/${course.id}`)}>
+                            <img src={course.image} alt="" className="course-img"/>
                             <div class="course-details">
                                 <h4>{course.title}</h4>
                                 <p>{course.description}</p>
@@ -319,7 +319,7 @@ const Home = ({user}) => {
                         <h5>Subscribe to our newsletter</h5>
                         <form onSubmit={handleSubmitNewsletter}>
                             <div className="subscribe-hero">
-                                <input type="text" placeholder="Enter your email address" id="subscribe-checkbox" value={subscribeEmail} onChange={(e) => setSubscribeEmail(e.target.value)} required/>
+                                <input type="email" placeholder="Enter your email address" id="subscribe-checkbox" value={subscribeEmail} onChange={(e) => setSubscribeEmail(e.target.value)} required/>
                                 <button type="submit" className="subscribe-button">Subscribe</button>
                             </div>
                             <div className='subscribe-checkbox'>

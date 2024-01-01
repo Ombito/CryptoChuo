@@ -380,7 +380,7 @@ button:hover {
     font-weight: bold;
     margin-bottom: 20px;
   }
-  .subscribe input[type="text"] {
+  .subscribe input[type="email"] {
     width: 40%;
     padding: 10px;
     margin-bottom: 10px;
