@@ -33,6 +33,8 @@ const Home = ({user}) => {
     const [subject, setSubject] = useState('');
     const [message, setMessage] = useState('');
 
+    const [subscribeEmail, setSubscribeEmail] = useState('');
+
     const filterItemsByCategory = (is_trending) => {
         return courses.filter(item => item.is_trending === is_trending);
       };
@@ -76,6 +78,31 @@ const Home = ({user}) => {
           } else {
             console.log("Signup failed!")
             enqueueSnackbar('Message send failed', { variant: 'error' });
+          }
+        } catch (error) {
+          setError('Error: ' + error.message);
+          console.error('Error', error);
+          enqueueSnackbar('Error', { variant: 'error' });
+        }
+      };
+
+      const handleSubmitNewsletter = async (e) => {
+        e.preventDefault();
+      
+        try {
+          const response = await fetch('http://127.0.0.1:5555/newsletters', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email: subscribeEmail }),
+          });
+      
+          if (response.ok) {
+            enqueueSnackbar('You have successfully subscribed to our newsletter!', { variant: 'success' });
+          } else {
+            console.log("Failed to subscribe!")
+            enqueueSnackbar('Failed to subscribe', { variant: 'error' });
           }
         } catch (error) {
           setError('Error: ' + error.message);
@@ -290,14 +317,17 @@ const Home = ({user}) => {
                 <div className='subscribe'>
                     <div class="container" id="subscribe-div">
                         <h5>Subscribe to our newsletter</h5>
-                        <div className="subscribe-hero">
-                            <input type="text" placeholder="Enter your email address" id="subscribe-checkbox"/>
-                            <button className="subscribe-button">Subscribe</button>
-                        </div>
-                        <div className='subscribe-checkbox'>
-                            <input type="checkbox" />
-                            <label>I have read and agreed to the Terms of Service.</label>
-                        </div>
+                        <form onSubmit={handleSubmitNewsletter}>
+                            <div className="subscribe-hero">
+                                <input type="text" placeholder="Enter your email address" id="subscribe-checkbox" value={subscribeEmail} onChange={(e) => setSubscribeEmail(e.target.value)} required/>
+                                <button type="submit" className="subscribe-button">Subscribe</button>
+                            </div>
+                            <div className='subscribe-checkbox'>
+                                <input type="checkbox" required/>
+                                <label>I have read and agreed to the Terms of Service.</label>
+                            </div>
+                        </form>
+                        
                         
                     </div>
                 </div>
