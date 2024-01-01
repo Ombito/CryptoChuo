@@ -17,12 +17,21 @@ import ContactUs from '../Assets/contact.png';
 import banner from '../Assets/Courses/basics.png';
 import ScrollTrigger from 'react-scroll-trigger';
 import CountUp from 'react-countup';
-
+import { useSnackbar } from 'notistack';
 
 
 const Home = ({user}) => {
     const [loading, setLoading] = useState(true);
     const [courses, setCourses] = useState([]);
+    const [ counterOn, setCounterOn ] = useState(false)
+    const [error, setError] = useState('');
+    const { enqueueSnackbar } = useSnackbar();
+
+    const [name, setName] = useState('');
+    const [phoneNumber, setPhoneNumber] = useState('');
+    const [email, setEmail] = useState('');
+    const [subject, setSubject] = useState('');
+    const [message, setMessage] = useState('');
 
     const filterItemsByCategory = (is_trending) => {
         return courses.filter(item => item.is_trending === is_trending);
@@ -49,7 +58,34 @@ const Home = ({user}) => {
   }, []);
 
     console.log(user)
-    const [ counterOn, setCounterOn ] = useState(false)
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+      
+        try {
+          const response = await fetch('http://127.0.0.1:5555/contact', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ name, phone_number: phoneNumber, email, subject, message }),
+          });
+      
+          if (response.ok) {
+            enqueueSnackbar('Message sent successful!', { variant: 'success' });
+          } else {
+            console.log("Signup failed!")
+            enqueueSnackbar('Message send failed', { variant: 'error' });
+          }
+        } catch (error) {
+          setError('Error: ' + error.message);
+          console.error('Error', error);
+          enqueueSnackbar('Error', { variant: 'error' });
+        }
+      };
+
+      
+
     const faqData = [
         { question: 'So your aim is educating people on Blockchain technology?', answer: "It's ok you can say it. Decentralization is important but what underpins it? That's the complication. Our strategy is to create grassroot level of mass awareness on cryptocurrencies and Blockchain." },
         { question: 'Who should attend these courses?', answer: 'The criteria is simple, are you willing to kickstart your Web3 career and achieve certifications? Yes? Good, welcome to CryptoChuo. ' },
@@ -230,21 +266,21 @@ const Home = ({user}) => {
                                     </div>
                                 </div>
                             </div>
-                            <form class="contact-form">
-                                <label for="fullName">Full Name</label>
-                                <input type="text" id="fullName" placeholder="Your Full Name" required/>
+                            <form class="contact-form" onSubmit={handleSubmit}>
+                                <label>Full Name</label>
+                                <input type="text" id="fullName" placeholder="Enter your Full Name" value={name} onChange={(e) => setName(e.target.value)} required/>
 
                                 <label for="phoneNumber">Phone Number</label>
-                                <input type="text" id="phoneNumber" placeholder="Your Phone Number" required/>
+                                <input type="text" id="phoneNumber" placeholder="Enter your Phone Number" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} required/>
 
                                 <label for="emailAddress">Email Address</label>
-                                <input type="text" id="emailAddress" placeholder="Your Email Address" required/>
+                                <input type="text" id="emailAddress" placeholder="Enter your Email Address" value={email} onChange={(e) => setEmail(e.target.value)} required/>
 
                                 <label for="subject">Subject</label>
-                                <input type="text" id="subject" placeholder="Email Subject" required/>
+                                <input type="text" id="subject" placeholder="Enter Email Subject" value={subject} onChange={(e) => setSubject(e.target.value)} required/>
 
                                 <label for="message">Your message</label>
-                                <textarea id="message" placeholder="What can we help you with?" required></textarea>
+                                <textarea id="message" placeholder="What can we help you with?" value={message} onChange={(e) => setMessage(e.target.value)} required></textarea>
 
                                 <button id="contact-btn" type="submit">Submit</button>
                             </form>
