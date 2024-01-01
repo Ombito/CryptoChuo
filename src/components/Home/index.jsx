@@ -24,8 +24,12 @@ const Home = ({user}) => {
     const [loading, setLoading] = useState(true);
     const [courses, setCourses] = useState([]);
 
+    const filterItemsByCategory = (is_trending) => {
+        return courses.filter(item => item.is_trending === is_trending);
+      };
+
   useEffect(() => {
-    const apiUrl = `http://127.0.0.1:5555/courses?is_trending=True`;
+    const apiUrl = `http://127.0.0.1:5555/courses`;
     fetch(apiUrl)
       .then((response) => {
         if (!response.ok) {
@@ -114,158 +118,29 @@ const Home = ({user}) => {
                 <div class="container" id="course-div">
                     <h3>Trending Courses</h3>
                     <div id="home-card-container">
-                        <div className="course-card">
+                        {filterItemsByCategory('true').map(course => (
+                        <div className="course-card" key={course.id}>
                             <img src={Course1} alt="" className="course-img"/>
                             <div class="course-details">
-                                <h6>Blockchain Advanced Level: Industry Applications</h6>
-                                <p>Duration: 1 week</p>                             
+                                <h4>{course.title}</h4>
+                                <p>{course.description}</p>
+                                <p>Duration: {course.duration}</p>
                                 <div className="amount">
-                                    <h6>$199.99</h6>
+                                    <h5>${course.price}</h5>
                                     <div>
-                                        <p class="rating"> 
-                                        <span class="star">&#9733;</span>
-                                        <span class="star">&#9733;</span>
-                                        <span class="star">&#9733;</span>
-                                        <span class="star">&#9733;</span>
-                                        <span class="star">&#9734;</span>
+                                        <p className="rating">
+                                            {Array.from({ length: Math.round(course.rating) }, (_, index) => (
+                                            <span key={index} className="star">&#9733;</span>
+                                            ))}
+                                            {Array.from({ length: 5 - Math.round(course.rating) }, (_, index) => (
+                                            <span key={index} className="star">&#9734;</span>
+                                            ))}
                                         </p>
                                     </div>
-                                </div>      
+                                </div>     
                             </div>
-                        </div>
-                        <div className="course-card">
-                            <img src={Course2} alt="" className="course-img"/>
-                            <div class="course-details">
-                                <h6>Cryptocurrency Regulation: Accounting Rules For Crypto & Bitcoin</h6>
-                                <p>Duration: 4 hours</p>                             
-                                <div className="amount">
-                                    <h6>$24.99</h6>
-                                    <div>
-                                        <p class="rating"> 
-                                        <span class="star">&#9733;</span>
-                                        <span class="star">&#9733;</span>
-                                        <span class="star">&#9733;</span>
-                                        <span class="star">&#9733;</span>
-                                        <span class="star">&#9733;</span>
-                                        </p>
-                                    </div>
-                                </div>      
-                            </div>
-                        </div>
-                        <div className="course-card">
-                            <img src={Course3} alt="" className="course-img"/>
-                            <div class="course-details">
-                                <h6>DeFi- Decentralized Finance - Future of Finance Masterclass</h6>
-                                <p>Duration: 6 hours</p>                             
-                                <div className="amount">
-                                    <h6>$19.99</h6>
-                                    <div>
-                                        <p class="rating"> 
-                                        <span class="star">&#9733;</span>
-                                        <span class="star">&#9733;</span>
-                                        <span class="star">&#9733;</span>
-                                        <span class="star">&#9733;</span>
-                                        <span class="star">&#9734;</span>
-                                        </p>
-                                    </div>
-                                </div>      
-                            </div>
-                        </div>
-                        <div className="course-card">
-                            <img src={Course4} alt="" className="course-img"/>
-                            <div class="course-details">
-                                <h6>Blockchain - Complete Blockchain Course for Beginners</h6>
-                                <p>Duration: 12 hours</p> 
-                                <div className="amount">
-                                    <h6>$49.99</h6>
-                                    <div>
-                                        <p class="rating"> 
-                                        <span class="star">&#9733;</span>
-                                        <span class="star">&#9733;</span>
-                                        <span class="star">&#9733;</span>
-                                        <span class="star">&#9733;</span>
-                                        <span class="star">&#9734;</span>
-                                        </p>
-                                    </div>
-                                </div>      
-                            </div>
-                        </div>
-                        <div className="course-card">
-                            <img src={Course5} alt="" className="course-img"/>
-                            <div class="course-details">
-                                <h6>Create Your Own CryptoCurrency With ERC-20 Tokens on ETH</h6>
-                                <p>Duration: 8 hours</p>                             
-                                <div className="amount">
-                                    <h6>$34.99</h6>
-                                    <div>
-                                        <p class="rating"> 
-                                        <span class="star">&#9733;</span>
-                                        <span class="star">&#9733;</span>
-                                        <span class="star">&#9733;</span>
-                                        <span class="star">&#9734;</span>
-                                        <span class="star">&#9734;</span>
-                                        </p>
-                                    </div>
-                                </div>      
-                            </div>
-                        </div>
-                        <div className="course-card">
-                            <img src={Course6} alt="" className="course-img"/>
-                            <div class="course-details">
-                                <h6>Staying Safe: Cryptocurrencies Security Guide</h6>
-                                <p>Duration: 12 hours</p>                             
-                                <div className="amount">
-                                    <h6>$34.99</h6>
-                                    <div>
-                                        <p class="rating"> 
-                                        <span class="star">&#9733;</span>
-                                        <span class="star">&#9733;</span>
-                                        <span class="star">&#9733;</span>
-                                        <span class="star">&#9733;</span>
-                                        <span class="star">&#9734;</span>
-                                        </p>
-                                    </div>
-                                </div>      
-                            </div>
-                        </div>
-                        <div className="course-card">
-                            <img src={Course7} alt="" className="course-img"/>
-                            <div class="course-details">
-                                <h6>Cryptocurrency Investing Guide: 2024-2025</h6>
-                                <p>Duration: 4 hours</p> 
-                                <div className="amount">
-                                    <h6>$24.99</h6>
-                                    <div>
-                                        <p class="rating"> 
-                                        <span class="star">&#9733;</span>
-                                        <span class="star">&#9733;</span>
-                                        <span class="star">&#9733;</span>
-                                        <span class="star">&#9734;</span>
-                                        <span class="star">&#9734;</span>
-                                        </p>
-                                    </div>
-                                </div>      
-                            </div>
-                        </div>
-                        <div className="course-card">
-                            <img src={Course8} alt="" className="course-img"/>
-                            <div class="course-details">
-                                <h6>Bitcoin Mining: Lightning Network In Bitcoin Explained</h6>
-                                <p>Duration: 8 hours</p> 
-                                <div className="amount">
-                                    <h6>$32.99</h6>
-                                    <div>
-                                        <p class="rating"> 
-                                        <span class="star">&#9733;</span>
-                                        <span class="star">&#9733;</span>
-                                        <span class="star">&#9733;</span>
-                                        <span class="star">&#9733;</span>
-                                        <span class="star">&#9734;</span>
-                                        </p>
-                                    </div>
-                                </div>      
-                            </div>
-                        </div>
+                        </div>                        
+                        ))}           
                     </div>
                 </div>
                 <div class="container" className='topics'>
