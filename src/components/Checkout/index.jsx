@@ -1,6 +1,8 @@
 import React from 'react';
 import '../Checkout/style.css';
 import Navbar from '../Navbar/index';
+import Footer from '../Footer/index';
+
 
 const Checkout = () => {
   return (
@@ -10,8 +12,8 @@ const Checkout = () => {
             <div>
                 <h2>Basic Information</h2>
                 <div>
-                    <form>
-                        <div>
+                    <form id="checkout-form">
+                        <div id="name-div" className="input-div">
                             <div>
                                 <label>First Name</label>
                                 <input type="text" />
@@ -23,7 +25,7 @@ const Checkout = () => {
                         </div>
                         <label>Full Address</label>
                         <textarea></textarea>
-                        <div>
+                        <div className="input-div">
                             <div>
                                 <label>City</label>
                                 <input type="text" />
@@ -43,6 +45,7 @@ const Checkout = () => {
                 </div>
             </div>
         </div>
+        <Footer />
     </div>
   )
 }

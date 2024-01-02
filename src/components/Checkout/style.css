@@ -1,0 +1,18 @@
+#checkout {
+    margin-top: 100px;
+    margin-bottom: 700px;
+}
+#checkout-form {
+    width: 70%;
+}
+#name-div {
+    display: flex;
+    justify-content: space-between;
+}
+.input-div {
+    display: flex;
+    gap: 20px;
+}
+#checkout-form input{
+    width: 20vw;
+}
