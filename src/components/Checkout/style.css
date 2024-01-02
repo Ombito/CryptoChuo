@@ -2,6 +2,9 @@
     margin-top: 100px;
     margin-bottom: 700px;
 }
+#checkout h2 {
+    text-align: center;
+}
 #checkout-form {
     width: 70%;
 }
