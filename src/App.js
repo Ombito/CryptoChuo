@@ -9,7 +9,7 @@ import About from './components/About';
 import Markets from './components/Markets';
 import News from './components/News';
 import Shop from './components/Shop';
-import Navbar from './components/Navbar/navbar';
+import Navbar from './components/Navbar/index.jsx';
 import Checkout from './components/Checkout';
 import Cart from './components/Cart';
 import Signup from './components/Signup';
@@ -57,28 +57,29 @@ function App() {
     }
   };
   
+  console.log('Cart length:', cart.length);
 
 
   return (
     <div className="App">
           <Routes>
-            <Route>
-              <Route path="/" element={<Home user={user}/>} />
-              <Route element={<Navbar user={user} size={cart.length} />} />
-              <Route path="/courses" element={<Courses user={user} />} />
-              <Route path="/courses/:id" element={<CourseDetails user={user} handleClick={handleClick} />} />
-              <Route path="/login" element={<LogIn setUser={setUser} />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/signup" element={<Signup />} />
-              <Route path="/markets" element={<Markets />} />
-              <Route path="/news" element={<News />} />
-              <Route path="/shop" element={<Shop handleClick={handleClick}/>} />
-              <Route path="checkout" element={<Checkout user={user}/>} />
-              <Route path="cart" element={<Cart cart={cart} setCart={setCart} refresh={refresh} />} />
-              <Route path="/events" element={<Events />} />
-              <Route path="/careers" element={<Careers />} />
-              <Route path="/sponsorship" element={<Sponsorship />} />
-            </Route>
+            <Route element={<Navbar user={user} setUser={setUser} size={cart.length} />} />
+              <Route>
+                <Route path="/" element={<Home user={user}/>} />
+                <Route path="/courses" element={<Courses user={user} />} />
+                <Route path="/courses/:id" element={<CourseDetails user={user} handleClick={handleClick} />} />
+                <Route path="/login" element={<LogIn setUser={setUser} />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/signup" element={<Signup />} />
+                <Route path="/markets" element={<Markets />} />
+                <Route path="/news" element={<News />} />
+                <Route path="/shop" element={<Shop handleClick={handleClick}/>} />
+                <Route path="checkout" element={<Checkout user={user}/>} />
+                <Route path="cart" element={<Cart cart={cart} setCart={setCart} refresh={refresh} />} />
+                <Route path="/events" element={<Events />} />
+                <Route path="/careers" element={<Careers />} />
+                <Route path="/sponsorship" element={<Sponsorship />} />
+              </Route>
       </Routes>
 
     </div>

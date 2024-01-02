@@ -1,5 +1,5 @@
 import React, { useState }  from 'react';
-import "../Navbar/navbar.css";
+import "../Navbar/style.css";
 import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import logo from '../Assets/logo1.jpeg';
@@ -47,8 +47,10 @@ const Navbar = ({ user, size }) => {
                         </div>
                         <div className="auth-button">
                             <Link to="/cart">
-                                <FaShoppingCart id="cart-icon"/>
-                                <span>{size}</span>
+                                <div>
+                                    <FaShoppingCart id="cart-icon"/>5
+                                    {size > 0 && <span className="cart-length">{size}</span>}
+                                </div>
                             </Link>
                             <Link to="/login">
                                 <FaUser />
@@ -79,8 +81,10 @@ const Navbar = ({ user, size }) => {
                     </div>
                     <div className="auth-button">
                         <Link to="/cart">
+                        <div>
                             <FaShoppingCart id="cart-icon"/>
-                            <span>{size}</span>
+                            {size > 0 && <span className="cart-length">{size}</span>}
+                        </div>
                         </Link>
                         <Link to="/login">
                             <button id='button' type='submit'>Sign in</button>

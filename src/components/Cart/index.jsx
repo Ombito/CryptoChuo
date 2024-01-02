@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Navbar from '../Navbar/navbar.jsx';
+import Navbar from '../Navbar/index.jsx';
 import "../Cart/styles.css";
 
 
@@ -74,7 +74,7 @@ const Cart = ({ cart, setCart }) => {
                                     <h4>Total Amount Of Your Cart</h4>
                                     <h2>${price}</h2>
                                 </div>
-                                <button>Proceed to Checkout</button>
+                                <button id='checkout-btn'>Proceed to Checkout (${price})</button>
                             </>
                         )}    
                         </div>

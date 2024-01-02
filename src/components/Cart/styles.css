@@ -23,7 +23,8 @@
 .cart-card-btns {
     display: flex;
     gap: 5px;
-    margin: auto;
+    height: 5vh;
+    margin: auto; 
 }
 .cart-card-btns p{
     margin: auto;
@@ -39,4 +40,13 @@
     display: flex;
     justify-content: space-between;
     padding: 15px 0;
+}
+
+
+/* mobile screen device  */
+@media screen and (min-width: 360px) and (max-width: 765px){
+    #cart-card {
+        display: flex;
+        flex-direction: column;
+    }
 }

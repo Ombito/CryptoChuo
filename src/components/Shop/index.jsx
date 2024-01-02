@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import tshirt from '../Assets/download.jpeg';
 import book from '../Assets/book.jpg';
 import hoodie from '../Assets/bitcoinhoodie.jpg';
-import Navbar from '../Navbar/navbar.jsx';
+import Navbar from '../Navbar/index.jsx';
 import Footer from '../Footer/index.jsx';
 
 

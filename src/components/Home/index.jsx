@@ -10,7 +10,7 @@ import Course5 from '../Assets/Courses/p2p.png';
 import Course6 from '../Assets/Courses/mobile.png';
 import Course7 from '../Assets/Courses/trading.jpeg';
 import Course8 from '../Assets/Courses/bitcoinmining.png';
-import Navbar from '../Navbar/navbar.jsx';
+import Navbar from '../Navbar/index.jsx';
 import Footer from '../Footer/index.jsx';
 import { FaTelegram, FaLinkedin, FaWhatsapp, FaDiscord } from  'react-icons/fa';
 import ContactUs from '../Assets/contact.png';
