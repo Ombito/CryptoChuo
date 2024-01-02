@@ -66,7 +66,7 @@ const Checkout = () => {
                             </div>
                             <div></div>
                             <div>
-                                <h5>Total</h5>
+                                <h5>Order Total</h5>
                                 <h4>$</h4>
                             </div>
                         </div>
@@ -76,7 +76,7 @@ const Checkout = () => {
                     <h3>Choose your payment method</h3>
                 </div>
                 <div>
-                    <h3>Billing Details</h3>
+                    <h3>Payment Details</h3>
                     <div>
                         <label>Debit/Credit Card</label>
                         <label>Card Number</label>
