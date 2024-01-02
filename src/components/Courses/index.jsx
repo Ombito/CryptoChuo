@@ -107,7 +107,7 @@ const Courses = () => {
         setFilterVisible(!filterVisible);
     };
 
-
+    
   return (
     <div> 
       <Navbar />

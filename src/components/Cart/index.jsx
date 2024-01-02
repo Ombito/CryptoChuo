@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../Navbar/index.jsx';
 import "../Cart/styles.css";
-
+import { useNavigate } from 'react-router-dom';
 
 const Cart = ({ cart, setCart }) => {
     const [price, setPrice] = useState(0);
+    const navigate = useNavigate();
 
   const handlePrice = () => {
     let initialTotal = 0;
@@ -44,6 +45,9 @@ const Cart = ({ cart, setCart }) => {
     handlePrice();
   }, [cart]);
  
+  const handleCheckout = () => {
+    navigate('/checkout', { totalAmount: price });
+  };
 
     return (
         <div>
@@ -74,7 +78,7 @@ const Cart = ({ cart, setCart }) => {
                                     <h4>Total Amount Of Your Cart</h4>
                                     <h2>${price}</h2>
                                 </div>
-                                <button id='checkout-btn'>Proceed to Checkout (${price})</button>
+                                <button onClick={handleCheckout} id='checkout-btn'>Proceed to Checkout (${price})</button>
                             </>
                         )}    
                         </div>
