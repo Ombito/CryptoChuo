@@ -1,19 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import "../Shop/style.css"
+import "../Shop/style.css";
 import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import tshirt from '../Assets/download.jpeg'
-import book from '../Assets/book.jpg'
-import hoodie from '../Assets/bitcoinhoodie.jpg'
+import tshirt from '../Assets/download.jpeg';
+import book from '../Assets/book.jpg';
+import hoodie from '../Assets/bitcoinhoodie.jpg';
 import Navbar from '../Navbar/navbar.jsx';
 import Footer from '../Footer/index.jsx';
 
-const Shop = () => {
+
+
+const Shop = ({handleClick}) => {
+
   const [merchandiseItems, setMerchandiseItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [refresh, setRefresh] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
+  const [cartItems, setCartItems] = useState([]); 
   const itemsPerPage = 12;
 
   const filterItemsByCategory = (category) => {
@@ -56,6 +60,11 @@ const Shop = () => {
     setSearchTerm(e.target.value);
   };
 
+  const handleAddToCart = (item) => {
+    setCartItems([...cartItems, item]);
+    console.log(`Item added to cart: ${item.name}`);
+  };
+
 
   return (
     <div>
@@ -88,7 +97,7 @@ const Shop = () => {
                       ))}
                     </p>
                   </div>
-                  <button>Add to Cart</button>
+                  <button onClick={() => handleClick(item)}>Add to Cart</button>
                 </div>
               </div>            
               ))}
@@ -113,7 +122,7 @@ const Shop = () => {
                       ))}
                     </p>
                   </div>
-                  <button>Add to Cart</button>
+                  <button onClick={() => handleClick(item)}>Add to Cart</button>
                 </div>
               </div>
             ))}  
@@ -143,7 +152,7 @@ const Shop = () => {
                       ))}
                     </p>
                   </div>
-                  <button>Add to Cart</button>
+                  <button onClick={() => handleClick(item)}>Add to Cart</button>
                 </div>
               </div>
               )
@@ -157,7 +166,7 @@ const Shop = () => {
 
         </div>
       </section>
-      <Footer />       
+      <Footer />    
 </div> 
   );
 };

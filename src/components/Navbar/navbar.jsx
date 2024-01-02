@@ -5,9 +5,10 @@ import { Link } from 'react-router-dom';
 import logo from '../Assets/logo1.jpeg';
 import { FaShoppingCart, FaBars, FaTimes, FaUser } from  'react-icons/fa';
 
-const Navbar = ({ user }) => {
-
+const Navbar = ({ user, size }) => {
+    console.log('Navbar size:', size);
     const [ active, setActive ] = useState(false);
+    
     const toggle = ()=> {
         setActive(!active);
     }
@@ -16,6 +17,8 @@ const Navbar = ({ user }) => {
         setActive(false);
       };
     console.log('Navbar user:', user)
+
+
     return (
         <div className='navbar'>
             <div className="logo-container">
@@ -45,6 +48,7 @@ const Navbar = ({ user }) => {
                         <div className="auth-button">
                             <Link to="/cart">
                                 <FaShoppingCart id="cart-icon"/>
+                                <span>{size}</span>
                             </Link>
                             <Link to="/login">
                                 <FaUser />
@@ -76,6 +80,7 @@ const Navbar = ({ user }) => {
                     <div className="auth-button">
                         <Link to="/cart">
                             <FaShoppingCart id="cart-icon"/>
+                            <span>{size}</span>
                         </Link>
                         <Link to="/login">
                             <button id='button' type='submit'>Sign in</button>

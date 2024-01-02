@@ -16,11 +16,14 @@ import Signup from './components/Signup';
 import Events from './components/Events';
 import Careers from './components/Careers';
 import Sponsorship from './components/Sponsorship';
-
+import { useSnackbar } from 'notistack';
 
 function App() {
   const [user, setUser] = useState({});
-  const[refresh, setRefresh]=useState(false)
+  const [refresh, setRefresh]=useState(false);
+  const [cart, setCart] = useState([]);
+  const { enqueueSnackbar } = useSnackbar();
+
 
   useEffect(() => {
     fetch("http://127.0.0.1:5555/session_user")
@@ -37,7 +40,23 @@ function App() {
     .catch(error => console.log(error));
   }, [refresh]); 
 
- 
+  const handleClick =  (item) => {
+    console.log(item);
+    let isPresent = false;
+
+    cart.forEach((product) => {
+      if (item.id === product.id) {
+        isPresent = true;
+      }
+    });
+
+    if (isPresent) {
+      enqueueSnackbar('Item already in Cart', { variant: 'warning' });
+    } else {
+      setCart([...cart, item]);
+    }
+  };
+  
 
 
   return (
@@ -45,7 +64,7 @@ function App() {
           <Routes>
             <Route>
               <Route path="/" element={<Home user={user}/>} />
-              <Route element={<Navbar user={user}/>} />
+              <Route element={<Navbar user={user} size={cart.length} />} />
               <Route path="/courses" element={<Courses user={user} />} />
               <Route path="/courses/:id" element={<CourseDetails user={user} />} />
               <Route path="/login" element={<LogIn setUser={setUser} />} />
@@ -53,9 +72,9 @@ function App() {
               <Route path="/signup" element={<Signup />} />
               <Route path="/markets" element={<Markets />} />
               <Route path="/news" element={<News />} />
-              <Route path="/shop" element={<Shop />} />
+              <Route path="/shop" element={<Shop handleClick={handleClick}/>} />
               <Route path="checkout" element={<Checkout user={user}/>} />
-              <Route path="cart" element={<Cart />} />
+              <Route path="cart" element={<Cart cart={cart} />} />
               <Route path="/events" element={<Events />} />
               <Route path="/careers" element={<Careers />} />
               <Route path="/sponsorship" element={<Sponsorship />} />
