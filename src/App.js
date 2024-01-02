@@ -51,7 +51,7 @@ function App() {
     });
 
     if (isPresent) {
-      enqueueSnackbar('Item already in Cart', { variant: 'warning' });
+      enqueueSnackbar('Item is already added to your Cart', { variant: 'warning' });
     } else {
       setCart([...cart, item]);
     }
@@ -66,7 +66,7 @@ function App() {
               <Route path="/" element={<Home user={user}/>} />
               <Route element={<Navbar user={user} size={cart.length} />} />
               <Route path="/courses" element={<Courses user={user} />} />
-              <Route path="/courses/:id" element={<CourseDetails user={user} />} />
+              <Route path="/courses/:id" element={<CourseDetails user={user} handleClick={handleClick} />} />
               <Route path="/login" element={<LogIn setUser={setUser} />} />
               <Route path="/about" element={<About />} />
               <Route path="/signup" element={<Signup />} />
