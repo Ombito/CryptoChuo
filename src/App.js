@@ -75,7 +75,7 @@ function App() {
                 <Route path="/news" element={<News />} />
                 <Route path="/shop" element={<Shop handleClick={handleClick}/>} />
                 <Route path="checkout" element={<Checkout user={user}/>} />
-                <Route path="cart" element={<Cart cart={cart} setCart={setCart} refresh={refresh} />} />
+                <Route path="cart" element={<Cart cart={cart} setCart={setCart} refresh={refresh} handleClick={handleClick} />} />
                 <Route path="/events" element={<Events />} />
                 <Route path="/careers" element={<Careers />} />
                 <Route path="/sponsorship" element={<Sponsorship />} />
