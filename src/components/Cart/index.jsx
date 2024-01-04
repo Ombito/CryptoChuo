@@ -75,7 +75,7 @@ const Cart = ({ cart, setCart, handleClick }) => {
   }, [refresh]);
 
   const filterItemsByCategory = (grouping) => {
-    return merchandiseItems.filter((item) => item.groupingy === grouping);
+    return merchandiseItems.filter((item) => item.grouping === grouping);
   };
 
   return (

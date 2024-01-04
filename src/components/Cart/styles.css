@@ -79,19 +79,28 @@
 .suggestion {
     margin-top: 40px;
 }
+.suggestion h3{
+   text-align: center;
+   padding-bottom: 7px;
+}
 
 /* mobile screen device  */
 @media screen and (min-width: 360px) and (max-width: 765px){
     #cart {
         margin-top: 130px;
-        margin-bottom: 4000px;
+        margin-bottom: 2700px;
     }
     #cart-container-div {
         display: flex;
         flex-direction: column-reverse;
     }
+    #cart-container h3 {
+        text-align: center;
+    }
     #cart-card {
         display: flex;
+        height: 15vh;
+        margin-bottom: 10px;
     }
     #cart-amount {
         width: 100%;
@@ -99,5 +108,11 @@
     }
     #checkout-btn {
         margin-bottom: 5px;
+    }
+    #cart-card h4, h5{
+        padding-top: 10px;
+    }
+    #cart-card-btns {
+        padding-bottom: 45px;
     }
 }
