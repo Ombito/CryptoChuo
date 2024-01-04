@@ -16,7 +16,7 @@ import { FaCheck } from 'react-icons/fa';
 const Courses = () => {
     const [activeTab, setActiveTab] = useState ('allCourses');
     const [loading, setLoading] = useState(true);
-    const [refresh, setRefresh]=useState(false);
+    const [refresh, setRefresh]=useState(true);
     const [courses, setCourses] = useState([]);
     const navigate = useNavigate();
     
@@ -54,7 +54,7 @@ const Courses = () => {
             ...prevFilters,
             [category]: !prevFilters[category],
         }));
-        setRefresh(true);
+        setRefresh();
     };
 
     const handleLevelFilter = (level) => {
@@ -62,7 +62,7 @@ const Courses = () => {
             ...prevFilters,
             [level]: !prevFilters[level],
         }));
-        setRefresh(true);
+        setRefresh();
     };
 
     const handleDurationFilter = (duration) => {
@@ -70,7 +70,7 @@ const Courses = () => {
             ...prevFilters,
             [duration]: !prevFilters[duration],
         }));
-        setRefresh(true);
+        setRefresh();
     };
     
     const applyFilters = (course) => {

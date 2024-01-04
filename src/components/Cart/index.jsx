@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import Navbar from '../Navbar/index.jsx';
 import "../Cart/styles.css";
 import { useNavigate } from 'react-router-dom';
+import Footer from '../Footer/index.jsx';
+import { FaTrash } from  'react-icons/fa';
+
 
 const Cart = ({ cart, setCart }) => {
     const [price, setPrice] = useState(0);
@@ -61,17 +64,22 @@ const Cart = ({ cart, setCart }) => {
                         </div>
                         ) : (
                             <>
+                                <h3>Cart ({cart.length})</h3>
                                 {cart.map(item => (
                                     <div key={item.id} id="cart-card">
                                         <img src={item.image} alt="item" />
-                                        <h5>{item.name}</h5>
-                                        <div className='cart-card-btns'>
-                                            <button onClick={() => handleIncrement(item)}>+</button>
-                                            <p>{item.quantity}</p>
-                                            <button onClick={() => handleDecrement(item)}>-</button>
+                                        <div>
+                                          <h5>{item.name}</h5>
+                                          <p onClick={() => handleRemove(item)} id="remove-btn"><FaTrash /> Remove</p>
                                         </div>
-                                        <h4>{item.price}</h4>
-                                        <button onClick={() => handleRemove(item)} id="remove-btn">Remove</button>
+                                        <div>
+                                          <h4>{item.price}</h4>
+                                          <div className='cart-card-btns'>
+                                              <button onClick={() => handleIncrement(item)}>+</button>
+                                              <p>{item.quantity}</p>
+                                              <button onClick={() => handleDecrement(item)}>-</button>
+                                          </div>
+                                        </div> 
                                     </div>
                                 ))}
                                 <div id="cart-amount">
@@ -84,6 +92,7 @@ const Cart = ({ cart, setCart }) => {
                         </div>
                 
             </div>
+            <Footer />
         </div>
     )   
 }
