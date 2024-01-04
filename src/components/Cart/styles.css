@@ -1,9 +1,9 @@
 #cart {
     margin-top: 90px;
-    margin-bottom: 4%;
+    margin-bottom: 1900px;
 }
 #cart-hero {
-    padding-bottom: 250px;
+    display: flex;
 }
 #cart h1{
     text-align: center;
@@ -41,10 +41,17 @@
 }
 #cart-amount {
     display: flex;
-    justify-content: space-between;
-    padding: 15px 0;
+    flex-direction: column;
 }
-
+#cart-summary {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    width: 100%;
+}
+.suggestion {
+    margin-bottom: 400px;
+}
 
 /* mobile screen device  */
 @media screen and (min-width: 360px) and (max-width: 765px){

@@ -107,20 +107,19 @@ const Cart = ({ cart, setCart, handleClick }) => {
                                           </div>
                                         </div> 
                                     </div>
-                                ))}
-                                <div id="cart-amount">
-                                    <h4>CART SUMMARY</h4>
-                                    <div>
-                                      <h5>Subtotal</h5>
-                                      <h2>${price}</h2>
-                                    </div> 
-                                    <button onClick={handleCheckout} id='checkout-btn'>Checkout (${price})</button>
-                                </div>
-                                
-                            </div>
-                        )}    
-                        </div>
-                  <div>
+                                ))}                                
+                            </div>    
+                        )} 
+                        <div id="cart-amount">
+                          <h4>CART SUMMARY</h4>
+                          <div id="cart-summary">
+                            <h5>Subtotal</h5>
+                            <h2>${price}</h2>
+                          </div> 
+                          <button onClick={handleCheckout} id='checkout-btn'>Checkout (${price})</button>
+                        </div>   
+                          </div>
+                  <div className="suggestion">
                     <h3>You may also like</h3>
                     <div className="trending-div">
                       {filterItemsByCategory('accessories').map(item => (
