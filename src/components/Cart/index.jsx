@@ -89,14 +89,16 @@ const Cart = ({ cart, setCart, handleClick }) => {
               <h4>Your cart is empty.</h4>
             </div>
           ) : (
-            <div>
+            <div id="my-cart">
               <div id="cart-container-div">
                 <div id="cart-container">
                   <h3>Cart ({cart.length})</h3>
                     {cart.map((item) => (
                       <div key={item.id} id="cart-card">
-                        <img src={item.image} alt="item" />
-                        <div>
+                        <div id="img-div">
+                          <img src={item.image} alt="item" />
+                        </div>
+                        <div id="cart-name-div">
                           <h5>{item.name}</h5>
                           <p onClick={() => handleRemove(item)} id="remove-btn" className="cart-div">
                             <FaTrash /> Remove
@@ -112,16 +114,24 @@ const Cart = ({ cart, setCart, handleClick }) => {
                         </div>
                       </div>
                     ))}
-                <div id="cart-amount">
-                  <h4>CART SUMMARY</h4>
-                  <div id="cart-summary">
-                    <h5>Subtotal</h5>
-                    <h2>${price}</h2>
-                  </div>
-                  <button onClick={handleCheckout} id="checkout-btn">
-                    Checkout (${price})
-                  </button>
+              </div>
+              <div id="cart-amount">
+                <h5>CART SUMMARY</h5>
+                <div id="cart-summary">
+                  <p>Subtotal</p>
+                  <h5>${price}</h5>
                 </div>
+                <div id="cart-summary">
+                  <p>Estimated Tax</p>
+                  <h5>$0.00</h5>
+                </div>
+                <div id="cart-summary">
+                  <h5>Total</h5>
+                  <h4>${price}</h4>
+                </div>
+                <button onClick={handleCheckout} id="checkout-btn">
+                    Checkout (${price})
+                </button>
               </div>
             </div>
             <div className="suggestion">
