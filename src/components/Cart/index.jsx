@@ -3,7 +3,7 @@ import Navbar from '../Navbar/index.jsx';
 import "../Cart/styles.css";
 import { useNavigate } from 'react-router-dom';
 import Footer from '../Footer/index.jsx';
-import { FaTrash } from  'react-icons/fa';
+import { FaTrash } from 'react-icons/fa';
 import book from '../Assets/book.jpg';
 
 const Cart = ({ cart, setCart, handleClick }) => {
@@ -15,11 +15,11 @@ const Cart = ({ cart, setCart, handleClick }) => {
 
   const handlePrice = () => {
     let initialTotal = 0;
-    cart.map((item)=> {
-        initialTotal += item.quantity * item.price
-        })
-        const roundedTotal = parseFloat(initialTotal.toFixed(2));
-        setPrice(roundedTotal);
+    cart.map((item) => {
+      initialTotal += item.quantity * item.price;
+    });
+    const roundedTotal = parseFloat(initialTotal.toFixed(2));
+    setPrice(roundedTotal);
   };
 
   const handleIncrement = (item) => {
@@ -50,7 +50,7 @@ const Cart = ({ cart, setCart, handleClick }) => {
   useEffect(() => {
     handlePrice();
   }, [cart]);
- 
+
   const handleCheckout = () => {
     navigate('/checkout', { totalAmount: price });
   };
@@ -75,78 +75,92 @@ const Cart = ({ cart, setCart, handleClick }) => {
   }, [refresh]);
 
   const filterItemsByCategory = (category) => {
-    return merchandiseItems.filter(item => item.category === category);
+    return merchandiseItems.filter((item) => item.category === category);
   };
 
-    return (
-        <div>
-            <Navbar />
-            <div id="cart" class="container">
-                <h1>Shopping Cart</h1>
-                <div id="cart-hero">
-                    {cart.length === 0 ? (
+  return (
+    <div>
+      <Navbar />
+      <div id="cart" class="container">
+        <h1>Shopping Cart</h1>
+        <div id="cart-hero">
+          {cart.length === 0 ? (
+            <div>
+              <h4>Your cart is empty.</h4>
+            </div>
+          ) : (
+            <div>
+              <div id="cart-container-div">
+                <div id="cart-container">
+                  <h3>Cart ({cart.length})</h3>
+                    {cart.map((item) => (
+                      <div key={item.id} id="cart-card">
+                        <img src={item.image} alt="item" />
                         <div>
-                            <h4>Your cart is empty.</h4>
+                          <h5>{item.name}</h5>
+                          <p onClick={() => handleRemove(item)} id="remove-btn" className="cart-div">
+                            <FaTrash /> Remove
+                          </p>
                         </div>
-                        ) : (
-                            <div id="cart-container">
-                                <h3>Cart ({cart.length})</h3>
-                                {cart.map(item => (
-                                    <div key={item.id} id="cart-card">
-                                        <img src={item.image} alt="item" />
-                                        <div>
-                                          <h5>{item.name}</h5>
-                                          <p onClick={() => handleRemove(item)} id="remove-btn" className="cart-div"><FaTrash /> Remove</p>
-                                        </div>
-                                        <div>
-                                          <h4>{item.price}</h4>
-                                          <div className='cart-card-btns'>
-                                              <button onClick={() => handleIncrement(item)}>+</button>
-                                              <p>{item.quantity}</p>
-                                              <button onClick={() => handleDecrement(item)}>-</button>
-                                          </div>
-                                        </div> 
-                                    </div>
-                                ))}                                
-                            </div>    
-                        )} 
-                        <div id="cart-amount">
-                          <h4>CART SUMMARY</h4>
-                          <div id="cart-summary">
-                            <h5>Subtotal</h5>
-                            <h2>${price}</h2>
-                          </div> 
-                          <button onClick={handleCheckout} id='checkout-btn'>Checkout (${price})</button>
-                        </div>   
-                          </div>
-                  <div className="suggestion">
-                    <h3>You may also like</h3>
-                    <div className="trending-div">
-                      {filterItemsByCategory('accessories').map(item => (
-                        <div className="shop-card" key={item.id}>
-                          <img src={book} height="200" width="200" alt="" />   
-                          <div className="shop-card-amount">
-                            <h5>{item.name}</h5>
-                            <div className="shop-card-hero">
-                              <h5>${item.price}</h5>
-                              <p className="rating">
-                                {Array.from({ length: Math.round(item.rating) }, (_, index) => (
-                                  <span key={index} className="star">&#9733;</span>
-                                ))}
-                                {Array.from({ length: 5 - Math.round(item.rating) }, (_, index) => (
-                                  <span key={index} className="star">&#9734;</span>
-                                ))}
-                              </p>
-                            </div>
-                            <button onClick={() => handleClick(item)}>Add to Cart</button>
+                        <div>
+                          <h4>{item.price}</h4>
+                          <div className="cart-card-btns">
+                            <button onClick={() => handleIncrement(item)}>+</button>
+                            <p>{item.quantity}</p>
+                            <button onClick={() => handleDecrement(item)}>-</button>
                           </div>
                         </div>
-                      ))}  
+                      </div>
+                    ))}
+                <div id="cart-amount">
+                  <h4>CART SUMMARY</h4>
+                  <div id="cart-summary">
+                    <h5>Subtotal</h5>
+                    <h2>${price}</h2>
+                  </div>
+                  <button onClick={handleCheckout} id="checkout-btn">
+                    Checkout (${price})
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div className="suggestion">
+              <h3>You may also like</h3>
+              <div className="trending-div">
+                {filterItemsByCategory('accessories').map((item) => (
+                  <div className="shop-card" key={item.id}>
+                    <img src={book} height="200" width="200" alt="" />
+                    <div className="shop-card-amount">
+                      <h5>{item.name}</h5>
+                      <div className="shop-card-hero">
+                        <h5>${item.price}</h5>
+                        <p className="rating">
+                          {Array.from({ length: Math.round(item.rating) }, (_, index) => (
+                            <span key={index} className="star">
+                              &#9733;
+                            </span>
+                          ))}
+                          {Array.from({ length: 5 - Math.round(item.rating) }, (_, index) => (
+                            <span key={index} className="star">
+                              &#9734;
+                            </span>
+                          ))}
+                        </p>
+                      </div>
+                      <button onClick={() => handleClick(item)}>Add to Cart</button>
                     </div>
                   </div>
+                ))}
+              </div>
             </div>
-            <Footer />
+            </div>
+          )}
+          
         </div>
-    )   
-}
+      </div>
+      <Footer />
+    </div>
+  );
+};
+
 export default Cart;

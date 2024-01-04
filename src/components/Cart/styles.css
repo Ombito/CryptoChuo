@@ -8,6 +8,9 @@
 #cart h1{
     text-align: center;
 }
+#cart-container {
+    display: flex;
+}
 #cart-card {
     display: flex;
     border-bottom: 1px solid red;
@@ -42,6 +45,9 @@
 #cart-amount {
     display: flex;
     flex-direction: column;
+    height: auto;
+    border: 2px solid gray;
+    border-radius: 8px;
 }
 #cart-summary {
     display: flex;
