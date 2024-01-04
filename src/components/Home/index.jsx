@@ -37,8 +37,8 @@ const Home = ({user}) => {
 
     const [subscribeEmail, setSubscribeEmail] = useState('');
 
-    const filterItemsByCategory = (is_trending) => {
-        return courses.filter(item => item.is_trending === is_trending);
+    const filterItemsByCategory = (grouping) => {
+        return courses.filter(item => item.grouping === grouping);
       };
 
   useEffect(() => {
@@ -181,7 +181,7 @@ const Home = ({user}) => {
                 <div class="container" id="course-div">
                     <h3>Trending Courses</h3>
                     <div id="home-card-container">
-                        {filterItemsByCategory('true').map(course => (
+                        {filterItemsByCategory('trending').map(course => (
                         <div className="course-card" key={course.id} onClick={() => navigate(`/courses/${course.id}`)}>
                             <img src={course.image} alt="" className="course-img"/>
                             <div class="course-details">

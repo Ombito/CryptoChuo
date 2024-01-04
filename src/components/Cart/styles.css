@@ -82,8 +82,22 @@
 
 /* mobile screen device  */
 @media screen and (min-width: 360px) and (max-width: 765px){
+    #cart {
+        margin-top: 130px;
+        margin-bottom: 4000px;
+    }
+    #cart-container-div {
+        display: flex;
+        flex-direction: column-reverse;
+    }
     #cart-card {
         display: flex;
-        flex-direction: column;
+    }
+    #cart-amount {
+        width: 100%;
+        height: auto;
+    }
+    #checkout-btn {
+        margin-bottom: 5px;
     }
 }

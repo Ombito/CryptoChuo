@@ -107,6 +107,9 @@ const Courses = () => {
         setFilterVisible(!filterVisible);
     };
 
+    const filterItemsByCategory = (grouping) => {
+        return courses.filter(item => item.grouping === grouping);
+      };
     
   return (
     <div> 
@@ -115,18 +118,20 @@ const Courses = () => {
     </div >
         <div className='courses'>
             <div class="container">
-                <h2>Featured Courses</h2>
-                <div className="featured-course-description">
-                    <img src={Feature} alt="course" id="featured-img" />
-                    <div id="featured-div">
-                        <h3>Introduction to Bitcoin</h3>
-                        <p><img src={tick} alt="" height="20" width="25"/> Course Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        <p><img src={clock} alt="" height="30" width="35"/> 4 hours</p>
-                        <p><img src={certificate} alt="" height="30" width="25"/> Earn a certificate upon completion</p>
-                        <h4>$49.99</h4>
-                        <button>Enroll Now</button>
-                    </div>                  
-                </div>
+                <h2>Featured Course</h2>
+                {filterItemsByCategory('featured').map(course => (
+                    <div className="featured-course-description" key={course.id} onClick={() => navigate(`/courses/${course.id}`)}>
+                        <img src={Feature} alt="course" id="featured-img" />
+                        <div id="featured-div">
+                            <h3>{course.title}</h3>
+                            <p><img src={tick} alt="" height="20" width="25"/> {course.description}</p>
+                            <p><img src={clock} alt="" height="30" width="35"/> {course.duration}</p>
+                            <p><img src={certificate} alt="" height="30" width="25"/> Earn a certificate upon completion</p>
+                            <h4>${course.price}</h4>
+                            <button>Enroll Now</button>
+                        </div>                  
+                    </div>
+                ))}
             </div>
             <div className='tabs-container'>
                 <p className={`tab ${activeTab === 'allCourses' ? 'active' : ''}`} onClick={() => showTab('allCourses')}>All Courses</p>

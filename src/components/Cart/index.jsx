@@ -74,8 +74,8 @@ const Cart = ({ cart, setCart, handleClick }) => {
       });
   }, [refresh]);
 
-  const filterItemsByCategory = (category) => {
-    return merchandiseItems.filter((item) => item.category === category);
+  const filterItemsByCategory = (grouping) => {
+    return merchandiseItems.filter((item) => item.groupingy === grouping);
   };
 
   return (
@@ -137,7 +137,7 @@ const Cart = ({ cart, setCart, handleClick }) => {
             <div className="suggestion">
               <h3>You may also like</h3>
               <div className="trending-div">
-                {filterItemsByCategory('accessories').map((item) => (
+                {filterItemsByCategory('suggested').map((item) => (
                   <div className="shop-card" key={item.id}>
                     <img src={book} height="200" width="200" alt="" />
                     <div className="shop-card-amount">
