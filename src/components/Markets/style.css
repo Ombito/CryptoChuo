@@ -68,17 +68,21 @@
 
 /* mobile responsiveness   */
 @media (max-width: 768px) {
+  #market {
+    display: flex;
+    flex-direction: column;
+    margin-top: 140px;
+    margin-bottom: 10px;
+  }
+  #market input{
+    height: 5vh;
+    width: 100%;
+  }
   .crypto-table {
     width: 90%;
   }
   .crypto-table th:nth-child(n+5),
   .crypto-table td:nth-child(n+5) {
     display: none;
-  }
-
-  .coin-info img {
-    width: 20px;
-    height: 20px;
-    margin-right: 5px;
   }
 }
