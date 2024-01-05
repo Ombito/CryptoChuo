@@ -94,8 +94,8 @@ const Markets = () => {
                     <div className="coin-info">
                       <img src={i.image} id="coin_img" alt="Coin Image" />
                       <div className="coin-name">
-                        <p>{i.name}</p>
-                        <p> {i.symbol.toUpperCase()}</p>
+                        <p>{i.name}</p> 
+                        <p>{i.symbol.toUpperCase()}</p>
                       </div>
                     </div>
                   </td>

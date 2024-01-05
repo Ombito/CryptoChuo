@@ -74,6 +74,16 @@ p span {
 .like-button.active:hover {
     color:#4caf50;
 }
+#suggestion {
+    margin-bottom: 540px;
+}
+#suggestion h3{
+    text-align: center;
+}
+.suggested-div {
+    display: flex;
+    margin-bottom: 140px;
+}
 
 /* mobile responsiveness   */
 @media (max-width: 768px) {
@@ -99,5 +109,12 @@ p span {
     }
     #feedback-hero {
         margin: 0px 4% 4% 4%;
+    }
+    #suggestion {
+        margin-bottom: 1970px;
+    }
+    .suggested-div {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
     }
 }

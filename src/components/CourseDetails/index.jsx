@@ -15,6 +15,9 @@ const CourseDetails = () => {
   const navigate = useNavigate();
   const [likeActive, setLikeActive] = useState(false);
   const [dislikeActive, setDislikeActive] = useState(false);
+  const [loading, setLoading] = useState(true);
+    const [refresh, setRefresh]=useState(true);
+    const [suggestedCourses, setSuggestedCourses] = useState([]);
 
   useEffect(() => {
     const apiUrl = `http://127.0.0.1:5555/courses/${id}`;
@@ -41,6 +44,25 @@ const CourseDetails = () => {
     </div>;
   }
 
+  
+    const apiUrl = `http://127.0.0.1:5555/courses`;
+    fetch(apiUrl)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Network response was not ok: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setSuggestedCourses(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+        setLoading(false);
+      });
+  
+
 
   const handleLike = () => {
     setLikeActive(true);
@@ -55,6 +77,9 @@ const CourseDetails = () => {
   const likeButtonClass = likeActive ? 'active' : '';
   const dislikeButtonClass = dislikeActive ? 'active' : '';
 
+  const filterItemsByCategory = (grouping) => {
+    return suggestedCourses.filter((course) => course.grouping === grouping);
+  };
 
   return (
     <div>
@@ -98,6 +123,34 @@ const CourseDetails = () => {
         <div id="feedback-btns">
           <button onClick={handleLike} className={`like-button ${likeButtonClass}`}><FaThumbsUp /> Yes </button>
           <button onClick={handleDislike} className={`like-button ${dislikeButtonClass}`}><FaThumbsDown /> No</button>
+        </div>
+      </div>
+      <div class="container" id="suggestion">
+        <h3>You may also like</h3>
+        <div className="suggested-div">
+          {filterItemsByCategory('suggested').map((course) => (
+            <div key={course.id} className="course-card" onClick={() => navigate(`/courses/${course.id}`)}>
+              <img src={course.image} alt="Course" className="course-img" />
+              <div className="course-details">
+                <h4>{course.title}</h4>
+                <p>{course.description}</p>
+                <p>Duration: {course.duration}</p>
+                <div className="amount">
+                  <h5>${course.price}</h5>
+                  <div>
+                    <p className="rating">
+                      {Array.from({ length: Math.round(course.rating) }, (_, index) => (
+                        <span key={index} className="star">&#9733;</span>
+                      ))}
+                      {Array.from({ length: 5 - Math.round(course.rating) }, (_, index) => (
+                        <span key={index} className="star">&#9734;</span>
+                      ))}
+                    </p>
+                  </div>
+              </div>
+            </div>
+        </div>
+          ))}
         </div>
       </div>
       <Footer />
