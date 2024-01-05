@@ -62,8 +62,8 @@ const LogIn = ({setUser}) => {
           <div className="checkbox-div">
             <div id="checkbox-container">
               <input type="checkbox" id="rememberMe" name="rememberMe" />
-              <label htmlFor="rememberMe">Remember me</label>
-              </div>
+              <label htmlFor="rememberMe" >Remember me</label>
+            </div>
               <p className="account">
                 <Link to="/forgot-password">Forgot password?</Link>
               </p>
