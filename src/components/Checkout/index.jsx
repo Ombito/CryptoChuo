@@ -76,23 +76,23 @@ const Checkout = () => {
                     </div>
                     <div id="order-summary">
                         <div className="order-summary-hero">
-                            <h3>Order Summary</h3>
-                            <div>
-                                <input type='text' placeholder='Gift card or discount code' />
-                                <button>Apply</button>
+                            <h4>Order Summary</h4>
+                            <div className="voucher-div">
+                                <input type='text' placeholder='Discount code' />
+                                <button id="voucher-btn">Apply</button>
                             </div>
                             <div className="input-div">
-                                <h5>Sub Total</h5>
-                                <h4>$</h4>
+                                <h6>Sub Total</h6>
+                                <h5>$</h5>
                             </div>
                             <div className="input-div">
-                                <h5>Delivery Charges</h5>
-                                <h4>$22.96</h4>
+                                <h6>Delivery Charges</h6>
+                                <h5>$</h5>
                             </div>
-                            <div></div>
+                            <div className="horizontal-line"></div>
                             <div className="input-div">
                                 <h5>Grand Total</h5>
-                                <h4>$</h4>
+                                <h5>$</h5>
                             </div>
                         </div>
                         <div>

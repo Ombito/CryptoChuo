@@ -77,12 +77,34 @@
 #order-summary {
     display: flex;
     flex-direction: column;
-    width: 35%;
+    width: 40%;
     gap: 40px;
 }
 .order-summary-hero {
     padding: 10px 15px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+.order-summary-hero h4 {
+    text-align: center;
+}
+.voucher-div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    height: 5.5vh;
+    gap: 15px;
+}
+.voucher-div input {
+    width: 100%;
+    border-radius: 4px;
+}
+#voucher-btn {
+    padding: 3px 15px;
+}
+.horizontal-line {
+    border-bottom: 2px solid black;
+    width: 100%;
+    margin-bottom: 20px;
 }
 .checkout-policy {
     display: flex;
