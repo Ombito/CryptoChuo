@@ -6,7 +6,7 @@ import Navbar from '../Navbar/index.jsx';
 import Footer from '../Footer/index.jsx';
 import { Line } from 'react-chartjs-2';
 import { FaSearch } from  'react-icons/fa';
-
+import { FaBackward, FaForward } from  'react-icons/fa';
 
 const Markets = () => {
   const [loading, setLoading] = useState(true);
@@ -117,11 +117,11 @@ const Markets = () => {
         )}
         <div className="pagination">
           <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>
-                Previous
+                <FaBackward />
           </button>
           <span>{currentPage}</span>
           <button onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === totalPages}>
-                Next
+          <FaForward />
           </button>
         </div>
       </div>

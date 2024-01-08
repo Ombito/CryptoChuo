@@ -63,15 +63,15 @@
   gap: 10px;
 }
 .pagination button {
-  padding: 2px 8px;
+  padding: 0px 8px;
 }
 
 /* mobile responsiveness   */
-@media (max-width: 768px) {
+@media (min-width: 220px) and (max-width: 325px) {
   #market {
     display: flex;
     flex-direction: column;
-    margin-top: 140px;
+    margin-top: 100px;
     margin-bottom: 10px;
   }
   #market input{
@@ -79,10 +79,137 @@
     width: 100%;
   }
   .crypto-table {
-    width: 90%;
+    width: 70%;
+  }
+  .crypto-table td {
+    padding: 3px 0px;
+    overflow-x: hidden;
+  }
+  .crypto-table th {
+    padding: 5px 0px;
   }
   .crypto-table th:nth-child(n+5),
   .crypto-table td:nth-child(n+5) {
     display: none;
+  }
+  .pagination {
+    margin: 0 0 3% 100px;
+  }
+  .loading {
+    height: 90vh;
+  }
+}
+
+ @media screen and (min-width: 326px) and (max-width: 378px){
+  #market {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+  }
+  #market input{
+    height: 6vh;
+    width: 100%;
+  }
+  .pagination {
+    margin: 0 0 3% 130px;
+  }
+  .crypto-table {
+    width: 95%;
+    margin-top: 10px;
+    overflow: hidden;
+  }
+  .crypto-table td {
+    padding: 2px 5px;
+  }
+  .crypto-table th:nth-child(n+5),
+  .crypto-table td:nth-child(n+5) {
+    display: none;
+  }
+} 
+
+@media screen and (min-width: 380px) and (max-width: 450px){
+  #market {
+    display: flex;
+    flex-direction: column;
+    margin-top: 110px;
+  }
+  #market input{
+    height: 6vh;
+    width: 100%;
+  }
+  .loading {
+    height: 80vh;
+  }
+  .crypto-table {
+    width: 95%;
+    margin-top: 10px;
+  }
+  .crypto-table td {
+    padding: 1px 5px;
+  }
+  .crypto-table th:nth-child(n+5),
+  .crypto-table td:nth-child(n+5) {
+    display: none;
+  }
+  .pagination {
+    margin: 0 0 3% 155px;
+  }
+}
+
+
+ /* tablets and ipad screens */
+ @media screen and (min-width: 460px) and (max-width: 780px){
+  #market {
+    display: flex;
+    flex-direction: column;
+    margin-top: 125px;
+  }
+  .loading {
+    height: 80vh;
+  }
+  #market input{
+    height: 4vh;
+    width: 100%;
+  }
+  .crypto-table {
+    width: 95%;
+    margin-top: 10px;
+  }
+  .crypto-table th:nth-child(n+6),
+  .crypto-table td:nth-child(n+6) {
+    display: none;
+  }
+}
+
+
+@media screen and (min-width: 790px) and (max-width: 830px){
+  #market {
+    display: flex;
+    flex-direction: column;
+    margin-top: 150px;
+  }
+  #market input{
+    height: 4vh;
+    width: 100%;
+  }
+  .crypto-table {
+    margin-top: 10px;
+  }
+  .loading {
+    height: 80vh;
+  }
+}
+
+
+@media screen and (min-width: 840px) and (max-width: 1500px){
+  #market {
+    margin-top: 175px;
+  }
+  #market input{
+    height: 4vh;
+    width: 100%;
+  }
+  .loading {
+    height: 80vh;
   }
 }
