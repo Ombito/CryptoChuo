@@ -12,6 +12,10 @@
     justify-content: space-around;
     padding: 30px 0;
 }
+#logo-footer {
+    height: 13vh;
+    width: 50%;
+}
 .footer-heading {
     font-size: 1.2rem;
     font-weight: bold;
