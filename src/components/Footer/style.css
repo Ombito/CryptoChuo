@@ -63,13 +63,73 @@ a:hover {
     text-align: center;
     padding: 1% 0;
 }
+
+
  /* mobile screen device  */
- @media screen and (min-width: 360px) and (max-width: 765px){
+  @media screen and (max-width: 320px) {
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+        margin: auto;
+        text-align: center;
+    }
+    .social-links {
+        width: 90%;
+        margin: 0 auto;
+    }
+ }
+
+ @media screen and (min-width: 320px) and (max-width: 375px){
     .footer-container {
         display: flex;
         flex-direction: column;
         gap: 40px;
         margin: auto;
         text-align: center;
+    }
+    .social-links {
+        width: 90%;
+        margin: 0 auto;
+    }
+ }
+
+ @media screen and (min-width: 375px) and (max-width: 425px){
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        margin: auto;
+        text-align: center;
+    }
+    .social-links {
+        width: 90%;
+        margin: 0 auto;
+    }
+ }
+@media screen and (min-width: 360px) and (max-width: 775px){
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        margin: auto;
+        text-align: center;
+    }
+    .social-links {
+        width: 90%;
+        margin: 0 auto;
+    }
+ }
+ 
+ /* tablets and ipad screens */
+ @media screen and (min-width: 425px) and (max-width: 768px){
+    .footer-container {
+        display: flex;
+        gap: 20px;
+        margin: auto;
+    }
+    .social-links {
+        width: 90%;
+        margin: 0 auto;
     }
  }

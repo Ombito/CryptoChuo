@@ -27,13 +27,15 @@ const Footer = () => {
           <NavLink to='/courses/blockchain'>Web3 Masterclass</NavLink>
           <NavLink to='/shop'>Shop</NavLink>
           <NavLink to='/markets'>Markets</NavLink>
-          <NavLink to='/contact'>Contact Us</NavLink>
+          <NavLink to='/login'>Login</NavLink>
+          <NavLink to='/careers'>Careers</NavLink>
+          
         </div>
         <div class="contactinfo">
           <h5>RESOURCES</h5>
-          <NavLink to='/events'>Events</NavLink>
           <NavLink to='/news'>News</NavLink>
-          <NavLink to='/careers'>Careers</NavLink>
+          <NavLink to='/events'>Events</NavLink>
+          <NavLink to='/blogs'>Blog</NavLink>
           <NavLink to='/sponsorship'>Sponsorship</NavLink>
           <NavLink to='/faqs'>FAQs</NavLink>
           <NavLink to='/privacypolicy'>Privacy policy</NavLink>
@@ -41,7 +43,7 @@ const Footer = () => {
         <div class="contactinfo">
           <h5>Company</h5>
           <NavLink to='/events'>About Us</NavLink>
-          <NavLink to='/careers'>Blog</NavLink>
+          <NavLink to='/contact'>Contact Us</NavLink>
           <NavLink to='/partnership'>Become a Partner</NavLink>
           <NavLink to='/community'>Join Our Community</NavLink>
           <NavLink to='/termsofservice'>Terms of Service</NavLink>
