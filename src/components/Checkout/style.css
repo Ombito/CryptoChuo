@@ -74,6 +74,9 @@
 .name-hero input {
     width: 20vw;
 }
+#payment {
+    margin-top: 30px;
+}
 #order-summary {
     display: flex;
     flex-direction: column;
@@ -110,4 +113,27 @@
     display: flex;
     justify-content: space-between;
     gap: 20px;
+}
+
+/* mobile screen device  */
+@media screen and (min-width: 360px) and (max-width: 765px){
+    #order-details {
+        display: flex;
+        flex-direction: column;
+    }
+    .delivery-address-form {
+        padding: 5px 10px;
+    }
+    #checkout-form {
+        width: 100%;
+    }
+    .name-hero input {
+        width: 40vw;
+    }
+    .address-div {
+        width: 85%;
+    }
+    #order-summary {
+        width: 100%;
+    }
 }

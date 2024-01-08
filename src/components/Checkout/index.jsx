@@ -65,12 +65,11 @@ const Checkout = () => {
                                     <input type="text" placeholder='00-000' className="address-div" required/>
                                 </div>
                             </div>
-                            <div>
-                                <h3>Choose your payment method</h3>
-                            </div> 
-                            <div>
-                                <h3>Payment Details</h3>
-                                {!paymentComplete && <Paypal onPaymentSuccess={handlePaymentSuccess} />}
+                            <div id="payment">
+                                <div>
+                                    <h3>Billing Details</h3>
+                                    {!paymentComplete && <Paypal onPaymentSuccess={handlePaymentSuccess} />}
+                                </div>
                             </div>
                         </form>
                     </div>
