@@ -30,20 +30,28 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
 .footer-contact p {
     margin: 5px 0;
 }
 .social-links {
     display: flex;
+    justify-content: space-between;
+    width: 90%;
 }
 .social-links a {
     margin-right: 10px;
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: #fff;
     text-decoration: none;
+    border: 1px solid white;
+    border-radius: 5px;
+    text-align: center;
+    padding: 1px 12px 7px 12px;
 }
 .social-links a:hover {
-    color: #55acee; 
+    color: red;
+    border: 1px solid red; 
 }
 #copyright {
     text-align: center;

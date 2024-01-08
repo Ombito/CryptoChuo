@@ -2,22 +2,23 @@ import "../Footer/style.css"
 import { NavLink } from 'react-router-dom';
 import { FaCopyright } from  'react-icons/fa';
 import logo from '../Assets/logo1.jpeg';
+import { FaTwitter, FaDiscord, FaTelegram, FaFacebook, FaInstagram } from  'react-icons/fa';
 
 
 const Footer = () => {
     return (
     <footer className='footer'>
       <div className="footer-container">
-        <div class="contactinfo">
+        <div className="contactinfo">
           <img id="logo-footer" src={logo} alt="Logo" />
           <p>Choose us for a dynamic learning experience.</p>
           <h5>Community</h5>
           <div className='social-links'>
-            <a href="https://www.ins" target="blank" className='twitter'>X</a>
-              
-            <a href="https://t.me/cryptochuo" target="blank" className='telegram'>Telegram</a>
-                
-            <a href="https://discord.gg/kUapzzg7" target="blank" className='discord'>Discord</a>   
+            <a href="https://www.ins" target="blank" className='twitter'><FaTwitter /></a> 
+            <a href="https://t.me/cryptochuo" target="blank" className='telegram'><FaTelegram /></a>  
+            <a href="https://discord.gg/kUapzzg7" target="blank" className='discord'><FaDiscord /></a>   
+            <a href="https://t.me/cryptochuo" target="blank" className='telegram'><FaFacebook /></a>
+            <a href="https://discord.gg/kUapzzg7" target="blank" className='discord'><FaInstagram /></a> 
           </div>
         </div>
         <div class="contactinfo">
@@ -44,7 +45,6 @@ const Footer = () => {
           <NavLink to='/partnership'>Become a Partner</NavLink>
           <NavLink to='/community'>Join Our Community</NavLink>
           <NavLink to='/termsofservice'>Terms of Service</NavLink>
-          <NavLink to='/privacypolicy'>Privacy Policy</NavLink>
         </div>
         {/* <div class="footer-contact">
           <p class="" >info@cryptochuo.com</p>
