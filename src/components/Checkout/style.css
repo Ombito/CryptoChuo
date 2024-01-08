@@ -1,6 +1,7 @@
 #checkout {
     margin-top: 100px;
-    margin-bottom: 700px;
+    margin-bottom: 30px;
+    height: 150vh;
 }
 #checkout h2 {
     text-align: center;
@@ -23,6 +24,11 @@
 }
 #order-details {
     display: flex;
+    justify-content: space-between;
+    gap: 25px; 
+}
+.delivery-address-form {
+    width: 100%;
 }
 .line {
     width: 100%;
@@ -54,7 +60,23 @@
 }
 .input-div {
     display: flex;
+    justify-content: space-between;
 }
-#checkout-form input{
+.address-div {
+    width: 100%;
+}
+.name-hero {
+    display: flex;
+    justify-content: space-between;
+}
+.name-hero input {
     width: 20vw;
+}
+#order-summary {
+    width: 35%;
+}
+.checkout-policy {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
 }

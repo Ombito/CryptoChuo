@@ -34,61 +34,63 @@ const Checkout = () => {
                     </div>
                 </div>
                 <div id="order-details">
-                    <form id="checkout-form">
-                        <h3>Delivery Address</h3>
-                        <div className="input-div">
-                            <div>
-                                <label>First name</label>
-                                <input type="text" placeholder='Enter first name' required/>
+                    <div className="delivery-address-form">
+                        <form id="checkout-form">
+                            <h3>Delivery Address</h3>
+                            <div className="name-hero">
+                                <div>
+                                    <label>First name</label>
+                                    <input type="text" placeholder='Enter first name' className="name-div" required/>
+                                </div>
+                                <div>
+                                    <label>Last name</label>
+                                    <input type="text" placeholder='Enter last name' className="name-div" required/>
+                                </div>
+                            </div>
+                            <label>Phone Number</label>
+                            <input type="number" placeholder='Enter phone number' required />
+                            <label>Street Address</label>
+                            <input type="text" placeholder='Enter Street and Number' required />
+                            <div className="input-div">
+                                <div>
+                                    <label>City</label>
+                                    <input type="text" placeholder='City' className="address-div" required/>
+                                </div>
+                                <div>
+                                    <label>State</label>
+                                    <input type="text" placeholder='State' className="address-div" required/>
+                                </div>
+                                <div>
+                                    <label>Zip Code</label>
+                                    <input type="text" placeholder='00-000' className="address-div" required/>
+                                </div>
                             </div>
                             <div>
-                                <label>Last name</label>
-                                <input type="text" placeholder='Enter last name' required/>
-                            </div>
-                        </div>
-                        <label>Phone Number</label>
-                        <input type="number" placeholder='Enter phone number' required />
-                        <label>Street Address</label>
-                        <input type="text" placeholder='Enter Street and Number' required />
-                        <div className="input-div">
+                                <h3>Choose your payment method</h3>
+                            </div> 
                             <div>
-                                <label>City</label>
-                                <input type="text" placeholder='City'/>
+                                <h3>Payment Details</h3>
+                                {!paymentComplete && <Paypal onPaymentSuccess={handlePaymentSuccess} />}
                             </div>
-                            <div>
-                                <label>State</label>
-                                <input type="text" placeholder='State'/>
-                            </div>
-                            <div>
-                                <label>Zip Code</label>
-                                <input type="text" placeholder='00-000' required/>
-                            </div>
-                        </div>
-                        <div>
-                            <h3>Choose your payment method</h3>
-                        </div>
-                        <div>
-                            <h3>Payment Details</h3>
-                            {!paymentComplete && <Paypal onPaymentSuccess={handlePaymentSuccess} />}
-                        </div>
-                    </form>
-                    <div>
+                        </form>
+                    </div>
+                    <div id="order-summary">
                         <h3>Order Summary</h3>
                         <div>
                             <div>
                                 <input type='text' placeholder='Gift card or discount code' />
                                 <button>Apply</button>
                             </div>
-                            <div>
+                            <div className="input-div">
                                 <h5>Sub Total</h5>
                                 <h4>$</h4>
                             </div>
-                            <div>
+                            <div className="input-div">
                                 <h5>Delivery Charges</h5>
                                 <h4>$</h4>
                             </div>
                             <div></div>
-                            <div>
+                            <div className="input-div">
                                 <h5>Grand Total</h5>
                                 <h4>$</h4>
                             </div>
@@ -108,6 +110,29 @@ const Checkout = () => {
                                     <img src='' alt="DHL" />
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="checkout-policy">
+                    <div>
+                        <img src="" />
+                        <div>
+                            <h5>Secure shopping</h5>
+                            <p>Completely embrace out of box human capital with plug and play</p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="" />
+                        <div>
+                            <h5>Free and easy returns</h5>
+                            <p>Completely embrace out of box human capital with plug and play</p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="" />
+                        <div>
+                            <h5>17 years of experience</h5>
+                            <p>Completely embrace out of box human capital with plug and play</p>
                         </div>
                     </div>
                 </div>
