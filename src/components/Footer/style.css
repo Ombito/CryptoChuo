@@ -11,6 +11,7 @@
     display: flex;
     justify-content: space-around;
     padding: 30px 0;
+    margin: 0 7%;
 }
 #logo-footer {
     height: 13vh;
@@ -52,6 +53,11 @@ a:hover {
 .social-links a:hover {
     color: red;
     border: 1px solid red; 
+}
+.footer-line {
+    border: 1px solid white;
+    width: 85%;
+    margin: 0 auto;
 }
 #copyright {
     text-align: center;

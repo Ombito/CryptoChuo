@@ -27,7 +27,7 @@ const Footer = () => {
           <NavLink to='/courses/blockchain'>Web3 Masterclass</NavLink>
           <NavLink to='/shop'>Shop</NavLink>
           <NavLink to='/markets'>Markets</NavLink>
-          <NavLink to='/contact'>Contact</NavLink>
+          <NavLink to='/contact'>Contact Us</NavLink>
         </div>
         <div class="contactinfo">
           <h5>RESOURCES</h5>
@@ -46,20 +46,8 @@ const Footer = () => {
           <NavLink to='/community'>Join Our Community</NavLink>
           <NavLink to='/termsofservice'>Terms of Service</NavLink>
         </div>
-        {/* <div class="footer-contact">
-          <p class="" >info@cryptochuo.com</p>
-          <p class="" >+254 721 857 213</p>
-          <p class="s" >Kilimani, Nairobi</p>        
-          <div className='social-links'>
-            <a href="https://www.ins" target="blank" className='twitter'>X</a>
-              
-              <a href="https://t.me/cryptochuo" target="blank" className='telegram'>Telegram</a>
-                
-              <a href="https://discord.gg/kUapzzg7" target="blank" className='discord'>Discord</a>
-                
-          </div>
-        </div>      */}
       </div>
+      <div className="footer-line"></div>
       <div id="copyright"><FaCopyright />CryptoChuo 2024. All Rights Reserved.</div>
     </footer>
     )
