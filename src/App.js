@@ -62,8 +62,8 @@ function App() {
 
   return (
     <div className="App">
+          <Navbar user={user} setUser={setUser} size={cart.length} />
           <Routes>
-            <Route element={<Navbar user={user} setUser={setUser} size={cart.length} />} />
               <Route>
                 <Route path="/" element={<Home user={user}/>} />
                 <Route path="/courses" element={<Courses user={user} />} />

@@ -1,6 +1,7 @@
 #cart {
     margin-top: 90px;
-    margin-bottom: 1000px;
+    margin-bottom: 20px;
+    height: auto;
 }
 #cart-hero {
     display: flex;

@@ -64,6 +64,72 @@
     font-size: 1.8em;
     margin: 19% 0;
 }
+
+.market-navlink {
+  position: relative;
+}
+
+.market-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: 1px solid #ccc;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.market-select:focus {
+  outline: none;
+  border-color: #007BFF; /* Change the border color on focus */
+}
+
+/* Style the options */
+.market-select option {
+  background-color: #fff;
+  color: #333;
+}
+
+/* Hide the first option */
+.market-select option:first-child {
+  display: none;
+}
+
+/* Hover effect on options */
+.market-select option:hover {
+  background-color: #007BFF;
+  color: #fff;
+}
+
+/* .market-navlink {
+  display: flex;
+  gap: 0;
+}
+
+.market-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: 1px solid #ccc;
+  padding: 8px;
+  cursor: pointer;
+} */
+
+/* .market-select:focus {
+  outline: none;
+  border-color: #007BFF; /* Change the border color on focus */
+/* } */
+
+/* Style the options 
+.market-select option {
+  background-color: #fff;
+  color: #333;
+}
+
+/* Hover effect on options */
+/* .market-select option:hover {
+  background-color: #007BFF;
+} */
+
  /* mobile screen device  */
  @media screen and (min-width: 360px) and (max-width: 765px){
     .navbar {

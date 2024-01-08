@@ -102,7 +102,7 @@ const Courses = () => {
         } 
         return true;
     };
-    
+
     const toggleFilterVisibility = () => {
         setFilterVisible(!filterVisible);
     };

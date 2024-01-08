@@ -6,9 +6,11 @@ import logo from '../Assets/logo1.jpeg';
 import { FaShoppingCart, FaBars, FaTimes, FaUser } from  'react-icons/fa';
 
 const Navbar = ({ user, size }) => {
-    console.log('Navbar size:', size);
     const [ active, setActive ] = useState(false);
     
+    console.log('Navbar size:', size)
+    console.log('Navbar user:', user)
+
     const toggle = ()=> {
         setActive(!active);
     }
@@ -16,7 +18,7 @@ const Navbar = ({ user, size }) => {
     const closeMenu = () => {
         setActive(false);
       };
-    console.log('Navbar user:', user)
+    
 
 
     return (
@@ -48,8 +50,8 @@ const Navbar = ({ user, size }) => {
                         <div className="auth-button">
                             <Link to="/cart">
                                 <div>
-                                    <FaShoppingCart id="cart-icon"/>5
-                                    {size > 0 && <span className="cart-length">{size}</span>}
+                                    <FaShoppingCart id="cart-icon"/>
+                                    {/* {size > 0 && <span className="cart-length">{size}</span>} */}
                                 </div>
                             </Link>
                             <Link to="/login">
@@ -82,8 +84,8 @@ const Navbar = ({ user, size }) => {
                     <div className="auth-button">
                         <Link to="/cart">
                         <div>
-                            <FaShoppingCart id="cart-icon"/>
-                            {size > 0 && <span className="cart-length">{size}</span>}
+                            <FaShoppingCart id="cart-icon"/>{size}
+                            {/* {size > 0 && <span className="cart-length">{size}</span>} */}
                         </div>
                         </Link>
                         <Link to="/login">
