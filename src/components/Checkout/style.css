@@ -54,7 +54,6 @@
 }
 .input-div {
     display: flex;
-    gap: 20px;
 }
 #checkout-form input{
     width: 20vw;
