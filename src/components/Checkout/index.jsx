@@ -50,7 +50,7 @@ const Checkout = () => {
                             <label>Phone Number</label>
                             <input type="number" placeholder='Enter phone number' required />
                             <label>Street Address</label>
-                            <input type="text" placeholder='Enter Street and Number' required />
+                            <input type="text" placeholder='Enter street and number' required />
                             <div className="input-div">
                                 <div>
                                     <label>City</label>
@@ -75,8 +75,8 @@ const Checkout = () => {
                         </form>
                     </div>
                     <div id="order-summary">
-                        <h3>Order Summary</h3>
-                        <div>
+                        <div className="order-summary-hero">
+                            <h3>Order Summary</h3>
                             <div>
                                 <input type='text' placeholder='Gift card or discount code' />
                                 <button>Apply</button>
@@ -87,7 +87,7 @@ const Checkout = () => {
                             </div>
                             <div className="input-div">
                                 <h5>Delivery Charges</h5>
-                                <h4>$</h4>
+                                <h4>$22.96</h4>
                             </div>
                             <div></div>
                             <div className="input-div">
@@ -97,7 +97,7 @@ const Checkout = () => {
                         </div>
                         <div>
                             <div>
-                                <h6>Need Help? Contact us!</h6>
+                                <h6>Need Help? Contact us</h6>
                                 <p>Please call</p>
                                 <h5>+254722222222</h5>
                                 <p>Monday-Friday 8:00-20:00</p>
