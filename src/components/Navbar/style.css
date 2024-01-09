@@ -8,7 +8,7 @@
     justify-content: space-between;
     align-items: center;
     background-color: #252a43;
-    color: #fff;
+    color: #252a43;
     z-index: 1;
 }
 .logo-container {
@@ -31,104 +31,43 @@
 .navbar-menu {
   display: flex;
   align-items: center;
+  gap: 60px;
+  margin-right: 100px;
 }
 #navlinks {
     display: flex;
-    margin-right: -60px;
-    gap: 50px;
+    gap: 150px;
 }
 #navlinks a {
     color: #fff;
     text-decoration: none;
-    margin-right: 90px;
     font-weight: bold;
     font-size: 1.2em;
 }
-#button {
+#signin-button {
     background-color: #4CAF50;
     color: #fff;
-    padding: 7px 20px;
+    padding: 7px 25px;
     border: none;
-    border-radius: 5px;
+    border-radius: 25px;
     cursor: pointer;
     font-size: 1em;
     margin-top: 4%;
 }
-#button:hover {
+#signin-button:hover {
     background-color: #4CAF50;
 }
 .auth-button {
-    display: flex;
+  display: flex;
+  gap: 50px;
+
 }
 #cart-icon {
-    font-size: 1.8em;
-    margin: 19% 0;
+    font-size: 1.6em;
+    margin: 26% 0;
 }
 
-.market-navlink {
-  position: relative;
-}
 
-.market-select {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  border: 1px solid #ccc;
-  padding: 8px;
-  cursor: pointer;
-}
-
-.market-select:focus {
-  outline: none;
-  border-color: #007BFF; /* Change the border color on focus */
-}
-
-/* Style the options */
-.market-select option {
-  background-color: #fff;
-  color: #333;
-}
-
-/* Hide the first option */
-.market-select option:first-child {
-  display: none;
-}
-
-/* Hover effect on options */
-.market-select option:hover {
-  background-color: #007BFF;
-  color: #fff;
-}
-
-/* .market-navlink {
-  display: flex;
-  gap: 0;
-}
-
-.market-select {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  border: 1px solid #ccc;
-  padding: 8px;
-  cursor: pointer;
-} */
-
-/* .market-select:focus {
-  outline: none;
-  border-color: #007BFF; /* Change the border color on focus */
-/* } */
-
-/* Style the options 
-.market-select option {
-  background-color: #fff;
-  color: #333;
-}
-
-/* Hover effect on options */
-/* .market-select option:hover {
-  background-color: #007BFF;
-} */
 
  /* mobile screen device  */
  @media screen and (min-width: 360px) and (max-width: 765px){

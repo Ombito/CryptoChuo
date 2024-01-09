@@ -26,7 +26,7 @@ const Navbar = ({ user, size }) => {
             <div className="logo-container">
                 <Link class="container" to="/"><img className='logo' src={logo} alt="Bitcoin Logo" /></Link>
             </div>
-            {user ? (
+          
                 <div className="navigation-container">
                     <button onClick={toggle} className='navbar-icons'>{active ? <FaTimes id="close"/> : <FaBars />}</button>
                     <div id="navlinks" className={active ? 'active' : '' } onClick={closeMenu}>
@@ -47,21 +47,33 @@ const Navbar = ({ user, size }) => {
                                 Shop
                             </NavLink>
                         </div>
+                        {user ? (
                         <div className="auth-button">
                             <Link to="/cart">
                                 <div>
-                                    <FaShoppingCart id="cart-icon"/>
-                                    {/* {size > 0 && <span className="cart-length">{size}</span>} */}
+                                    <FaShoppingCart id="cart-icon"/>{size}
                                 </div>
                             </Link>
                             <Link to="/login">
                                 <FaUser />
                             </Link>
                         </div>
+                        ) : (
+                            <div className="auth-button">
+                                <Link to="/cart">
+                                <div>
+                                    <FaShoppingCart id="cart-icon"/>{size}
+                                </div>
+                                </Link>
+                                <Link to="/login">
+                                    <button id='signin-button' type='submit'>Sign in</button>
+                                </Link>
+                             </div>
+                           )}
                     </div>         
                 </div>
-            ) : (
-                <div className="navigation-container">
+            
+                {/* <div className="navigation-container">
                 <button onClick={toggle} className='navbar-icons'>{active ? <FaTimes id="close"/> : <FaBars />}</button>
                 <div id="navlinks" className={active ? 'active' : '' } onClick={closeMenu}>
                     <div className="navbar-menu">
@@ -81,20 +93,10 @@ const Navbar = ({ user, size }) => {
                             Shop
                         </NavLink>
                     </div>
-                    <div className="auth-button">
-                        <Link to="/cart">
-                        <div>
-                            <FaShoppingCart id="cart-icon"/>{size}
-                            {/* {size > 0 && <span className="cart-length">{size}</span>} */}
-                        </div>
-                        </Link>
-                        <Link to="/login">
-                            <button id='button' type='submit'>Sign in</button>
-                        </Link>
-                    </div>
+                    
                 </div>         
-            </div>
-            )}
+            </div> */}
+         
         </div>
     );
 };
