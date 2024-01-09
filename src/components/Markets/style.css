@@ -114,7 +114,7 @@
     margin: 0 0 3% 130px;
   }
   .crypto-table {
-    width: 95%;
+    width: 92%;
     margin-top: 10px;
     overflow: hidden;
   }
@@ -141,7 +141,7 @@
     height: 80vh;
   }
   .crypto-table {
-    width: 95%;
+    width: 92%;
     margin-top: 10px;
   }
   .crypto-table td {
@@ -200,7 +200,7 @@
   }
 }
 
-
+/* 
 @media screen and (min-width: 840px) and (max-width: 1500px){
   #market {
     margin-top: 175px;
@@ -212,4 +212,4 @@
   .loading {
     height: 80vh;
   }
-}
+} */

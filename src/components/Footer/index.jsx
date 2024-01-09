@@ -43,10 +43,10 @@ const Footer = () => {
         <div class="contactinfo">
           <h5>Company</h5>
           <NavLink to='/events'>About Us</NavLink>
-          <NavLink to='/contact'>Contact Us</NavLink>
           <NavLink to='/partnership'>Become a Partner</NavLink>
           <NavLink to='/community'>Join Our Community</NavLink>
           <NavLink to='/termsofservice'>Terms of Service</NavLink>
+          <NavLink to='/contact'>Contact Us</NavLink>
         </div>
       </div>
       <div className="footer-line"></div>

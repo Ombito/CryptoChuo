@@ -4,7 +4,7 @@
   align-items: center;
   margin-top: 4%;
   flex-direction: row;
-  background-image: url(../Assets/banner10.jpg);  
+  background-image: url(../Assets/student4.jpg);  
   background-size: cover;
   height: 100vh;
   background-position: center;
@@ -21,11 +21,11 @@
 }
 .homepage h2 {
     font-size: 2.5rem;
-    color: black;
+    color: rgb(255, 255, 255);
     margin-bottom: 20px;
 }
 .homepage p {
-  color: black;
+  color: rgb(255, 255, 255);
 }
 .crypto {
     color: #007bff;
