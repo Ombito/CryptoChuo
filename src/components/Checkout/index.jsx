@@ -10,7 +10,7 @@ import customer from '../Assets/customer.png';
 import shoppingcart from '../Assets/shopping-cart.png';
 import shopping from '../Assets/shopping.png';
 import delivery from '../Assets/delivery.png';
-
+import paypal from '../Assets/paypal.png';
 
 
 const Checkout = () => {
@@ -102,19 +102,22 @@ const Checkout = () => {
                                 <h5>$</h5>
                             </div>
                         </div>
-                        <div>
-                            <div>
+                        <div className="info-hero">
+                            <div className="info-box">
                                 <h6>Need Help? Contact us</h6>
-                                <p>Please call</p>
-                                <h5>+254722222222</h5>
+                                <div>Please call:<h4>+254722222222</h4></div>
                                 <p>Monday-Friday 8:00-20:00</p>
                                 <p>Saturday 8:00-16:00</p>
                             </div>
-                            <div>
+                            <div className="info-box">
                                 <h6>Delivery Methods</h6>
                                 <div className="delivery-img">
                                     <img src={Fedex} alt="FedEx" height="50"/>
                                     <img src={DHL} alt="DHL" height="50"/>
+                                </div>
+                                <h6 style={{ marginTop: '5px' }}>Payment Method</h6>
+                                <div className="delivery-img">
+                                    <img src={paypal} alt="Paypal" height="50"/>
                                 </div>
                             </div>
                         </div>
@@ -122,7 +125,7 @@ const Checkout = () => {
                 </div>
                 <div className="checkout-policy">
                     <div>
-                        <h6>Quick delivery</h6>
+                        <h6>Quick Delivery</h6>
                         <img src={delivery} alt="easy checkout" />
                     </div>
                     

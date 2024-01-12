@@ -31,6 +31,7 @@
     padding: 15px 25px;
     width: 100%;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
 }
 .line {
     width: 100%;
@@ -86,6 +87,7 @@
 .order-summary-hero {
     padding: 10px 15px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
 }
 .order-summary-hero h5 {
     text-align: center;
@@ -118,7 +120,6 @@
     display: flex;
     gap: 20px;
 }
-
 .checkout-policy {
     display: flex;
     justify-content: space-around;
@@ -126,7 +127,6 @@
     flex-wrap: wrap;
     margin: 20px;
 }
-
 .checkout-policy div {
     text-align: center;
     margin: 15px;
@@ -142,7 +142,6 @@
     font-size: 1.2em;
     margin-bottom: 10px;
 }
-
 .checkout-policy img {
     max-width: 100%;
     height: 20vh;
@@ -151,6 +150,34 @@
     transition: transform 0.3s ease-in-out;
 }
 
+.info-hero {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.info-box {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.info-box h6 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+.info-box h4 {
+    margin: 5px 0;
+    color: #3498db; /* Change color to a shade of blue */
+}
+.delivery-img {
+    display: flex;
+}
+/* Style for delivery and payment method images */
+.delivery-img img {
+    height: 8vh;
+    margin: 7px;
+}
 
 
 
