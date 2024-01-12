@@ -52,7 +52,7 @@ const Cart = ({ cart, setCart, handleClick }) => {
   }, [cart]);
 
   const handleCheckout = () => {
-    navigate('/checkout', { totalAmount: price });
+    navigate('/checkout', { state: { totalAmount: price } });
   };
 
   useEffect(() => {

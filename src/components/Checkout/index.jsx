@@ -11,14 +11,39 @@ import shoppingcart from '../Assets/shopping-cart.png';
 import shopping from '../Assets/shopping.png';
 import delivery from '../Assets/delivery.png';
 import paypal from '../Assets/paypal.png';
-
+import { useLocation } from 'react-router-dom';
 
 const Checkout = () => {
+    const location = useLocation();
+    const totalAmount = location.state?.totalAmount || 0;
     const [paymentComplete, setPaymentComplete] = useState(false);
+    const [formComplete, setFormComplete] = useState(false);
 
-  const handlePaymentSuccess = () => {
-    setPaymentComplete(true);
-  }
+    const handleInputChange = () => {
+        const firstName = document.getElementById('first-name').value;
+        const lastName = document.getElementById('last-name').value;
+        const phoneNumber = document.getElementById('phone-number').value;
+        const streetAddress = document.getElementById('street-address').value;
+        const city = document.getElementById('city').value;
+        const state = document.getElementById('state').value;
+        const zipCode = document.getElementById('zip-code').value;
+    
+        const isFormComplete =
+          firstName.trim() !== '' &&
+          lastName.trim() !== '' &&
+          phoneNumber.trim() !== '' &&
+          streetAddress.trim() !== '' &&
+          city.trim() !== '' &&
+          state.trim() !== '' &&
+          zipCode.trim() !== '';
+    
+        setFormComplete(isFormComplete);
+      };
+
+
+    const handlePaymentSuccess = () => {
+        setPaymentComplete(true);
+    }
   return (
     <div>
         <Navbar />
@@ -48,34 +73,35 @@ const Checkout = () => {
                             <div className="name-hero">
                                 <div>
                                     <label>First name</label>
-                                    <input type="text" placeholder='Enter first name' className="name-div" required/>
+                                    <input type="text" placeholder='Enter first name' className="name-div" onChange={handleInputChange} required/>
                                 </div>
                                 <div>
                                     <label>Last name</label>
-                                    <input type="text" placeholder='Enter last name' className="name-div" required/>
+                                    <input type="text" placeholder='Enter last name' className="name-div" onChange={handleInputChange} required/>
                                 </div>
                             </div>
                             <label>Phone Number</label>
-                            <input type="tel" placeholder='Enter phone number' required />
+                            <input type="tel" placeholder='Enter phone number' onChange={handleInputChange} required />
                             <label>Street Address</label>
-                            <input type="text" placeholder='Enter street and number' required />
+                            <input type="text" placeholder='Enter street and number' onChange={handleInputChange} required />
                             <div className="input-div">
                                 <div>
                                     <label>City</label>
-                                    <input type="text" placeholder='City' className="address-div" required/>
+                                    <input type="text" placeholder='City' className="address-div" onChange={handleInputChange} required/>
                                 </div>
                                 <div>
                                     <label>State</label>
-                                    <input type="text" placeholder='State' className="address-div" required/>
+                                    <input type="text" placeholder='State' className="address-div" onChange={handleInputChange} required/>
                                 </div>
                                 <div>
                                     <label>Zip Code</label>
-                                    <input type="text" placeholder='00-000' className="address-div" required/>
+                                    <input type="text" placeholder='00-000' className="address-div" onChange={handleInputChange} required/>
                                 </div>
                             </div>
                             <div id="payment">
                                 <div>
                                     <h3>Billing Details</h3>
+                                    {!formComplete && <p>Please fill in all form fields before proceeding to payment.</p>}
                                     {!paymentComplete && <Paypal onPaymentSuccess={handlePaymentSuccess} />}
                                 </div>
                             </div>
@@ -90,7 +116,7 @@ const Checkout = () => {
                             </div>
                             <div className="input-div">
                                 <h6>Sub Total</h6>
-                                <h5>$</h5>
+                                <h5>${totalAmount}</h5>
                             </div>
                             <div className="input-div">
                                 <h6>Delivery Charges</h6>
