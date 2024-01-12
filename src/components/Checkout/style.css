@@ -378,3 +378,16 @@
         padding-bottom: 15px;
     }
 }
+
+/* tablets and laptops screen device  */
+@media screen and (min-width: 780px) and (max-width: 1025px){
+    #checkout {
+        height: 225vh;
+    }
+}
+/* tablets and ipads screen device  */
+@media screen and (min-width: 1026px) and (max-width: 1445px){
+    #checkout {
+        height: 190vh;
+    }
+}
