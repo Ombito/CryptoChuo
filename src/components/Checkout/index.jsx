@@ -13,6 +13,7 @@ import delivery from '../Assets/delivery.png';
 import paypal from '../Assets/paypal.png';
 import { useLocation } from 'react-router-dom';
 
+
 const Checkout = () => {
     const location = useLocation();
     const totalAmount = location.state?.totalAmount || 0;
