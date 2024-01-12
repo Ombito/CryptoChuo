@@ -87,6 +87,9 @@ section {
     background-color: blue;
 }
 
+
+
+
  /* mobile screen device  */
  @media screen and (min-width: 360px) and (max-width: 765px){
     section {
@@ -134,4 +137,9 @@ section {
     #best-sellers h2{
         text-align: center;
     }
+}
+
+@media screen and (min-width: 380px) and (max-width: 444px){
+}
+@media screen and (min-width: 445px) and (max-width: 850px){
 }

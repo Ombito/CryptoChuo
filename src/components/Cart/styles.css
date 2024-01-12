@@ -6,6 +6,9 @@
 #cart-hero {
     display: flex;
 }
+#empt-cart-div {
+    height: 40vh;
+}
 #cart h1{
     text-align: center;
 }
@@ -84,6 +87,8 @@
    text-align: center;
    padding-bottom: 7px;
 }
+
+
 
 /* mobile screen device  */
 @media screen and (min-width: 360px) and (max-width: 765px){

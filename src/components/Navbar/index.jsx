@@ -50,8 +50,8 @@ const Navbar = ({ user, size }) => {
                         {user ? (
                         <div className="auth-button">
                             <Link to="/cart">
-                                <div>
-                                    <FaShoppingCart id="cart-icon"/>{size}
+                                <div className="count">
+                                    <FaShoppingCart id="cart-icon"/><span id="countss">{size}</span>
                                 </div>
                             </Link>
                             <Link to="/login">
@@ -61,8 +61,8 @@ const Navbar = ({ user, size }) => {
                         ) : (
                             <div className="auth-button">
                                 <Link to="/cart">
-                                <div>
-                                    <FaShoppingCart id="cart-icon"/>{size}
+                                <div className="count">
+                                    <FaShoppingCart id="cart-icon"/><span className="counts">{size}</span>
                                 </div>
                                 </Link>
                                 <Link to="/login">

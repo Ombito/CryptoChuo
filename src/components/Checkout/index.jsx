@@ -4,6 +4,14 @@ import Navbar from '../Navbar/index';
 import Footer from '../Footer/index';
 import { FaCheck } from  'react-icons/fa';
 import Paypal from '../Paypal/paypal';
+import DHL from '../Assets/dhl1.png';
+import Fedex from '../Assets/fedex.png';
+import customer from '../Assets/customer.png';
+import shoppingcart from '../Assets/shopping-cart.png';
+import shopping from '../Assets/shopping.png';
+import delivery from '../Assets/delivery.png';
+
+
 
 const Checkout = () => {
     const [paymentComplete, setPaymentComplete] = useState(false);
@@ -36,7 +44,7 @@ const Checkout = () => {
                 <div id="order-details">
                     <div className="delivery-address-form">
                         <form id="checkout-form">
-                            <h3>Delivery Address</h3>
+                            <h3>Shipping Address</h3>
                             <div className="name-hero">
                                 <div>
                                     <label>First name</label>
@@ -48,7 +56,7 @@ const Checkout = () => {
                                 </div>
                             </div>
                             <label>Phone Number</label>
-                            <input type="number" placeholder='Enter phone number' required />
+                            <input type="tel" placeholder='Enter phone number' required />
                             <label>Street Address</label>
                             <input type="text" placeholder='Enter street and number' required />
                             <div className="input-div">
@@ -75,7 +83,7 @@ const Checkout = () => {
                     </div>
                     <div id="order-summary">
                         <div className="order-summary-hero">
-                            <h4>Order Summary</h4>
+                            <h5>Order Summary</h5>
                             <div className="voucher-div">
                                 <input type='text' placeholder='Discount code' />
                                 <button id="voucher-btn">Apply</button>
@@ -104,9 +112,9 @@ const Checkout = () => {
                             </div>
                             <div>
                                 <h6>Delivery Methods</h6>
-                                <div>
-                                    <img src='' alt="FedEx" />
-                                    <img src='' alt="DHL" />
+                                <div className="delivery-img">
+                                    <img src={Fedex} alt="FedEx" height="50"/>
+                                    <img src={DHL} alt="DHL" height="50"/>
                                 </div>
                             </div>
                         </div>
@@ -114,25 +122,21 @@ const Checkout = () => {
                 </div>
                 <div className="checkout-policy">
                     <div>
-                        <img src="" />
-                        <div>
-                            <h5>Secure shopping</h5>
-                            <p>Completely embrace out of box human capital with plug and play</p>
-                        </div>
+                        <h6>Quick delivery</h6>
+                        <img src={delivery} alt="easy checkout" />
+                    </div>
+                    
+                    <div>
+                        <h6>Easy Checkout</h6>
+                        <img src={shoppingcart} alt="easy checkout" />
                     </div>
                     <div>
-                        <img src="" />
-                        <div>
-                            <h5>Free and easy returns</h5>
-                            <p>Completely embrace out of box human capital with plug and play</p>
-                        </div>
+                        <h6>Seamless Shopping Experience</h6>
+                        <img src={shopping} alt="easy checkout" />
                     </div>
                     <div>
-                        <img src="" />
-                        <div>
-                            <h5>17 years of experience</h5>
-                            <p>Completely embrace out of box human capital with plug and play</p>
-                        </div>
+                        <h6>Customer Support</h6>
+                        <img src={customer} alt="easy checkout" />
                     </div>
                 </div>
             </div>

@@ -3,7 +3,7 @@ import Navbar from '../Navbar/index.jsx';
 import "../Cart/styles.css";
 import { useNavigate } from 'react-router-dom';
 import Footer from '../Footer/index.jsx';
-import { FaTrash } from 'react-icons/fa';
+import { FaTrash, FaLessThan } from 'react-icons/fa';
 import book from '../Assets/book.jpg';
 
 const Cart = ({ cart, setCart, handleClick }) => {
@@ -85,7 +85,7 @@ const Cart = ({ cart, setCart, handleClick }) => {
         <h1>Shopping Cart</h1>
         <div id="cart-hero">
           {cart.length === 0 ? (
-            <div>
+            <div id="empt-cart-div">
               <h4>Your cart is empty.</h4>
             </div>
           ) : (
@@ -134,6 +134,7 @@ const Cart = ({ cart, setCart, handleClick }) => {
                 </button>
               </div>
             </div>
+            <a><FaLessThan /> Go back & continue shopping</a>
             <div className="suggestion">
               <h3>You may also like</h3>
               <div className="trending-div">

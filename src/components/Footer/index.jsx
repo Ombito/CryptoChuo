@@ -33,7 +33,7 @@ const Footer = () => {
         </div>
         <div class="contactinfo">
           <h5>RESOURCES</h5>
-          <NavLink to='/news'>News</NavLink>
+          <NavLink to='/news'>Newsroom</NavLink>
           <NavLink to='/events'>Events</NavLink>
           <NavLink to='/blogs'>Blog</NavLink>
           <NavLink to='/sponsorship'>Sponsorship</NavLink>

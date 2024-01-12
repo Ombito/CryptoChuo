@@ -254,7 +254,7 @@
     }
   }
 
-  @media screen and (min-width: 380px) and (max-width: 450px){
+  @media screen and (min-width: 380px) and (max-width: 444px){
     .navbar {
       position: fixed;
       top: 0;
@@ -291,7 +291,7 @@
       display: flex;
       flex-direction: column;
       position: absolute;
-      top: 88px;
+      top: 76px;
       right: -1px;
       background-color: #333;
       width: 115%;
@@ -333,6 +333,9 @@
       color: white;
       margin-right: 10px;
     } 
+    #countss {
+      background-color: red;
+    }
     button#button {
       background-color: #4CAF50;
       color: white;
@@ -345,7 +348,7 @@
       background-color: #45a049;
     }
   }
-  @media screen and (min-width: 455px) and (max-width: 850px){
+  @media screen and (min-width: 445px) and (max-width: 850px){
     .navbar {
       position: fixed;
       top: 0;
