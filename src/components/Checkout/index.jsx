@@ -51,17 +51,17 @@ const Checkout = () => {
             <div>
                 <h2>Secure Checkout</h2>
                 <div className="checkout-hero">
-                    <div>
+                    <div className="checkout-range">
                         <p id="cart-checkout"className="checkout-head"><FaCheck className="check-icon" /></p>
                         <p>Shopping Cart</p>
                     </div>
                     <div className='line'></div>
-                    <div>
+                    <div className="checkout-range">
                         <p className="checkout-head">2</p>
                         <p>Delivery Address</p>
                     </div>
                     <div className='line'></div>
-                    <div>
+                    <div className="checkout-range">
                         <p className="checkout-head">3</p>
                         <p>Billing & Payment</p>
                     </div>
