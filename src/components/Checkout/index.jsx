@@ -138,7 +138,7 @@ const Checkout = () => {
                         <img src={shopping} alt="easy checkout" />
                     </div>
                     <div>
-                        <h6>Customer Support</h6>
+                        <h6>24/7 Customer Support</h6>
                         <img src={customer} alt="easy checkout" />
                     </div>
                 </div>

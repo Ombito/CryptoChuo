@@ -168,14 +168,13 @@
 }
 .info-box h4 {
     margin: 5px 0;
-    color: #3498db; /* Change color to a shade of blue */
+    color: #3498db
 }
 .delivery-img {
     display: flex;
 }
-/* Style for delivery and payment method images */
 .delivery-img img {
-    height: 8vh;
+    height: 5vh;
     margin: 7px;
 }
 
