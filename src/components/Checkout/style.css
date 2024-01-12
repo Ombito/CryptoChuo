@@ -181,7 +181,7 @@
 /* mobile screen device  */
 @media screen and (max-width: 290px){
     #checkout {
-        height: 365vh;
+        height: 398vh;
     }
     .checkout-hero {
         width: 100%;
@@ -299,7 +299,7 @@
 /* mobile screen device  */
 @media screen and (min-width: 377px) and (max-width: 426px){
     #checkout {
-        height: 417vh;
+        height: 350vh;
     }
     .checkout-hero {
         width: 100%;
@@ -335,9 +335,9 @@
 }
 
 /* tablets and ipads screen device  */
-@media screen and (min-width: 427px) and (max-width: 769px){
+@media screen and (min-width: 427px) and (max-width: 601px){
     #checkout {
-        height: 350vh;
+        height: 325vh;
     }
     .checkout-hero {
         width: 100%;
@@ -368,7 +368,53 @@
     }
     .order-summary-hero {
         margin: auto;
-        width: 60%;
+        width: 85%;
+        padding:0  15px 12px 15px;
+    }
+    .voucher-div {
+        margin-top: 15px;
+    }
+    .input-div {
+        padding-bottom: 15px;
+    }
+}
+
+/* tablets and ipads screen device  */
+@media screen and (min-width: 602px) and (max-width: 800px){
+    #checkout {
+        height: 290vh;
+        padding-top: 20px;
+    }
+    .checkout-hero {
+        width: 100%;
+    }
+    #order-details {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .delivery-address-form {
+        padding: 5px 10px;
+    }
+    #checkout-form {
+        width: 100%;
+    }
+    .name-hero {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .name-hero input {
+        width: 100%;
+    }
+    .address-div {
+        width: 85%;
+    }
+    #order-summary {
+        width: 100%;
+    }
+    .order-summary-hero {
+        margin: auto;
+        width: 70%;
         padding:0  15px 12px 15px;
     }
     .voucher-div {
@@ -380,9 +426,21 @@
 }
 
 /* tablets and laptops screen device  */
-@media screen and (min-width: 780px) and (max-width: 1025px){
+@media screen and (min-width: 801px) and (max-width: 1025px){
     #checkout {
         height: 225vh;
+    }
+    #order-details {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    #order-summary {
+        width: 100%;
+    }
+    .order-summary-hero {
+        margin: auto;
+        width: 80%;
+        padding:0  15px 12px 15px;
     }
 }
 /* tablets and ipads screen device  */
