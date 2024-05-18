@@ -165,8 +165,7 @@ const Shop = ({handleClick}) => {
           </div>
 
         </div>
-      </section>
-      <Footer />    
+      </section>    
 </div> 
   );
 };

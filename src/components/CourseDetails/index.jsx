@@ -153,7 +153,6 @@ const CourseDetails = () => {
           ))}
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

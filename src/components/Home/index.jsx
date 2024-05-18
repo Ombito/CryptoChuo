@@ -331,7 +331,6 @@ const Home = ({user}) => {
                         
                     </div>
                 </div>
-                <Footer />
             </div>
         </div>
     );

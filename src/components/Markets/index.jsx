@@ -125,7 +125,6 @@ const Markets = () => {
           </button>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

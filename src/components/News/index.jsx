@@ -10,8 +10,7 @@ const News = () => {
     <div>
       <div className='navbar'>
           <Navbar /> 
-      </div>
-      <Footer />      
+      </div>      
     </div>
 
 

@@ -169,7 +169,6 @@ const Cart = ({ cart, setCart, handleClick }) => {
           
         </div>
       </div>
-      <Footer />
     </div>
   );
 };
