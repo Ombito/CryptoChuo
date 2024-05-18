@@ -25,9 +25,8 @@ const LogIn = ({setUser}) => {
       });
   
       if (response.ok) {
-        const user = await response.json();
-        setUser(user);
-        localStorage.setItem('userData', JSON.stringify(user));
+        const data = await response.json();
+        localStorage.setItem('token', data.token);
         enqueueSnackbar('Login successful!', { variant: 'success' });
         navigate('/');
       } else {

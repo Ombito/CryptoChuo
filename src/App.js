@@ -19,53 +19,16 @@ import Careers from './components/Careers';
 import Sponsorship from './components/Sponsorship';
 import { useSnackbar } from 'notistack';
 import Chat from './components/Chat/index.jsx';
-
+import Cookies from 'js-cookie';
 
 function App() {
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState(null);
   const [refresh, setRefresh]=useState(false);
   const [cart, setCart] = useState([]);
   const [courses, setCourses] = useState(true);
   const [loading, setLoading] = useState(true);
   const { enqueueSnackbar } = useSnackbar();
   const location = useLocation();
-
-
-  useEffect(() => {
-    fetch("http://127.0.0.1:5555/check_session")
-    .then(response=>{
-      if (response.ok){
-        return response.json()
-      }
-    })
-    .then((data) => {
-      setUser(data);
-      localStorage.setItem('userData', JSON.stringify(data));
-      console.log('Session data:', data);
-    })
-    .catch(error => console.log(error));
-  }, [refresh]); 
-
-  useEffect(() => {
-    const apiUrl1 = `http://127.0.0.1:5555/courses`;
-    fetch(apiUrl1)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`Network response was not ok: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then((data) => {
-        console.log('Fetched courses:', data); 
-        setCourses(data);
-        setLoading(false);
-        console.log(data);
-      })
-      .catch((error) => {
-        console.error('Error fetching data:', error);
-        setLoading(false);
-      });
-  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -79,7 +42,7 @@ function App() {
 
     return () => clearInterval(interval);
   }, []);
-
+  
   const fetchUserDetails = async (userId) => {
     try {
       const response = await fetch(`http://127.0.0.1:5555/users/${userId}`, {
@@ -95,6 +58,45 @@ function App() {
       console.error('Error fetching user details:', error.message);
     }
   };
+
+
+
+  useEffect(() => {
+    const apiUrl1 = `http://127.0.0.1:5555/courses`;
+    fetch(apiUrl1)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Network response was not ok: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log('Fetched courses:', data); 
+        setCourses(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+        setLoading(false);
+      });
+  }, []);
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      const decodedToken = JSON.parse(atob(token.split('.')[1]));
+      const userId = decodedToken.user_id;
+      fetchUserDetails(userId);
+    }
+  }, []);
+  
+
+  useEffect(() => {
+    if (user && Object.keys(user).length !== 0) {
+      Cookies.set('userData', JSON.stringify(user), { expires: 7 });
+      localStorage.setItem('userData', JSON.stringify(user));
+    }
+  }, [user]);
 
   const handleClick =  (item) => {
     console.log(item);

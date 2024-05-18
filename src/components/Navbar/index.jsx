@@ -8,8 +8,6 @@ import { FaShoppingCart, FaBars, FaTimes, FaUser } from  'react-icons/fa';
 const Navbar = ({ user, size }) => {
     const [ active, setActive ] = useState(false);
     
-    console.log('Navbar size:', size)
-    console.log('Navbar user:', user)
 
     const toggle = ()=> {
         setActive(!active);
@@ -19,7 +17,7 @@ const Navbar = ({ user, size }) => {
         setActive(false);
       };
     
-
+console.log('Navbar user:', user)
 
     return (
         <div className='navbar'>
@@ -47,29 +45,25 @@ const Navbar = ({ user, size }) => {
                                 Shop
                             </NavLink>
                         </div>
-                        {user ? (
                         <div className="auth-button">
                             <Link to="/cart">
                                 <div className="count">
                                     <FaShoppingCart id="cart-icon"/><span id="countss">{size}</span>
                                 </div>
                             </Link>
-                            <Link to="/login">
-                                <FaUser />
-                            </Link>
-                        </div>
-                        ) : (
-                            <div className="auth-button">
-                                <Link to="/cart">
-                                <div className="count">
-                                    <FaShoppingCart id="cart-icon"/><span className="counts">{size}</span>
-                                </div>
+                            {user ? (
+                                <Link to="/login">
+                                    <FaUser />{user.full_name}
                                 </Link>
+                            ) : (
                                 <Link to="/login">
                                     <button id='signin-button' type='submit'>Sign in</button>
                                 </Link>
-                             </div>
-                           )}
+                            )}
+                        </div>
+                      
+                           ?
+                         
                     </div>         
                 </div>
             
