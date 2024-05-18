@@ -10,6 +10,7 @@ import Markets from './components/Markets';
 import News from './components/News';
 import Shop from './components/Shop';
 import Navbar from './components/Navbar/index.jsx';
+import Footer from './components/Footer';
 import Checkout from './components/Checkout';
 import Cart from './components/Cart';
 import Signup from './components/Signup';
@@ -120,25 +121,24 @@ function App() {
   
   return (
     <div className="App">
-          <Navbar user={user} setUser={setUser} size={cart.length} />
-          <Routes>
-              <Route>
-                <Route path="/" element={<Home user={user}/>} />
-                <Route path="/courses" element={<Courses user={user} />} />
-                <Route path="/courses/:id" element={<CourseDetails user={user} handleClick={handleClick} />} />
-                <Route path="/login" element={<LogIn setUser={setUser} />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/signup" element={<Signup />} />
-                <Route path="/markets" element={<Markets />} />
-                <Route path="/news" element={<News />} />
-                <Route path="/shop" element={<Shop handleClick={handleClick}/>} />
-                <Route path="checkout" element={<Checkout user={user}/>} />
-                <Route path="cart" element={<Cart cart={cart} setCart={setCart} refresh={refresh} handleClick={handleClick} />} />
-                <Route path="/events" element={<Events />} />
-                <Route path="/careers" element={<Careers />} />
-                <Route path="/sponsorship" element={<Sponsorship />} />
-              </Route>
+      {location.pathname !== '/login' && location.pathname !== '/signup' && location.pathname !== '/forgot-password' && <Navbar user={user} setUser={setUser} size={cart.length} courses={courses} />}
+        <Routes>
+          <Route path="/" element={<Home user={user}/>} />
+          <Route path="/courses" element={<Courses user={user} />} />
+          <Route path="/courses/:id" element={<CourseDetails user={user} handleClick={handleClick} />} />
+          <Route path="/login" element={<LogIn setUser={setUser} />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/markets" element={<Markets />} />
+          <Route path="/news" element={<News />} />
+          <Route path="/shop" element={<Shop handleClick={handleClick}/>} />
+          <Route path="checkout" element={<Checkout user={user}/>} />
+          <Route path="cart" element={<Cart cart={cart} setCart={setCart} refresh={refresh} handleClick={handleClick} />} />
+          <Route path="/events" element={<Events />} />
+          <Route path="/careers" element={<Careers />} />
+          <Route path="/sponsorship" element={<Sponsorship />} />
       </Routes>
+      {location.pathname !== '/login' && location.pathname !== '/signup' && location.pathname !== '/forgot-password' && <Footer />}
 
     </div>
   );
