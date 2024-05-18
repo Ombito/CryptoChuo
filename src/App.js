@@ -30,19 +30,7 @@ function App() {
   const { enqueueSnackbar } = useSnackbar();
   const location = useLocation();
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const token = localStorage.getItem('token');
-      if (token) {
-        const decodedToken = JSON.parse(atob(token.split('.')[1]));
-        const userId = decodedToken.user_id;
-        fetchUserDetails(userId);
-      }
-    }, 5000); 
 
-    return () => clearInterval(interval);
-  }, []);
-  
   const fetchUserDetails = async (userId) => {
     try {
       const response = await fetch(`http://127.0.0.1:5555/users/${userId}`, {
@@ -59,7 +47,26 @@ function App() {
     }
   };
 
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      const decodedToken = JSON.parse(atob(token.split('.')[1]));
+      const userId = decodedToken.user_id;
+      fetchUserDetails(userId);
+    }
+  }, []);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const token = localStorage.getItem('token');
+      if (token) {
+        const decodedToken = JSON.parse(atob(token.split('.')[1]));
+        const userId = decodedToken.user_id;
+        fetchUserDetails(userId);
+      }
+    }, 1800000);
 
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     const apiUrl1 = `http://127.0.0.1:5555/courses`;
@@ -81,14 +88,6 @@ function App() {
       });
   }, []);
 
-  useEffect(() => {
-    const token = localStorage.getItem('token');
-    if (token) {
-      const decodedToken = JSON.parse(atob(token.split('.')[1]));
-      const userId = decodedToken.user_id;
-      fetchUserDetails(userId);
-    }
-  }, []);
   
 
   useEffect(() => {

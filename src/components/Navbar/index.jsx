@@ -17,7 +17,7 @@ const Navbar = ({ user, size }) => {
         setActive(false);
       };
     
-console.log('Navbar user:', user)
+console.log({user})
 
     return (
         <div className='navbar'>
@@ -45,6 +45,7 @@ console.log('Navbar user:', user)
                                 Shop
                             </NavLink>
                         </div>
+                        
                         <div className="auth-button">
                             <Link to="/cart">
                                 <div className="count">
@@ -59,11 +60,8 @@ console.log('Navbar user:', user)
                                 <Link to="/login">
                                     <button id='signin-button' type='submit'>Sign in</button>
                                 </Link>
-                            )}
-                        </div>
-                      
-                           ?
-                         
+                           )}
+                        </div> 
                     </div>         
                 </div>
             
