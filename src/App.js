@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import { Route ,Routes} from 'react-router-dom';
+import { Route , Routes, useLocation, Navigate} from 'react-router-dom';
 import Courses from './components/Courses';
 import CourseDetails from './components/CourseDetails';
 import Home from './components/Home';
@@ -24,11 +24,14 @@ function App() {
   const [user, setUser] = useState({});
   const [refresh, setRefresh]=useState(false);
   const [cart, setCart] = useState([]);
+  const [courses, setCourses] = useState(true);
+  const [loading, setLoading] = useState(true);
   const { enqueueSnackbar } = useSnackbar();
+  const location = useLocation();
 
 
   useEffect(() => {
-    fetch("http://127.0.0.1:5555/session_user")
+    fetch("http://127.0.0.1:5555/check_session")
     .then(response=>{
       if (response.ok){
         return response.json()
@@ -41,6 +44,56 @@ function App() {
     })
     .catch(error => console.log(error));
   }, [refresh]); 
+
+  useEffect(() => {
+    const apiUrl1 = `http://127.0.0.1:5555/courses`;
+    fetch(apiUrl1)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Network response was not ok: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log('Fetched courses:', data); 
+        setCourses(data);
+        setLoading(false);
+        console.log(data);
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+        setLoading(false);
+      });
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const token = localStorage.getItem('token');
+      if (token) {
+        const decodedToken = JSON.parse(atob(token.split('.')[1]));
+        const userId = decodedToken.user_id;
+        fetchUserDetails(userId);
+      }
+    }, 5000); 
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const fetchUserDetails = async (userId) => {
+    try {
+      const response = await fetch(`http://127.0.0.1:5555/users/${userId}`, {
+    
+      });
+      if (response.ok) {
+        const userData = await response.json();
+        setUser(userData);
+      } else {
+        console.error('Failed to fetch user details:', response.status);
+      }
+    } catch (error) {
+      console.error('Error fetching user details:', error.message);
+    }
+  };
 
   const handleClick =  (item) => {
     console.log(item);
@@ -61,7 +114,10 @@ function App() {
   
   console.log('Cart length:', cart.length);
 
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+  
   return (
     <div className="App">
           <Navbar user={user} setUser={setUser} size={cart.length} />

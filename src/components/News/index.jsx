@@ -8,13 +8,11 @@ import Footer from '../Footer/index.jsx';
 const News = () => {
   return (
     <div>
-    <div className='navbar'>
-        <Navbar /> 
+      <div className='navbar'>
+          <Navbar /> 
+      </div>
+      <Footer />      
     </div>
-    <Footer />
-    
-          
-</div>
 
 
 

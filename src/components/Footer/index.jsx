@@ -41,7 +41,7 @@ const Footer = () => {
           <NavLink to='/privacypolicy'>Privacy policy</NavLink>
         </div>
         <div class="contactinfo">
-          <h5>Company</h5>
+          <h5>COMPANY</h5>
           <NavLink to='/events'>About Us</NavLink>
           <NavLink to='/partnership'>Become a Partner</NavLink>
           <NavLink to='/community'>Join Our Community</NavLink>
