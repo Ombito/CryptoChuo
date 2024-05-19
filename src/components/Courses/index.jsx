@@ -277,17 +277,17 @@ const Courses = () => {
                 <h5 style={{"text-align": "center"}}>Learn. Trade. Invest. Play</h5>
                 <p style={{"text-align": "center"}}>Advance your knowledge for free through our fun, interactive courses. CryptoChuo presents the most comprehensive educational courses lineup for beginners, intermediate and advanced learners.</p>
                 <div id="learnandtrade">
-                    <div>
+                    <div className="learn-cards">
                         <img src="" alt="" />
                         <h3>Complete support</h3>
                         <p>Get full support</p>
                     </div>
-                    <div>
+                    <div className="learn-cards">
                         <img src="" alt="" />
                         <h3>Earn certificate</h3>
                         <p>Claim your certificate of achievent upon completion of a course</p>
                     </div>
-                    <div>
+                    <div className="learn-cards">
                         <img src="" alt="" />
                         <h3>One-Stop learning hub</h3>
                         <p>Join millions of learners in ou community</p>
