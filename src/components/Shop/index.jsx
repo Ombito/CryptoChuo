@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import tshirt from '../Assets/download.jpeg';
 import book from '../Assets/book.jpg';
 import hoodie from '../Assets/bitcoinhoodie.jpg';
-import Navbar from '../Navbar/index.jsx';
 import Footer from '../Footer/index.jsx';
 
 
@@ -69,7 +68,6 @@ const Shop = ({handleClick}) => {
   return (
     <div>
     <div className='navbar'>
-        <Navbar />
     </div>
     <section id="popular">
         <div id="banner">

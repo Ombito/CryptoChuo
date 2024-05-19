@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import "./style.css"
 import calendar from "../Assets/calendar.png";
 import clock from "../Assets/wall-clock.png";
-import Navbar from '../Navbar/index.jsx';
 import Footer from '../Footer/index.jsx';
 import Course1 from "../Assets/homepage.jpg";
 import Feature from '../Assets/Courses/bitcoinlogo.png';
@@ -113,7 +112,6 @@ const Courses = () => {
     
   return (
     <div> 
-      <Navbar />
     <div >       
     </div >
         <div className='courses'>

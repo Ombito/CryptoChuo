@@ -9,7 +9,8 @@ import About from './components/About';
 import Markets from './components/Markets';
 import News from './components/News';
 import Shop from './components/Shop';
-import Navbar from './components/Navbar/index.jsx';
+// import Navbar from './components/Navbar/';
+import NavbarMenu from './components/NavMenu/NavbarMenu.jsx'
 import Footer from './components/Footer';
 import Checkout from './components/Checkout';
 import Cart from './components/Cart';
@@ -122,7 +123,7 @@ function App() {
   
   return (
     <div className="App">
-      {location.pathname !== '/login' && location.pathname !== '/signup' && location.pathname !== '/forgot-password' && <Navbar user={user} setUser={setUser} size={cart.length} courses={courses} />}
+      {location.pathname !== '/login' && location.pathname !== '/signup' && location.pathname !== '/forgot-password' && <NavbarMenu  user={user}/>}
         <Routes>
           <Route path="/" element={<Home user={user}/>} />
           <Route path="/courses" element={<Courses user={user} />} />

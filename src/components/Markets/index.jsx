@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import "../Markets/style.css";
 import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import Navbar from '../Navbar/index.jsx';
 import Footer from '../Footer/index.jsx';
 import { Line } from 'react-chartjs-2';
 import { FaSearch } from  'react-icons/fa';
@@ -58,7 +57,6 @@ const Markets = () => {
   return (
     <div>
       <div className='navbar'>
-        <Navbar />
       </div>
       <div id="market">
         <div>

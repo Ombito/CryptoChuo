@@ -1,13 +1,12 @@
-import React, { useState }  from 'react';
-import "../Navbar/style.css";
+import React, { useState } from 'react';
+import './navmenu.css';
 import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import logo from '../Assets/logo1.jpeg';
 import { FaShoppingCart, FaBars, FaTimes, FaUser } from  'react-icons/fa';
 
-const Navbar = ({ user, size }) => {
+const NavbarMenu = ({user}) => {
     const [ active, setActive ] = useState(false);
-    
 
     const toggle = ()=> {
         setActive(!active);
@@ -16,16 +15,12 @@ const Navbar = ({ user, size }) => {
     const closeMenu = () => {
         setActive(false);
       };
-    
-console.log({user})
 
-    return (
-        <div className='navbar'>
-            <div className="logo-container">
-                <Link class="container" to="/"><img className='logo' src={logo} alt="Bitcoin Logo" /></Link>
-            </div>
-          
-                <div className="navigation-container">
+  return (
+    <div>
+        <h1>Navbar</h1>
+        <h2>{user.full_name}</h2>
+        <div className="navigation-container">
                     <button onClick={toggle} className='navbar-icons'>{active ? <FaTimes id="close"/> : <FaBars />}</button>
                     <div id="navlinks" className={active ? 'active' : '' } onClick={closeMenu}>
                         <div className="navbar-menu">
@@ -45,11 +40,10 @@ console.log({user})
                                 Shop
                             </NavLink>
                         </div>
-                        
                         <div className="auth-button">
                             <Link to="/cart">
                                 <div className="count">
-                                    <FaShoppingCart id="cart-icon"/><span id="countss">{size}</span>
+                                    <FaShoppingCart color='red' id="cart-icon"/><span id="countss">{user.full_name}</span>
                                 </div>
                             </Link>
                             {user ? (
@@ -61,36 +55,12 @@ console.log({user})
                                     <button id='signin-button' type='submit'>Sign in</button>
                                 </Link>
                            )}
-                        </div> 
-                    </div>         
-                </div>
-            
-                {/* <div className="navigation-container">
-                <button onClick={toggle} className='navbar-icons'>{active ? <FaTimes id="close"/> : <FaBars />}</button>
-                <div id="navlinks" className={active ? 'active' : '' } onClick={closeMenu}>
-                    <div className="navbar-menu">
-                        <NavLink to='/' id='home'>
-                            Home
-                        </NavLink>
-                        <NavLink to='/about' id='about'>
-                            About Us
-                        </NavLink>
-                        <NavLink to='/courses' id='courses'>
-                            Courses
-                        </NavLink>
-                        <NavLink to='/markets' id='markets'>
-                            Markets
-                        </NavLink>
-                        <NavLink to='/shop' id='shop'>
-                            Shop
-                        </NavLink>
-                    </div>
-                    
-                </div>         
-            </div> */}
-         
-        </div>
-    );
-};
+                            </div>
+                        </div>
+                        </div>
+        
+    </div>
+  )
+}
 
-export default Navbar;
+export default NavbarMenu;

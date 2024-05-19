@@ -4,7 +4,6 @@ import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import team3 from "../Assets/team3.jpg"
 import team2 from "../Assets/team2.png";
-import Navbar from "../Navbar/index.jsx";
 import Footer from "../Footer/index.jsx";
 import banner from "../Assets/learn3.jpeg";
 import ourstory from "../Assets/our-story.png";
@@ -21,7 +20,6 @@ import { FaUserFriends, FaGraduationCap, FaBookOpen, FaBriefcase, FaCheck } from
 const About = () => {
   return (
     <div id="about">
-        <Navbar /> 
         <div className='aboutus'>
           <div className="about-hero">
             <div id="about-banner" class="container">
