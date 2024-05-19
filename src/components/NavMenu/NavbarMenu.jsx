@@ -17,48 +17,36 @@ const NavbarMenu = ({user}) => {
       };
 
   return (
-    <div>
-        <h1>Navbar</h1>
-        <h2>{user.full_name}</h2>
+    <div className='navbar'>
+        <div className="logo-container">
+            <Link class="container" to="/"><img className='logo' src={logo} alt="Bitcoin Logo" /></Link>
+        </div>
         <div className="navigation-container">
-                    <button onClick={toggle} className='navbar-icons'>{active ? <FaTimes id="close"/> : <FaBars />}</button>
-                    <div id="navlinks" className={active ? 'active' : '' } onClick={closeMenu}>
-                        <div className="navbar-menu">
-                            <NavLink to='/' id='home'>
-                                Home
-                            </NavLink>
-                            <NavLink to='/about' id='about'>
-                                About Us
-                            </NavLink>
-                            <NavLink to='/courses' id='courses'>
-                                Courses
-                            </NavLink>
-                            <NavLink to='/markets' id='markets'>
-                                Markets
-                            </NavLink>
-                            <NavLink to='/shop' id='shop'>
-                                Shop
-                            </NavLink>
+            <button onClick={toggle} className='navbar-icons'>{active ? <FaTimes id="close"/> : <FaBars />}</button>
+            <div id="navlinks" className={active ? 'active' : '' } onClick={closeMenu}>
+                <div className="navbar-menu">
+                    <NavLink to='/' id='home'>Home</NavLink>
+                    <NavLink to='/about' id='about'>About Us</NavLink>
+                    <NavLink to='/courses' id='courses'>Courses</NavLink>
+                    <NavLink to='/markets' id='markets'>Markets</NavLink>
+                    <NavLink to='/shop' id='shop'>Shop</NavLink>
+                </div>
+                <div className="auth-button">
+                    <Link to="/cart">
+                        <div className="count">
+                            <FaShoppingCart color='red' id="cart-icon"/><span id="countss">Cart</span>
                         </div>
-                        <div className="auth-button">
-                            <Link to="/cart">
-                                <div className="count">
-                                    <FaShoppingCart color='red' id="cart-icon"/><span id="countss">{user.full_name}</span>
-                                </div>
-                            </Link>
-                            {user ? (
-                                <Link to="/login">
-                                    <FaUser />{user.full_name}
-                                </Link>
-                            ) : (
-                                <Link to="/login">
-                                    <button id='signin-button' type='submit'>Sign in</button>
-                                </Link>
-                           )}
-                            </div>
-                        </div>
-                        </div>
-        
+                    </Link>
+                    {user ? (
+                        <Link to="/login"><FaUser />{user.full_name}</Link>
+                    ) : (
+                        <Link to="/login">
+                            <button id='signin-button' type='submit'>Sign in</button>
+                        </Link>
+                    )}
+                </div>
+            </div>
+        </div>    
     </div>
   )
 }
