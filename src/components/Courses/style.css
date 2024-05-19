@@ -203,6 +203,15 @@
   flex-direction: column;
   justify-content: center;
 }
+.card1 {
+  background-color: #ffd700; 
+}
+.card2 {
+  background-color: #87ceeb; 
+}
+.card3 {
+  background-color: #90ee90;
+}
 .learn-cards h3 {
   font-size: 1.2em;
   color: #333;

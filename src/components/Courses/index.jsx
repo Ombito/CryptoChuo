@@ -278,15 +278,15 @@ const Courses = () => {
                 <h5 style={{"text-align": "center"}}>Learn. Trade. Invest. Play</h5>
                 <p className="learn-headline">CryptoChuo presents the most comprehensive educational courses lineup for beginners, intermediate and advanced learners.</p>
                 <div id="learnandtrade">
-                    <div className="learn-cards">
+                    <div className="learn-cards card1">
                         <h3>Complete support</h3>
                         <p>Get full support</p>
                     </div>
-                    <div className="learn-cards">
+                    <div className="learn-cards card2">
                         <h3>Earn certificate</h3>
                         <p>Claim your certificate of achievent upon completion of a course</p>
                     </div>
-                    <div className="learn-cards">
+                    <div className="learn-cards card3">
                         <h3>One-Stop learning hub</h3>
                         <p>Join millions of learners in ou community</p>
                     </div>
