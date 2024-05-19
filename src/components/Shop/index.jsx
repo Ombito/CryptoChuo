@@ -67,8 +67,6 @@ const Shop = ({handleClick}) => {
 
   return (
     <div>
-    <div className='navbar'>
-    </div>
     <section id="popular">
         <div id="banner">
           <div className="banner-hero">

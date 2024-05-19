@@ -56,8 +56,6 @@ const Markets = () => {
 
   return (
     <div>
-      <div className='navbar'>
-      </div>
       <div id="market">
         <div>
           <h3>Today's Cryptocurrency Prices by Market Cap</h3>

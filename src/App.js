@@ -122,8 +122,6 @@ function App() {
     }
   };
   
-  console.log('Cart length:', cart.length);
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
