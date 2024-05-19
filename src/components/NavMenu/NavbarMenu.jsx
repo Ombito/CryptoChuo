@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import logo from '../Assets/logo1.jpeg';
 import { FaShoppingCart, FaBars, FaTimes, FaUser } from  'react-icons/fa';
 
-const NavbarMenu = ({user}) => {
+const NavbarMenu = ({user, cart }) => {
     const [ active, setActive ] = useState(false);
 
     const toggle = ()=> {
@@ -34,7 +34,8 @@ const NavbarMenu = ({user}) => {
                 <div className="auth-button">
                     <Link to="/cart">
                         <div className="count">
-                            <FaShoppingCart id="cart-icon"/><span id="countss">0</span>
+                            <FaShoppingCart id="cart-icon"/>
+                            <span id="countss"> {cart.length > 0 && <div className="cart-items">{cart.length}</div>}</span>
                         </div>
                     </Link>
                     {user ? (

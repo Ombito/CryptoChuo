@@ -9,7 +9,6 @@ import About from './components/About';
 import Markets from './components/Markets';
 import News from './components/News';
 import Shop from './components/Shop';
-// import Navbar from './components/Navbar/';
 import NavbarMenu from './components/NavMenu/NavbarMenu.jsx'
 import Footer from './components/Footer';
 import Checkout from './components/Checkout';
@@ -25,7 +24,10 @@ import Cookies from 'js-cookie';
 function App() {
   const [user, setUser] = useState(null);
   const [refresh, setRefresh]=useState(false);
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(() => {
+    const storedCart = localStorage.getItem('cart');
+    return storedCart ? JSON.parse(storedCart) : [];
+  });
   const [courses, setCourses] = useState(true);
   const [loading, setLoading] = useState(true);
   const { enqueueSnackbar } = useSnackbar();
@@ -56,6 +58,7 @@ function App() {
       fetchUserDetails(userId);
     }
   }, []);
+
   useEffect(() => {
     const interval = setInterval(() => {
       const token = localStorage.getItem('token');
@@ -90,13 +93,17 @@ function App() {
   }, []);
 
   
-
   useEffect(() => {
     if (user && Object.keys(user).length !== 0) {
       Cookies.set('userData', JSON.stringify(user), { expires: 7 });
       localStorage.setItem('userData', JSON.stringify(user));
     }
   }, [user]);
+
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }, [cart]);
+
 
   const handleClick =  (item) => {
     console.log(item);
@@ -123,7 +130,7 @@ function App() {
   
   return (
     <div className="App">
-      {location.pathname !== '/login' && location.pathname !== '/signup' && location.pathname !== '/forgot-password' && <NavbarMenu  user={user}/>}
+      {location.pathname !== '/login' && location.pathname !== '/signup' && location.pathname !== '/forgot-password' && <NavbarMenu  user={user} cart={cart} />}
         <Routes>
           <Route path="/" element={<Home user={user}/>} />
           <Route path="/courses" element={<Courses user={user} />} />
