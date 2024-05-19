@@ -55,14 +55,13 @@ const Markets = () => {
   const currentItems = filteredMarkets.slice(startIndex, endIndex);
 
   return (
-    <div>
-      <div id="market">
-        <div>
+    <div id="market">
+      <div className='market-summary'>
+        <div className='market-header'>
           <h3>Today's Cryptocurrency Prices by Market Cap</h3>
-          <p>This page displays the latest prices, 24-hour trading volume, price changes, and market capitalizations for all cryptocurrencies on CoinmarketCap.          
-          </p>
+          <input className='market-search' type="text" value={searchTerm} onChange={handleSearch} placeholder="Search Tokens, NFT, Categories..."/>
         </div>
-        <input type="text" value={searchTerm} onChange={handleSearch} placeholder="Search..."/>
+        <p>This page displays the latest prices, 24-hour trading volume, price changes, and market capitalizations for all cryptocurrencies on CoinmarketCap.</p>
       </div>
       <div>
         {loading || markets.length === 0 ? (
