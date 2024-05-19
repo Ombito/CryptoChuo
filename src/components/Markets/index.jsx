@@ -111,13 +111,9 @@ const Markets = () => {
           </table>
         )}
         <div className="pagination">
-          <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>
-                <FaBackward />
-          </button>
-          <span>{currentPage}</span>
-          <button onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === totalPages}>
-          <FaForward />
-          </button>
+          <button className="pagination-button" onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>&lt;</button>
+          <span className="pagination-current">{currentPage}</span>
+          <button className="pagination-button" onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === totalPages}>&gt;</button>
         </div>
       </div>
     </div>
