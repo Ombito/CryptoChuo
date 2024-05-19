@@ -29,6 +29,7 @@ function App() {
     return storedCart ? JSON.parse(storedCart) : [];
   });
   const [courses, setCourses] = useState(true);
+  const [merchandiseItems, setMerchandiseItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const { enqueueSnackbar } = useSnackbar();
   const location = useLocation();
@@ -92,6 +93,25 @@ function App() {
       });
   }, []);
 
+  useEffect(() => {
+    const apiUrl = `http://127.0.0.1:5555/merchandises`;
+    fetch(apiUrl)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Network response was not ok: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setMerchandiseItems(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+        setLoading(false);
+      });
+  }, [refresh]);
+
   
   useEffect(() => {
     if (user && Object.keys(user).length !== 0) {
@@ -138,7 +158,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/markets" element={<Markets />} />
           <Route path="/news" element={<News />} />
-          <Route path="/shop" element={<Shop handleClick={handleClick}/>} />
+          <Route path="/shop" element={<Shop handleClick={handleClick} merchandiseItems={merchandiseItems}/>} />
           <Route path="checkout" element={<Checkout user={user}/>} />
           <Route path="cart" element={<Cart cart={cart} setCart={setCart} refresh={refresh} handleClick={handleClick} />} />
           <Route path="/events" element={<Events />} />

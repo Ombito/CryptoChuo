@@ -9,9 +9,7 @@ import Footer from '../Footer/index.jsx';
 
 
 
-const Shop = ({handleClick}) => {
-
-  const [merchandiseItems, setMerchandiseItems] = useState([]);
+const Shop = ({handleClick, merchandiseItems}) => {
   const [loading, setLoading] = useState(true);
   const [refresh, setRefresh] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
@@ -36,24 +34,24 @@ const Shop = ({handleClick}) => {
   const currentFlashSales = filterItemsByCategory('flash_sales').slice(indexOfFirstItem, indexOfLastItem);
 
 
-  useEffect(() => {
-    const apiUrl = `http://127.0.0.1:5555/merchandises`;
-    fetch(apiUrl)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`Network response was not ok: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setMerchandiseItems(data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error('Error fetching data:', error);
-        setLoading(false);
-      });
-  }, [refresh]);
+  // useEffect(() => {
+  //   const apiUrl = `http://127.0.0.1:5555/merchandises`;
+  //   fetch(apiUrl)
+  //     .then((response) => {
+  //       if (!response.ok) {
+  //         throw new Error(`Network response was not ok: ${response.status}`);
+  //       }
+  //       return response.json();
+  //     })
+  //     .then((data) => {
+  //       setMerchandiseItems(data);
+  //       setLoading(false);
+  //     })
+  //     .catch((error) => {
+  //       console.error('Error fetching data:', error);
+  //       setLoading(false);
+  //     });
+  // }, [refresh]);
 
   const handleSearch = (e) => {
     setSearchTerm(e.target.value);
