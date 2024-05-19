@@ -34,7 +34,7 @@ const NavbarMenu = ({user}) => {
                 <div className="auth-button">
                     <Link to="/cart">
                         <div className="count">
-                            <FaShoppingCart color='red' id="cart-icon"/><span id="countss">Cart</span>
+                            <FaShoppingCart id="cart-icon"/><span id="countss">0</span>
                         </div>
                     </Link>
                     {user ? (
