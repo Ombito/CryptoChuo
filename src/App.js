@@ -21,6 +21,8 @@ import { useSnackbar } from 'notistack';
 import Chat from './components/Chat/index.jsx';
 import Cookies from 'js-cookie';
 
+// color palette #ffa500;
+
 function App() {
   const [user, setUser] = useState(null);
   const [refresh, setRefresh]=useState(false);
@@ -112,7 +114,7 @@ function App() {
       });
   }, [refresh]);
 
-  
+
   useEffect(() => {
     if (user && Object.keys(user).length !== 0) {
       Cookies.set('userData', JSON.stringify(user), { expires: 7 });
