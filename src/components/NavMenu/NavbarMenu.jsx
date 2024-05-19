@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import './navmenu.css';
-import { NavLink } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import logo from '../Assets/logo1.jpeg';
 import { FaShoppingCart, FaBars, FaTimes, FaUser } from  'react-icons/fa';
+import { useSnackbar } from 'notistack';
 
 const NavbarMenu = ({user, cart }) => {
     const [ active, setActive ] = useState(false);
+    const navigate = useNavigate();
+    const { enqueueSnackbar } = useSnackbar();
 
     const toggle = ()=> {
         setActive(!active);
@@ -14,7 +16,18 @@ const NavbarMenu = ({user, cart }) => {
 
     const closeMenu = () => {
         setActive(false);
-      };
+    };
+
+    const handleProtectedNavClick = (e, path) => {
+        if (!user) {
+          e.preventDefault();
+          navigate('/login');
+          enqueueSnackbar('Signin to view courses', { variant: 'warning' });
+        } else {
+          navigate(path);
+        }
+    };
+      
 
   return (
     <div className='navbar'>
@@ -27,7 +40,7 @@ const NavbarMenu = ({user, cart }) => {
                 <div className="navbar-menu">
                     <NavLink to='/' id='home'>Home</NavLink>
                     <NavLink to='/about' id='about'>About Us</NavLink>
-                    <NavLink to='/courses' id='courses'>Courses</NavLink>
+                    <NavLink to='/courses' id='courses' onClick={(e) => handleProtectedNavClick(e, '/courses')}>Courses</NavLink>
                     <NavLink to='/markets' id='markets'>Markets</NavLink>
                     <NavLink to='/shop' id='shop'>Shop</NavLink>
                 </div>

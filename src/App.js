@@ -67,7 +67,7 @@ function App() {
         const userId = decodedToken.user_id;
         fetchUserDetails(userId);
       }
-    }, 1800000);
+    }, 240000);
 
     return () => clearInterval(interval);
   }, []);
@@ -131,7 +131,7 @@ function App() {
       {location.pathname !== '/login' && location.pathname !== '/signup' && location.pathname !== '/forgot-password' && <NavbarMenu  user={user} cart={cart} />}
         <Routes>
           <Route path="/" element={<Home user={user}/>} />
-          <Route path="/courses" element={<Courses user={user} />} />
+          <Route path="/courses" element={user ? <Courses user={user} /> : <Navigate to="/login" />} />
           <Route path="/courses/:id" element={<CourseDetails user={user} handleClick={handleClick} />} />
           <Route path="/login" element={<LogIn setUser={setUser} />} />
           <Route path="/about" element={<About />} />
