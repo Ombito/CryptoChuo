@@ -373,6 +373,7 @@ button:hover {
   }
   
   .subscribe {
+    align-items: center;
     padding: 50px 20px;
     margin-top: 53%;
     background-color: #252a43;
