@@ -48,7 +48,7 @@ const NavbarMenu = ({user, cart }) => {
                     <Link to="/cart">
                         <div className="count">
                             <ion-icon name="cart-outline" id="cart-icon"></ion-icon>
-                            <span id="count-number">{cart.length > 0 && cart.length}</span>
+                            {cart.length > 0 && (<span id="count-number">{cart.length}</span>)}
                         </div>
                     </Link>
                     {user ? (
