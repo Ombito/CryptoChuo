@@ -1,0 +1,131 @@
+.whatsapp-chat-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+}
+.whatsapp-icon {
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+.whatsapp-chat {
+  display: none;
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 300px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}  
+.whatsapp-chat.show {
+  display: block;
+}  
+.chat-header {
+  background-color: #25d366;
+  color: #fff;
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}  
+.close-btn {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}  
+.close-btn:hover {
+  background-color: rgba(0, 128, 0, 0.74);
+}
+.chat-body {
+  height: calc(100% - 50px);
+  padding: 5px;
+  overflow-y: auto;
+}
+.chat-window {
+  height: 220px;
+  overflow-y: scroll;
+  background-color: #c6e6ea;
+}
+.message-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.message {
+  padding: 5px 5px;
+  border-radius: 20px;
+  width: 80%;
+  margin-bottom: 10px;
+  word-wrap: break-word;
+}  
+.message.user {
+  background-color: #dcf8c6;
+  margin-left: auto;
+}
+  
+.message.bot {
+  background-color: #e2e2e2;
+  margin-right: auto;
+}
+.message-content {
+  display: flex;
+  align-items: flex-start;
+  max-width: 100%;
+  word-wrap: break-word;
+}  
+.message.user .message-content {
+  flex-direction: row-reverse;
+  margin-left: auto;
+}  
+.message.bot .message-content {
+  margin-right: auto;
+}  
+.message-content span {
+  padding: 8px 12px;
+  border-radius: 20px;
+  background-color: #e2e2e2;
+}  
+.message.user .message-content span {
+  background-color: #dcf8c6;
+}  
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin: 0 8px;
+}  
+.chat-input {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+}  
+.message-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 5px;
+  font-size: 14px;
+}  
+.send-button {
+  border: none;
+  outline: none;
+  background-color: #333;
+  color: #fff;
+  font-size: 14px;
+  padding: 5px 10px;
+  cursor: pointer;
+}  
+.send-button:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+}

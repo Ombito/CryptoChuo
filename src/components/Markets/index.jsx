@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react';
 import "../Markets/style.css";
 import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import Navbar from '../Navbar/index.jsx';
 import Footer from '../Footer/index.jsx';
 import { Line } from 'react-chartjs-2';
 import { FaSearch } from  'react-icons/fa';
 import { FaBackward, FaForward } from  'react-icons/fa';
+import WhatsAppChat from '../WhatsAppChat/index.jsx';
+
 
 const Markets = () => {
   const [loading, setLoading] = useState(true);
@@ -56,17 +57,13 @@ const Markets = () => {
   const currentItems = filteredMarkets.slice(startIndex, endIndex);
 
   return (
-    <div>
-      <div className='navbar'>
-        <Navbar />
-      </div>
-      <div id="market">
-        <div>
+    <div id="market">
+      <div className='market-summary'>
+        <div className='market-header'>
           <h3>Today's Cryptocurrency Prices by Market Cap</h3>
-          <p>This page displays the latest prices, 24-hour trading volume, price changes, and market capitalizations for all cryptocurrencies on CoinmarketCap.          
-          </p>
+          <input className='market-search' type="text" value={searchTerm} onChange={handleSearch} placeholder="Search Tokens, NFT, Categories..."/>
         </div>
-        <input type="text" value={searchTerm} onChange={handleSearch} placeholder="Search..."/>
+        <p>This page displays the latest prices, 24-hour trading volume, price changes, and market capitalizations for all cryptocurrencies on CoinmarketCap.</p>
       </div>
       <div>
         {loading || markets.length === 0 ? (
@@ -116,15 +113,12 @@ const Markets = () => {
           </table>
         )}
         <div className="pagination">
-          <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>
-                <FaBackward />
-          </button>
-          <span>{currentPage}</span>
-          <button onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === totalPages}>
-          <FaForward />
-          </button>
+          <button className="pagination-button" onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>&lt;</button>
+          <span className="pagination-current">{currentPage}</span>
+          <button className="pagination-button" onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === 7}>&gt;</button>
         </div>
       </div>
+      <WhatsAppChat />
     </div>
   );
 };

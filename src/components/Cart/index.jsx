@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import Navbar from '../Navbar/index.jsx';
 import "../Cart/styles.css";
 import { useNavigate } from 'react-router-dom';
 import Footer from '../Footer/index.jsx';
 import { FaTrash, FaLessThan } from 'react-icons/fa';
 import book from '../Assets/book.jpg';
+import WhatsAppChat from '../WhatsAppChat/index.jsx';
 
 const Cart = ({ cart, setCart, handleClick }) => {
   const [price, setPrice] = useState(0);
@@ -80,7 +80,6 @@ const Cart = ({ cart, setCart, handleClick }) => {
 
   return (
     <div>
-      <Navbar />
       <div id="cart" class="container">
         <h1>Shopping Cart</h1>
         <div id="cart-hero">
@@ -169,6 +168,7 @@ const Cart = ({ cart, setCart, handleClick }) => {
           
         </div>
       </div>
+      <WhatsAppChat />
     </div>
   );
 };

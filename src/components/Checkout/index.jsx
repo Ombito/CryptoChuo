@@ -1,6 +1,5 @@
 import React, { useState} from 'react';
 import '../Checkout/style.css';
-import Navbar from '../Navbar/index';
 import Footer from '../Footer/index';
 import { FaCheck } from  'react-icons/fa';
 import Paypal from '../Paypal/paypal';
@@ -12,7 +11,7 @@ import shopping from '../Assets/shopping.png';
 import delivery from '../Assets/delivery.png';
 import paypal from '../Assets/paypal.png';
 import { useLocation } from 'react-router-dom';
-
+import WhatsAppChat from '../WhatsAppChat/index.jsx';
 
 const Checkout = () => {
     const location = useLocation();
@@ -47,7 +46,6 @@ const Checkout = () => {
     }
   return (
     <div>
-        <Navbar />
         <div id="checkout" class="container">
             <div>
                 <h2>Secure Checkout</h2>
@@ -170,6 +168,7 @@ const Checkout = () => {
                     </div>
                 </div>
             </div>
+            <WhatsAppChat />
         </div>
     </div>
   )

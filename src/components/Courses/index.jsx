@@ -2,16 +2,16 @@ import React, { useState, useEffect } from 'react';
 import "./style.css"
 import calendar from "../Assets/calendar.png";
 import clock from "../Assets/wall-clock.png";
-import Navbar from '../Navbar/index.jsx';
 import Footer from '../Footer/index.jsx';
 import Course1 from "../Assets/homepage.jpg";
 import Feature from '../Assets/Courses/bitcoinlogo.png';
-import time from '../Assets/time.png';
+import Support from '../Assets/support.jpg';
 import certificate from '../Assets/certificate.png';
+import Cert from '../Assets/cert.jpg';
 import tick from '../Assets/tick.png';
 import { useNavigate } from 'react-router-dom';
 import { FaCheck } from 'react-icons/fa';
-
+import WhatsAppChat from '../WhatsAppChat/index.jsx';
 
 const Courses = () => {
     const [activeTab, setActiveTab] = useState ('allCourses');
@@ -113,7 +113,6 @@ const Courses = () => {
     
   return (
     <div> 
-      <Navbar />
     <div >       
     </div >
         <div className='courses'>
@@ -277,26 +276,23 @@ const Courses = () => {
             </div>
             <div class="container" id="learnwithus">
                 <h5 style={{"text-align": "center"}}>Learn. Trade. Invest. Play</h5>
-                <p style={{"text-align": "center"}}>Advance your knowledge for free through our fun, interactive courses. CryptoChuo presents the most comprehensive educational courses lineup for beginners, intermediate and advanced learners.</p>
+                <p className="learn-headline">CryptoChuo presents the most comprehensive educational courses lineup for beginners, intermediate and advanced learners.</p>
                 <div id="learnandtrade">
-                    <div>
-                        <img src="" alt="" />
+                    <div className="learn-cards card1">
                         <h3>Complete support</h3>
                         <p>Get full support</p>
                     </div>
-                    <div>
-                        <img src="" alt="" />
+                    <div className="learn-cards card2">
                         <h3>Earn certificate</h3>
                         <p>Claim your certificate of achievent upon completion of a course</p>
                     </div>
-                    <div>
-                        <img src="" alt="" />
+                    <div className="learn-cards card3">
                         <h3>One-Stop learning hub</h3>
                         <p>Join millions of learners in ou community</p>
                     </div>
                 </div>
             </div>
-
+            <WhatsAppChat />
         </div>
   
   );

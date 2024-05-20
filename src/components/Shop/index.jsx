@@ -5,14 +5,10 @@ import { Link } from 'react-router-dom';
 import tshirt from '../Assets/download.jpeg';
 import book from '../Assets/book.jpg';
 import hoodie from '../Assets/bitcoinhoodie.jpg';
-import Navbar from '../Navbar/index.jsx';
 import Footer from '../Footer/index.jsx';
+import WhatsAppChat from '../WhatsAppChat/index.jsx';
 
-
-
-const Shop = ({handleClick}) => {
-
-  const [merchandiseItems, setMerchandiseItems] = useState([]);
+const Shop = ({handleClick, merchandiseItems}) => {
   const [loading, setLoading] = useState(true);
   const [refresh, setRefresh] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
@@ -36,26 +32,6 @@ const Shop = ({handleClick}) => {
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentFlashSales = filterItemsByCategory('flash_sales').slice(indexOfFirstItem, indexOfLastItem);
 
-
-  useEffect(() => {
-    const apiUrl = `http://127.0.0.1:5555/merchandises`;
-    fetch(apiUrl)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`Network response was not ok: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setMerchandiseItems(data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error('Error fetching data:', error);
-        setLoading(false);
-      });
-  }, [refresh]);
-
   const handleSearch = (e) => {
     setSearchTerm(e.target.value);
   };
@@ -68,14 +44,11 @@ const Shop = ({handleClick}) => {
 
   return (
     <div>
-    <div className='navbar'>
-        <Navbar />
-    </div>
     <section id="popular">
         <div id="banner">
           <div className="banner-hero">
             <p>Explore our curated selection of sleek wearables and accessories that not only reflect your passion for blockchain but elevate your style to new heights. Embrace the future in style, only at cryptoChuo.</p>
-            <input type="text" placeholder="Search for a product" value={searchTerm} onChange={handleSearch}/>
+            <input type="text" placeholder="Search for a product..." value={searchTerm} onChange={handleSearch}/>
           </div>
         </div>
         <div class="container" id="trending-container">
@@ -165,6 +138,7 @@ const Shop = ({handleClick}) => {
           </div>
 
         </div>
+        <WhatsAppChat />
       </section>    
 </div> 
   );

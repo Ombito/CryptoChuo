@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import Navbar from '../Navbar/index.jsx';
 import Footer from '../Footer/index.jsx';
 import "./style.css"
 import { FaThumbsDown, FaThumbsUp, FaCheck, FaCalendar, FaBolt, FaClock, FaCreditCard, FaList, FaHandHoldingHeart, FaBackward } from 'react-icons/fa';
 import Course1 from "../Assets/homepage.jpg";
 import clock from "../Assets/wall-clock.png";
 import calendar from "../Assets/calendar.png";
-
+import WhatsAppChat from '../WhatsAppChat/index.jsx';
 
 const CourseDetails = () => {
   const { id } = useParams();
@@ -38,7 +37,6 @@ const CourseDetails = () => {
 
   if (!course) {
     return <div id="loading">
-      <Navbar />
       <p>Loading course details...</p>
       <Footer />
     </div>;
@@ -83,7 +81,6 @@ const CourseDetails = () => {
 
   return (
     <div>
-      <Navbar />
       <div id="coursedetails" class="container">
         <div id="course-description">
           <img src={course.image} alt="Course" height="380" width="800"/>
@@ -153,6 +150,7 @@ const CourseDetails = () => {
           ))}
         </div>
       </div>
+      <WhatsAppChat />
     </div>
   );
 };

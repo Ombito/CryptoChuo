@@ -9,7 +9,7 @@ import About from './components/About';
 import Markets from './components/Markets';
 import News from './components/News';
 import Shop from './components/Shop';
-import Navbar from './components/Navbar/index.jsx';
+import NavbarMenu from './components/NavMenu/NavbarMenu.jsx'
 import Footer from './components/Footer';
 import Checkout from './components/Checkout';
 import Cart from './components/Cart';
@@ -18,14 +18,20 @@ import Events from './components/Events';
 import Careers from './components/Careers';
 import Sponsorship from './components/Sponsorship';
 import { useSnackbar } from 'notistack';
-import Chat from './components/Chat/index.jsx';
+import Chat from './components/WhatsAppChat/index.jsx';
 import Cookies from 'js-cookie';
+
+
 
 function App() {
   const [user, setUser] = useState(null);
   const [refresh, setRefresh]=useState(false);
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(() => {
+    const storedCart = localStorage.getItem('cart');
+    return storedCart ? JSON.parse(storedCart) : [];
+  });
   const [courses, setCourses] = useState(true);
+  const [merchandiseItems, setMerchandiseItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const { enqueueSnackbar } = useSnackbar();
   const location = useLocation();
@@ -55,6 +61,7 @@ function App() {
       fetchUserDetails(userId);
     }
   }, []);
+
   useEffect(() => {
     const interval = setInterval(() => {
       const token = localStorage.getItem('token');
@@ -63,7 +70,7 @@ function App() {
         const userId = decodedToken.user_id;
         fetchUserDetails(userId);
       }
-    }, 1800000);
+    }, 240000);
 
     return () => clearInterval(interval);
   }, []);
@@ -88,7 +95,25 @@ function App() {
       });
   }, []);
 
-  
+  useEffect(() => {
+    const apiUrl = `http://127.0.0.1:5555/merchandises`;
+    fetch(apiUrl)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Network response was not ok: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setMerchandiseItems(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+        setLoading(false);
+      });
+  }, [refresh]);
+
 
   useEffect(() => {
     if (user && Object.keys(user).length !== 0) {
@@ -96,6 +121,11 @@ function App() {
       localStorage.setItem('userData', JSON.stringify(user));
     }
   }, [user]);
+
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }, [cart]);
+
 
   const handleClick =  (item) => {
     console.log(item);
@@ -114,25 +144,23 @@ function App() {
     }
   };
   
-  console.log('Cart length:', cart.length);
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
   
   return (
     <div className="App">
-      {location.pathname !== '/login' && location.pathname !== '/signup' && location.pathname !== '/forgot-password' && <Navbar user={user} setUser={setUser} size={cart.length} courses={courses} />}
+      {location.pathname !== '/login' && location.pathname !== '/signup' && location.pathname !== '/forgot-password' && <NavbarMenu  user={user} cart={cart} />}
         <Routes>
           <Route path="/" element={<Home user={user}/>} />
-          <Route path="/courses" element={<Courses user={user} />} />
+          <Route path="/courses" element={user ? <Courses user={user} /> : <Navigate to="/login" />} />
           <Route path="/courses/:id" element={<CourseDetails user={user} handleClick={handleClick} />} />
           <Route path="/login" element={<LogIn setUser={setUser} />} />
           <Route path="/about" element={<About />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/markets" element={<Markets />} />
           <Route path="/news" element={<News />} />
-          <Route path="/shop" element={<Shop handleClick={handleClick}/>} />
+          <Route path="/shop" element={<Shop handleClick={handleClick} merchandiseItems={merchandiseItems}/>} />
           <Route path="checkout" element={<Checkout user={user}/>} />
           <Route path="cart" element={<Cart cart={cart} setCart={setCart} refresh={refresh} handleClick={handleClick} />} />
           <Route path="/events" element={<Events />} />

@@ -2,15 +2,13 @@ import React from 'react';
 import "./style.css"
 import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import Navbar from '../Navbar/index.jsx';
 import Footer from '../Footer/index.jsx';
+import WhatsAppChat from '../WhatsAppChat/index.jsx';
 
 const News = () => {
   return (
     <div>
-      <div className='navbar'>
-          <Navbar /> 
-      </div>      
+      <WhatsAppChat />    
     </div>
 
 

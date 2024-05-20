@@ -176,11 +176,52 @@
 #learnwithus {
   margin-bottom: 15%;
 }
+.learn-headline {
+  text-align: center;
+  width: 70%;
+  margin: auto;
+  margin-bottom: 10px;
+}
 #learnandtrade {
   display: flex;
-  justify-content: space-between;
-  width: 90%;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
 }
+.learn-cards {
+  background-color: #fff;
+  padding: 0 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 300px;
+  height: 15vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.card1 {
+  background-color: #ffd700; 
+}
+.card2 {
+  background-color: #87ceeb; 
+}
+.card3 {
+  background-color: #90ee90;
+}
+.learn-cards h3 {
+  font-size: 1.2em;
+  color: #333;
+}
+
+.learn-cards p {
+  font-size: 1em;
+  color: #666;
+}
+
 
  /* mobile screen device  */
  @media screen and (min-width: 360px) and (max-width: 765px){
@@ -252,6 +293,9 @@
   }
   #learnwithus {
     margin: 210px 0 560px 0;
+  }
+  .learn-headline {
+    width: 100%;
   }
   #learnandtrade {
     display: flex;

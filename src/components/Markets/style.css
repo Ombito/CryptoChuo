@@ -1,12 +1,17 @@
 #market {
-  margin: 8% 5% 0 5%;
+  margin: 8% 5% 3% 5%;
+}
+.market-summary {
+  gap: 20px;
+}
+.market-header {
   display: flex;
   justify-content: space-between;
 }
-#market input {
-  height: 6vh;
-  width: 350px;
-  border-radius: 7px;
+.market-search {
+  width: 40%;
+  border-radius: 3px;
+  padding: 2px 10px;
 }
 #coin_img {
     height: 4vh;
@@ -19,7 +24,7 @@
   text-align: center;
 }
 .crypto-table {
-  width: 90%;
+  width: 100%;
   border-collapse: collapse;
   margin: 0 auto;
 }
@@ -59,11 +64,35 @@
   color: red;
 }
 .pagination {
-  margin: 0 45% 3% 45%;
-  gap: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
 }
-.pagination button {
-  padding: 0px 8px;
+
+.pagination-button {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pagination-button:hover {
+  background-color: #0056b3;
+}
+
+.pagination-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination-current {
+  margin: 0 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 /* mobile responsiveness   */
