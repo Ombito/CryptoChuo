@@ -6,6 +6,8 @@ import Footer from '../Footer/index.jsx';
 import { Line } from 'react-chartjs-2';
 import { FaSearch } from  'react-icons/fa';
 import { FaBackward, FaForward } from  'react-icons/fa';
+import WhatsAppChat from '../WhatsAppChat/index.jsx';
+
 
 const Markets = () => {
   const [loading, setLoading] = useState(true);
@@ -116,6 +118,7 @@ const Markets = () => {
           <button className="pagination-button" onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === totalPages}>&gt;</button>
         </div>
       </div>
+      <WhatsAppChat />
     </div>
   );
 };

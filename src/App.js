@@ -18,10 +18,10 @@ import Events from './components/Events';
 import Careers from './components/Careers';
 import Sponsorship from './components/Sponsorship';
 import { useSnackbar } from 'notistack';
-import Chat from './components/Chat/index.jsx';
+import Chat from './components/WhatsAppChat/index.jsx';
 import Cookies from 'js-cookie';
 
-// color palette #ffa500;
+
 
 function App() {
   const [user, setUser] = useState(null);

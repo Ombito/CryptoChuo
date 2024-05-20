@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import team3 from "../Assets/team3.jpg"
 import team2 from "../Assets/team2.png";
-import Footer from "../Footer/index.jsx";
+import WhatsAppChat from '../WhatsAppChat/index.jsx';
 import banner from "../Assets/learn3.jpeg";
 import ourstory from "../Assets/our-story.png";
 import binance from "../Assets/binance.png";
@@ -169,6 +169,7 @@ const About = () => {
                 </div>
               </div>
           </div>
+          <WhatsAppChat />
     </div>
     
           

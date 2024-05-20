@@ -2,15 +2,7 @@ import React, { useState, useEffect } from 'react';
 import "../Home/style.css";
 import { Link } from 'react-router-dom';
 import online from '../Assets/online-meeting.jpeg';
-import Course1 from '../Assets/Courses/science.jpeg';
-import Course2 from '../Assets/Courses/regulation.png';
-import Course3 from '../Assets/Courses/bitcoindecentralization.png';
-import Course4 from '../Assets/Courses/bitcoin.png';
-import Course5 from '../Assets/Courses/p2p.png';
-import Course6 from '../Assets/Courses/mobile.png';
-import Course7 from '../Assets/Courses/trading.jpeg';
-import Course8 from '../Assets/Courses/bitcoinmining.png';
-import Footer from '../Footer/index.jsx';
+import WhatsAppChat from '../WhatsAppChat/index.jsx';
 import { FaTelegram, FaLinkedin, FaWhatsapp, FaDiscord } from  'react-icons/fa';
 import ContactUs from '../Assets/contact.png';
 import banner from '../Assets/Courses/basics.png';
@@ -329,6 +321,7 @@ const Home = ({user}) => {
                         
                     </div>
                 </div>
+                <WhatsAppChat />
             </div>
         </div>
     );
