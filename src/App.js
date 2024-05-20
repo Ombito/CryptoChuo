@@ -18,7 +18,6 @@ import Events from './components/Events';
 import Careers from './components/Careers';
 import Sponsorship from './components/Sponsorship';
 import { useSnackbar } from 'notistack';
-import Chat from './components/WhatsAppChat/index.jsx';
 import Cookies from 'js-cookie';
 
 

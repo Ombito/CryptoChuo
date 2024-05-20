@@ -47,12 +47,17 @@ const NavbarMenu = ({user, cart }) => {
                 <div className="auth-button">
                     <Link to="/cart">
                         <div className="count">
-                            <FaShoppingCart id="cart-icon"/>
-                            <span id="countss"> {cart.length > 0 && <div className="cart-items">{cart.length}</div>}</span>
+                            <ion-icon name="cart-outline" id="cart-icon"></ion-icon>
+                            {cart.length > 0 && (<span id="count-number">{cart.length}</span>)}
                         </div>
                     </Link>
                     {user ? (
-                        <Link to="/login"><FaUser />{user.full_name}</Link>
+                        <Link to="/login">
+                            <div className='user-name-container'>
+                                <ion-icon name="person-circle-outline" id="user-icon"></ion-icon>
+                                <h4>{user.username}</h4>
+                            </div>
+                        </Link>  
                     ) : (
                         <Link to="/login">
                             <button id='signin-button' type='submit'>Sign in</button>
