@@ -115,7 +115,7 @@ const Markets = () => {
         <div className="pagination">
           <button className="pagination-button" onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>&lt;</button>
           <span className="pagination-current">{currentPage}</span>
-          <button className="pagination-button" onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === totalPages}>&gt;</button>
+          <button className="pagination-button" onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === 7}>&gt;</button>
         </div>
       </div>
       <WhatsAppChat />
