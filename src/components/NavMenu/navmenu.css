@@ -58,11 +58,22 @@
 }
 .auth-button {
   display: flex;
-  gap: 50px;
+  gap: 30px;
 }
 #cart-icon {
   font-size: 1.6em;
   margin-top: 10px;
+}
+.user-name-container {
+  display: flex;
+}
+.user-name-container h4{
+  margin-top: 10px;
+}
+#user-icon {
+  font-size: 1.9em; 
+  margin-right: 0px;
+  margin-top: 8px;
 }
 #count-number {
   background-color: red;

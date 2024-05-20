@@ -52,7 +52,12 @@ const NavbarMenu = ({user, cart }) => {
                         </div>
                     </Link>
                     {user ? (
-                        <Link to="/login"><FaUser />{user.full_name}</Link>
+                        <Link to="/login">
+                            <div className='user-name-container'>
+                                <ion-icon name="person-circle-outline" id="user-icon"></ion-icon>
+                                <h4>{user.username}</h4>
+                            </div>
+                        </Link>  
                     ) : (
                         <Link to="/login">
                             <button id='signin-button' type='submit'>Sign in</button>
