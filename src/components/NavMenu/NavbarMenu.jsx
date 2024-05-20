@@ -47,8 +47,8 @@ const NavbarMenu = ({user, cart }) => {
                 <div className="auth-button">
                     <Link to="/cart">
                         <div className="count">
-                            <FaShoppingCart id="cart-icon"/>
-                            <span id="countss"> {cart.length > 0 && <div className="cart-items">{cart.length}</div>}</span>
+                            <ion-icon name="cart-outline" id="cart-icon"></ion-icon>
+                            <span id="count-number">{cart.length > 0 && cart.length}</span>
                         </div>
                     </Link>
                     {user ? (

@@ -42,7 +42,7 @@ const Footer = () => {
         </div>
         <div class="contactinfo">
           <h5>COMPANY</h5>
-          <NavLink to='/events'>About Us</NavLink>
+          <NavLink to='/about'>About Us</NavLink>
           <NavLink to='/partnership'>Become a Partner</NavLink>
           <NavLink to='/community'>Join Our Community</NavLink>
           <NavLink to='/termsofservice'>Terms of Service</NavLink>

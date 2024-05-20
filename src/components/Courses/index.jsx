@@ -113,8 +113,6 @@ const Courses = () => {
     
   return (
     <div> 
-    <div >       
-    </div >
         <div className='courses'>
             <div class="container">
                 <h2>Featured Course</h2>
