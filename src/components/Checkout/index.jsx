@@ -11,7 +11,7 @@ import shopping from '../Assets/shopping.png';
 import delivery from '../Assets/delivery.png';
 import paypal from '../Assets/paypal.png';
 import { useLocation } from 'react-router-dom';
-
+import WhatsAppChat from '../WhatsAppChat/index.jsx';
 
 const Checkout = () => {
     const location = useLocation();
@@ -168,6 +168,7 @@ const Checkout = () => {
                     </div>
                 </div>
             </div>
+            <WhatsAppChat />
         </div>
     </div>
   )

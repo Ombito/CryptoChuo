@@ -6,7 +6,7 @@ import tshirt from '../Assets/download.jpeg';
 import book from '../Assets/book.jpg';
 import hoodie from '../Assets/bitcoinhoodie.jpg';
 import Footer from '../Footer/index.jsx';
-
+import WhatsAppChat from '../WhatsAppChat/index.jsx';
 
 const Shop = ({handleClick, merchandiseItems}) => {
   const [loading, setLoading] = useState(true);
@@ -138,6 +138,7 @@ const Shop = ({handleClick, merchandiseItems}) => {
           </div>
 
         </div>
+        <WhatsAppChat />
       </section>    
 </div> 
   );

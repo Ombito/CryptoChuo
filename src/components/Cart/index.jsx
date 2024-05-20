@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import Footer from '../Footer/index.jsx';
 import { FaTrash, FaLessThan } from 'react-icons/fa';
 import book from '../Assets/book.jpg';
+import WhatsAppChat from '../WhatsAppChat/index.jsx';
 
 const Cart = ({ cart, setCart, handleClick }) => {
   const [price, setPrice] = useState(0);
@@ -167,6 +168,7 @@ const Cart = ({ cart, setCart, handleClick }) => {
           
         </div>
       </div>
+      <WhatsAppChat />
     </div>
   );
 };

@@ -6,7 +6,7 @@ import { FaThumbsDown, FaThumbsUp, FaCheck, FaCalendar, FaBolt, FaClock, FaCredi
 import Course1 from "../Assets/homepage.jpg";
 import clock from "../Assets/wall-clock.png";
 import calendar from "../Assets/calendar.png";
-
+import WhatsAppChat from '../WhatsAppChat/index.jsx';
 
 const CourseDetails = () => {
   const { id } = useParams();
@@ -150,6 +150,7 @@ const CourseDetails = () => {
           ))}
         </div>
       </div>
+      <WhatsAppChat />
     </div>
   );
 };

@@ -11,7 +11,7 @@ import Cert from '../Assets/cert.jpg';
 import tick from '../Assets/tick.png';
 import { useNavigate } from 'react-router-dom';
 import { FaCheck } from 'react-icons/fa';
-
+import WhatsAppChat from '../WhatsAppChat/index.jsx';
 
 const Courses = () => {
     const [activeTab, setActiveTab] = useState ('allCourses');
@@ -292,7 +292,7 @@ const Courses = () => {
                     </div>
                 </div>
             </div>
-
+            <WhatsAppChat />
         </div>
   
   );
