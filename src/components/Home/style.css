@@ -118,11 +118,11 @@
 }
 .loadingTrendingCourses {
   width: 100%;
-  height: auto;
+  height: 40vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 30px;
+  gap: 50px;
   align-items: center;
 }
 .loadingTrendingCourses p {
