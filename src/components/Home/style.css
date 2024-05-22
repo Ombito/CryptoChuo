@@ -69,7 +69,7 @@
     gap: 20px;
     margin-top: 4%;
     align-items: center;
-    background-color: #d35400;
+    background-color: #fb8500;
     color: white;
     padding: 50px 20px;
     height: 22vh; 
@@ -312,7 +312,7 @@ button:hover {
   font-size: 1.6em;
 }
   .join {
-    background-color: #9b59b6;
+    background-color: #283618;
     padding: 30px 20px;
     color: white;
     margin-top: 7%;
@@ -376,7 +376,7 @@ button:hover {
     align-items: center;
     padding: 50px 20px;
     margin-top: 53%;
-    background-color: #252a43;
+    background-color: #023047;
     color: white;
     height: 32vh;
   }
@@ -407,7 +407,7 @@ button:hover {
   }
   
   .subscribe-button {
-    background-color: #f9a826;
+    background-color: #fb8500;
     color: #fff;
     border: none;
     border-radius: 5px;

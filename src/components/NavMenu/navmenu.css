@@ -7,17 +7,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #252a43;
+    background-color: #023047;
     color: #252a43;
     z-index: 1;
 }
 .logo-container {
-    margin: 0 5%;
-    margin-top: -3%; 
+    margin: auto 4%;
 }
 
 .logo-container img {
-    height: 12vh; 
+    height: 8vh; 
     width: 115%;
 }
 .navigation-container {
@@ -45,7 +44,7 @@
     font-size: 1.2em;
 }
 #signin-button {
-    background-color: #4CAF50;
+    background-color: #fb8500;
     color: #fff;
     padding: 7px 25px;
     border: none;

@@ -17,6 +17,7 @@ import Signup from './components/Signup';
 import Events from './components/Events';
 import Careers from './components/Careers';
 import Sponsorship from './components/Sponsorship';
+import CourseCategory from './components/CourseCategory';
 import { useSnackbar } from 'notistack';
 import Cookies from 'js-cookie';
 
@@ -154,6 +155,7 @@ function App() {
           <Route path="/" element={<Home user={user}/>} />
           <Route path="/courses" element={user ? <Courses user={user} /> : <Navigate to="/login" />} />
           <Route path="/courses/:id" element={<CourseDetails user={user} handleClick={handleClick} />} />
+          <Route path="/courses/:CourseCategory" element={<CourseCategory />} />
           <Route path="/login" element={<LogIn setUser={setUser} />} />
           <Route path="/about" element={<About />} />
           <Route path="/signup" element={<Signup />} />

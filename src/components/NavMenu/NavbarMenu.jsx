@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './navmenu.css';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
-import logo from '../Assets/logo1.jpeg';
+import logo from '../Assets/logo-.png';
 import { FaShoppingCart, FaBars, FaTimes, FaUser } from  'react-icons/fa';
 import { useSnackbar } from 'notistack';
 
