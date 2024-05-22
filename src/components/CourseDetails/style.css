@@ -258,8 +258,8 @@
 #course-description h3 {
     padding-top: 25px;
 }
-#enroll-btn {
-    width: 30%;
+.addedToCart {
+  background-color: orange;
 }
 .courseDetailsCard {
     margin-bottom: 15px;
