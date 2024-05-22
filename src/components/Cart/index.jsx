@@ -6,7 +6,7 @@ import { FaTrash, FaLessThan } from 'react-icons/fa';
 import book from '../Assets/book.jpg';
 import WhatsAppChat from '../WhatsAppChat/index.jsx';
 
-const Cart = ({ cart, setCart, handleClick }) => {
+const Cart = ({ cart, setCart, handleClick, selectedCourses }) => {
   const [price, setPrice] = useState(0);
   const [merchandiseItems, setMerchandiseItems] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -77,6 +77,7 @@ const Cart = ({ cart, setCart, handleClick }) => {
   const filterItemsByCategory = (grouping) => {
     return merchandiseItems.filter((item) => item.grouping === grouping);
   };
+console.log(selectedCourses)
 
   return (
     <div>
@@ -110,6 +111,22 @@ const Cart = ({ cart, setCart, handleClick }) => {
                             <p>{item.quantity}</p>
                             <button onClick={() => handleDecrement(item)}>-</button>
                           </div>
+                        </div>
+                      </div>
+                    ))}
+                    {selectedCourses.map((item) => (
+                      <div key={item.id} id="cart-card">
+                        <div id="img-div">
+                          <img src={item.image} alt="item" />
+                        </div>
+                        <div id="cart-name-div">
+                          <h5>{item.title}</h5>
+                          <p onClick={() => handleRemove(item)} id="remove-btn" className="cart-div">
+                            <FaTrash /> Remove
+                          </p>
+                        </div>
+                        <div>
+                          <h4>{item.price}</h4>
                         </div>
                       </div>
                     ))}

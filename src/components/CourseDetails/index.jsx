@@ -8,7 +8,7 @@ import clock from "../Assets/wall-clock.png";
 import calendar from "../Assets/calendar.png";
 import WhatsAppChat from '../WhatsAppChat/index.jsx';
 
-const CourseDetails = () => {
+const CourseDetails = ({ handleClick }) => {
   const { id } = useParams();
   const [course, setCourse] = useState(null);
   const navigate = useNavigate();
@@ -54,7 +54,6 @@ const CourseDetails = () => {
   );
   }
 
-  
     const apiUrl = `http://127.0.0.1:5555/courses`;
     fetch(apiUrl)
       .then((response) => {
@@ -98,7 +97,7 @@ const CourseDetails = () => {
           <img src={course.image} alt="Course" height="380" width="800"/>
           <h2>{course.title}</h2>
           <p>{course.description}</p>
-          <button id="enroll-btn">Enroll Now</button>
+          <button onClick={() => handleClick(course.id)} id="enroll-btn">Enroll Now</button>
         </div>
         <div className="courseDetails-div">
           <div className="courseDetailsCard">
@@ -109,7 +108,7 @@ const CourseDetails = () => {
             <p><FaClock className="checkicon"/> Duration: {course.duration}</p>
             <p><FaCreditCard className="checkicon"/> Tuition: ${course.price}</p>
             <p><FaHandHoldingHeart  className="checkicon"/> Lifetime Full Access</p>
-            <button>Enroll Now</button>
+            <button onClick={() => handleClick(course.id)}>Enroll Now</button>
           </div>
           <div className="courseDetailsCard">
             <h5>Additional Information</h5>

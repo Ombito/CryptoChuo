@@ -31,6 +31,10 @@ function App() {
     return storedCart ? JSON.parse(storedCart) : [];
   });
   const [courses, setCourses] = useState(true);
+  const [selectedCourses, setSelectedCourses] = useState(() => {
+    const storedselectedCourses = localStorage.getItem('selectedCourses');
+    return storedselectedCourses ? JSON.parse(storedselectedCourses) : [];
+  });
   const [merchandiseItems, setMerchandiseItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const { enqueueSnackbar } = useSnackbar();
@@ -126,6 +130,10 @@ function App() {
     localStorage.setItem('cart', JSON.stringify(cart));
   }, [cart]);
 
+  useEffect(() => {
+    localStorage.setItem('selectedCourses', JSON.stringify(selectedCourses));
+  }, [selectedCourses]);
+
 
   const handleClick =  (item) => {
     console.log(item);
@@ -140,7 +148,14 @@ function App() {
     if (isPresent) {
       enqueueSnackbar('Item is already added to your Cart', { variant: 'warning' });
     } else {
-      setCart([...cart, item]);
+      const itemWithType = {
+        ...item,
+        type: item.hasOwnProperty('description') ? 'course' : 'product',
+      };
+      setCart([...cart, itemWithType]);
+      if (itemWithType.type === 'course') {
+        setSelectedCourses([...selectedCourses, itemWithType]);
+      }
     }
   };
   
@@ -163,7 +178,7 @@ function App() {
           <Route path="/news" element={<News />} />
           <Route path="/shop" element={<Shop handleClick={handleClick} merchandiseItems={merchandiseItems}/>} />
           <Route path="checkout" element={<Checkout user={user}/>} />
-          <Route path="cart" element={<Cart cart={cart} setCart={setCart} refresh={refresh} handleClick={handleClick} />} />
+          <Route path="cart" element={<Cart cart={cart} setCart={setCart} selectedCourses={selectedCourses} refresh={refresh} handleClick={handleClick} />} />
           <Route path="/events" element={<Events />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/sponsorship" element={<Sponsorship />} />
