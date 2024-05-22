@@ -84,54 +84,56 @@ const Markets = () => {
             </div>
           </div>
         ) : (
-          <table className="crypto-table">
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Coin</th>
-                <th>Price</th>
-                <th>1h</th>
-                <th>24h</th>
-                <th>7d</th>
-                <th>Total Volume</th>
-                <th>Market Cap</th>
-              </tr>
-            </thead>
-            <tbody>
-              {currentItems.map((i) => (
-                <tr key={i.id}>
-                  <td>{i.market_cap_rank}</td>
-                  <td>
-                    <div className="coin-info">
-                      <img src={i.image} id="coin_img" alt="Coin Image" />
-                      <div className="coin-name">
-                        <p>{i.name}</p> 
-                        <p>{i.symbol.toUpperCase()}</p>
-                      </div>
-                    </div>
-                  </td>
-                  <td>${i.current_price.toFixed(2)}</td>
-                  <td className={i.price_change_percentage_1h_in_currency < 0 ? 'negative-change' : 'positive-change'}>
-                    {i.price_change_percentage_1h_in_currency.toFixed(2)}%
-                  </td>
-                  <td className={i.price_change_percentage_24h_in_currency < 0 ? 'negative-change' : 'positive-change'}>
-                    {i.price_change_percentage_24h_in_currency.toFixed(2)}%
-                  </td>
-                  <td className={i.price_change_percentage_7d_in_currency < 0 ? 'negative-change' : 'positive-change'}>
-                    {i.price_change_percentage_7d_in_currency.toFixed(2)}%
-                  </td>
-                  <td>${i.total_volume}</td>
-                  <td>${i.market_cap}</td>
+          <>
+            <table className="crypto-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Coin</th>
+                  <th>Price</th>
+                  <th>1h</th>
+                  <th>24h</th>
+                  <th>7d</th>
+                  <th>Total Volume</th>
+                  <th>Market Cap</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {currentItems.map((i) => (
+                  <tr key={i.id}>
+                    <td>{i.market_cap_rank}</td>
+                    <td>
+                      <div className="coin-info">
+                        <img src={i.image} id="coin_img" alt="Coin Image" />
+                        <div className="coin-name">
+                          <p>{i.name}</p> 
+                          <p>{i.symbol.toUpperCase()}</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>${i.current_price.toFixed(2)}</td>
+                    <td className={i.price_change_percentage_1h_in_currency < 0 ? 'negative-change' : 'positive-change'}>
+                      {i.price_change_percentage_1h_in_currency.toFixed(2)}%
+                    </td>
+                    <td className={i.price_change_percentage_24h_in_currency < 0 ? 'negative-change' : 'positive-change'}>
+                      {i.price_change_percentage_24h_in_currency.toFixed(2)}%
+                    </td>
+                    <td className={i.price_change_percentage_7d_in_currency < 0 ? 'negative-change' : 'positive-change'}>
+                      {i.price_change_percentage_7d_in_currency.toFixed(2)}%
+                    </td>
+                    <td>${i.total_volume}</td>
+                    <td>${i.market_cap}</td>
+                  </tr>
+                ))}
+              </tbody>             
+            </table>
+            <div id="next-btns" className="pagination">
+              <button className="pagination-button" onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>&lt;</button>
+              <span className="pagination-current">{currentPage}</span>
+              <button className="pagination-button" onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === 7}>&gt;</button>
+            </div>
+          </>
         )}
-        <div className="pagination">
-          <button className="pagination-button" onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>&lt;</button>
-          <span className="pagination-current">{currentPage}</span>
-          <button className="pagination-button" onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === 7}>&gt;</button>
-        </div>
       </div>
       <WhatsAppChat />
     </div>
