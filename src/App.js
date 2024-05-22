@@ -76,24 +76,28 @@ function App() {
   }, []);
 
   useEffect(() => {
-    const apiUrl1 = `http://127.0.0.1:5555/courses`;
-    fetch(apiUrl1)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`Network response was not ok: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then((data) => {
-        console.log('Fetched courses:', data); 
-        setCourses(data);
+    if (courses.length === 0) {
+      const apiUrl1 = `http://127.0.0.1:5555/courses`;
+      fetch(apiUrl1)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`Network response was not ok: ${response.status}`);
+          }
+          return response.json();
+        })
+        .then((data) => {
+          console.log('Fetched courses:', data); 
+          setCourses(data);
+          setLoading(false);
+        })
+        .catch((error) => {
+          console.error('Error fetching data:', error);
+          setLoading(false);
+        });
+      } else {
         setLoading(false);
-      })
-      .catch((error) => {
-        console.error('Error fetching data:', error);
-        setLoading(false);
-      });
-  }, []);
+      }
+  }, [courses]);
 
   useEffect(() => {
     const apiUrl = `http://127.0.0.1:5555/merchandises`;

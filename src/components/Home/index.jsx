@@ -148,8 +148,21 @@ const Home = ({ user, courses }) => {
                 </div>
                 <div class="container" id="course-div">     
                     <h3>Trending Courses</h3>
-                    {loading ? (
-                        <div>Loading...</div>
+                    {courses.length === 0  ? (
+                        <div className="loadingTrendingCourses">
+                            <p>Loading courses...</p>
+                            <div class="courseloader">
+                                <div class="loading1"></div>
+                                <div class="loading2"></div>
+                                <div class="loading3"></div>
+                                <div class="loading4"></div>
+                                <div class="loading5"></div>
+                                <div class="loading6"></div>
+                                <div class="loading7"></div>
+                                <div class="loading8"></div>
+                                <div class="loading9"></div>
+                            </div>
+                        </div>
                     ) : (
                         <div id="home-card-container">
                             {filterItemsByCategory('trending').map(course => (
