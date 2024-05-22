@@ -35,7 +35,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   const { enqueueSnackbar } = useSnackbar();
   const location = useLocation();
-
+  const [isInCart, setIsInCart] = useState(false);
 
   const fetchUserDetails = async (userId) => {
     try {
@@ -133,6 +133,7 @@ function App() {
       enqueueSnackbar('Item is already added to your Cart', { variant: 'warning' });
     } else {
       setCart([...cart, { ...item, isCourse, quantity: 1 }]);
+      setIsInCart(true);
     }
   };
   
@@ -146,7 +147,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home user={user}/>} />
           <Route path="/courses" element={user ? <Courses user={user} /> : <Navigate to="/login" />} />
-          <Route path="/courses/:id" element={<CourseDetails user={user} handleAddToCart={handleAddToCart} cart={cart} />} />
+          <Route path="/courses/:id" element={<CourseDetails user={user} handleAddToCart={handleAddToCart} isInCart={isInCart}  />} />
           <Route path="/courses/:CourseCategory" element={<CourseCategory />} />
           <Route path="/login" element={<LogIn setUser={setUser} />} />
           <Route path="/about" element={<About />} />

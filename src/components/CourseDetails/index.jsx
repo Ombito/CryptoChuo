@@ -8,10 +8,9 @@ import clock from "../Assets/wall-clock.png";
 import calendar from "../Assets/calendar.png";
 import WhatsAppChat from '../WhatsAppChat/index.jsx';
 
-const CourseDetails = ({ handleAddToCart, cart }) => {
+const CourseDetails = ({ handleAddToCart, isInCart={isInCart}  }) => {
   const { id } = useParams();
   const [course, setCourse] = useState(null);
-  const [isInCart, setIsInCart] = useState(false);
   const navigate = useNavigate();
   const [likeActive, setLikeActive] = useState(false);
   const [dislikeActive, setDislikeActive] = useState(false);
@@ -30,7 +29,6 @@ const CourseDetails = ({ handleAddToCart, cart }) => {
       })
       .then((data) => {
         setCourse(data);
-        setIsInCart(cart.some(item => item.id === data.id && item.isCourse));
       })
       .catch((error) => {
         console.error('Error fetching course details:', error);
@@ -99,7 +97,7 @@ const CourseDetails = ({ handleAddToCart, cart }) => {
           <img src={course.image} alt="Course" height="380" width="800"/>
           <h2>{course.title}</h2>
           <p>{course.description}</p>
-          <button onClick={() => handleAddToCart(course, true)} className={isInCart ? 'addedToCart' :"enroll-btn"}>{isInCart ? "Added to Cart" : "Enroll Now"}</button>
+          <button onClick={() => handleAddToCart(course, true)} className={isInCart ? 'addedToCart' : "enroll-btn"}>{isInCart ? "Added to Cart" : "Enroll Now"}</button>
         </div>
         <div className="courseDetails-div">
           <div className="courseDetailsCard">
@@ -110,7 +108,7 @@ const CourseDetails = ({ handleAddToCart, cart }) => {
             <p><FaClock className="checkicon"/> Duration: {course.duration}</p>
             <p><FaCreditCard className="checkicon"/> Tuition: ${course.price}</p>
             <p><FaHandHoldingHeart  className="checkicon"/> Lifetime Full Access</p>
-            <button onClick={() => handleAddToCart(course, true)}>{isInCart ? "Added to Cart" : "Enroll Now"}</button>
+            <button className={isInCart ? 'addedToCart' : "enroll-btn"} onClick={() => handleAddToCart(course, true)}>{isInCart ? "Added to Cart" : "Enroll Now"}</button>
           </div>
           <div className="courseDetailsCard">
             <h5>Additional Information</h5>
