@@ -1,6 +1,6 @@
 import React, { useState} from 'react';
 import '../Checkout/style.css';
-import Footer from '../Footer/index';
+import Login from '../Login/index';
 import { FaCheck } from  'react-icons/fa';
 import Paypal from '../Paypal/paypal';
 import DHL from '../Assets/dhl1.png';
@@ -10,14 +10,15 @@ import shoppingcart from '../Assets/shopping-cart.png';
 import shopping from '../Assets/shopping.png';
 import delivery from '../Assets/delivery.png';
 import paypal from '../Assets/paypal.png';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import WhatsAppChat from '../WhatsAppChat/index.jsx';
 
-const Checkout = () => {
+const Checkout = ({ user }) => {
     const location = useLocation();
     const totalAmount = location.state?.totalAmount || 0;
     const [paymentComplete, setPaymentComplete] = useState(false);
     const [formComplete, setFormComplete] = useState(false);
+    const navigate = useNavigate();
 
     const handleInputChange = () => {
         const firstName = document.getElementById('first-name').value;
@@ -44,6 +45,11 @@ const Checkout = () => {
     const handlePaymentSuccess = () => {
         setPaymentComplete(true);
     }
+
+    if (!user) {
+        navigate('/login');
+      }
+
   return (
     <div>
         <div id="checkout" class="container">

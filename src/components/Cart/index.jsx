@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import "../Cart/styles.css";
 import { useNavigate } from 'react-router-dom';
-import Footer from '../Footer/index.jsx';
 import { FaTrash, FaLessThan } from 'react-icons/fa';
 import book from '../Assets/book.jpg';
 import WhatsAppChat from '../WhatsAppChat/index.jsx';
 
-const Cart = ({ cart, setCart, handleAddToCart, selectedCourses }) => {
+const Cart = ({ cart, setCart, user, handleAddToCart }) => {
   const [price, setPrice] = useState(0);
   const [merchandiseItems, setMerchandiseItems] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -52,7 +51,11 @@ const Cart = ({ cart, setCart, handleAddToCart, selectedCourses }) => {
   }, [cart]);
 
   const handleCheckout = () => {
+    if (user) {
     navigate('/checkout', { state: { totalAmount: price } });
+  } else {
+    navigate('/login');
+  }
   };
 
   useEffect(() => {

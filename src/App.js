@@ -156,7 +156,7 @@ function App() {
           <Route path="/news" element={<News />} />
           <Route path="/shop" element={<Shop handleAddToCart={handleAddToCart} merchandiseItems={merchandiseItems}/>} />
           <Route path="checkout" element={<Checkout user={user}/>} />
-          <Route path="cart" element={<Cart cart={cart} setCart={setCart} refresh={refresh} handleAddToCart={handleAddToCart} />} />
+          <Route path="cart" element={<Cart cart={cart} setCart={setCart} user={user} refresh={refresh} handleAddToCart={handleAddToCart} />} />
           <Route path="/events" element={<Events />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/sponsorship" element={<Sponsorship />} />
