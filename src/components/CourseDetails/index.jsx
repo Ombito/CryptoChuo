@@ -15,7 +15,6 @@ const CourseDetails = ({ handleAddToCart, isInCart={isInCart}  }) => {
   const [likeActive, setLikeActive] = useState(false);
   const [dislikeActive, setDislikeActive] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [refresh, setRefresh]=useState(true);
   const [suggestedCourses, setSuggestedCourses] = useState([]);
 
   useEffect(() => {

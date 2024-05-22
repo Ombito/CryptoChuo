@@ -30,7 +30,7 @@ function App() {
     const storedCart = localStorage.getItem('cart');
     return storedCart ? JSON.parse(storedCart) : [];
   });
-  const [courses, setCourses] = useState(true);
+  const [courses, setCourses] = useState([]);
   const [merchandiseItems, setMerchandiseItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const { enqueueSnackbar } = useSnackbar();
@@ -145,7 +145,7 @@ function App() {
     <div className="App">
       {location.pathname !== '/login' && location.pathname !== '/signup' && location.pathname !== '/forgot-password' && <NavbarMenu  user={user} cart={cart} />}
         <Routes>
-          <Route path="/" element={<Home user={user}/>} />
+          <Route path="/" element={<Home user={user} courses={courses} />} />
           <Route path="/courses" element={user ? <Courses user={user} /> : <Navigate to="/login" />} />
           <Route path="/courses/:id" element={<CourseDetails user={user} handleAddToCart={handleAddToCart} isInCart={isInCart}  />} />
           <Route path="/courses/:CourseCategory" element={<CourseCategory />} />
