@@ -126,6 +126,27 @@
   font-weight: bold;
   font-size: 1.5em; 
   text-align: center;
+  animation: loading-text 10s infinite;
+}
+@keyframes loading-text {
+  0% {
+    opacity: 0.2;
+  }
+  20% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0.2;
+  }
+  60% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 @keyframes flow2 {
   50% {

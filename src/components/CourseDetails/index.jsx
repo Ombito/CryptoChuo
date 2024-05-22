@@ -36,10 +36,22 @@ const CourseDetails = () => {
   }, [id]);
 
   if (!course) {
-    return <div id="loading">
-      <p>Loading course details...</p>
-      <Footer />
-    </div>;
+    return (
+      <div id="courseDetailsLoading">
+        <p>Loading course details...</p>
+        <div class="courseDetailsloader">
+          <div class="loading1"></div>
+          <div class="loading2"></div>
+          <div class="loading3"></div>
+          <div class="loading4"></div>
+          <div class="loading5"></div>
+          <div class="loading6"></div>
+          <div class="loading7"></div>
+          <div class="loading8"></div>
+          <div class="loading9"></div>
+        </div>
+      </div>
+  );
   }
 
   
