@@ -6,7 +6,7 @@ import { FaTrash, FaLessThan } from 'react-icons/fa';
 import book from '../Assets/book.jpg';
 import WhatsAppChat from '../WhatsAppChat/index.jsx';
 
-const Cart = ({ cart, setCart, handleClick, selectedCourses }) => {
+const Cart = ({ cart, setCart, handleAddToCart, selectedCourses }) => {
   const [price, setPrice] = useState(0);
   const [merchandiseItems, setMerchandiseItems] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -77,7 +77,6 @@ const Cart = ({ cart, setCart, handleClick, selectedCourses }) => {
   const filterItemsByCategory = (grouping) => {
     return merchandiseItems.filter((item) => item.grouping === grouping);
   };
-console.log(selectedCourses)
 
   return (
     <div>
@@ -99,7 +98,7 @@ console.log(selectedCourses)
                           <img src={item.image} alt="item" />
                         </div>
                         <div id="cart-name-div">
-                          <h5>{item.name}</h5>
+                          <h5>{item.isCourse ? item.title : item.name}</h5>
                           <p onClick={() => handleRemove(item)} id="remove-btn" className="cart-div">
                             <FaTrash /> Remove
                           </p>
@@ -107,26 +106,16 @@ console.log(selectedCourses)
                         <div>
                           <h4>{item.price}</h4>
                           <div className="cart-card-btns">
-                            <button onClick={() => handleIncrement(item)}>+</button>
-                            <p>{item.quantity}</p>
-                            <button onClick={() => handleDecrement(item)}>-</button>
+                            {item.isCourse ? (
+                              <p>1 X 1</p>
+                            ) : (
+                              <>
+                                <button onClick={() => handleIncrement(item)}>+</button>
+                                <p>{item.quantity}</p>
+                                <button onClick={() => handleDecrement(item)}>-</button>
+                              </>
+                            )}
                           </div>
-                        </div>
-                      </div>
-                    ))}
-                    {selectedCourses.map((item) => (
-                      <div key={item.id} id="cart-card">
-                        <div id="img-div">
-                          <img src={item.image} alt="item" />
-                        </div>
-                        <div id="cart-name-div">
-                          <h5>{item.title}</h5>
-                          <p onClick={() => handleRemove(item)} id="remove-btn" className="cart-div">
-                            <FaTrash /> Remove
-                          </p>
-                        </div>
-                        <div>
-                          <h4>{item.price}</h4>
                         </div>
                       </div>
                     ))}
@@ -174,7 +163,7 @@ console.log(selectedCourses)
                           ))}
                         </p>
                       </div>
-                      <button onClick={() => handleClick(item)}>Add to Cart</button>
+                      <button onClick={() => handleAddToCart(item)}>Add to Cart</button>
                     </div>
                   </div>
                 ))}

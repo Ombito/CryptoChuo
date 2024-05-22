@@ -31,10 +31,6 @@ function App() {
     return storedCart ? JSON.parse(storedCart) : [];
   });
   const [courses, setCourses] = useState(true);
-  const [selectedCourses, setSelectedCourses] = useState(() => {
-    const storedselectedCourses = localStorage.getItem('selectedCourses');
-    return storedselectedCourses ? JSON.parse(storedselectedCourses) : [];
-  });
   const [merchandiseItems, setMerchandiseItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const { enqueueSnackbar } = useSnackbar();
@@ -130,32 +126,13 @@ function App() {
     localStorage.setItem('cart', JSON.stringify(cart));
   }, [cart]);
 
-  useEffect(() => {
-    localStorage.setItem('selectedCourses', JSON.stringify(selectedCourses));
-  }, [selectedCourses]);
 
-
-  const handleClick =  (item) => {
-    console.log(item);
-    let isPresent = false;
-
-    cart.forEach((product) => {
-      if (item.id === product.id) {
-        isPresent = true;
-      }
-    });
-
+  const handleAddToCart = (item, isCourse = false) => {
+    const isPresent = cart.some((product) => product.id === item.id && product.isCourse === isCourse);
     if (isPresent) {
       enqueueSnackbar('Item is already added to your Cart', { variant: 'warning' });
     } else {
-      const itemWithType = {
-        ...item,
-        type: item.hasOwnProperty('description') ? 'course' : 'product',
-      };
-      setCart([...cart, itemWithType]);
-      if (itemWithType.type === 'course') {
-        setSelectedCourses([...selectedCourses, itemWithType]);
-      }
+      setCart([...cart, { ...item, isCourse, quantity: 1 }]);
     }
   };
   
@@ -169,16 +146,16 @@ function App() {
         <Routes>
           <Route path="/" element={<Home user={user}/>} />
           <Route path="/courses" element={user ? <Courses user={user} /> : <Navigate to="/login" />} />
-          <Route path="/courses/:id" element={<CourseDetails user={user} handleClick={handleClick} />} />
+          <Route path="/courses/:id" element={<CourseDetails user={user} handleAddToCart={handleAddToCart} />} />
           <Route path="/courses/:CourseCategory" element={<CourseCategory />} />
           <Route path="/login" element={<LogIn setUser={setUser} />} />
           <Route path="/about" element={<About />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/markets" element={<Markets />} />
           <Route path="/news" element={<News />} />
-          <Route path="/shop" element={<Shop handleClick={handleClick} merchandiseItems={merchandiseItems}/>} />
+          <Route path="/shop" element={<Shop handleAddToCart={handleAddToCart} merchandiseItems={merchandiseItems}/>} />
           <Route path="checkout" element={<Checkout user={user}/>} />
-          <Route path="cart" element={<Cart cart={cart} setCart={setCart} selectedCourses={selectedCourses} refresh={refresh} handleClick={handleClick} />} />
+          <Route path="cart" element={<Cart cart={cart} setCart={setCart} refresh={refresh} handleAddToCart={handleAddToCart} />} />
           <Route path="/events" element={<Events />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/sponsorship" element={<Sponsorship />} />

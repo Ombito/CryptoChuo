@@ -8,7 +8,7 @@ import hoodie from '../Assets/bitcoinhoodie.jpg';
 import Footer from '../Footer/index.jsx';
 import WhatsAppChat from '../WhatsAppChat/index.jsx';
 
-const Shop = ({handleClick, merchandiseItems}) => {
+const Shop = ({ handleAddToCart, merchandiseItems}) => {
   const [loading, setLoading] = useState(true);
   const [refresh, setRefresh] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
@@ -36,10 +36,10 @@ const Shop = ({handleClick, merchandiseItems}) => {
     setSearchTerm(e.target.value);
   };
 
-  const handleAddToCart = (item) => {
-    setCartItems([...cartItems, item]);
-    console.log(`Item added to cart: ${item.name}`);
-  };
+  // const handleAddToCart = (item) => {
+  //   setCartItems([...cartItems, item]);
+  //   console.log(`Item added to cart: ${item.name}`);
+  // };
 
 
   return (
@@ -70,7 +70,7 @@ const Shop = ({handleClick, merchandiseItems}) => {
                       ))}
                     </p>
                   </div>
-                  <button onClick={() => handleClick(item)}>Add to Cart</button>
+                  <button onClick={() => handleAddToCart(item)}>Add to Cart</button>
                 </div>
               </div>            
               ))}
@@ -95,7 +95,7 @@ const Shop = ({handleClick, merchandiseItems}) => {
                       ))}
                     </p>
                   </div>
-                  <button onClick={() => handleClick(item)}>Add to Cart</button>
+                  <button onClick={() => handleAddToCart(item)}>Add to Cart</button>
                 </div>
               </div>
             ))}  
@@ -125,7 +125,7 @@ const Shop = ({handleClick, merchandiseItems}) => {
                       ))}
                     </p>
                   </div>
-                  <button onClick={() => handleClick(item)}>Add to Cart</button>
+                  <button onClick={() => handleAddToCart(item)}>Add to Cart</button>
                 </div>
               </div>
               )
