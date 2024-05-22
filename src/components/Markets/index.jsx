@@ -8,6 +8,18 @@ import { FaSearch } from  'react-icons/fa';
 import { FaBackward, FaForward } from  'react-icons/fa';
 import WhatsAppChat from '../WhatsAppChat/index.jsx';
 
+const MarketFilter = () => {
+  <svg style="position: absolute; width: 0; height: 0;">
+    <filter id="goo">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="12"></feGaussianBlur>
+      <feColorMatrix values="0 0 0 0 0 
+            0 0 0 0 0 
+            0 0 0 0 0 
+            0 0 0 48 -7">
+      </feColorMatrix>
+    </filter>
+  </svg>
+}
 
 const Markets = () => {
   const [loading, setLoading] = useState(true);
@@ -65,9 +77,14 @@ const Markets = () => {
         </div>
         <p>This page displays the latest prices, 24-hour trading volume, price changes, and market capitalizations for all cryptocurrencies on CoinmarketCap.</p>
       </div>
-      <div>
+      <div className="loader-container">
         {loading || markets.length === 0 ? (
-          <p className="loading">Fetching market data...</p>
+          <div>
+            <MarketFilter />
+            <div class="loader">
+              <p className="loading">Fetching market data...</p>
+            </div>
+          </div>
         ) : (
           <table className="crypto-table">
             <thead>
