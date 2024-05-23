@@ -8,7 +8,7 @@ import hoodie from '../Assets/bitcoinhoodie.jpg';
 import Footer from '../Footer/index.jsx';
 import WhatsAppChat from '../WhatsAppChat/index.jsx';
 
-const Shop = ({ handleAddToCart, merchandiseItems}) => {
+const Shop = ({ handleAddToCart, merchandiseItems }) => {
   const [loading, setLoading] = useState(true);
   const [refresh, setRefresh] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
@@ -36,11 +36,6 @@ const Shop = ({ handleAddToCart, merchandiseItems}) => {
     setSearchTerm(e.target.value);
   };
 
-  // const handleAddToCart = (item) => {
-  //   setCartItems([...cartItems, item]);
-  //   console.log(`Item added to cart: ${item.name}`);
-  // };
-
 
   return (
     <div>
@@ -53,53 +48,87 @@ const Shop = ({ handleAddToCart, merchandiseItems}) => {
         </div>
         <div class="container" id="trending-container">
           <h2>Top Deals</h2>
-          <div className="trending-div">
-            {filterItemsByCategory('top_deals').map(item => (
-              <div className="shop-card" key={item.id}>
-                <img src={tshirt} height="200" width="200" alt="" />
-                <div className="shop-card-amount">
-                  <h5>{item.name}</h5>
-                  <div className="shop-card-hero">
-                    <h5>${item.price}</h5>
-                    <p className="rating">
-                      {Array.from({ length: Math.round(item.rating) }, (_, index) => (
-                        <span key={index} className="star">&#9733;</span>
-                      ))}
-                      {Array.from({ length: 5 - Math.round(item.rating) }, (_, index) => (
-                        <span key={index} className="star">&#9734;</span>
-                      ))}
-                    </p>
-                  </div>
-                  <button onClick={() => handleAddToCart(item)}>Add to Cart</button>
+            {merchandiseItems.length === 0  ? (
+              <div className="loadingTrendingCourses">
+                <p>Loading products...</p>
+                <div class="courseloader">
+                  <div class="loading2"></div>
+                  <div class="loading1"></div>
+                  <div class="loading3"></div>
+                  <div class="loading4"></div>
+                  <div class="loading5"></div>
+                  <div class="loading6"></div>
+                  <div class="loading7"></div>
+                  <div class="loading8"></div>
+                  <div class="loading9"></div>
                 </div>
-              </div>            
-              ))}
-          </div>  
+              </div>
+            ) : (
+              <div className="trending-div">
+                {filterItemsByCategory('top_deals').map(item => (
+                  <div className="shop-card" key={item.id}>
+                    <img src={tshirt} height="200" width="200" alt="" />
+                    <div className="shop-card-amount">
+                      <h5>{item.name}</h5>
+                      <div className="shop-card-hero">
+                        <h5>${item.price}</h5>
+                        <p className="rating">
+                          {Array.from({ length: Math.round(item.rating) }, (_, index) => (
+                            <span key={index} className="star">&#9733;</span>
+                          ))}
+                          {Array.from({ length: 5 - Math.round(item.rating) }, (_, index) => (
+                            <span key={index} className="star">&#9734;</span>
+                          ))}
+                        </p>
+                      </div>
+                      <button onClick={() => handleAddToCart(item)}>Add to Cart</button>
+                    </div>
+                  </div>            
+                  ))}
+              </div>  
+            )}
         </div>
         <div class="container" id="accessories">
           <h2>Accessories</h2>
-          <div className="trending-div">
-            {filterItemsByCategory('accessories').map(item => (
-              <div className="shop-card" key={item.id}>
-                <img src={book} height="200" width="200" alt="" />   
-                <div className="shop-card-amount">
-                  <h5>{item.name}</h5>
-                  <div className="shop-card-hero">
-                    <h5>${item.price}</h5>
-                    <p className="rating">
-                      {Array.from({ length: Math.round(item.rating) }, (_, index) => (
-                        <span key={index} className="star">&#9733;</span>
-                      ))}
-                      {Array.from({ length: 5 - Math.round(item.rating) }, (_, index) => (
-                        <span key={index} className="star">&#9734;</span>
-                      ))}
-                    </p>
-                  </div>
-                  <button onClick={() => handleAddToCart(item)}>Add to Cart</button>
+            {merchandiseItems.length === 0  ? (
+              <div className="loadingTrendingCourses">
+                <p>Loading products...</p>
+                <div class="courseloader">
+                  <div class="loading2"></div>
+                  <div class="loading1"></div>
+                  <div class="loading3"></div>
+                  <div class="loading4"></div>
+                  <div class="loading5"></div>
+                  <div class="loading6"></div>
+                  <div class="loading7"></div>
+                  <div class="loading8"></div>
+                  <div class="loading9"></div>
                 </div>
               </div>
-            ))}  
-          </div>
+            ) : (
+              <div className="trending-div">
+                {filterItemsByCategory('accessories').map(item => (
+                  <div className="shop-card" key={item.id}>
+                    <img src={book} height="200" width="200" alt="" />   
+                    <div className="shop-card-amount">
+                      <h5>{item.name}</h5>
+                      <div className="shop-card-hero">
+                        <h5>${item.price}</h5>
+                        <p className="rating">
+                          {Array.from({ length: Math.round(item.rating) }, (_, index) => (
+                            <span key={index} className="star">&#9733;</span>
+                          ))}
+                          {Array.from({ length: 5 - Math.round(item.rating) }, (_, index) => (
+                            <span key={index} className="star">&#9734;</span>
+                          ))}
+                        </p>
+                      </div>
+                      <button onClick={() => handleAddToCart(item)}>Add to Cart</button>
+                    </div>
+                  </div>
+                ))}  
+              </div>
+            )}
         </div>
         <div id="discount-div">
           <h4>Up to 35% off discount</h4>
@@ -107,30 +136,47 @@ const Shop = ({ handleAddToCart, merchandiseItems}) => {
         </div>
         <div class="container" id="best-sellers">
           <h2>Flash sales</h2>
-          <div className="trending-div">
-            {currentFlashSales.map(item => (
-              item.name.toLowerCase().includes(searchTerm.toLowerCase()) && (
-              <div className="shop-card" key={item.id}>
-                <img src={hoodie} height="200" width="200" alt="" />
-                <div className="shop-card-amount">
-                  <h5>{item.name}</h5>
-                  <div className="shop-card-hero">
-                    <h5>${item.price}</h5>
-                    <p className="rating">
-                      {Array.from({ length: Math.round(item.rating) }, (_, index) => (
-                        <span key={index} className="star">&#9733;</span>
-                      ))}
-                      {Array.from({ length: 5 - Math.round(item.rating) }, (_, index) => (
-                        <span key={index} className="star">&#9734;</span>
-                      ))}
-                    </p>
-                  </div>
-                  <button onClick={() => handleAddToCart(item)}>Add to Cart</button>
+            {merchandiseItems.length === 0  ? (
+              <div className="loadingTrendingCourses">
+                <p>Loading products...</p>
+                <div class="courseloader">
+                  <div class="loading1"></div>
+                  <div class="loading2"></div>
+                  <div class="loading3"></div>
+                  <div class="loading4"></div>
+                  <div class="loading5"></div>
+                  <div class="loading6"></div>
+                  <div class="loading7"></div>
+                  <div class="loading8"></div>
+                  <div class="loading9"></div>
                 </div>
               </div>
-              )
-              ))}
-          </div>
+            ) : (
+              <div className="trending-div">
+                {currentFlashSales.map(item => (
+                  item.name.toLowerCase().includes(searchTerm.toLowerCase()) && (
+                  <div className="shop-card" key={item.id}>
+                    <img src={hoodie} height="200" width="200" alt="" />
+                    <div className="shop-card-amount">
+                      <h5>{item.name}</h5>
+                      <div className="shop-card-hero">
+                        <h5>${item.price}</h5>
+                        <p className="rating">
+                          {Array.from({ length: Math.round(item.rating) }, (_, index) => (
+                            <span key={index} className="star">&#9733;</span>
+                          ))}
+                          {Array.from({ length: 5 - Math.round(item.rating) }, (_, index) => (
+                            <span key={index} className="star">&#9734;</span>
+                          ))}
+                        </p>
+                      </div>
+                      <button onClick={() => handleAddToCart(item)}>Add to Cart</button>
+                    </div>
+                  </div>
+                  )
+                  ))}
+              </div>
+            )}
           <div className="pagination">
             {Array.from({ length: Math.ceil(filterItemsByCategory('flash_sales').length / itemsPerPage) }, (_, index) => (
               <button key={index} className={currentPage === index + 1 ? 'active' : ''} onClick={() => handlePageChange(index + 1)}>{index + 1}</button>

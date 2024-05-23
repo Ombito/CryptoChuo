@@ -22,7 +22,6 @@ import { useSnackbar } from 'notistack';
 import Cookies from 'js-cookie';
 
 
-
 function App() {
   const [user, setUser] = useState(null);
   const [refresh, setRefresh]=useState(false);
@@ -94,29 +93,33 @@ function App() {
           console.error('Error fetching data:', error);
           setLoading(false);
         });
-      } else {
-        setLoading(false);
-      }
+    } else {
+      setLoading(false);
+    }
   }, [courses]);
 
   useEffect(() => {
-    const apiUrl = `http://127.0.0.1:5555/merchandises`;
-    fetch(apiUrl)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`Network response was not ok: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setMerchandiseItems(data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error('Error fetching data:', error);
-        setLoading(false);
-      });
-  }, [refresh]);
+    if (merchandiseItems.length === 0) {
+      const apiUrl = `http://127.0.0.1:5555/merchandises`;
+      fetch(apiUrl)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`Network response was not ok: ${response.status}`);
+          }
+          return response.json();
+        })
+        .then((data) => {
+          setMerchandiseItems(data);
+          setLoading(false);
+        })
+        .catch((error) => {
+          console.error('Error fetching data:', error);
+          setLoading(false);
+        });
+    } else {
+      setLoading(false);
+    }
+  }, [merchandiseItems]);
 
 
   useEffect(() => {
