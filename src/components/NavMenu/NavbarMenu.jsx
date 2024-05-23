@@ -5,7 +5,7 @@ import logo from '../Assets/logo-.png';
 import { FaShoppingCart, FaBars, FaTimes, FaUser } from  'react-icons/fa';
 import { useSnackbar } from 'notistack';
 
-const NavbarMenu = ({user, cart }) => {
+const NavbarMenu = ({ user, cart, darkMode, toggleDarkMode }) => {
     const [ active, setActive ] = useState(false);
     const navigate = useNavigate();
     const { enqueueSnackbar } = useSnackbar();
@@ -45,6 +45,10 @@ const NavbarMenu = ({user, cart }) => {
                     <NavLink to='/shop' id='shop'>Shop</NavLink>
                 </div>
                 <div className="auth-button">
+                    <div className="dark-mode-toggle">
+                        <input type="radio" id="dark-mode" name="dark-mode" checked={darkMode} onChange={toggleDarkMode} />
+                        <label htmlFor="dark-mode">Dark Mode</label>
+                    </div>
                     <Link to="/cart">
                         <div className="count">
                             <ion-icon name="cart-outline" id="cart-icon"></ion-icon>

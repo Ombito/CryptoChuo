@@ -35,6 +35,11 @@ function App() {
   const { enqueueSnackbar } = useSnackbar();
   const location = useLocation();
   const [isInCart, setIsInCart] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setDarkMode(prevDarkMode => !prevDarkMode);
+  };
 
   const fetchUserDetails = async (userId) => {
     try {
@@ -149,8 +154,8 @@ function App() {
   }, [location.pathname]);
   
   return (
-    <div className="App">
-      {location.pathname !== '/login' && location.pathname !== '/signup' && location.pathname !== '/forgot-password' && <NavbarMenu  user={user} cart={cart} />}
+    <div className={`app-${darkMode ? 'dark-mode' : ''}`}>
+      {location.pathname !== '/login' && location.pathname !== '/signup' && location.pathname !== '/forgot-password' && <NavbarMenu  user={user} cart={cart} darkMode={darkMode} toggleDarkMode={toggleDarkMode} />}
         <Routes>
           <Route path="/" element={<Home user={user} courses={courses} />} />
           <Route path="/courses" element={user ? <Courses user={user} /> : <Navigate to="/login" />} />
