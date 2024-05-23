@@ -8,15 +8,14 @@ import clock from "../Assets/wall-clock.png";
 import calendar from "../Assets/calendar.png";
 import WhatsAppChat from '../WhatsAppChat/index.jsx';
 
-const CourseDetails = () => {
+const CourseDetails = ({ handleAddToCart, isInCart={isInCart}  }) => {
   const { id } = useParams();
   const [course, setCourse] = useState(null);
   const navigate = useNavigate();
   const [likeActive, setLikeActive] = useState(false);
   const [dislikeActive, setDislikeActive] = useState(false);
   const [loading, setLoading] = useState(true);
-    const [refresh, setRefresh]=useState(true);
-    const [suggestedCourses, setSuggestedCourses] = useState([]);
+  const [suggestedCourses, setSuggestedCourses] = useState([]);
 
   useEffect(() => {
     const apiUrl = `http://127.0.0.1:5555/courses/${id}`;
@@ -36,13 +35,24 @@ const CourseDetails = () => {
   }, [id]);
 
   if (!course) {
-    return <div id="loading">
-      <p>Loading course details...</p>
-      <Footer />
-    </div>;
+    return (
+      <div id="courseDetailsLoading">
+        <p>Loading course details...</p>
+        <div class="courseDetailsloader">
+          <div class="loading1"></div>
+          <div class="loading2"></div>
+          <div class="loading3"></div>
+          <div class="loading4"></div>
+          <div class="loading5"></div>
+          <div class="loading6"></div>
+          <div class="loading7"></div>
+          <div class="loading8"></div>
+          <div class="loading9"></div>
+        </div>
+      </div>
+  );
   }
 
-  
     const apiUrl = `http://127.0.0.1:5555/courses`;
     fetch(apiUrl)
       .then((response) => {
@@ -86,7 +96,7 @@ const CourseDetails = () => {
           <img src={course.image} alt="Course" height="380" width="800"/>
           <h2>{course.title}</h2>
           <p>{course.description}</p>
-          <button id="enroll-btn">Enroll Now</button>
+          <button onClick={() => handleAddToCart(course, true)} className={isInCart ? 'addedToCart' : "enroll-btn"}>{isInCart ? "Added to Cart" : "Enroll Now"}</button>
         </div>
         <div className="courseDetails-div">
           <div className="courseDetailsCard">
@@ -97,7 +107,7 @@ const CourseDetails = () => {
             <p><FaClock className="checkicon"/> Duration: {course.duration}</p>
             <p><FaCreditCard className="checkicon"/> Tuition: ${course.price}</p>
             <p><FaHandHoldingHeart  className="checkicon"/> Lifetime Full Access</p>
-            <button>Enroll Now</button>
+            <button className={isInCart ? 'addedToCart' : "enroll-btn"} onClick={() => handleAddToCart(course, true)}>{isInCart ? "Added to Cart" : "Enroll Now"}</button>
           </div>
           <div className="courseDetailsCard">
             <h5>Additional Information</h5>

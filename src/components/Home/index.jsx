@@ -12,9 +12,8 @@ import { useSnackbar } from 'notistack';
 import { useNavigate } from 'react-router-dom';
 
 
-const Home = ({user}) => {
+const Home = ({ user, courses }) => {
     const [loading, setLoading] = useState(true);
-    const [courses, setCourses] = useState([]);
     const [ counterOn, setCounterOn ] = useState(false)
     const [error, setError] = useState('');
     const { enqueueSnackbar } = useSnackbar();
@@ -32,27 +31,6 @@ const Home = ({user}) => {
         return courses.filter(item => item.grouping === grouping);
       };
 
-  useEffect(() => {
-    const apiUrl = `http://127.0.0.1:5555/courses`;
-    fetch(apiUrl)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`Network response was not ok: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setCourses(data);
-        setLoading(false);
-        console.log(data);
-      })
-      .catch((error) => {
-        console.error('Error fetching data:', error);
-        setLoading(false);
-      });
-  }, []);
-
-    console.log(user)
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -168,33 +146,50 @@ const Home = ({user}) => {
                         </div>
                     </div>
                 </div>
-                <div class="container" id="course-div">
+                <div class="container" id="course-div">     
                     <h3>Trending Courses</h3>
-                    <div id="home-card-container">
-                        {filterItemsByCategory('trending').map(course => (
-                        <div className="course-card" key={course.id} onClick={() => navigate(`/courses/${course.id}`)}>
-                            <img src={course.image} alt="" className="course-img"/>
-                            <div class="course-details">
-                                <h4>{course.title}</h4>
-                                <p>{course.description}</p>
-                                <p>Duration: {course.duration}</p>
-                                <div className="amount">
-                                    <h5>${course.price}</h5>
-                                    <div>
-                                        <p className="rating">
-                                            {Array.from({ length: Math.round(course.rating) }, (_, index) => (
-                                            <span key={index} className="star">&#9733;</span>
-                                            ))}
-                                            {Array.from({ length: 5 - Math.round(course.rating) }, (_, index) => (
-                                            <span key={index} className="star">&#9734;</span>
-                                            ))}
-                                        </p>
-                                    </div>
-                                </div>     
+                    {courses.length === 0  ? (
+                        <div className="loadingTrendingCourses">
+                            <p>Loading courses...</p>
+                            <div class="courseloader">
+                                <div class="loading1"></div>
+                                <div class="loading2"></div>
+                                <div class="loading3"></div>
+                                <div class="loading4"></div>
+                                <div class="loading5"></div>
+                                <div class="loading6"></div>
+                                <div class="loading7"></div>
+                                <div class="loading8"></div>
+                                <div class="loading9"></div>
                             </div>
-                        </div>                        
-                        ))}           
-                    </div>
+                        </div>
+                    ) : (
+                        <div id="home-card-container">
+                            {filterItemsByCategory('trending').map(course => (
+                            <div className="course-card" key={course.id} onClick={() => navigate(`/courses/${course.id}`)}>
+                                <img src={course.image} alt="" className="course-img"/>
+                                <div class="course-details">
+                                    <h4>{course.title}</h4>
+                                    <p>{course.description}</p>
+                                    <p>Duration: {course.duration}</p>
+                                    <div className="amount">
+                                        <h5>${course.price}</h5>
+                                        <div>
+                                            <p className="rating">
+                                                {Array.from({ length: Math.round(course.rating) }, (_, index) => (
+                                                <span key={index} className="star">&#9733;</span>
+                                                ))}
+                                                {Array.from({ length: 5 - Math.round(course.rating) }, (_, index) => (
+                                                <span key={index} className="star">&#9734;</span>
+                                                ))}
+                                            </p>
+                                        </div>
+                                    </div>     
+                                </div>
+                            </div>                        
+                            ))}           
+                        </div>
+                    )}
                 </div>
                 <div class="container" className='topics'>
                     <div class="container">

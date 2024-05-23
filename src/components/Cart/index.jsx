@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import "../Cart/styles.css";
 import { useNavigate } from 'react-router-dom';
-import Footer from '../Footer/index.jsx';
 import { FaTrash, FaLessThan } from 'react-icons/fa';
 import book from '../Assets/book.jpg';
 import WhatsAppChat from '../WhatsAppChat/index.jsx';
 
-const Cart = ({ cart, setCart, handleClick }) => {
+const Cart = ({ cart, setCart, user, handleAddToCart }) => {
   const [price, setPrice] = useState(0);
   const [merchandiseItems, setMerchandiseItems] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -52,7 +51,11 @@ const Cart = ({ cart, setCart, handleClick }) => {
   }, [cart]);
 
   const handleCheckout = () => {
+    if (user) {
     navigate('/checkout', { state: { totalAmount: price } });
+  } else {
+    navigate('/login');
+  }
   };
 
   useEffect(() => {
@@ -98,7 +101,7 @@ const Cart = ({ cart, setCart, handleClick }) => {
                           <img src={item.image} alt="item" />
                         </div>
                         <div id="cart-name-div">
-                          <h5>{item.name}</h5>
+                          <h5>{item.isCourse ? item.title : item.name}</h5>
                           <p onClick={() => handleRemove(item)} id="remove-btn" className="cart-div">
                             <FaTrash /> Remove
                           </p>
@@ -106,9 +109,15 @@ const Cart = ({ cart, setCart, handleClick }) => {
                         <div>
                           <h4>{item.price}</h4>
                           <div className="cart-card-btns">
-                            <button onClick={() => handleIncrement(item)}>+</button>
-                            <p>{item.quantity}</p>
-                            <button onClick={() => handleDecrement(item)}>-</button>
+                            {item.isCourse ? (
+                              <p>1 X 1</p>
+                            ) : (
+                              <>
+                                <button onClick={() => handleIncrement(item)}>+</button>
+                                <p>{item.quantity}</p>
+                                <button onClick={() => handleDecrement(item)}>-</button>
+                              </>
+                            )}
                           </div>
                         </div>
                       </div>
@@ -157,7 +166,7 @@ const Cart = ({ cart, setCart, handleClick }) => {
                           ))}
                         </p>
                       </div>
-                      <button onClick={() => handleClick(item)}>Add to Cart</button>
+                      <button onClick={() => handleAddToCart(item)}>Add to Cart</button>
                     </div>
                   </div>
                 ))}

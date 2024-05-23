@@ -17,9 +17,9 @@ import Signup from './components/Signup';
 import Events from './components/Events';
 import Careers from './components/Careers';
 import Sponsorship from './components/Sponsorship';
+import CourseCategory from './components/CourseCategory';
 import { useSnackbar } from 'notistack';
 import Cookies from 'js-cookie';
-
 
 
 function App() {
@@ -29,12 +29,17 @@ function App() {
     const storedCart = localStorage.getItem('cart');
     return storedCart ? JSON.parse(storedCart) : [];
   });
-  const [courses, setCourses] = useState(true);
+  const [courses, setCourses] = useState([]);
   const [merchandiseItems, setMerchandiseItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const { enqueueSnackbar } = useSnackbar();
   const location = useLocation();
+  const [isInCart, setIsInCart] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
 
+  const toggleDarkMode = () => {
+    setDarkMode(prevDarkMode => !prevDarkMode);
+  };
 
   const fetchUserDetails = async (userId) => {
     try {
@@ -75,43 +80,51 @@ function App() {
   }, []);
 
   useEffect(() => {
-    const apiUrl1 = `http://127.0.0.1:5555/courses`;
-    fetch(apiUrl1)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`Network response was not ok: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then((data) => {
-        console.log('Fetched courses:', data); 
-        setCourses(data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error('Error fetching data:', error);
-        setLoading(false);
-      });
-  }, []);
+    if (courses.length === 0) {
+      const apiUrl1 = `http://127.0.0.1:5555/courses`;
+      fetch(apiUrl1)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`Network response was not ok: ${response.status}`);
+          }
+          return response.json();
+        })
+        .then((data) => {
+          console.log('Fetched courses:', data); 
+          setCourses(data);
+          setLoading(false);
+        })
+        .catch((error) => {
+          console.error('Error fetching data:', error);
+          setLoading(false);
+        });
+    } else {
+      setLoading(false);
+    }
+  }, [courses]);
 
   useEffect(() => {
-    const apiUrl = `http://127.0.0.1:5555/merchandises`;
-    fetch(apiUrl)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`Network response was not ok: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setMerchandiseItems(data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error('Error fetching data:', error);
-        setLoading(false);
-      });
-  }, [refresh]);
+    if (merchandiseItems.length === 0) {
+      const apiUrl = `http://127.0.0.1:5555/merchandises`;
+      fetch(apiUrl)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`Network response was not ok: ${response.status}`);
+          }
+          return response.json();
+        })
+        .then((data) => {
+          setMerchandiseItems(data);
+          setLoading(false);
+        })
+        .catch((error) => {
+          console.error('Error fetching data:', error);
+          setLoading(false);
+        });
+    } else {
+      setLoading(false);
+    }
+  }, [merchandiseItems]);
 
 
   useEffect(() => {
@@ -126,20 +139,13 @@ function App() {
   }, [cart]);
 
 
-  const handleClick =  (item) => {
-    console.log(item);
-    let isPresent = false;
-
-    cart.forEach((product) => {
-      if (item.id === product.id) {
-        isPresent = true;
-      }
-    });
-
+  const handleAddToCart = (item, isCourse = false) => {
+    const isPresent = cart.some((product) => product.id === item.id && product.isCourse === isCourse);
     if (isPresent) {
       enqueueSnackbar('Item is already added to your Cart', { variant: 'warning' });
     } else {
-      setCart([...cart, item]);
+      setCart([...cart, { ...item, isCourse, quantity: 1 }]);
+      setIsInCart(true);
     }
   };
   
@@ -148,20 +154,21 @@ function App() {
   }, [location.pathname]);
   
   return (
-    <div className="App">
-      {location.pathname !== '/login' && location.pathname !== '/signup' && location.pathname !== '/forgot-password' && <NavbarMenu  user={user} cart={cart} />}
+    <div className={`app-${darkMode ? 'dark-mode' : ''}`}>
+      {location.pathname !== '/login' && location.pathname !== '/signup' && location.pathname !== '/forgot-password' && <NavbarMenu  user={user} cart={cart} darkMode={darkMode} toggleDarkMode={toggleDarkMode} />}
         <Routes>
-          <Route path="/" element={<Home user={user}/>} />
+          <Route path="/" element={<Home user={user} courses={courses} />} />
           <Route path="/courses" element={user ? <Courses user={user} /> : <Navigate to="/login" />} />
-          <Route path="/courses/:id" element={<CourseDetails user={user} handleClick={handleClick} />} />
+          <Route path="/courses/:id" element={<CourseDetails user={user} handleAddToCart={handleAddToCart} isInCart={isInCart}  />} />
+          <Route path="/courses/:CourseCategory" element={<CourseCategory />} />
           <Route path="/login" element={<LogIn setUser={setUser} />} />
           <Route path="/about" element={<About />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/markets" element={<Markets />} />
           <Route path="/news" element={<News />} />
-          <Route path="/shop" element={<Shop handleClick={handleClick} merchandiseItems={merchandiseItems}/>} />
+          <Route path="/shop" element={<Shop handleAddToCart={handleAddToCart} merchandiseItems={merchandiseItems}/>} />
           <Route path="checkout" element={<Checkout user={user}/>} />
-          <Route path="cart" element={<Cart cart={cart} setCart={setCart} refresh={refresh} handleClick={handleClick} />} />
+          <Route path="cart" element={<Cart cart={cart} setCart={setCart} user={user} refresh={refresh} handleAddToCart={handleAddToCart} />} />
           <Route path="/events" element={<Events />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/sponsorship" element={<Sponsorship />} />
