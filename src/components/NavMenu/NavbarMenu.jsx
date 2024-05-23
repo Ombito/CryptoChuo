@@ -45,10 +45,10 @@ const NavbarMenu = ({ user, cart, darkMode, toggleDarkMode }) => {
                     <NavLink to='/shop' id='shop'>Shop</NavLink>
                 </div>
                 <div className="auth-button">
-                    <div className="dark-mode-toggle">
+                    {/* <div className="dark-mode-toggle">
                         <input type="radio" id="dark-mode" name="dark-mode" checked={darkMode} onChange={toggleDarkMode} />
                         <label htmlFor="dark-mode">Dark Mode</label>
-                    </div>
+                    </div> */}
                     <Link to="/cart">
                         <div className="count">
                             <ion-icon name="cart-outline" id="cart-icon"></ion-icon>
