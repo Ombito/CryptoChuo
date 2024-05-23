@@ -12,20 +12,21 @@
     z-index: 1;
 }
 .logo-container {
-    margin: auto 4%;
+  margin: 0 4%;
+  margin-top: -2.8%;
 }
-
 .logo-container img {
-    height: 8vh; 
-    width: 115%;
+  height: 12vh; 
+  width: 115%;
+  margin-top: -3%;
 }
 .navigation-container {
-    display: flex;
-    align-items: center;
-    margin-right: 80px;
+  display: flex;
+  align-items: center;
+  margin-right: 80px;
 }
 .navbar-icons {
-    display: none;
+  display: none;
 }
 .navbar-menu {
   display: flex;
