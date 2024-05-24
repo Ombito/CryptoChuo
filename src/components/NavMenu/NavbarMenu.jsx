@@ -45,10 +45,6 @@ const NavbarMenu = ({ user, cart, darkMode, toggleDarkMode }) => {
                     <NavLink to='/shop' id='shop'>Shop</NavLink>
                 </div>
                 <div className="auth-button">
-                    {/* <div className="dark-mode-toggle">
-                        <input type="radio" id="dark-mode" name="dark-mode" checked={darkMode} onChange={toggleDarkMode} />
-                        <label htmlFor="dark-mode">Dark Mode</label>
-                    </div> */}
                     <div class="lightmode-container">
                         <label class="toggle" for="switch">
                             <input id="switch" class="input" type="checkbox" name="dark-mode" checked={darkMode} onChange={toggleDarkMode}/>
