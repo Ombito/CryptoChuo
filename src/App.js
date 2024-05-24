@@ -35,11 +35,28 @@ function App() {
   const { enqueueSnackbar } = useSnackbar();
   const location = useLocation();
   const [isInCart, setIsInCart] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(() => {
+    const savedDarkMode = localStorage.getItem('darkMode');
+    if (savedDarkMode) {
+      const { value, expiry } = JSON.parse(savedDarkMode);
+      if (expiry > Date.now()) {
+        return value;
+      } else {
+        localStorage.removeItem('darkMode');
+      }
+    }
+    return false;
+  });
 
   const toggleDarkMode = () => {
     setDarkMode(prevDarkMode => !prevDarkMode);
   };
+
+  useEffect(() => {
+    const expiry = Date.now() + 8640000;
+    const darkModeState = { value: darkMode, expiry };
+    localStorage.setItem('darkMode', JSON.stringify(darkModeState));
+  }, [darkMode]);
 
   const fetchUserDetails = async (userId) => {
     try {
