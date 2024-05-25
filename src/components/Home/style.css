@@ -407,28 +407,43 @@
     margin: 20px 20px;
     transition: transform 0.3s ease-in-out;
     height: auto;
+    cursor: pointer;
 }
 .course-img {
-  height: 25vh;
+  height: 150px;
   width: 100%;
+  object-fit: contain;
 }
 .course-card:hover {
   cursor: pointer;
-  transform: scale(1.05);
+  transform: scale(1.02);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 .rating { 
   margin-bottom: 1px;
 }
 .course-details {
-  padding: 3%;
+  padding: 0 3% 0 3%;
 }
 .course-details p {
   font-size: 0.85em;
   font-weight: 500;
+  margin: 7px 0;
+}
+.course-description {
+  font-size: 14px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; 
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .amount {
   display: flex;
   justify-content: space-between;
+}
+.amount h5 {
+  margin: 0;
 }
 .star {
   font-size: 1.2em;

@@ -176,8 +176,8 @@ const Home = ({ user, courses }) => {
                             <div className="course-card" key={course.id} onClick={() => navigate(`/courses/${course.id}`)}>
                                 <img src={course.image} alt="" className="course-img"/>
                                 <div class="course-details">
-                                    <h4>{course.title}</h4>
-                                    <p>{course.description}</p>
+                                    <h5>{course.title}</h5>
+                                    <p className="course-description">{course.description}</p>
                                     <p>Duration: {course.duration}</p>
                                     <div className="amount">
                                         <h5>${course.price}</h5>
