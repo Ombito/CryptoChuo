@@ -126,8 +126,8 @@ const About = () => {
               </div>
             </div>
           </div>
-          <div>
-            <h2 id="subscribe" style={{"text-align": "center"}}>Choose Your Subscription Plan</h2>
+          <div id="subscribe">
+            <h2  style={{"text-align": "center"}}>Choose Your Subscription Plan</h2>
             <div id="subscription-plan">
               <div className="subscription-card">
                 <h4>Basic Membership</h4>

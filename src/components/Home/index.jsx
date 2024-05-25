@@ -113,12 +113,10 @@ const Home = ({ user, courses }) => {
         { question: 'What is Blockchain mining?', answer: "Blockchain mining, a peer-to-peer computer process, is used to secure and verify cryptographic secured transactions. Mining involves crypto miners who add cryptocurrency transaction data to global public ledger of past transactions. In the ledgers, blocks are secured by miners and are connected to each other forming a chain. Cryptocurrencies or tokens, such as Bitcoin or Ethereum, have no central clearing house. Transactions are generally verified in decentralized clearing systems wherein people contribute computing resources to verify the same. This process of verifying transactions in called mining." },
       ];
       
-    
     const [expandedIndex, setExpandedIndex] = useState(null);
     const handleToggleAnswer = (index) => {
         setExpandedIndex(expandedIndex === index ? null : index);
     };
-
 
     return (
         <div>
