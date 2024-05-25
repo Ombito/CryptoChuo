@@ -10,7 +10,7 @@ import ScrollTrigger from 'react-scroll-trigger';
 import CountUp from 'react-countup';
 import { useSnackbar } from 'notistack';
 import { useNavigate } from 'react-router-dom';
-import bannerGIF from '../Assets/free1.png';
+import bannerGIF from '../Assets/2.png';
 
 const Home = ({ user, courses }) => {
     const [loading, setLoading] = useState(true);
@@ -110,7 +110,7 @@ const Home = ({ user, courses }) => {
                             </Link>
                         </div>
                         <div>
-                            <img src={bannerGIF} alt="Example GIF" />
+                            <img id="landing-img" src={bannerGIF} alt="Example GIF" />
                         </div> 
                     </div>
                 </div>
