@@ -46,6 +46,10 @@ const Home = ({ user, courses }) => {
           });
       
           if (response.ok) {
+            setEmail('')
+            setPhoneNumber('')
+            setSubject('')
+            setMessage('')
             enqueueSnackbar('Message sent successful!', { variant: 'success' });
           } else {
             console.log("Signup failed!")
@@ -273,10 +277,10 @@ const Home = ({ user, courses }) => {
                                     <h6>Nairobi, Kenya</h6>
                                     <div>
                                         <div id="contact-icons">
-                                            <a href=""><FaLinkedin className="icons"/></a>
-                                            <a href=""><FaWhatsapp className="icons"/></a>
-                                            <a href=""><FaTelegram className="icons"/></a>
-                                            <a href=""><FaDiscord className="icons"/></a>
+                                            <a href=""><FaLinkedin className="icons linkedin"/></a>
+                                            <a href=""><FaWhatsapp className="icons whatsapp"/></a>
+                                            <a href=""><FaTelegram className="icons telegram"/></a>
+                                            <a href=""><FaDiscord className="icons discord"/></a>
                                         </div>
                                     </div>
                                 </div>
