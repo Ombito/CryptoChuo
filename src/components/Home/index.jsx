@@ -44,7 +44,7 @@ const Home = ({ user, courses }) => {
         'GameFi'
     ];
 
-      const handleTopicClick = (topic) => {
+    const handleTopicClick = (topic) => {
         navigate(`/courses/${topic}`);
     };
 
@@ -113,10 +113,12 @@ const Home = ({ user, courses }) => {
         { question: 'What is Blockchain mining?', answer: "Blockchain mining, a peer-to-peer computer process, is used to secure and verify cryptographic secured transactions. Mining involves crypto miners who add cryptocurrency transaction data to global public ledger of past transactions. In the ledgers, blocks are secured by miners and are connected to each other forming a chain. Cryptocurrencies or tokens, such as Bitcoin or Ethereum, have no central clearing house. Transactions are generally verified in decentralized clearing systems wherein people contribute computing resources to verify the same. This process of verifying transactions in called mining." },
       ];
       
-      const [expandedIndex, setExpandedIndex] = useState(null);
+    
+    const [expandedIndex, setExpandedIndex] = useState(null);
     const handleToggleAnswer = (index) => {
         setExpandedIndex(expandedIndex === index ? null : index);
-      };
+    };
+
 
     return (
         <div>
@@ -188,7 +190,7 @@ const Home = ({ user, courses }) => {
                     ) : (
                         <div id="home-card-container">
                             {filterItemsByCategory('trending').map(course => (
-                            <div className="course-card" key={course.id} onClick={() => navigate(`/courses/${course.id}`)}>
+                            <div className="course-card" key={course.id} onClick={() => navigate(`/course-details/${course.id}`)}>
                                 <img src={course.image} alt="" className="course-img"/>
                                 <div class="course-details">
                                     <h5>{course.title}</h5>
@@ -217,38 +219,11 @@ const Home = ({ user, courses }) => {
                     <div class="container">
                         <h3>Our students also learn</h3>
                         <div className='topics-container'>
-                        {topics.map((topic, index) => (
-                <div key={index} className='topic' onClick={() => handleTopicClick(topic)}>
-                    <h5>{topic}</h5>
-                </div>
-            ))}
-                            {/* <div className='topic'>
-                                <h5>Web3</h5>
-                            </div>
-                            <div className='topic'>
-                                <h5>Blockchain</h5>
-                            </div>
-                            <div className='topic'>
-                                <h5>DeFi</h5>
-                            </div>
-                            <div className='topic'>
-                                <h5>Metaverse</h5>
-                            </div>
-                            <div className='topic'>
-                                <h5>Security</h5>
-                            </div>
-                            <div className='topic'>
-                                <h5>NFT's</h5>
-                            </div>
-                            <div className='topic'>
-                                <h5>Cryptography</h5>
-                            </div>
-                            <div className='topic'>
-                                <h5>Privacy</h5>
-                            </div>
-                            <div className='topic'>
-                                <h5>GameFi</h5>
-                            </div> */}
+                            {topics.map((topic, index) => (
+                                <div key={index} className='topic' onClick={() => handleTopicClick(topic)}>
+                                    <h5>{topic}</h5>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>
