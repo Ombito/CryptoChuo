@@ -26,6 +26,7 @@ const Home = ({ user, courses }) => {
     const [message, setMessage] = useState('');
 
     const [subscribeEmail, setSubscribeEmail] = useState('');
+    const [isChecked, setIsChecked] = useState(false);
 
     const filterItemsByCategory = (grouping) => {
         return courses.filter(item => item.grouping === grouping);
@@ -70,6 +71,8 @@ const Home = ({ user, courses }) => {
           });
       
           if (response.ok) {
+            setSubscribeEmail('');
+            setIsChecked(false);
             enqueueSnackbar('You have successfully subscribed to our newsletter!', { variant: 'success' });
           } else {
             console.log("Failed to subscribe!")
@@ -308,7 +311,7 @@ const Home = ({ user, courses }) => {
                                 <button type="submit" className="subscribe-button">Subscribe</button>
                             </div>
                             <div className='subscribe-checkbox'>
-                                <input type="checkbox" required/>
+                                <input type="checkbox" checked={isChecked} onChange={(e) => setIsChecked(e.target.checked)} required/>
                                 <label>I have read and agreed to the Terms of Service.</label>
                             </div>
                         </form>

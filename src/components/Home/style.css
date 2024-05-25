@@ -353,18 +353,19 @@
 .topics {
   padding: 25px 0;
   margin-top: 57%;
+  margin-bottom: 10%;
+  height: auto;
 }
-.topics h2 {
-  font-size: 36px;
-  font-weight: bold;
-  margin-bottom: 30px;
+.topics h3 {
+  text-align: center;
 }
-  
 .topics-container {
   display: grid;
   justify-content: space-between;
   grid-template-columns: repeat(6, 1fr);
   gap: 10px;    
+  padding: 10px 0;
+  margin-bottom: 2%;
 }
 .topic {
   max-width: 200px;
@@ -462,8 +463,9 @@
 .contact-info {
   max-width: 400px;
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 4px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid gray;
 }
 #contact-img {
   height: 40vh;
@@ -473,12 +475,13 @@
   font-size: 1.2em;
   margin-bottom: 15px;
 }
-/* .contact-info a{
-  color: black;
-} */
-.contact-info a:hover {
-  text-decoration: none;
+.contact-info a {
   color: #0056b3;
+  text-decoration: none;
+}
+.contact-info a:hover {
+  color: #0056b3;
+  text-decoration: underline;
 }
 .contact-info p {
   margin: 0;
@@ -489,8 +492,9 @@ form.contact-form {
 }
 .contact-form {
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 4px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid gray;
 }
 .contact-p {
   text-align: center;
@@ -603,7 +607,10 @@ button:hover {
     margin-top: 53%;
     background-color: #023047;
     color: white;
-    height: 32vh;
+    height: 35vh;
+  }
+  #subscribe-div {
+    padding-left: 20%;
   }
   .subscribe h5 {
     font-size: 24px;
@@ -611,7 +618,7 @@ button:hover {
     margin-bottom: 20px;
   }
   .subscribe input[type="email"] {
-    width: 40%;
+    width: 50%;
     padding: 10px;
     margin-bottom: 10px;
     border: none;
@@ -622,15 +629,15 @@ button:hover {
   .subscribe-checkbox {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
-    margin-left: -1270px;
   }
   
   .subscribe-checkbox input[type="checkbox"] {
-    margin-right: -1266px;
+    margin-left: -50%;
     margin-top: 15px;
   }
-  
+  .subscribe-checkbox label {
+    margin-left: -48%;
+  }
   .subscribe-button {
     background-color: #fb8500;
     color: #fff;
