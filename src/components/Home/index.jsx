@@ -10,7 +10,7 @@ import ScrollTrigger from 'react-scroll-trigger';
 import CountUp from 'react-countup';
 import { useSnackbar } from 'notistack';
 import { useNavigate } from 'react-router-dom';
-import bannerGIF from '../Assets/bannergif.gif';
+import bannerGIF from '../Assets/free1.png';
 
 const Home = ({ user, courses }) => {
     const [loading, setLoading] = useState(true);
@@ -106,7 +106,7 @@ const Home = ({ user, courses }) => {
                             <p className='paragraph'>Your one-stop place for learning everything from<br /> mastering the basics of blockchain to conquering the art of crypto trading and insightful on-chain analysis. Join us, and let's pioneer the future of decentralization together!
                             </p>
                             <Link to="/login">
-                                <button className="enroll-button" type='submit'>Get Started</button>
+                                <button className="enroll-button" type='submit'>Let's Go</button>
                             </Link>
                         </div>
                         <div>
