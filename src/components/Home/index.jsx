@@ -30,8 +30,23 @@ const Home = ({ user, courses }) => {
 
     const filterItemsByCategory = (grouping) => {
         return courses.filter(item => item.grouping === grouping);
-      };
+    };
 
+    const topics = [
+        'Web3',
+        'Blockchain',
+        'DeFi',
+        'Metaverse',
+        'Security',
+        "NFT's",
+        'Cryptography',
+        'Privacy',
+        'GameFi'
+    ];
+
+      const handleTopicClick = (topic) => {
+        navigate(`/courses/${topic}`);
+    };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -202,7 +217,12 @@ const Home = ({ user, courses }) => {
                     <div class="container">
                         <h3>Our students also learn</h3>
                         <div className='topics-container'>
-                            <div className='topic'>
+                        {topics.map((topic, index) => (
+                <div key={index} className='topic' onClick={() => handleTopicClick(topic)}>
+                    <h5>{topic}</h5>
+                </div>
+            ))}
+                            {/* <div className='topic'>
                                 <h5>Web3</h5>
                             </div>
                             <div className='topic'>
@@ -228,7 +248,7 @@ const Home = ({ user, courses }) => {
                             </div>
                             <div className='topic'>
                                 <h5>GameFi</h5>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>

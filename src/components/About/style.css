@@ -5,6 +5,8 @@
     height: 18vh;
     padding: 4%;
     color: white;
+      background-image: url(../Assets/about-banner.png);  
+  background-size: cover;
 }
 .about {
     width: 90%;
