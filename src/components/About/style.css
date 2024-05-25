@@ -13,7 +13,7 @@
 .about-hero {
     background-color: #252a43;
     height: 60vh;
-    margin-top: -3%;
+    margin-top: 25%;
     z-index: -1;
     clip-path: polygon(
         0 0,
@@ -38,8 +38,6 @@
 }
 #partner-container {
     height: 100vh;
-      /* background-image: url(../Assets/banner9.jpg);  
-    background-size: cover;  */
 }
 #partners {
     margin-top: 26%;
@@ -96,7 +94,7 @@
     display: flex;
     gap: 40px;
     margin-left: 15%;
-    padding: 3% 0;
+    padding: 1% 0;
 }
 .testimonials {
     width: 40%;
