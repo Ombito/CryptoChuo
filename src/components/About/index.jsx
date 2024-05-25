@@ -84,7 +84,7 @@ const About = () => {
           </div>
           </div>
           <div class="container" id="our-success">
-            <h2>What Our Students Say About Us</h2>
+            <h2>Wall of Love❤️</h2>
             <div id="testimonials-container">
               <div className="testimonials">
                 <p>"CryptoChuo was specifically created to help people like you and me transition to a career in Web3 and just weeks after completing the course I accepted a full-time role at Grot."
