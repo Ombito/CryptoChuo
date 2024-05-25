@@ -109,9 +109,9 @@ const Home = ({ user, courses }) => {
                                 <button className="enroll-button" type='submit'>Get Started</button>
                             </Link>
                         </div>
-                        {/* <div>
+                        <div>
                             <img src={bannerGIF} alt="Example GIF" />
-                        </div>  */}
+                        </div> 
                     </div>
                 </div>
                 <div class="container" id="stats">
