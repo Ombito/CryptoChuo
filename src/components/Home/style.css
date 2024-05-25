@@ -59,17 +59,15 @@
   margin-top: -5%;
 }
 #stats {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 20px;
-    margin-top: 0%;
-    align-items: center;
-    background-color: #fb8500;
-    color: white;
-    padding: 50px 20px;
-    height: 22vh; 
-    border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  background-color: #fb8500;
+  color: white;
+  padding: 70px 20px;
+  border-radius: 3px;
 }
 #stats div{
   display: flex;
@@ -85,8 +83,8 @@
   font-weight: bold; 
 }
 .content-img {
-    height: 50vh;
-    border-radius: 5px;
+  height: 50vh;
+  border-radius: 5px;
 }
 .home-hero {
     display: flex;  
@@ -353,45 +351,43 @@
 }
 
 .topics {
-    padding: 50px 20px;
-    margin-top: 830px;
-  }
-  
-  .topics h2 {
-    font-size: 36px;
-    font-weight: bold;
-    margin-bottom: 30px;
-  }
-  
-  .topics-container {
-    display: grid;
-    justify-content: space-between;
-    grid-template-columns: repeat(6, 1fr);
-    gap: -50px;    
-  }
-  
-  .topic {
-    max-width: 200px;
-    margin-bottom: 10px;
-    text-align: center;
-    border: 1px solid gray;
-    color: #3498db;
-    padding: 10px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
-  }
-  .topic:hover {
-    background-color: #252a43;
-    transform: scale(1.05);
-    color: #fff;
+  padding: 25px 0;
+  margin-top: 57%;
 }
-  .topic h5 {
-    margin: auto;
-    font-size: 1em;
-    text-align: center;
-    align-items: center;
-  }
+.topics h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+  
+.topics-container {
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;    
+}
+.topic {
+  max-width: 200px;
+  margin-bottom: 10px;
+  text-align: center;
+  border: 1px solid gray;
+  color: #3498db;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+.topic:hover {
+  background-color: #252a43;
+  transform: scale(1.05);
+  color: #fff;
+}
+.topic h5 {
+  margin: auto;
+  font-size: 1em;
+  text-align: center;
+  align-items: center;
+}
   .join-community-btn {
     background-color: #4caf50;
     color: #fff;
@@ -406,10 +402,10 @@
     border: 1px solid gray;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    width: 300px;
-    max-width: 90%;
+    width: 260px;
     margin: 20px 20px;
     transition: transform 0.3s ease-in-out;
+    height: auto;
 }
 .course-img {
   height: 25vh;
@@ -453,7 +449,7 @@
   text-decoration: none;
 }
 #contact-div {
-  margin-top: -15%;
+  margin-top: -10%;
 }
 .contact-container {
   display: flex;
@@ -575,9 +571,6 @@ button:hover {
     border: 1px solid gray;
     border-radius: 4px;
   }
-  .faq h3 {
-    text-align: center;
-  }
   .faq-item {
     margin-bottom: 20px;
     border-bottom: 1px solid #ddd;
@@ -596,16 +589,14 @@ button:hover {
   }
   
   .faq h3 {
+    text-align: center;
     font-size: 36px;
     font-weight: bold;
     margin-bottom: 50px;
   }
-  
-  
-  /* .question:hover {
-    background-color: #e0e0e0;
-  } */
-  
+.plus {
+  color: #fb8500;
+}  
   .subscribe {
     align-items: center;
     padding: 50px 20px;
