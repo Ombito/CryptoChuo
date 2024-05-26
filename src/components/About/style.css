@@ -97,8 +97,7 @@
     color: #252a43;
 }
 #our-success {
-    margin-top: 2%;
-    margin-bottom: 24%;
+    margin-top: 1%;
 }
 #our-success h2 {
     text-align: center;
@@ -151,6 +150,7 @@
 #subscribe {
     width: 85%;
     margin: auto;
+    margin-top: 21%;
 }
 #subscription-plan {
     margin: 1% 7% 5% 7%;
