@@ -4,7 +4,6 @@
 .featured-course-description {
   display: flex;
   gap: 20px;
-  background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   cursor: pointer;
@@ -24,16 +23,15 @@
   display: flex;
   justify-content: space-between;
 }
-
 #searchcourse {
   width: 25%;
   height: 5vh;
-  border-radius: 10px;
+  border-radius: 4px;
   padding: 1%;
+  border: 1px solid gray;
 }
 .tabs-container {
   display: flex;
-  background-color: #fff;
   margin-bottom: 20px;
   margin-top: 29%;
 }
@@ -46,25 +44,18 @@
   cursor: pointer;
   transition: border-bottom 0.3s ease-in-out;
 }
-
-.tab:hover {
-  background-color: #f9f9f9;
-}
-
 .active {
   border-bottom: 2px solid #3498db;
 }
-
 .tab-content {
   max-width: 600px;
   padding: 20px;
   margin: 20px 0;
-  background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  border-radius: 4px;
   display: none;
+  border: 1px solid gray;
 }
-
 .tab-content.active {
   display: block;
   margin: 0 3%;
@@ -75,7 +66,6 @@
   align-items: center;
   margin: 20px 0;
 }
-
 .course h3 {
   font-size: 1.5em;
   margin-bottom: 10px;
@@ -87,11 +77,9 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
-
 #filter-container {
   margin: 0 3% 0 0;
 }
-
 .timeline,
 .hourweekly {
   display: flex;
@@ -104,6 +92,8 @@
 }
 #subscription-div {
   margin-top: -50px;
+  width: 90%;
+  margin: auto;
 }
 #subscription-plan {
   display: flex;
@@ -113,10 +103,10 @@
 .subscription-card {
   text-align: left;
   width: 70%;
-  height: 60vh;
+  height: auto;
   padding: 2% 3%;
-  border-radius: 10px;
-  border: 1px solid black;
+  border-radius: 4px;
+  border: 1px solid gray;
   transition: transform 0.3s ease-in-out;
 }
 .subscription-card:hover {
@@ -148,23 +138,19 @@
   display: flex;
   align-items: center;
   gap: 10px; 
-  color: black; 
 }
-
 .checkbox-container input[type="checkbox"] {
   appearance: none;
   width: 20px;
   height: 20px;
-  border: 2px solid black; 
+  border: 2px solid gray; 
   border-radius: 4px;
   outline: none;
   cursor: pointer;
-  color: black;
 }
 
 .checkbox-container input[type="checkbox"]:checked {
   background-color: #3498db; 
-  color: black;
 }
 
 .checkbox-container label {
@@ -192,7 +178,6 @@
   flex-wrap: wrap;
 }
 .learn-cards {
-  background-color: #fff;
   padding: 0 10px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
