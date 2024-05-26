@@ -10,6 +10,22 @@
     width: 90%;
     font-size: 1.1em;
 }
+#bannerimg {
+    position: relative;
+    margin-top: 5%;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#bannerimg img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
 .about-hero {
     background-color: #252a43;
     height: 60vh;

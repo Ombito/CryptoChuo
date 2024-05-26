@@ -14,6 +14,7 @@ import polygon from "../Assets/polygon.png";
 import opensea from "../Assets/opensea.png";
 import ledger from "../Assets/ledger.png";
 import join from '../Assets/joinnow.png';
+import company from '../Assets/company.png';
 import { FaUserFriends, FaGraduationCap, FaBookOpen, FaBriefcase, FaCheck } from  'react-icons/fa';
 
 
@@ -21,6 +22,9 @@ const About = () => {
   return (
     <div id="about">
         <div className='aboutus'>
+          <div id="bannerimg">
+            <img src={company} alt="" />
+          </div>
           {/* <div className="about-hero">
             <div id="about-banner" class="container">
               <div> 
