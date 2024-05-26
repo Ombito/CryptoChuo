@@ -96,7 +96,7 @@ const CourseDetails = ({ handleAddToCart, isInCart={isInCart}  }) => {
           <img src={course.image} alt="Course" height="380" width="800"/>
           <h2>{course.title}</h2>
           <p>{course.description}</p>
-          <button onClick={() => handleAddToCart(course, true)} className={isInCart ? 'addedToCart' : "enroll-btn"}>{isInCart ? "Added to Cart" : "Enroll Now"}</button>
+          <button onClick={() => handleAddToCart(course, true)} className={isInCart ? 'addedToCart' : "enroll-btn"}>{isInCart ? "Added to Cart" : "Enroll Course"}</button>
         </div>
         <div className="courseDetails-div">
           <div className="courseDetailsCard">
@@ -107,7 +107,7 @@ const CourseDetails = ({ handleAddToCart, isInCart={isInCart}  }) => {
             <p><FaClock className="checkicon"/> Duration: {course.duration}</p>
             <p><FaCreditCard className="checkicon"/> Tuition: ${course.price}</p>
             <p><FaHandHoldingHeart  className="checkicon"/> Lifetime Full Access</p>
-            <button className={isInCart ? 'addedToCart' : "enroll-btn"} onClick={() => handleAddToCart(course, true)}>{isInCart ? "Added to Cart" : "Enroll Now"}</button>
+            <button className={isInCart ? 'addedToCart' : "enroll-btn"} onClick={() => handleAddToCart(course, true)}>{isInCart ? "Added to Cart" : "Enroll Course"}</button>
           </div>
           <div className="courseDetailsCard">
             <h5>Additional Information</h5>

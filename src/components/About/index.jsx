@@ -25,17 +25,6 @@ const About = () => {
           <div id="bannerimg">
             <img src={company} alt="" />
           </div>
-          {/* <div className="about-hero">
-            <div id="about-banner" class="container">
-              <div> 
-                <p className='about'>At CryptoChuo, we go beyond the basics. Our curriculum is designed to equip you with the knowledge and skills needed to navigate the complexities of the crypto ecosystem. Our cutting-edge program goes beyond the basics empowering learners to delve into the essentials of blockchain and distributed ledger technology (DLT). Our graduates emerge as trailblazers ready to tackle the challenges and opportunities presented by the dynamic world of cryptocurrency. But wait, there's more! Our program isn't just about learning; it's an immersive journey into the future of finance. Join a community of forward-thinkers, disruptors, and visionaries who are reshaping the narrative of cryptocurrency. At CryptoChuo, we believe that knowledge is power, and we're here to empower you.
-                </p>
-              </div>
-              <div>
-                <img src={banner} alt="" className="about-banner-img"/>
-              </div>
-            </div>
-          </div> */}
           <div id="our-story" class="container">
             <img src={ourstory} alt="" height="300" width="400"/>
             <div>
@@ -59,7 +48,6 @@ const About = () => {
             <div class="container" id="partners">
               <div className="hero-partners">
                 <h4>Our Partners</h4>
-                <p>From industry giants to emerging startups, our partners represent a spectrum of expertise, contributing to the richness of our platform. Join our league of visionary partners and become an integral part of the global blockchain revolution. Together we'll unlock new horizons and set the stage for the next wave of blockchain innovation.</p>
               </div>
               <div id="logo-div">
                 <img src={binance} alt="" height="100" width="100" />
