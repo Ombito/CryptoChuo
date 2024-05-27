@@ -56,6 +56,15 @@ const About = () => {
                 <img src={polygon} alt="" height="70" width="70" />
                 <img src={ledger} alt="" height="90" width="120" />
                 <img src={bybit} alt="" height="70" width="100" />
+                <img src={avalanche} alt="" height="70" width="70" />
+                <img src={polygon} alt="" height="70" width="70" />
+                <img src={binance} alt="" height="70" width="100" />
+                <img src={opensea} alt="" height="100" width="150" />
+                <img src={polygon} alt="" height="70" width="70" />
+                <img src={ledger} alt="" height="90" width="120" />
+                <img src={bybit} alt="" height="70" width="100" />
+                <img src={avalanche} alt="" height="70" width="70" />
+                <img src={polygon} alt="" height="70" width="70" />
               </div>
             </div>
             <div >
