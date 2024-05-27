@@ -29,7 +29,7 @@ const About = () => {
             <img src={ourstory} alt="" height="300" width="400"/>
             <div>
               <h2>Our Story</h2>
-                <p>As we continue to lead the way in blockchain education, CryptoChuo remains dedicated to fostering a dynamic and supportive learning environment. Our journey since 2020 has been marked by a relentless pursuit of excellence in providing unparalleled resources for Blockchain and Web3 Practitioners. Our mission is to make blockchain education accessible and empower blockchain enthusiasts with the tools they need to thrive in a rapidly evolving digital landscape. Through our user-friendly platform, learners can engage with cutting-edge content, interactive modules, and collaborative discussions. We foster an environment where curiosity is encouraged, questions are welcomed, and knowledge is shared. Our industry-recognized certification programs are a testament to our dedication to excellence. These programs serve as a hallmark of proficiency and are widely acknowledged within the blockchain and Web3 communities. We take pride in being a catalyst for professional growth, enabling individuals to elevate their skills and advance to the next level of success. <br></br><br></br>What sets CryptoChuo apart is our team of seasoned researchers, instructors, and subject matter experts. Comprising real-world industry professionals, our team brings a wealth of knowledge and substantial experience to the table. Join us on this transformative journey, where knowledge meets innovation, and success knows no bounds.
+                <p>As we continue to lead the way in blockchain education, CryptoChuo remains dedicated to fostering a dynamic and supportive learning environment. Our journey since 2020 has been marked by a relentless pursuit of excellence in providing unparalleled resources for Blockchain and Web3 Practitioners. Our mission is to make blockchain education accessible and empower blockchain enthusiasts with the tools they need to thrive in a rapidly evolving digital landscape. Through our user-friendly platform, learners can engage with cutting-edge content, interactive modules, and collaborative discussions. We foster an environment where curiosity is encouraged, questions are welcomed, and knowledge is shared. Our industry-recognized certification programs are a testament to our dedication to excellence. These programs serve as a hallmark of proficiency and are widely acknowledged within the blockchain and Web3 communities. We take pride in being a catalyst for professional growth, enabling individuals to elevate their skills and advance to the next level of success.
               </p>
             </div>
           </div>
@@ -47,15 +47,15 @@ const About = () => {
           <div id="partner-container">
             <div class="container" id="partners">
               <div className="hero-partners">
-                <h4>Our Partners</h4>
+                <h3>Our Partners</h3>
               </div>
               <div id="logo-div">
-                <img src={binance} alt="" height="100" width="100" />
+                <img src={binance} alt="" height="70" width="100" />
                 <img src={opensea} alt="" height="100" width="150" />
-                <img src={avalanche} alt="" height="100" width="100" />
-                <img src={polygon} alt="" height="100" width="100" />
-                <img src={ledger} alt="" height="100" width="130" />
-                <img src={bybit} alt="" height="100" width="100" />
+                <img src={avalanche} alt="" height="70" width="70" />
+                <img src={polygon} alt="" height="70" width="70" />
+                <img src={ledger} alt="" height="90" width="120" />
+                <img src={bybit} alt="" height="70" width="100" />
               </div>
             </div>
             <div >
