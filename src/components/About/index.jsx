@@ -45,28 +45,7 @@ const About = () => {
             </div>
           </div>
           <div id="partner-container">
-            <div class="container" id="partners">
-              <div className="hero-partners">
-                <h3>Our Partners</h3>
-              </div>
-              <div id="logo-div">
-                <img src={binance} alt="" height="70" width="100" />
-                <img src={opensea} alt="" height="100" width="150" />
-                <img src={avalanche} alt="" height="70" width="70" />
-                <img src={polygon} alt="" height="70" width="70" />
-                <img src={ledger} alt="" height="90" width="120" />
-                <img src={bybit} alt="" height="70" width="100" />
-                <img src={avalanche} alt="" height="70" width="70" />
-                <img src={polygon} alt="" height="70" width="70" />
-                <img src={binance} alt="" height="70" width="100" />
-                <img src={opensea} alt="" height="100" width="150" />
-                <img src={polygon} alt="" height="70" width="70" />
-                <img src={ledger} alt="" height="90" width="120" />
-                <img src={bybit} alt="" height="70" width="100" />
-                <img src={avalanche} alt="" height="70" width="70" />
-                <img src={polygon} alt="" height="70" width="70" />
-              </div>
-            </div>
+            
             <div >
             <div class="container" id="why-us">
               <h3>Why CryptoChuo</h3>
@@ -91,6 +70,28 @@ const About = () => {
                   <h5>Extensive Alumni network</h5>
                   <p>With our thriving Alumni network opening doors to a myriad of opportunities, this network serves as a valuable resource for connecting with like-minded professionals, industry leaders, and potential collaborators.</p>
                 </div>
+              </div>
+            </div>
+            <div class="container" id="partners">
+              <div className="hero-partners">
+                <h3>Our Partners</h3>
+              </div>
+              <div id="logo-div">
+                <img src={binance} alt="" height="70" width="100" />
+                <img src={opensea} alt="" height="100" width="150" />
+                <img src={avalanche} alt="" height="70" width="70" />
+                <img src={polygon} alt="" height="70" width="70" />
+                <img src={ledger} alt="" height="90" width="120" />
+                <img src={bybit} alt="" height="70" width="100" />
+                <img src={avalanche} alt="" height="70" width="70" />
+                <img src={polygon} alt="" height="70" width="70" />
+                <img src={binance} alt="" height="70" width="100" />
+                <img src={opensea} alt="" height="100" width="150" />
+                <img src={polygon} alt="" height="70" width="70" />
+                <img src={ledger} alt="" height="90" width="120" />
+                <img src={bybit} alt="" height="70" width="100" />
+                <img src={avalanche} alt="" height="70" width="70" />
+                <img src={polygon} alt="" height="70" width="70" />
               </div>
             </div>
           </div>

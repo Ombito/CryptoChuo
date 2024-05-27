@@ -60,6 +60,7 @@
 #partners {
     display: flex;
     flex-direction: column;
+    margin-top: 24%;
     gap: 5%;
     width: 100%;
     text-align: center;
@@ -75,7 +76,7 @@
     align-items: center;
 }
 #why-us {
-    margin-top: 25%;
+    margin-top: 0%;
 }
 #why-us h3 {
     text-align: center;
