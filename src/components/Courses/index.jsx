@@ -199,7 +199,6 @@ const Courses = ({ courses, handleAddToCart, isInCart }) => {
                     <p>You haven't completed any courses yet enroll in a course and start learning today! </p>
                 </div>
             </div>
-
            
           </div>
           <div id="subscription-div">

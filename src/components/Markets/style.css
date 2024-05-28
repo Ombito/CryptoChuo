@@ -266,16 +266,14 @@
 .crypto-table th {
   padding: 10px;
   text-align: center;
-  border: 1px solid #ddd;
+  border: 1px solid gray;
 }
 .crypto-table td {
   padding: 7px 10px;
   text-align: center;
-  border: 1px solid #ddd;
+  border: 1px solid gray;
 }
-.crypto-table tr:hover {
-  background-color: #eff4f0;
-}
+
 .coin-info {
   display: flex;
   align-items: center;
