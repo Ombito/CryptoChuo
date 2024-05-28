@@ -181,7 +181,8 @@ const About = () => {
                 <button>Get Plan</button>
               </div>
               </div>
-              <div class="container" id="about-contact-hero">
+          </div>
+          <div class="container" id="about-contact-hero">
                 <img src={join} alt="" height="100" width="130" />
                 <h6>Ready to learn the world's most in-demand Blockchain, Web3 and AI skills?</h6>
                 <div id="about-contact">
@@ -189,7 +190,6 @@ const About = () => {
                   <button>Contact</button>
                 </div>
               </div>
-          </div>
           <WhatsAppChat />
     </div>
     
