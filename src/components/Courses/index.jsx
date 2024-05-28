@@ -57,21 +57,19 @@ const Courses = ({ courses }) => {
     };
     
     const applyFilters = (course) => {
-        // filter by search
         const lowerCaseSearchQuery = searchQuery.toLowerCase();
         if (lowerCaseSearchQuery && !course.title.toLowerCase().includes(lowerCaseSearchQuery)) {
           return false;
         }
       
-        // filter by category
         if (Object.keys(categoryFilters).length > 0) {
           const courseCategories = course.category || [];
-          if (!Object.keys(categoryFilters).some(category => categoryFilters[category] && courseCategories.includes(category))) {
+          const checkedCategories = Object.keys(categoryFilters).filter(category => categoryFilters[category]);
+          if (checkedCategories.length > 0 && !checkedCategories.includes(courseCategories)) {
             return false;
           }
         }
       
-        // filter by level
         if (Object.keys(levelFilters).length > 0) {
           const courseLevels = course.level || '';
           const checkedLevels = Object.keys(levelFilters).filter(level => levelFilters[level]);
@@ -80,7 +78,6 @@ const Courses = ({ courses }) => {
           }
         }
       
-        // filter by duration
         if (Object.keys(durationFilters).length > 0) {
           const courseDuration = course.duration || '';
           const checkedDurations = Object.keys(durationFilters).filter(duration => durationFilters[duration]);
