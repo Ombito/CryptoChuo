@@ -13,6 +13,7 @@ import avalanche from "../Assets/avalanche.png";
 import polygon from "../Assets/polygon.png";
 import opensea from "../Assets/opensea.png";
 import ledger from "../Assets/ledger.png";
+import kraken from "../Assets/kraken1.png";
 import join from '../Assets/joinnow.png';
 import company from '../Assets/student4.jpg';
 import certificate from "../Assets/certificate1.png";
@@ -91,7 +92,7 @@ const About = () => {
                 <img src={ledger} alt="" height="90" width="120" />
                 <img src={bybit} alt="" height="70" width="100" />
                 <img src={avalanche} alt="" height="70" width="70" />
-                <img src={polygon} alt="" height="70" width="70" />
+                <img src={kraken} alt="" height="70" width="110" />
                 <img src={binance} alt="" height="70" width="100" />
                 <img src={opensea} alt="" height="100" width="150" />
                 <img src={polygon} alt="" height="70" width="70" />
@@ -104,7 +105,7 @@ const About = () => {
           </div>
           </div>
           <div class="container" id="our-success">
-            <h2>Wall of Love❤️</h2>
+            <h2>Success Stories</h2>
             <div id="testimonials-container">
               <div className="testimonials">
                 <p>"CryptoChuo was specifically created to help people like you and me transition to a career in Web3 and just weeks after completing the course I accepted a full-time role at Grot."

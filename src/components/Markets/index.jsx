@@ -9,33 +9,12 @@ import { FaBackward, FaForward } from  'react-icons/fa';
 import WhatsAppChat from '../WhatsAppChat/index.jsx';
 
 
-const Markets = () => {
+const Markets = ({ markets }) => {
   const [loading, setLoading] = useState(true);
-  const [markets, setMarkets] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 50;
   
-  useEffect(() => {
-    const apiUrl = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=1000&page=1&sparkline=true&price_change_percentage=1h%2C24h%2C7d%2C14d%2C30d%2C200d%2C1y&locale=en`;
-    
-    fetch(apiUrl)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`Network response was not ok: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setMarkets(data);
-        setLoading(false);
-        console.log(data);
-      })
-      .catch((error) => {
-        console.error('Error fetching data:', error);
-        setLoading(false);
-      });
-  }, []);
 
   const filteredMarkets = markets.filter((market) =>
   market.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -66,7 +45,7 @@ const Markets = () => {
         <p>This page displays the latest prices, 24-hour trading volume, price changes, and market capitalizations for all cryptocurrencies on CoinmarketCap.</p>
       </div>
       <div>
-        {loading || markets.length === 0 ? (
+        {/* {loading || markets.length === 0 ? (
           <div className="loader-container">
             <div class="loader">
               <div class="load1"></div>
@@ -83,7 +62,7 @@ const Markets = () => {
               <p className="loading">Fetching market data...</p>
             </div>
           </div>
-        ) : (
+        ) : ( */}
           <>
             <table className="crypto-table">
               <thead>
@@ -133,7 +112,7 @@ const Markets = () => {
               <button className="pagination-button" onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === 7}>&gt;</button>
             </div>
           </>
-        )}
+        {/* )} */}
       </div>
       <WhatsAppChat />
     </div>

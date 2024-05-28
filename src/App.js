@@ -30,6 +30,7 @@ function App() {
     return storedCart ? JSON.parse(storedCart) : [];
   });
   const [courses, setCourses] = useState([]);
+  const [markets, setMarkets] = useState([]);
   const [merchandiseItems, setMerchandiseItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const { enqueueSnackbar } = useSnackbar();
@@ -121,6 +122,30 @@ function App() {
   }, [courses]);
 
   useEffect(() => {
+    if (markets.length === 0) {
+      const apiUrl = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=1000&page=1&sparkline=true&price_change_percentage=1h%2C24h%2C7d%2C14d%2C30d%2C200d%2C1y&locale=en`; 
+      fetch(apiUrl)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`Network response was not ok: ${response.status}`);
+          }
+          return response.json();
+        })
+        .then((data) => {
+          setMarkets(data);
+          setLoading(false);
+          console.log(data);
+        })
+        .catch((error) => {
+          console.error('Error fetching data:', error);
+          setLoading(false);
+        });
+    } else {
+      setLoading(false);
+    }
+  }, [markets]);
+
+  useEffect(() => {
     if (merchandiseItems.length === 0) {
       const apiUrl = `http://127.0.0.1:5555/merchandises`;
       fetch(apiUrl)
@@ -175,13 +200,13 @@ function App() {
       {location.pathname !== '/login' && location.pathname !== '/signup' && location.pathname !== '/forgot-password' && <NavbarMenu  user={user} cart={cart} darkMode={darkMode} toggleDarkMode={toggleDarkMode} />}
         <Routes>
           <Route path="/" element={<Home user={user} courses={courses} />} />
-          <Route path="/courses" element={user ? <Courses user={user} /> : <Navigate to="/login" />} />
+          <Route path="/courses" element={user ? <Courses user={user} courses={courses} /> : <Navigate to="/login" />} />
           <Route path="/course-details/:id" element={<CourseDetails user={user} handleAddToCart={handleAddToCart} isInCart={isInCart}  />} />
           <Route path="/courses/:CourseCategory" element={<CourseCategory />} />
           <Route path="/login" element={<LogIn setUser={setUser} />} />
           <Route path="/about" element={<About />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/markets" element={<Markets />} />
+          <Route path="/markets" element={<Markets markets={markets}/>} />
           <Route path="/news" element={<News />} />
           <Route path="/shop" element={<Shop handleAddToCart={handleAddToCart} merchandiseItems={merchandiseItems}/>} />
           <Route path="checkout" element={<Checkout user={user}/>} />

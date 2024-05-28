@@ -13,11 +13,10 @@ import { useNavigate } from 'react-router-dom';
 import { FaCheck } from 'react-icons/fa';
 import WhatsAppChat from '../WhatsAppChat/index.jsx';
 
-const Courses = () => {
+const Courses = ({ courses }) => {
     const [activeTab, setActiveTab] = useState ('allCourses');
     const [loading, setLoading] = useState(true);
-    const [refresh, setRefresh]=useState(true);
-    const [courses, setCourses] = useState([]);
+    const [refresh, setRefresh]=useState(true);;
     const navigate = useNavigate();
     
     const [searchQuery, setSearchQuery] = useState('');
@@ -30,26 +29,8 @@ const Courses = () => {
         setActiveTab(tabName);
     };
 
-    useEffect(() => {
-        const apiUrl = `http://127.0.0.1:5555/courses`;
-        fetch(apiUrl)
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error(`Network response was not ok: ${response.status}`);
-            }
-            return response.json();
-          })
-          .then((data) => {
-            setCourses(data);
-            setLoading(false);
-          })
-          .catch((error) => {
-            console.error('Error fetching data:', error);
-            setLoading(false);
-          });
-      }, [refresh]);
 
-      const handleCategoryFilter = (category) => {
+    const handleCategoryFilter = (category) => {
         setCategoryFilters((prevFilters) => ({
             ...prevFilters,
             [category]: !prevFilters[category],
@@ -189,9 +170,6 @@ const Courses = () => {
                         </div>
                         )}
                         <div id="course-hero">
-                            {loading ? (
-                                <p className="loading">Loading courses...</p>
-                            ) : (
                                 <div id="all-courses">
                                 {courses
                                     .filter(applyFilters)
@@ -219,7 +197,6 @@ const Courses = () => {
                                     </div>
                                 ))}
                             </div>
-                        )}
                         </div>
                     </div>
                 </div>
