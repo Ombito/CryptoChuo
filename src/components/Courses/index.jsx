@@ -25,6 +25,8 @@ const Courses = ({ courses }) => {
     const [durationFilters, setDurationFilters] = useState({});
     const [filterVisible, setFilterVisible] = useState(true);
 
+
+
     const showTab = (tabName) => {
         setActiveTab(tabName);
     };
@@ -58,31 +60,37 @@ const Courses = ({ courses }) => {
         // filter by search
         const lowerCaseSearchQuery = searchQuery.toLowerCase();
         if (lowerCaseSearchQuery && !course.title.toLowerCase().includes(lowerCaseSearchQuery)) {
-            return false;
+          return false;
         }
-    
+      
         // filter by category
         if (Object.keys(categoryFilters).length > 0) {
-            const courseCategories = course.category || [];
-            if (!Object.keys(categoryFilters).every(category => courseCategories.includes(category))) {
-                return false;
-            }
-        }
-
-        // filter by level
-        if (Object.keys(levelFilters).length > 0 && !levelFilters[course.level]) {
+          const courseCategories = course.category || [];
+          if (!Object.keys(categoryFilters).some(category => categoryFilters[category] && courseCategories.includes(category))) {
             return false;
+          }
         }
-    
+      
+        // filter by level
+        if (Object.keys(levelFilters).length > 0) {
+          const courseLevels = course.level || '';
+          const checkedLevels = Object.keys(levelFilters).filter(level => levelFilters[level]);
+          if (checkedLevels.length > 0 && !checkedLevels.includes(courseLevels)) {
+            return false;
+          }
+        }
+      
         // filter by duration
         if (Object.keys(durationFilters).length > 0) {
-            const courseDuration = course.duration || '';
-            if (!Object.keys(durationFilters).some(duration => courseDuration.includes(duration))) {
-                return false;
-            }
-        } 
+          const courseDuration = course.duration || '';
+          const checkedDurations = Object.keys(durationFilters).filter(duration => durationFilters[duration]);
+          if (checkedDurations.length > 0 && !checkedDurations.some(duration => courseDuration.includes(duration))) {
+            return false;
+          }
+        }
+      
         return true;
-    };
+      };
 
     const toggleFilterVisibility = () => {
         setFilterVisible(!filterVisible);

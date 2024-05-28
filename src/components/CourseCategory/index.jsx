@@ -11,7 +11,7 @@ const CourseCategory = ({ courses }) => {
   if (filteredCourses.length === 0) {
     return (
       <div id="courseDetailsLoading">
-        <p>Loading course details...</p>
+        <p>Loading courses...</p>
         <div class="courseDetailsloader">
           <div class="loading1"></div>
           <div class="loading2"></div>
