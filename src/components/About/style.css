@@ -129,9 +129,10 @@
     gap: 80px;
     align-items: center;
     background-color: #252a43;
-    margin-bottom: 4%;
+    margin: 4% 0;
     height: 20vh;
     padding: 0 5%;
+    width: 100%;
 }
 #about-contact-hero h6 {
     font-size: 1.4em;
@@ -153,45 +154,20 @@
 #subscription-div {
     margin-top: -50px;
   }
-  #subscription-plan {
+#subscription-plan {
     display: flex;
     justify-content: space-around;
-    margin: 10px 10%;
+    margin: 10px 7%;
     gap: 3%;
-  }
-  .subscription-card {
-    text-align: left;
-    width: 70%;
-    height: 60vh;
-    padding: 2% 3%;
-    border-radius: 10px;
-    border: 1px solid black;
-    transition: transform 0.3s ease-in-out;
-  }
-  .subscription-card:hover {
-    background-color: #252a43;
-    cursor: pointer;
-    color: white;
-    transform: scale(1.05);
-  }
-  .subscription-card button {
-    width: 100%;
-    margin-bottom: 0;
-  }
-  .subscription-card button:hover {
-    background-color: #4caf50;
-  }
-  .subscription-card h4 {
+}
+.subscription-card h4 {
     text-align: center;
-  }
+}
 #subscribe {
     width: 85%;
     margin: auto;
     margin-top: 21%;
-}
-#subscription-plan {
-    margin: 1% 7% 5% 7%;
-    gap: 3%;
+    margin-bottom: 3%;
 }
 .subscription-card {
     text-align: left;
@@ -212,12 +188,7 @@
     width: 100%;
     margin-bottom: 0;
 }
-.subscription-card button:hover {
-    background-color: #4caf50;
-}
-.subscription-card h4 {
-    text-align: center;
-}
+
 .check {
     color: green;
 }
