@@ -9,11 +9,10 @@ import clock from "../Assets/wall-clock.png";
 import calendar from "../Assets/calendar.png";
 import WhatsAppChat from '../WhatsAppChat/index.jsx';
 
-const CourseDetails = ({ courses, handleAddToCart, isInCart={isInCart}  }) => {
+const CourseDetails = ({ courses, handleAddToCart, isInCart }) => {
   const { id } = useParams();
   const [likeActive, setLikeActive] = useState(false);
   const [dislikeActive, setDislikeActive] = useState(false);
-
 
   const course = courses.find(course => course.id === parseInt(id));
   const suggestedCourses = courses.filter(course => course.grouping === 'suggested');
@@ -47,9 +46,8 @@ const CourseDetails = ({ courses, handleAddToCart, isInCart={isInCart}  }) => {
           <div class="loading9"></div>
         </div>
       </div>
-  );
+    );
   }
-
 
   return (
     <div>

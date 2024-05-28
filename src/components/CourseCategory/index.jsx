@@ -8,7 +8,7 @@ const CourseCategory = ({ courses }) => {
 
   const filteredCourses = courses.filter(course => course.category === category);
   
-  if (!filteredCourses) {
+  if (filteredCourses.length === 0) {
     return (
       <div id="courseDetailsLoading">
         <p>Loading course details...</p>
