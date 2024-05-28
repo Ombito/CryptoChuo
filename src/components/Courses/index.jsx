@@ -112,7 +112,7 @@ const Courses = ({ courses, handleAddToCart, isInCart }) => {
                             <p><img src={clock} alt="" height="30" width="35"/> {course.duration}</p>
                             <p><img src={certificate} alt="" height="30" width="25"/> Earn a certificate upon completion</p>
                             <h4>${course.price}</h4>
-                            <button onClick={() => handleAddToCart(course, true)} className={isInCart ? 'addedToCart' : "enroll-btn"}>{isInCart ? "Added to Cart" : "Enroll Course"}</button>
+                            <button onClick={(e) => { e.stopPropagation(); handleAddToCart(course, true)}} className={isInCart ? 'addedToCart' : "enroll-btn"}>{isInCart ? "Added to Cart" : "Enroll Course"}</button>
                         </div>                  
                     </div>
                 ))}
@@ -177,11 +177,11 @@ const Courses = ({ courses, handleAddToCart, isInCart }) => {
                         )}
                         <div id="course-hero">
                                 <div id="all-courses">
-                                {courses
-                                    .filter(applyFilters)
-                                    .map((course) => (                                
-                                        <CourseCard key={course.id} course={course} />
-                                ))}
+                                    {courses
+                                        .filter(applyFilters)
+                                        .map((course) => (                                
+                                            <CourseCard key={course.id} course={course} />
+                                    ))}
                             </div>
                         </div>
                     </div>
