@@ -12,8 +12,9 @@ import tick from '../Assets/tick.png';
 import { useNavigate } from 'react-router-dom';
 import { FaCheck } from 'react-icons/fa';
 import WhatsAppChat from '../WhatsAppChat/index.jsx';
+import CourseCard from '../CourseCard/CourseCard';
 
-const Courses = ({ courses }) => {
+const Courses = ({ courses, handleAddToCart, isInCart }) => {
     const [activeTab, setActiveTab] = useState ('allCourses');
     const [loading, setLoading] = useState(true);
     const [refresh, setRefresh]=useState(true);;
@@ -111,7 +112,7 @@ const Courses = ({ courses }) => {
                             <p><img src={clock} alt="" height="30" width="35"/> {course.duration}</p>
                             <p><img src={certificate} alt="" height="30" width="25"/> Earn a certificate upon completion</p>
                             <h4>${course.price}</h4>
-                            <button>Enroll Now</button>
+                            <button onClick={() => handleAddToCart(course, true)} className={isInCart ? 'addedToCart' : "enroll-btn"}>{isInCart ? "Added to Cart" : "Enroll Course"}</button>
                         </div>                  
                     </div>
                 ))}
@@ -179,27 +180,7 @@ const Courses = ({ courses }) => {
                                 {courses
                                     .filter(applyFilters)
                                     .map((course) => (                                
-                                    <div key={course.id} className="course-card" onClick={() => navigate(`/courses/${course.id}`)}>
-                                        <img src={course.image} alt="Course" className="course-img" />
-                                        <div className="course-details">
-                                            <h4>{course.title}</h4>
-                                            <p>{course.description}</p>
-                                            <p>Duration: {course.duration}</p>
-                                            <div className="amount">
-                                            <h5>${course.price}</h5>
-                                            <div>
-                                                <p className="rating">
-                                                {Array.from({ length: Math.round(course.rating) }, (_, index) => (
-                                                    <span key={index} className="star">&#9733;</span>
-                                                ))}
-                                                {Array.from({ length: 5 - Math.round(course.rating) }, (_, index) => (
-                                                    <span key={index} className="star">&#9734;</span>
-                                                ))}
-                                                </p>
-                                            </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                        <CourseCard key={course.id} course={course} />
                                 ))}
                             </div>
                         </div>

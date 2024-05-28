@@ -1,5 +1,6 @@
 #market {
-  margin: 8% 5% 3% 5%;
+  margin: 5% 5% 3% 5%;
+  padding: 3% 0;
 }
 .market-summary {
   gap: 20px;

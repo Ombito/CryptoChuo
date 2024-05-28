@@ -200,8 +200,8 @@ function App() {
       {location.pathname !== '/login' && location.pathname !== '/signup' && location.pathname !== '/forgot-password' && <NavbarMenu  user={user} cart={cart} darkMode={darkMode} toggleDarkMode={toggleDarkMode} />}
         <Routes>
           <Route path="/" element={<Home user={user} courses={courses} />} />
-          <Route path="/courses" element={user ? <Courses user={user} courses={courses} /> : <Navigate to="/login" />} />
-          <Route path="/course-details/:id" element={<CourseDetails courses={courses} user={user} handleAddToCart={handleAddToCart} isInCart={isInCart}  />} />
+          <Route path="/courses" element={user ? <Courses user={user} courses={courses} handleAddToCart={handleAddToCart} isInCart={isInCart} /> : <Navigate to="/login" />} />
+          <Route path="/course-details/:id" element={<CourseDetails courses={courses} user={user} handleAddToCart={handleAddToCart} isInCart={isInCart} />} />
           <Route path="/courses/:category" element={<CourseCategory courses={courses}/>} />
           <Route path="/login" element={<LogIn setUser={setUser} />} />
           <Route path="/about" element={<About />} />
