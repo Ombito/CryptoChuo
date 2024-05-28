@@ -103,7 +103,7 @@ const Courses = ({ courses }) => {
             <div class="container">
                 <h2>Featured Course</h2>
                 {filterItemsByCategory('featured').map(course => (
-                    <div className="featured-course-description" key={course.id} onClick={() => navigate(`/courses/${course.id}`)}>
+                    <div className="featured-course-description" key={course.id} onClick={() => navigate(`/course-details/${course.id}`)}>
                         <img src={Feature} alt="course" id="featured-img" />
                         <div id="featured-div">
                             <h3>{course.title}</h3>

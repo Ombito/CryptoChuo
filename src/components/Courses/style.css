@@ -3,15 +3,15 @@
 }
 .featured-course-description {
   display: flex;
-  gap: 20px;
-  border-radius: 10px;
+  gap: 50px;
+  border-radius: 4px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  margin: auto;
 }
 #featured-img {
   height: 45vh;
-  width: 45%;
-  border-radius: 7px;
+  object-fit: contain;
 }
 #featured-div {
   padding: 1% 0;
