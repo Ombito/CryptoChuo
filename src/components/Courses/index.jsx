@@ -108,7 +108,7 @@ const Courses = ({ courses, handleAddToCart, isInCart }) => {
                         <img src={Feature} alt="course" id="featured-img" />
                         <div id="featured-div">
                             <h3>{course.title}</h3>
-                            <p><img src={tick} alt="" height="20" width="25"/> {course.description}</p>
+                            <p className="featured-description"><img src={tick} alt="" height="20" width="25"/> {course.description}</p>
                             <p><img src={clock} alt="" height="30" width="35"/> {course.duration}</p>
                             <p><img src={certificate} alt="" height="30" width="25"/> Earn a certificate upon completion</p>
                             <h4>${course.price}</h4>
@@ -129,13 +129,15 @@ const Courses = ({ courses, handleAddToCart, isInCart }) => {
                         <button id="toggleFilter" onClick={toggleFilterVisibility}><i className="fa fa-filter"> </i>
                              {filterVisible ? 'Filters' : 'Filters'}
                         </button>
-                        <input id="searchcourse"type="text" placeholder='Search for a Course...' value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)}/>              
+                        <div className='categorySearchInput'>
+                            <h4>Category</h4>
+                            <input id="searchcourse"type="text" placeholder='Search for a Course...' value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)}/>
+                        </div>              
                     </div>
                     <div className="allCourses-div">
                         {filterVisible && (
                         <div id="filter-container">
                             <div className="filter-div">
-                                <h4>Category</h4>
                                 {['Technology', 'Programming', 'Finance', 'Smart Contracts', 'Business', 'Art', 'Social Impact', 'Health'].map((category) => (
                                     <div key={category} className="checkbox-container">
                                         <input

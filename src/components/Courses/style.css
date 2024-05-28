@@ -4,11 +4,19 @@
 }
 .featured-course-description {
   display: flex;
-  gap: 50px;
+  gap: 80px;
   border-radius: 4px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   margin: auto;
+  width: 90%;
+}
+.featured-description {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; 
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 #featured-img {
   height: 45vh;
@@ -24,7 +32,14 @@
   display: flex;
   justify-content: space-between;
 }
+.categorySearchInput {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
 #searchcourse {
+  display: flex;
+  justify-content: flex-end;
   width: 25%;
   height: 5vh;
   border-radius: 4px;
