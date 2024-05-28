@@ -1,42 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
-import CourseCard from '../CourseCard/CourseCard.jsx';
+import CourseCard from '../CourseCard/CourseCard';
+import './index.css';
 
-const CourseCategory = () => {
-    const { category } = useParams();
-    const [courses, setCourses] = useState([]);
-    const [loading, setLoading] = useState(true);
+const CourseCategory = ({ courses }) => {
+  const { category } = useParams();
 
-    useEffect(() => {
-        const fetchCourses = async () => {
-            try {
-                const response = await fetch(`http://127.0.0.1:5555/courses?category=${category}`);
-                const data = await response.json();
-                setCourses(data);
-                setLoading(false);
-            } catch (error) {
-                console.error('Error fetching courses:', error);
-                setLoading(false);
-            }
-        };
+  const filteredCourses = courses.filter(course => course.category === category);
 
-        fetchCourses();
-    }, [category]);
-
-    if (loading) {
-        return <div>Loading...</div>;
-    }
-
-    return (
-        <div>
-            <h2>Courses in {category}</h2>
-            <div className="course-list">
-                {courses.map(course => (
-                    <CourseCard key={course.id} course={course} />
-                ))}
-            </div>
-        </div>
-    );
+  return (
+    <div class='container' id="course-category-container">
+      <h2>{category} Courses</h2>
+      <div className="course-list">
+        {filteredCourses.map(course => (
+          <CourseCard key={course.id} course={course} />
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default CourseCategory;

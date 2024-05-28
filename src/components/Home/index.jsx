@@ -11,6 +11,7 @@ import CountUp from 'react-countup';
 import { useSnackbar } from 'notistack';
 import { useNavigate } from 'react-router-dom';
 import bannerGIF from '../Assets/2.png';
+import CourseCard from '../CourseCard/CourseCard.jsx';
 
 const Home = ({ user, courses }) => {
     const [loading, setLoading] = useState(true);
@@ -189,27 +190,7 @@ const Home = ({ user, courses }) => {
                     ) : (
                         <div id="home-card-container">
                             {filterItemsByCategory('trending').map(course => (
-                            <div className="course-card" key={course.id} onClick={() => navigate(`/course-details/${course.id}`)}>
-                                <img src={course.image} alt="" className="course-img"/>
-                                <div class="course-details">
-                                    <h5>{course.title}</h5>
-                                    <p className="course-description">{course.description}</p>
-                                    <p>Duration: {course.duration}</p>
-                                    <div className="amount">
-                                        <h5>${course.price}</h5>
-                                        <div>
-                                            <p className="rating">
-                                                {Array.from({ length: Math.round(course.rating) }, (_, index) => (
-                                                <span key={index} className="star">&#9733;</span>
-                                                ))}
-                                                {Array.from({ length: 5 - Math.round(course.rating) }, (_, index) => (
-                                                <span key={index} className="star">&#9734;</span>
-                                                ))}
-                                            </p>
-                                        </div>
-                                    </div>     
-                                </div>
-                            </div>                        
+                                <CourseCard key={course.id} course={course} />                        
                             ))}           
                         </div>
                     )}
