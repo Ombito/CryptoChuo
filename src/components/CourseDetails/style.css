@@ -1,7 +1,10 @@
+#course {
+  margin-top: 5%;
+  padding: 3% 0;
+}
 #coursedetails {
-    margin-top: 8%;
-    display: flex;
-    justify-content: space-evenly;
+  display: flex;
+  justify-content: space-evenly;
 }
 #courseDetailsLoading {
     width: 100%;
@@ -244,85 +247,84 @@
   }
   
 #course-description {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 .back-btn {
-    width: 13vw;
-    margin-top: 8%;
-    margin-left: 10%;
+  width: 13vw;
+  margin-top: 8%;
+  margin-left: 10%;
 }
 #course-description img {
-    border-radius: 7px;
+  border-radius: 7px;
 }
 #course-description h3 {
-    padding-top: 25px;
+  padding-top: 25px;
 }
 .addedToCart {
   background-color: orange;
 }
 .courseDetailsCard {
-    margin-bottom: 15px;
-    background-color: #f5f4f5;
-    width: 330px;
-    padding: 3% 5%;
-    border-radius: 8px;
-    border: 1px solid black;
+  margin-bottom: 15px;
+  width: 330px;
+  padding: 3% 5%;
+  border-radius: 4px;
+  border: 1px solid gray;
 }
 .courseDetailsCard h5 {
-    text-align: center;
+  text-align: center;
 }
 .courseDetailsCard button {
-    width: 100%;
+  width: 100%;
 }
 p span {
-    color: black;
-    font-weight: bold;
+  color: #4caf50;
+  font-weight: bold;
 }
 .checkicon {
-    color: #4caf50;
-    font-size: 1.2em;
-    margin-right: 7px;
+  color: #4caf50;
+  font-size: 1.2em;
+  margin-right: 7px;
 }
 #loading {
-    margin-top: 8%;
-    margin-bottom: 54%;
-    color: red;
-    font-weight: bold;
+  margin-top: 8%;
+  margin-bottom: 54%;
+  color: red;
+  font-weight: bold;
 }
 #loading p{
-    margin-bottom: 50%;
-    margin-left: 6%;
+  margin-bottom: 50%;
+  margin-left: 6%;
 }
 #upcoming-live {
-    margin: 530px 11% 2% 11%;
+  margin: 530px 11% 2% 11%;
 }
 #feedback-hero {
-    margin: 0px 11% 3% 11%;
+  margin: 0px 11% 3% 11%;
 }
 #feedback-btns {
-    display: flex;
-    gap: 20px;
+  display: flex;
+  gap: 20px;
   } 
 .like-button:hover {
-    color:#4caf50;
+  color:#4caf50;
 }
 .like-button.active {
-    background-color: #252a43;
-    color:#ffffff;
+  background-color: #252a43;
+  color:#ffffff;
 }
 .like-button.active:hover {
-    color:#4caf50;
+  color:#4caf50;
 }
 #suggestion {
-    margin-bottom: 540px;
+  margin-bottom: 540px;
 }
 #suggestion h3{
-    text-align: center;
+  text-align: center;
 }
 .suggested-div {
-    display: flex;
-    margin-bottom: 140px;
+  display: flex;
+  margin-bottom: 140px;
 }
 
 /* mobile responsiveness   */

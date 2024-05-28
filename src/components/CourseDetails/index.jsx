@@ -50,7 +50,7 @@ const CourseDetails = ({ courses, handleAddToCart, isInCart }) => {
   }
 
   return (
-    <div>
+    <div id="course">
       <div id="coursedetails" class="container">
         <div id="course-description">
           <img src={course.image} alt="Course" height="380" width="800"/>
