@@ -103,7 +103,7 @@ const Courses = ({ courses, handleAddToCart, isInCart }) => {
         <div className='courses'>
             <div class="container">
                 <h2>Featured Course</h2>
-                {filterItemsByCategory('featured').map(course => (
+                {filterItemsByCategory('featured').slice(0, 1).map(course => (
                     <div className="featured-course-description" key={course.id} onClick={() => navigate(`/course-details/${course.id}`)}>
                         <img src={Feature} alt="course" id="featured-img" />
                         <div id="featured-div">
@@ -200,10 +200,10 @@ const Courses = ({ courses, handleAddToCart, isInCart }) => {
                 </div>
             </div>
            
-          </div>
-          <div id="subscription-div">
-            <h2 id="subscribe" style={{"text-align": "center"}}>Choose Your Subscription Plan</h2>
-            <div id="subscription-plan">
+        </div>
+        <div id="membership-div">
+            <h2 style={{"text-align": "center"}}>Choose Your Subscription Plan</h2>
+            <div id="membership-plan">
               <div className="subscription-card">
                 <h4>Basic Membership</h4>
                 <h2>$99.99 / month</h2>

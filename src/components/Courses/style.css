@@ -108,15 +108,16 @@
 .hourweekly img {
   margin-right: 5px;
 }
-#subscription-div {
+#membership-div {
   margin-top: -0px;
-  width: 90%;
   margin: auto;
+  width: 90%;
 }
-#subscription-plan {
+#membership-plan {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin: 10px 10%;
+  gap: 20px;
 }
 .subscription-card {
   text-align: left;
@@ -178,7 +179,7 @@
   margin-bottom: 3%;font-weight: 400;
 }
 #learnwithus {
-  margin-bottom: 15%;
+  margin: 3% 0 15% 0;
 }
 .learn-headline {
   text-align: center;

@@ -150,6 +150,40 @@
 #about-contact button:hover {
     background-color: #4caf50;
 }
+#subscription-div {
+    margin-top: -50px;
+  }
+  #subscription-plan {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 10%;
+    gap: 3%;
+  }
+  .subscription-card {
+    text-align: left;
+    width: 70%;
+    height: 60vh;
+    padding: 2% 3%;
+    border-radius: 10px;
+    border: 1px solid black;
+    transition: transform 0.3s ease-in-out;
+  }
+  .subscription-card:hover {
+    background-color: #252a43;
+    cursor: pointer;
+    color: white;
+    transform: scale(1.05);
+  }
+  .subscription-card button {
+    width: 100%;
+    margin-bottom: 0;
+  }
+  .subscription-card button:hover {
+    background-color: #4caf50;
+  }
+  .subscription-card h4 {
+    text-align: center;
+  }
 #subscribe {
     width: 85%;
     margin: auto;
