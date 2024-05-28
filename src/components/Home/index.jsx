@@ -41,6 +41,7 @@ const Home = ({ user, courses }) => {
         "NFT's",
         'Cryptography',
         'Privacy',
+        'Programming',
         'GameFi'
     ];
 
