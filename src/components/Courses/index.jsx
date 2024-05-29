@@ -12,12 +12,12 @@ import tick from '../Assets/tick.png';
 import { useNavigate } from 'react-router-dom';
 import { FaCheck } from 'react-icons/fa';
 import WhatsAppChat from '../WhatsAppChat/index.jsx';
+import CourseCard from '../CourseCard/CourseCard';
 
-const Courses = () => {
+const Courses = ({ courses, handleAddToCart, isInCart }) => {
     const [activeTab, setActiveTab] = useState ('allCourses');
     const [loading, setLoading] = useState(true);
-    const [refresh, setRefresh]=useState(true);
-    const [courses, setCourses] = useState([]);
+    const [refresh, setRefresh]=useState(true);;
     const navigate = useNavigate();
     
     const [searchQuery, setSearchQuery] = useState('');
@@ -26,30 +26,14 @@ const Courses = () => {
     const [durationFilters, setDurationFilters] = useState({});
     const [filterVisible, setFilterVisible] = useState(true);
 
+
+
     const showTab = (tabName) => {
         setActiveTab(tabName);
     };
 
-    useEffect(() => {
-        const apiUrl = `http://127.0.0.1:5555/courses`;
-        fetch(apiUrl)
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error(`Network response was not ok: ${response.status}`);
-            }
-            return response.json();
-          })
-          .then((data) => {
-            setCourses(data);
-            setLoading(false);
-          })
-          .catch((error) => {
-            console.error('Error fetching data:', error);
-            setLoading(false);
-          });
-      }, [refresh]);
 
-      const handleCategoryFilter = (category) => {
+    const handleCategoryFilter = (category) => {
         setCategoryFilters((prevFilters) => ({
             ...prevFilters,
             [category]: !prevFilters[category],
@@ -74,34 +58,37 @@ const Courses = () => {
     };
     
     const applyFilters = (course) => {
-        // filter by search
         const lowerCaseSearchQuery = searchQuery.toLowerCase();
         if (lowerCaseSearchQuery && !course.title.toLowerCase().includes(lowerCaseSearchQuery)) {
-            return false;
+          return false;
         }
-    
-        // filter by category
+      
         if (Object.keys(categoryFilters).length > 0) {
-            const courseCategories = course.category || [];
-            if (!Object.keys(categoryFilters).every(category => courseCategories.includes(category))) {
-                return false;
-            }
-        }
-
-        // filter by level
-        if (Object.keys(levelFilters).length > 0 && !levelFilters[course.level]) {
+          const courseCategories = course.category || [];
+          const checkedCategories = Object.keys(categoryFilters).filter(category => categoryFilters[category]);
+          if (checkedCategories.length > 0 && !checkedCategories.includes(courseCategories)) {
             return false;
+          }
         }
-    
-        // filter by duration
+      
+        if (Object.keys(levelFilters).length > 0) {
+          const courseLevels = course.level || '';
+          const checkedLevels = Object.keys(levelFilters).filter(level => levelFilters[level]);
+          if (checkedLevels.length > 0 && !checkedLevels.includes(courseLevels)) {
+            return false;
+          }
+        }
+      
         if (Object.keys(durationFilters).length > 0) {
-            const courseDuration = course.duration || '';
-            if (!Object.keys(durationFilters).some(duration => courseDuration.includes(duration))) {
-                return false;
-            }
-        } 
+          const courseDuration = course.duration || '';
+          const checkedDurations = Object.keys(durationFilters).filter(duration => durationFilters[duration]);
+          if (checkedDurations.length > 0 && !checkedDurations.some(duration => courseDuration.includes(duration))) {
+            return false;
+          }
+        }
+      
         return true;
-    };
+      };
 
     const toggleFilterVisibility = () => {
         setFilterVisible(!filterVisible);
@@ -116,16 +103,16 @@ const Courses = () => {
         <div className='courses'>
             <div class="container">
                 <h2>Featured Course</h2>
-                {filterItemsByCategory('featured').map(course => (
-                    <div className="featured-course-description" key={course.id} onClick={() => navigate(`/courses/${course.id}`)}>
+                {filterItemsByCategory('featured').slice(0, 1).map(course => (
+                    <div className="featured-course-description" key={course.id} onClick={() => navigate(`/course-details/${course.id}`)}>
                         <img src={Feature} alt="course" id="featured-img" />
                         <div id="featured-div">
                             <h3>{course.title}</h3>
-                            <p><img src={tick} alt="" height="20" width="25"/> {course.description}</p>
+                            <p className="featured-description"><img src={tick} alt="" height="20" width="25"/> {course.description}</p>
                             <p><img src={clock} alt="" height="30" width="35"/> {course.duration}</p>
                             <p><img src={certificate} alt="" height="30" width="25"/> Earn a certificate upon completion</p>
                             <h4>${course.price}</h4>
-                            <button>Enroll Now</button>
+                            <button onClick={(e) => { e.stopPropagation(); handleAddToCart(course, true)}} className={isInCart ? 'addedToCart' : "enroll-btn"}>{isInCart ? "Added to Cart" : "Enroll Course"}</button>
                         </div>                  
                     </div>
                 ))}
@@ -142,13 +129,15 @@ const Courses = () => {
                         <button id="toggleFilter" onClick={toggleFilterVisibility}><i className="fa fa-filter"> </i>
                              {filterVisible ? 'Filters' : 'Filters'}
                         </button>
-                        <input id="searchcourse"type="text" placeholder='Search for a Course...' value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)}/>              
+                        <div className='categorySearchInput'>
+                            <h4>Category</h4>
+                            <input id="searchcourse"type="text" placeholder='Search for a Course...' value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)}/>
+                        </div>              
                     </div>
                     <div className="allCourses-div">
                         {filterVisible && (
                         <div id="filter-container">
                             <div className="filter-div">
-                                <h4>Category</h4>
                                 {['Technology', 'Programming', 'Finance', 'Smart Contracts', 'Business', 'Art', 'Social Impact', 'Health'].map((category) => (
                                     <div key={category} className="checkbox-container">
                                         <input
@@ -189,37 +178,13 @@ const Courses = () => {
                         </div>
                         )}
                         <div id="course-hero">
-                            {loading ? (
-                                <p className="loading">Loading courses...</p>
-                            ) : (
                                 <div id="all-courses">
-                                {courses
-                                    .filter(applyFilters)
-                                    .map((course) => (                                
-                                    <div key={course.id} className="course-card" onClick={() => navigate(`/courses/${course.id}`)}>
-                                        <img src={course.image} alt="Course" className="course-img" />
-                                        <div className="course-details">
-                                            <h4>{course.title}</h4>
-                                            <p>{course.description}</p>
-                                            <p>Duration: {course.duration}</p>
-                                            <div className="amount">
-                                            <h5>${course.price}</h5>
-                                            <div>
-                                                <p className="rating">
-                                                {Array.from({ length: Math.round(course.rating) }, (_, index) => (
-                                                    <span key={index} className="star">&#9733;</span>
-                                                ))}
-                                                {Array.from({ length: 5 - Math.round(course.rating) }, (_, index) => (
-                                                    <span key={index} className="star">&#9734;</span>
-                                                ))}
-                                                </p>
-                                            </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                ))}
+                                    {courses
+                                        .filter(applyFilters)
+                                        .map((course) => (                                
+                                            <CourseCard key={course.id} course={course} />
+                                    ))}
                             </div>
-                        )}
                         </div>
                     </div>
                 </div>
@@ -234,12 +199,11 @@ const Courses = () => {
                     <p>You haven't completed any courses yet enroll in a course and start learning today! </p>
                 </div>
             </div>
-
            
-          </div>
-          <div id="subscription-div">
-            <h2 id="subscribe" style={{"text-align": "center"}}>Choose Your Subscription Plan</h2>
-            <div id="subscription-plan">
+        </div>
+        <div id="membership-div">
+            <h2 style={{"text-align": "center"}}>Choose Your Subscription Plan</h2>
+            <div id="membership-plan">
               <div className="subscription-card">
                 <h4>Basic Membership</h4>
                 <h2>$99.99 / month</h2>

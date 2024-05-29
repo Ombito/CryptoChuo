@@ -1,0 +1,13 @@
+#course-category-container {
+    margin-top: 5%;
+    padding: 2% 0;
+    height: auto;
+}
+#course-category-container h2{
+    text-align: center;
+}
+.course-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}

@@ -10,7 +10,8 @@ import ScrollTrigger from 'react-scroll-trigger';
 import CountUp from 'react-countup';
 import { useSnackbar } from 'notistack';
 import { useNavigate } from 'react-router-dom';
-
+import bannerGIF from '../Assets/2.png';
+import CourseCard from '../CourseCard/CourseCard.jsx';
 
 const Home = ({ user, courses }) => {
     const [loading, setLoading] = useState(true);
@@ -26,11 +27,28 @@ const Home = ({ user, courses }) => {
     const [message, setMessage] = useState('');
 
     const [subscribeEmail, setSubscribeEmail] = useState('');
+    const [isChecked, setIsChecked] = useState(false);
 
     const filterItemsByCategory = (grouping) => {
         return courses.filter(item => item.grouping === grouping);
-      };
+    };
 
+    const topics = [
+        'Web3',
+        'Blockchain',
+        'DeFi',
+        'Metaverse',
+        'Security',
+        "NFT's",
+        'Cryptography',
+        'Privacy',
+        'Programming',
+        'GameFi'
+    ];
+
+    const handleTopicClick = (topic) => {
+        navigate(`/courses/${topic}`);
+    };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -45,6 +63,10 @@ const Home = ({ user, courses }) => {
           });
       
           if (response.ok) {
+            setEmail('')
+            setPhoneNumber('')
+            setSubject('')
+            setMessage('')
             enqueueSnackbar('Message sent successful!', { variant: 'success' });
           } else {
             console.log("Signup failed!")
@@ -70,6 +92,8 @@ const Home = ({ user, courses }) => {
           });
       
           if (response.ok) {
+            setSubscribeEmail('');
+            setIsChecked(false);
             enqueueSnackbar('You have successfully subscribed to our newsletter!', { variant: 'success' });
           } else {
             console.log("Failed to subscribe!")
@@ -91,10 +115,10 @@ const Home = ({ user, courses }) => {
         { question: 'What is Blockchain mining?', answer: "Blockchain mining, a peer-to-peer computer process, is used to secure and verify cryptographic secured transactions. Mining involves crypto miners who add cryptocurrency transaction data to global public ledger of past transactions. In the ledgers, blocks are secured by miners and are connected to each other forming a chain. Cryptocurrencies or tokens, such as Bitcoin or Ethereum, have no central clearing house. Transactions are generally verified in decentralized clearing systems wherein people contribute computing resources to verify the same. This process of verifying transactions in called mining." },
       ];
       
-      const [expandedIndex, setExpandedIndex] = useState(null);
+    const [expandedIndex, setExpandedIndex] = useState(null);
     const handleToggleAnswer = (index) => {
         setExpandedIndex(expandedIndex === index ? null : index);
-      };
+    };
 
     return (
         <div>
@@ -106,12 +130,12 @@ const Home = ({ user, courses }) => {
                             <p className='paragraph'>Your one-stop place for learning everything from<br /> mastering the basics of blockchain to conquering the art of crypto trading and insightful on-chain analysis. Join us, and let's pioneer the future of decentralization together!
                             </p>
                             <Link to="/login">
-                                <button className="enroll-button" type='submit'>Get Started</button>
+                                <button className="enroll-button" type='submit'>Let's Go</button>
                             </Link>
                         </div>
-                        {/* <div>
-                            <img className='homecrypto' src={banner} alt="Crypto Banner" />
-                        </div> */}
+                        <div>
+                            <img id="landing-img" src={bannerGIF} alt="Example GIF" />
+                        </div> 
                     </div>
                 </div>
                 <div class="container" id="stats">
@@ -166,27 +190,7 @@ const Home = ({ user, courses }) => {
                     ) : (
                         <div id="home-card-container">
                             {filterItemsByCategory('trending').map(course => (
-                            <div className="course-card" key={course.id} onClick={() => navigate(`/courses/${course.id}`)}>
-                                <img src={course.image} alt="" className="course-img"/>
-                                <div class="course-details">
-                                    <h4>{course.title}</h4>
-                                    <p>{course.description}</p>
-                                    <p>Duration: {course.duration}</p>
-                                    <div className="amount">
-                                        <h5>${course.price}</h5>
-                                        <div>
-                                            <p className="rating">
-                                                {Array.from({ length: Math.round(course.rating) }, (_, index) => (
-                                                <span key={index} className="star">&#9733;</span>
-                                                ))}
-                                                {Array.from({ length: 5 - Math.round(course.rating) }, (_, index) => (
-                                                <span key={index} className="star">&#9734;</span>
-                                                ))}
-                                            </p>
-                                        </div>
-                                    </div>     
-                                </div>
-                            </div>                        
+                                <CourseCard key={course.id} course={course} />                        
                             ))}           
                         </div>
                     )}
@@ -195,33 +199,11 @@ const Home = ({ user, courses }) => {
                     <div class="container">
                         <h3>Our students also learn</h3>
                         <div className='topics-container'>
-                            <div className='topic'>
-                                <h5>Web3</h5>
-                            </div>
-                            <div className='topic'>
-                                <h5>Blockchain</h5>
-                            </div>
-                            <div className='topic'>
-                                <h5>DeFi</h5>
-                            </div>
-                            <div className='topic'>
-                                <h5>Metaverse</h5>
-                            </div>
-                            <div className='topic'>
-                                <h5>Security</h5>
-                            </div>
-                            <div className='topic'>
-                                <h5>NFT's</h5>
-                            </div>
-                            <div className='topic'>
-                                <h5>Cryptography</h5>
-                            </div>
-                            <div className='topic'>
-                                <h5>Privacy</h5>
-                            </div>
-                            <div className='topic'>
-                                <h5>GameFi</h5>
-                            </div>
+                            {topics.map((topic, index) => (
+                                <div key={index} className='topic' onClick={() => handleTopicClick(topic)}>
+                                    <h5>{topic}</h5>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>
@@ -270,10 +252,10 @@ const Home = ({ user, courses }) => {
                                     <h6>Nairobi, Kenya</h6>
                                     <div>
                                         <div id="contact-icons">
-                                            <a href=""><FaLinkedin className="icons"/></a>
-                                            <a href=""><FaWhatsapp className="icons"/></a>
-                                            <a href=""><FaTelegram className="icons"/></a>
-                                            <a href=""><FaDiscord className="icons"/></a>
+                                            <a href=""><FaLinkedin className="icons linkedin"/></a>
+                                            <a href=""><FaWhatsapp className="icons whatsapp"/></a>
+                                            <a href=""><FaTelegram className="icons telegram"/></a>
+                                            <a href=""><FaDiscord className="icons discord"/></a>
                                         </div>
                                     </div>
                                 </div>
@@ -308,7 +290,7 @@ const Home = ({ user, courses }) => {
                                 <button type="submit" className="subscribe-button">Subscribe</button>
                             </div>
                             <div className='subscribe-checkbox'>
-                                <input type="checkbox" required/>
+                                <input type="checkbox" checked={isChecked} onChange={(e) => setIsChecked(e.target.checked)} required/>
                                 <label>I have read and agreed to the Terms of Service.</label>
                             </div>
                         </form>

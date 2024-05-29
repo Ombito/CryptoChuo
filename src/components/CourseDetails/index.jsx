@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import Footer from '../Footer/index.jsx';
+import CourseCard from '../CourseCard/CourseCard';
 import "./style.css"
 import { FaThumbsDown, FaThumbsUp, FaCheck, FaCalendar, FaBolt, FaClock, FaCreditCard, FaList, FaHandHoldingHeart, FaBackward } from 'react-icons/fa';
 import Course1 from "../Assets/homepage.jpg";
@@ -8,31 +9,26 @@ import clock from "../Assets/wall-clock.png";
 import calendar from "../Assets/calendar.png";
 import WhatsAppChat from '../WhatsAppChat/index.jsx';
 
-const CourseDetails = ({ handleAddToCart, isInCart={isInCart}  }) => {
+const CourseDetails = ({ courses, handleAddToCart, isInCart }) => {
   const { id } = useParams();
-  const [course, setCourse] = useState(null);
-  const navigate = useNavigate();
   const [likeActive, setLikeActive] = useState(false);
   const [dislikeActive, setDislikeActive] = useState(false);
-  const [loading, setLoading] = useState(true);
-  const [suggestedCourses, setSuggestedCourses] = useState([]);
 
-  useEffect(() => {
-    const apiUrl = `http://127.0.0.1:5555/courses/${id}`;
-    fetch(apiUrl)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`Network response was not ok: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setCourse(data);
-      })
-      .catch((error) => {
-        console.error('Error fetching course details:', error);
-      });
-  }, [id]);
+  const course = courses.find(course => course.id === parseInt(id));
+  const suggestedCourses = courses.filter(course => course.grouping === 'suggested');
+
+  const handleLike = () => {
+    setLikeActive(true);
+    setDislikeActive(false);
+  };
+
+  const handleDislike = () => {
+    setLikeActive(false);
+    setDislikeActive(true);
+  };
+
+  const likeButtonClass = likeActive ? 'active' : '';
+  const dislikeButtonClass = dislikeActive ? 'active' : '';
 
   if (!course) {
     return (
@@ -50,53 +46,17 @@ const CourseDetails = ({ handleAddToCart, isInCart={isInCart}  }) => {
           <div class="loading9"></div>
         </div>
       </div>
-  );
+    );
   }
 
-    const apiUrl = `http://127.0.0.1:5555/courses`;
-    fetch(apiUrl)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`Network response was not ok: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setSuggestedCourses(data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error('Error fetching data:', error);
-        setLoading(false);
-      });
-  
-
-
-  const handleLike = () => {
-    setLikeActive(true);
-    setDislikeActive(false);
-  };
-
-  const handleDislike = () => {
-    setLikeActive(false);
-    setDislikeActive(true);
-  };
-
-  const likeButtonClass = likeActive ? 'active' : '';
-  const dislikeButtonClass = dislikeActive ? 'active' : '';
-
-  const filterItemsByCategory = (grouping) => {
-    return suggestedCourses.filter((course) => course.grouping === grouping);
-  };
-
   return (
-    <div>
+    <div id="course">
       <div id="coursedetails" class="container">
         <div id="course-description">
           <img src={course.image} alt="Course" height="380" width="800"/>
           <h2>{course.title}</h2>
           <p>{course.description}</p>
-          <button onClick={() => handleAddToCart(course, true)} className={isInCart ? 'addedToCart' : "enroll-btn"}>{isInCart ? "Added to Cart" : "Enroll Now"}</button>
+          <button onClick={() => handleAddToCart(course, true)} className={isInCart ? 'addedToCart' : "enroll-btn"}>{isInCart ? "Added to Cart" : "Enroll Course"}</button>
         </div>
         <div className="courseDetails-div">
           <div className="courseDetailsCard">
@@ -107,7 +67,7 @@ const CourseDetails = ({ handleAddToCart, isInCart={isInCart}  }) => {
             <p><FaClock className="checkicon"/> Duration: {course.duration}</p>
             <p><FaCreditCard className="checkicon"/> Tuition: ${course.price}</p>
             <p><FaHandHoldingHeart  className="checkicon"/> Lifetime Full Access</p>
-            <button className={isInCart ? 'addedToCart' : "enroll-btn"} onClick={() => handleAddToCart(course, true)}>{isInCart ? "Added to Cart" : "Enroll Now"}</button>
+            <button className={isInCart ? 'addedToCart' : "enroll-btn"} onClick={() => handleAddToCart(course, true)}>{isInCart ? "Added to Cart" : "Enroll Course"}</button>
           </div>
           <div className="courseDetailsCard">
             <h5>Additional Information</h5>
@@ -135,28 +95,8 @@ const CourseDetails = ({ handleAddToCart, isInCart={isInCart}  }) => {
       <div class="container" id="suggestion">
         <h3>You may also like</h3>
         <div className="suggested-div">
-          {filterItemsByCategory('suggested').map((course) => (
-            <div key={course.id} className="course-card" onClick={() => navigate(`/courses/${course.id}`)}>
-              <img src={course.image} alt="Course" className="course-img" />
-              <div className="course-details">
-                <h4>{course.title}</h4>
-                <p>{course.description}</p>
-                <p>Duration: {course.duration}</p>
-                <div className="amount">
-                  <h5>${course.price}</h5>
-                  <div>
-                    <p className="rating">
-                      {Array.from({ length: Math.round(course.rating) }, (_, index) => (
-                        <span key={index} className="star">&#9733;</span>
-                      ))}
-                      {Array.from({ length: 5 - Math.round(course.rating) }, (_, index) => (
-                        <span key={index} className="star">&#9734;</span>
-                      ))}
-                    </p>
-                  </div>
-              </div>
-            </div>
-        </div>
+          {suggestedCourses.slice(0, 4).map((suggestedCourse) => (
+            <CourseCard key={suggestedCourse.id} course={suggestedCourse} />
           ))}
         </div>
       </div>
