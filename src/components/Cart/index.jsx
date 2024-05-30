@@ -3,6 +3,7 @@ import "../Cart/styles.css";
 import { useNavigate } from 'react-router-dom';
 import { FaTrash, FaLessThan } from 'react-icons/fa';
 import book from '../Assets/book.jpg';
+import empty from '../Assets/emptycart.png';
 import WhatsAppChat from '../WhatsAppChat/index.jsx';
 
 const Cart = ({ cart, setCart, user, handleAddToCart }) => {
@@ -88,13 +89,14 @@ const Cart = ({ cart, setCart, user, handleAddToCart }) => {
         <div id="cart-hero">
           {cart.length === 0 ? (
             <div id="empt-cart-div">
-              <h4>Your cart is empty.</h4>
+              <img src={empty} alt='Empty cart' />
+              <h4>Your cart is currently empty.</h4>
             </div>
           ) : (
             <div id="my-cart">
               <div id="cart-container-div">
                 <div id="cart-container">
-                  <h3>Cart ({cart.length})</h3>
+                  <h3>My Cart ({cart.length})</h3>
                     {cart.map((item) => (
                       <div key={item.id} id="cart-card">
                         <div id="img-div">
@@ -106,7 +108,7 @@ const Cart = ({ cart, setCart, user, handleAddToCart }) => {
                             <FaTrash /> Remove
                           </p>
                         </div>
-                        <div>
+                        <div id="cart-amount-div">
                           <h4>{item.price}</h4>
                           <div className="cart-card-btns">
                             {item.isCourse ? (
@@ -142,7 +144,6 @@ const Cart = ({ cart, setCart, user, handleAddToCart }) => {
                 </button>
               </div>
             </div>
-            <a><FaLessThan /> Go back & continue shopping</a>
             <div className="suggestion">
               <h3>You may also like</h3>
               <div className="trending-div">

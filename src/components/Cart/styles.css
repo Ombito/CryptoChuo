@@ -1,13 +1,19 @@
 #cart {
-    margin-top: 90px;
+    margin-top: 5%;
     margin-bottom: 20px;
+    padding: 2%;
     height: auto;
 }
 #cart-hero {
     display: flex;
 }
 #empt-cart-div {
-    height: 40vh;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    text-align: center;
 }
 #cart h1{
     text-align: center;
@@ -26,13 +32,25 @@
 #img-div {
     width: 13vw;
 }
+#img-div img {
+    height: 100%;
+    width: auto;
+}
 #cart-name-div {
     width: 60%;
     margin-right: 20px;
+    align-items: center;
+    padding: 15px 20px;
+}
+#cart-name-div p:hover {
+    color: orange;
+}
+#cart-amount-div {
+    padding: 15px 20px;
 }
 #cart-card {
     display: flex;
-    border-bottom: 1px solid red;
+    border-bottom: 1px solid gray;
     height: 20vh;
 }
 #cart-card h5 {
@@ -65,7 +83,6 @@
     display: flex;
     flex-direction: column;
     height: 35vh;
-    background-color: #ffffff;
     border: 2px solid gray;
     border-radius: 8px;
     padding: 5px 10px;
@@ -85,7 +102,7 @@
 }
 .suggestion h3{
    text-align: center;
-   padding-bottom: 7px;
+   margin-bottom: 2%;
 }
 
 
