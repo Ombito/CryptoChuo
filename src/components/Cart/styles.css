@@ -32,13 +32,22 @@
 #img-div {
     width: 13vw;
 }
+#img-div img {
+    height: 100%;
+    width: auto;
+}
 #cart-name-div {
     width: 60%;
     margin-right: 20px;
+    align-items: center;
+    padding: 15px 20px;
+}
+#cart-amount-div {
+    padding: 15px 20px;
 }
 #cart-card {
     display: flex;
-    border-bottom: 1px solid red;
+    border-bottom: 1px solid gray;
     height: 20vh;
 }
 #cart-card h5 {

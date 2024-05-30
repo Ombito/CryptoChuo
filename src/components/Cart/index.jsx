@@ -104,11 +104,11 @@ const Cart = ({ cart, setCart, user, handleAddToCart }) => {
                         </div>
                         <div id="cart-name-div">
                           <h5>{item.isCourse ? item.title : item.name}</h5>
-                          <p onClick={() => handleRemove(item)} id="remove-btn" className="cart-div">
-                            <FaTrash /> Remove
+                          <p  onClick={() => handleRemove(item)} id="remove-btn" className="cart-div">
+                            <FaTrash color='orange'/> Remove
                           </p>
                         </div>
-                        <div>
+                        <div id="cart-amount-div">
                           <h4>{item.price}</h4>
                           <div className="cart-card-btns">
                             {item.isCourse ? (
