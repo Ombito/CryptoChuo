@@ -216,6 +216,9 @@
 .status-line.completed {
     background-color: #4caf50;
 }
+
+
+
 /* mobile screen device  */
 @media screen and (max-width: 290px){
     #checkout {
