@@ -82,49 +82,53 @@ const Checkout = ({ user }) => {
             </div>
         </div>
                 <div id="order-details">
-                    {currentStep === 2 && (
+                    
                         <div className="delivery-address-form">
                             <form id="checkout-form" onSubmit={handleFormSubmit}>
-                                <h3>Shipping Address</h3>
-                                <div className="name-hero">
-                                    <div>
-                                        <label>First name</label>
-                                        <input id="first-name" type="text" placeholder='Enter first name' className="name-div" onChange={handleInputChange} required />
-                                    </div>
-                                    <div>
-                                        <label>Last name</label>
-                                        <input id="last-name" type="text" placeholder='Enter last name' className="name-div" onChange={handleInputChange} required />
-                                    </div>
+                                {currentStep === 2 && (
+                                    <>
+                                        <h3>Shipping Address</h3>
+                                        <div className="name-hero">
+                                            <div>
+                                                <label>First name</label>
+                                                <input id="first-name" type="text" placeholder='Enter first name' className="name-div" onChange={handleInputChange} required />
+                                            </div>
+                                            <div>
+                                                <label>Last name</label>
+                                                <input id="last-name" type="text" placeholder='Enter last name' className="name-div" onChange={handleInputChange} required />
+                                            </div>
+                                        </div>
+                                        <label>Phone Number</label>
+                                        <input id="phone-number" type="tel" placeholder='Enter phone number' onChange={handleInputChange} required />
+                                        <label>Street Address</label>
+                                        <input id="street-address" type="text" placeholder='Enter street and number' onChange={handleInputChange} required />
+                                        <div className="input-div">
+                                            <div>
+                                                <label>City</label>
+                                                <input id="city" type="text" placeholder='City' className="address-div" onChange={handleInputChange} required />
+                                            </div>
+                                            <div>
+                                                <label>State</label>
+                                                <input id="state" type="text" placeholder='State' className="address-div" onChange={handleInputChange} required />
+                                            </div>
+                                            <div>
+                                                <label>Zip Code</label>
+                                                <input id="zip-code" type="text" placeholder='00-000' className="address-div" onChange={handleInputChange} required />
+                                            </div>
+                                        </div>
+                                        <button type="submit" disabled={!formComplete}>Proceed to Payment</button>
+                                    </>
+                            )}
+                            {currentStep === 3 && (
+                                <div id="payment">
+                                    <h3>Billing Details</h3>
+                                    {!paymentComplete && <Paypal onPaymentSuccess={handlePaymentSuccess} />}
+                                    <button onClick={handleBack}>Back</button>
                                 </div>
-                                <label>Phone Number</label>
-                                <input id="phone-number" type="tel" placeholder='Enter phone number' onChange={handleInputChange} required />
-                                <label>Street Address</label>
-                                <input id="street-address" type="text" placeholder='Enter street and number' onChange={handleInputChange} required />
-                                <div className="input-div">
-                                    <div>
-                                        <label>City</label>
-                                        <input id="city" type="text" placeholder='City' className="address-div" onChange={handleInputChange} required />
-                                    </div>
-                                    <div>
-                                        <label>State</label>
-                                        <input id="state" type="text" placeholder='State' className="address-div" onChange={handleInputChange} required />
-                                    </div>
-                                    <div>
-                                        <label>Zip Code</label>
-                                        <input id="zip-code" type="text" placeholder='00-000' className="address-div" onChange={handleInputChange} required />
-                                    </div>
-                                </div>
-                                <button type="submit" disabled={!formComplete}>Proceed to Payment</button>
+                            )}
                             </form>
                         </div>
-                    )}
-                    {currentStep === 3 && (
-                        <div id="payment">
-                            <h3>Billing Details</h3>
-                            {!paymentComplete && <Paypal onPaymentSuccess={handlePaymentSuccess} />}
-                            <button onClick={handleBack}>Back</button>
-                        </div>
-                    )}
+                    
                     <div id="order-summary">
                         <div className="order-summary-hero">
                             <h5>Order Summary</h5>
