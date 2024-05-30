@@ -1,7 +1,8 @@
 #checkout {
     margin-top: 5%;
     padding: 2% 5%;
-    height: 165vh;
+    height: auto;
+    margin-bottom: 5%;;
 }
 #checkout h2 {
     text-align: center;
@@ -156,19 +157,20 @@ form h3 {
     align-items: center;
     width: 80%;
     margin: auto;
+    margin-top: 3%;
 }
 .checkout-policy div {
+    height: 15vh;
     text-align: center;
-    margin: 3%;
     padding: 20px; 
     border-radius: 4px;
 }
 .checkout-policy div:hover {
     transform: scale(1.01);
 }
-.checkout-policy h5 {
-    font-size: 1.2em;
-    margin-bottom: 10px;
+.checkout-policy h6 {
+    margin-top: 5px;
+    width: 120%;
 }
 .checkout-policy img {
     width: 130px;

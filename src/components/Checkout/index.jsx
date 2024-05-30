@@ -113,7 +113,7 @@ const Checkout = ({ user }) => {
                                     <div id="payment">
                                         <h3>Billing Details</h3>
                                         {!paymentComplete && <Paypal onPaymentSuccess={handlePaymentSuccess} />}
-                                        <button onClick={handleBack}>Back</button>
+                                        <button id='proceed-btn' onClick={handleBack}>Back</button>
                                     </div>
                                 )}
                             </form>
