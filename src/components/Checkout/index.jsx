@@ -156,21 +156,21 @@ const Checkout = ({ user }) => {
                 </div>
                 <div className="checkout-policy">
                     <div>
-                        <h6>Quick Delivery</h6>
                         <img src={delivery} alt="easy checkout" />
+                        <h6>Quick Delivery</h6>
                     </div>
                     
                     <div>
-                        <h6>Easy Checkout</h6>
                         <img src={shoppingcart} alt="easy checkout" />
+                        <h6>Easy Checkout</h6>
                     </div>
-                    <div>
-                        <h6>Seamless Shopping Experience</h6>
+                    <div>    
                         <img src={shopping} alt="easy checkout" />
+                        <h6>Seamless Shopping Experience</h6>
                     </div>
                     <div>
-                        <h6>24/7 Customer Support</h6>
                         <img src={customer} alt="easy checkout" />
+                        <h6>24/7 Customer Support</h6>
                     </div>
                 </div>
             </div>
