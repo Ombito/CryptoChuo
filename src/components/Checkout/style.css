@@ -1,6 +1,7 @@
 #checkout {
-    margin-top: 100px;
-    margin-bottom: 20px;
+    margin-top: 5%;
+    padding: 2% 0;
+    margin-bottom: 7%;
     height: 165vh;
 }
 #checkout h2 {
@@ -177,6 +178,7 @@
     height: 5vh;
     margin: 7px;
 }
+
 
 /* mobile screen device  */
 @media screen and (max-width: 290px){
