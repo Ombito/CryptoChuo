@@ -1,13 +1,70 @@
 #checkout {
     margin-top: 5%;
     padding: 2% 0;
-    margin-bottom: 7%;
+    margin-bottom: 3%;
     height: 165vh;
 }
 #checkout h2 {
     text-align: center;
 }
-
+.checkout-status-bar {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+.status-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+.status-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ccc;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.status-label {
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+}
+/* .status-line {
+    width: 100%;
+    height: 2px;
+    background-color: #d71c1c;
+    position: absolute;
+    top: 20px;
+    z-index: -1;
+} */
+.status-step:first-child .status-line {
+    display: none;
+}
+.status-step.completed .status-icon {
+    background-color: #4caf50;
+}
+.status-step.completed .status-label {
+    color: #4caf50;
+}
+.status-step.active .status-icon {
+    background-color: #ff9800;
+}
+.status-step.active .status-label {
+    color: #ff9800;
+}
+.status-line.completed {
+    background-color: #4caf50;
+}
 #order-details {
     display: flex;
     justify-content: space-between;
@@ -100,14 +157,12 @@
 }
 .checkout-policy div {
     text-align: center;
-    margin: 05px;
+    margin: 3%;
     padding: 20px; 
-    border: 0px solid #ddd; 
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
 }
 .checkout-policy div:hover {
-    transform: scale(1.1);
+    transform: scale(1.01);
 }
 .checkout-policy h5 {
     font-size: 1.2em;
@@ -116,11 +171,9 @@
 .checkout-policy img {
     max-width: 100%;
     height: 20vh;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
+    border-radius: 4px;
+    transition: transform 0.1s ease-in-out;
 }
-
 .info-hero {
     display: flex;
     flex-direction: column;
@@ -130,7 +183,7 @@
     text-align: center;
     padding: 20px;
     border: 1px solid #ddd;
-    border-radius: 8px;
+    border-radius: 4px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 .info-box h6 {
@@ -147,74 +200,6 @@
 .delivery-img img {
     height: 5vh;
     margin: 7px;
-}
-
-
-.checkout-status-bar {
-    display: flex;
-    align-items: center;
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
-}
-.status-step {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    position: relative;
-}
-.status-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #ccc;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.status-label {
-    font-size: 14px;
-    color: #666;
-    text-align: center;
-}
-
-/* .status-line {
-    width: 100%;
-    height: 2px;
-    background-color: #d71c1c;
-    position: absolute;
-    top: 20px;
-    z-index: -1;
-} */
-
-.status-step:first-child .status-line {
-    display: none;
-}
-
-.status-step.completed .status-icon {
-    background-color: #4caf50;
-}
-
-.status-step.completed .status-label {
-    color: #4caf50;
-}
-
-.status-step.active .status-icon {
-    background-color: #ff9800;
-}
-
-.status-step.active .status-label {
-    color: #ff9800;
-}
-
-.status-line.completed {
-    background-color: #4caf50;
 }
 
 
