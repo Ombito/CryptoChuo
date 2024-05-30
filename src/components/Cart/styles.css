@@ -1,0 +1,141 @@
+#cart {
+    margin-top: 5%;
+    margin-bottom: 20px;
+    padding: 2%;
+    height: auto;
+}
+#cart-hero {
+    display: flex;
+}
+#empt-cart-div {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    text-align: center;
+}
+#cart h1{
+    text-align: center;
+}
+#my-cart {
+    width: 100%;
+}
+#cart-container-div {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+}
+#cart-container {
+    width: 100%;
+}
+#img-div {
+    width: 13vw;
+}
+#img-div img {
+    height: 100%;
+    width: auto;
+}
+#cart-name-div {
+    width: 60%;
+    margin-right: 20px;
+    align-items: center;
+    padding: 15px 20px;
+}
+#cart-name-div p:hover {
+    color: orange;
+}
+#cart-amount-div {
+    padding: 15px 20px;
+}
+#cart-card {
+    display: flex;
+    border-bottom: 1px solid gray;
+    height: 20vh;
+}
+#cart-card h5 {
+    width: 100%;
+}
+.cart-div {
+    padding-top: 30px;
+}
+.cart-card-btns {
+    display: flex;
+    gap: 10px;
+    margin-top: 30px;
+    height: 5vh;
+}
+.cart-card-btns p{
+    margin: auto;
+}
+.cart-card-btns button{
+    margin: auto;
+}
+#cart-card h4 {
+    margin: auto 5px;
+    padding: 0 20px;
+}
+#remove-btn {
+    cursor: pointer;
+    margin: auto 0;
+}
+#cart-amount {
+    display: flex;
+    flex-direction: column;
+    height: 35vh;
+    border: 2px solid gray;
+    border-radius: 8px;
+    padding: 5px 10px;
+    width: 27vw;
+}
+#cart-amount h5{
+    text-align: center;
+}
+#cart-summary {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0 5px 0;
+    margin-top: 3px;
+}
+.suggestion {
+    margin-top: 40px;
+}
+.suggestion h3{
+   text-align: center;
+   margin-bottom: 2%;
+}
+
+
+
+/* mobile screen device  */
+@media screen and (min-width: 360px) and (max-width: 765px){
+    #cart {
+        margin-top: 130px;
+        margin-bottom: 2700px;
+    }
+    #cart-container-div {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    #cart-container h3 {
+        text-align: center;
+    }
+    #cart-card {
+        display: flex;
+        height: 15vh;
+        margin-bottom: 10px;
+    }
+    #cart-amount {
+        width: 100%;
+        height: auto;
+    }
+    #checkout-btn {
+        margin-bottom: 5px;
+    }
+    #cart-card h4, h5{
+        padding-top: 10px;
+    }
+    #cart-card-btns {
+        padding-bottom: 45px;
+    }
+}

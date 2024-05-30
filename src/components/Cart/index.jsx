@@ -144,7 +144,6 @@ const Cart = ({ cart, setCart, user, handleAddToCart }) => {
                 </button>
               </div>
             </div>
-            <a><FaLessThan /> Go back & continue shopping</a>
             <div className="suggestion">
               <h3>You may also like</h3>
               <div className="trending-div">
