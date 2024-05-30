@@ -20,8 +20,7 @@ const Checkout = ({ user }) => {
     const navigate = useNavigate();
 
     const handleInputChange = () => {
-        const firstName = document.getElementById('first-name').value;
-        const lastName = document.getElementById('last-name').value;
+        const fullName = document.getElementById('full-name').value;
         const phoneNumber = document.getElementById('phone-number').value;
         const streetAddress = document.getElementById('street-address').value;
         const city = document.getElementById('city').value;
@@ -29,8 +28,7 @@ const Checkout = ({ user }) => {
         const zipCode = document.getElementById('zip-code').value;
 
         const isFormComplete =
-            firstName.trim() !== '' &&
-            lastName.trim() !== '' &&
+            fullName.trim() !== '' &&
             phoneNumber.trim() !== '' &&
             streetAddress.trim() !== '' &&
             city.trim() !== '' &&
@@ -88,20 +86,12 @@ const Checkout = ({ user }) => {
                                 {currentStep === 2 && (
                                     <>
                                         <h3>Shipping Address</h3>
-                                        <div className="name-hero">
-                                            <div>
-                                                <label>First name</label>
-                                                <input id="first-name" type="text" placeholder='Enter first name' className="name-div" onChange={handleInputChange} required />
-                                            </div>
-                                            <div>
-                                                <label>Last name</label>
-                                                <input id="last-name" type="text" placeholder='Enter last name' className="name-div" onChange={handleInputChange} required />
-                                            </div>
-                                        </div>
+                                        <label>First name</label>
+                                        <input id="full-name" type="text" placeholder='Enter your full name' className="name-div" onChange={handleInputChange} required />
                                         <label>Phone Number</label>
-                                        <input id="phone-number" type="tel" placeholder='Enter phone number' onChange={handleInputChange} required />
+                                        <input id="phone-number" type="tel" placeholder='Enter your phone number' onChange={handleInputChange} required />
                                         <label>Street Address</label>
-                                        <input id="street-address" type="text" placeholder='Enter street and number' onChange={handleInputChange} required />
+                                        <input id="street-address" type="text" placeholder='Enter your street address' onChange={handleInputChange} required />
                                         <div className="input-div">
                                             <div>
                                                 <label>City</label>

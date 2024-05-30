@@ -1,6 +1,6 @@
 #checkout {
     margin-top: 5%;
-    padding: 2% 0;
+    padding: 2% 5%;
     height: 165vh;
 }
 #checkout h2 {
@@ -82,7 +82,7 @@
     margin: -55px 10px 0 -25px;
 }
 #checkout-form {
-    width: 85%;
+    width: 100%;
 }
 #name-div {
     display: flex;
