@@ -90,7 +90,7 @@ const Cart = ({ cart, setCart, user, handleAddToCart }) => {
           {cart.length === 0 ? (
             <div id="empt-cart-div">
               <img src={empty} alt='Empty cart' />
-              <h4>Your cart is empty.</h4>
+              <h4>Your cart is currently empty.</h4>
             </div>
           ) : (
             <div id="my-cart">

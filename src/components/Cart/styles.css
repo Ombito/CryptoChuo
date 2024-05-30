@@ -1,16 +1,19 @@
 #cart {
-    margin-top: 90px;
+    margin-top: 5%;
     margin-bottom: 20px;
+    padding: 2%;
     height: auto;
 }
 #cart-hero {
     display: flex;
 }
 #empt-cart-div {
-    height: 40vh;
+    height: 60vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin: auto;
+    text-align: center;
 }
 #cart h1{
     text-align: center;
