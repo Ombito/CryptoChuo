@@ -113,19 +113,19 @@ const Checkout = ({ user }) => {
                                             </div>
                                             <div>
                                                 <label>Zip Code</label>
-                                                <input id="zip-code" type="text" placeholder='00-000' className="address-div" onChange={handleInputChange} required />
+                                                <input id="zip-code" type="text" placeholder='00-000' className="address-div" onChange={handleInputChange}/>
                                             </div>
                                         </div>
                                         <button type="submit" disabled={!formComplete}>Proceed to Payment</button>
                                     </>
-                            )}
-                            {currentStep === 3 && (
-                                <div id="payment">
-                                    <h3>Billing Details</h3>
-                                    {!paymentComplete && <Paypal onPaymentSuccess={handlePaymentSuccess} />}
-                                    <button onClick={handleBack}>Back</button>
-                                </div>
-                            )}
+                                )}
+                                {currentStep === 3 && (
+                                    <div id="payment">
+                                        <h3>Billing Details</h3>
+                                        {!paymentComplete && <Paypal onPaymentSuccess={handlePaymentSuccess} />}
+                                        <button onClick={handleBack}>Back</button>
+                                    </div>
+                                )}
                             </form>
                         </div>
                     
