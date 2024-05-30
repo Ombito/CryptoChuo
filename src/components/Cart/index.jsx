@@ -3,6 +3,7 @@ import "../Cart/styles.css";
 import { useNavigate } from 'react-router-dom';
 import { FaTrash, FaLessThan } from 'react-icons/fa';
 import book from '../Assets/book.jpg';
+import empty from '../Assets/emptycart.png';
 import WhatsAppChat from '../WhatsAppChat/index.jsx';
 
 const Cart = ({ cart, setCart, user, handleAddToCart }) => {
@@ -88,6 +89,7 @@ const Cart = ({ cart, setCart, user, handleAddToCart }) => {
         <div id="cart-hero">
           {cart.length === 0 ? (
             <div id="empt-cart-div">
+              <img src={empty} alt='Empty cart' />
               <h4>Your cart is empty.</h4>
             </div>
           ) : (

@@ -8,6 +8,9 @@
 }
 #empt-cart-div {
     height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 #cart h1{
     text-align: center;
