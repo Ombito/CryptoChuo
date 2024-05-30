@@ -55,20 +55,20 @@ const Checkout = ({ user }) => {
         <div id="checkout" class="container">
             <div>
                 <h2>Secure Checkout</h2>
-                <div className="checkout-hero">
-                    <div className="checkout-range">
-                        <p id="cart-checkout"className="checkout-head"><FaCheck className="check-icon" /></p>
-                        <p>Shopping Cart</p>
+                <div className="checkout-status-bar">
+                    <div className="status-step completed">
+                        <div className="status-icon">1</div>
+                        <div className="status-label">Shopping Cart</div>
                     </div>
-                    <div className='line'></div>
-                    <div className="checkout-range">
-                        <p className="checkout-head">2</p>
-                        <p>Delivery Address</p>
-                    </div>
-                    <div className='line'></div>
-                    <div className="checkout-range">
-                        <p className="checkout-head">3</p>
-                        <p>Billing & Payment</p>
+                    <div className="status-line completed"></div>
+                        <div className="status-step active">
+                            <div className="status-icon">2</div>
+                            <div className="status-label">Delivery Address</div>
+                        </div>
+                    <div className="status-line"></div>
+                    <div className="status-step">
+                        <div className="status-icon">3</div>
+                        <div className="status-label">Payment Method</div>
                     </div>
                 </div>
                 <div id="order-details">
