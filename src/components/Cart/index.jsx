@@ -96,7 +96,7 @@ const Cart = ({ cart, setCart, user, handleAddToCart }) => {
             <div id="my-cart">
               <div id="cart-container-div">
                 <div id="cart-container">
-                  <h3>Cart ({cart.length})</h3>
+                  <h3>My Cart ({cart.length})</h3>
                     {cart.map((item) => (
                       <div key={item.id} id="cart-card">
                         <div id="img-div">
@@ -104,8 +104,8 @@ const Cart = ({ cart, setCart, user, handleAddToCart }) => {
                         </div>
                         <div id="cart-name-div">
                           <h5>{item.isCourse ? item.title : item.name}</h5>
-                          <p  onClick={() => handleRemove(item)} id="remove-btn" className="cart-div">
-                            <FaTrash color='orange'/> Remove
+                          <p onClick={() => handleRemove(item)} id="remove-btn" className="cart-div">
+                            <FaTrash /> Remove
                           </p>
                         </div>
                         <div id="cart-amount-div">
