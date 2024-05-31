@@ -110,7 +110,7 @@
   width: 40px;  
   height: 40px; 
   border-radius: 50%;
-  background-color: #4CAF50;
+  background-color: rgba(255, 166, 0, 0.92);
   color: white;
   font-size: 1.2em; 
   font-weight: bold;
