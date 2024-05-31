@@ -41,46 +41,48 @@ const Signup = () => {
   };
 
   return (
-    <div className='form'>
-      <h2 className='signup'>Sign Up</h2>
-      <form onSubmit={handleSubmit}>
-        <label>Full Name</label>
-        <input
-          type="text"
-          placeholder="Enter your full name"
-          value={fullName}
-          onChange={(e) => setFullName(e.target.value)}
-        />
-        <label>Username</label>
-        <input
-          type="text"
-          placeholder="Enter your username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <label>Email Address</label>
-        <input
-          type="email"
-          placeholder="Enter your email address"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <label>Password</label>
-        <input
-          type="password"
-          placeholder="Enter a unique password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <p id="consent">
-          By creating an account, you agree to our <span>Terms & Conditions</span>
+    <div id='signup'>
+      <div className='signup-form'>
+        <h2 className='signup'>Sign Up</h2>
+        <form onSubmit={handleSubmit}>
+          <label>Full Name</label>
+          <input
+            type="text"
+            placeholder="Enter your full name"
+            value={fullName}
+            onChange={(e) => setFullName(e.target.value)}
+          />
+          <label>Username</label>
+          <input
+            type="text"
+            placeholder="Enter your username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <label>Email Address</label>
+          <input
+            type="email"
+            placeholder="Enter your email address"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <label>Password</label>
+          <input
+            type="password"
+            placeholder="Enter a unique password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <p id="consent">
+            By creating an account, you agree to our <span>Terms & Conditions</span>
+          </p>
+          <button className='signup-button' type="submit">Signup</button>
+          {error && <p>{error}</p>}
+        </form>
+        <p className="account">
+          Do you have an account? <Link to="/login"> Login</Link>
         </p>
-        <button type="submit">Signup</button>
-        {error && <p>{error}</p>}
-      </form>
-      <p className="account">
-        Do you have an account? <Link to="/login">Login</Link>
-      </p>
+      </div>
     </div>
   );
 }
