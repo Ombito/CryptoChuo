@@ -14,6 +14,8 @@ import Footer from './components/Footer';
 import Checkout from './components/Checkout';
 import Cart from './components/Cart';
 import Signup from './components/Signup';
+import Account from './components/Account';
+import Orders from './components/Orders';
 import Events from './components/Events';
 import Careers from './components/Careers';
 import Sponsorship from './components/Sponsorship';
@@ -197,7 +199,7 @@ function App() {
   
   return (
     <div className={`app-${darkMode ? 'dark-mode' : ''}`}>
-      {location.pathname !== '/login' && location.pathname !== '/signup' && location.pathname !== '/forgot-password' && <NavbarMenu  user={user} cart={cart} darkMode={darkMode} toggleDarkMode={toggleDarkMode} />}
+      {location.pathname !== '/login' && location.pathname !== '/signup' && location.pathname !== '/forgot-password' && <NavbarMenu  user={user} setUser={setUser} cart={cart} darkMode={darkMode} toggleDarkMode={toggleDarkMode} />}
         <Routes>
           <Route path="/" element={<Home user={user} courses={courses} />} />
           <Route path="/courses" element={user ? <Courses user={user} courses={courses} handleAddToCart={handleAddToCart} isInCart={isInCart} /> : <Navigate to="/login" />} />
@@ -212,6 +214,8 @@ function App() {
           <Route path="checkout" element={<Checkout user={user}/>} />
           <Route path="cart" element={<Cart cart={cart} setCart={setCart} user={user} refresh={refresh} handleAddToCart={handleAddToCart} />} />
           <Route path="/events" element={<Events />} />
+          <Route path="/profile" element={<Account user={user}/>} />
+          <Route path="/orders" element={<Orders user={user}/>} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/sponsorship" element={<Sponsorship />} />
       </Routes>

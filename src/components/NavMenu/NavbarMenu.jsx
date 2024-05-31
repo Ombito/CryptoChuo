@@ -5,10 +5,42 @@ import logo from '../Assets/logo1.jpeg';
 import { FaShoppingCart, FaBars, FaTimes, FaUser } from  'react-icons/fa';
 import { useSnackbar } from 'notistack';
 
-const NavbarMenu = ({ user, cart, darkMode, toggleDarkMode }) => {
+const NavbarMenu = ({ user, setUser, cart, darkMode, toggleDarkMode }) => {
     const [ active, setActive ] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const navigate = useNavigate();
     const { enqueueSnackbar } = useSnackbar();
+
+    const handleNavigate = (route) => {
+        navigate(route);
+        setIsModalOpen(false);
+    };
+
+    const handleLogout = async () => {
+        try {
+          const confirmed = window.confirm("Are you sure you want to logout?");
+          if (!confirmed) {
+            return;
+          }
+          localStorage.removeItem('token');
+          const response = await fetch('http://127.0.0.1:5555/logout_user', {
+            method: 'DELETE',
+          });
+          if (response.ok) {
+            localStorage.removeItem('token');
+            setUser(null);
+            enqueueSnackbar('Logout successful!', { variant: 'success' });
+            navigate('/');
+            return response.json();
+          } else {
+            console.error('Failed to logout:', response.status);
+            enqueueSnackbar('Failed to logout', { variant: 'error' });
+          }
+        } catch (error) {
+          console.error('Error during logout:', error.message);
+          enqueueSnackbar('An error occurred while logging out', { variant: 'error' });
+        }
+    };
 
     const toggle = ()=> {
         setActive(!active);
@@ -28,6 +60,42 @@ const NavbarMenu = ({ user, cart, darkMode, toggleDarkMode }) => {
         }
     };
       
+    const getInitials = (fullName) => {
+        const names = fullName.split(' ');
+        const initials = names.map(name => name.charAt(0)).join('').substring(0, 2);
+        return initials.toUpperCase();
+    };
+
+    const handleModalToggle = () => {
+        setIsModalOpen(!isModalOpen);
+    };
+
+    const UserModal = () => {
+        if (!isModalOpen) return null;
+    
+        const getInitials = (fullName) => {
+            const names = fullName.split(' ');
+            const initials = names.map(name => name.charAt(0)).join('').substring(0, 2);
+            return initials.toUpperCase();
+        };
+    
+        return (
+            <div className="modal-overlay" onClick={handleModalToggle}>
+                <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+                    <div className='modal-initials-div'>
+                        <p className='modal-initials'>{getInitials(user.full_name)}</p>
+                        <h6 className="user-email">{user.email}</h6>
+                    </div>
+                    <ul className="modal-menu">
+                        <li onClick={() => handleNavigate('/profile')}><ion-icon id='modal-icons' name="person-outline"></ion-icon> Profile</li>
+                        <li onClick={() => handleNavigate('/courses')}><ion-icon id='modal-icons1' name="book-outline"></ion-icon> Courses</li>
+                        <li onClick={() => handleNavigate('/orders')}><ion-icon id='modal-icons2' name="create-outline"></ion-icon> Orders</li>
+                        <li onClick={handleLogout}><ion-icon id='modal-icons3' name="log-out-outline"></ion-icon> Logout</li>
+                    </ul>
+                </div>
+            </div>
+        );
+    };
 
   return (
     <div className='navbar'>
@@ -59,7 +127,10 @@ const NavbarMenu = ({ user, cart, darkMode, toggleDarkMode }) => {
                                 </svg>
                             </div>
                         </label>
-                    </div>  
+                    </div>
+                    <Link>
+                        <ion-icon id="notification-icon" name="notifications-outline"></ion-icon>
+                    </Link>  
                     <Link to="/cart">
                         <div className="count">
                             <ion-icon name="cart-outline" id="cart-icon"></ion-icon>
@@ -67,12 +138,14 @@ const NavbarMenu = ({ user, cart, darkMode, toggleDarkMode }) => {
                         </div>
                     </Link>
                     {user ? (
-                        <Link to="/login">
-                            <div className='user-name-container'>
-                                <ion-icon name="person-circle-outline" id="user-icon"></ion-icon>
-                                <h4>{user.username}</h4>
+                        <div>
+                            <div className='user-name-container' onClick={handleModalToggle}>
+                                <div className='initials-circle'>
+                                    <p>{getInitials(user.full_name)}</p>
+                                </div>
                             </div>
-                        </Link>  
+                            <UserModal />
+                        </div>  
                     ) : (
                         <Link to="/login">
                             <button id='signin-button' type='submit'>Sign in</button>

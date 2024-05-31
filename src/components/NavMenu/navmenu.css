@@ -99,14 +99,30 @@
 }
 .user-name-container {
   display: flex;
+  margin: auto;
+  margin-top: 5px;
+  cursor: pointer;
 }
-.user-name-container h4{
-  margin-top: 10px;
+.initials-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 40px;  
+  height: 40px; 
+  border-radius: 50%;
+  background-color: rgba(255, 166, 0, 0.92);
+  color: white;
+  font-size: 1.2em; 
+  font-weight: bold;
+  margin-right: 10px; 
 }
-#user-icon {
-  font-size: 1.9em; 
-  margin-right: 0px;
-  margin-top: 8px;
+.user-name-container p{
+  margin: auto;
+}
+#notification-icon {
+  font-size: 1.6em; 
+  margin-top: 11px;
 }
 #count-number {
   background-color: red;
@@ -120,7 +136,84 @@
   font-weight: bold;
   border-radius: 50%;
   text-align: center;
-  }
+}
+.modal-overlay {
+  cursor: pointer;
+  position: fixed;
+  right: 80px;
+  display: flex;
+  height: fit-content;
+}
+.modal-content {
+  padding: 10px 10px 10px 10px;
+  height: fit-content;
+  border-radius: 3px;
+  width: 230px;
+  position: relative;
+  text-align: center;
+}
+.modal-initials-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+  border-radius: 3px;
+  padding: 3px 5px 3px 0;
+  gap: 4px;
+}
+.modal-initials-div h6{
+  margin-top: -11px;
+  overflow: hidden;
+}
+.modal-initials {
+  margin: 0 auto;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #4CAF50;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.user-email {
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+}
+.modal-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+#modal-icons, #modal-icons1, #modal-icons2, #modal-icons3 {
+  font-size: 1.2rem;
+  margin: auto 0;
+  display: flex;
+  margin-right: 5px;
+}
+.modal-menu li {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 10px 0;
+  border-top: 1px solid #ddd;
+  cursor: pointer;
+}
+.modal-menu li:first-child {
+  border-top: none;
+}
+.modal-menu li:hover {
+  background-color: #f0f0f0;
+}
+
+
+
+
 
 
  /* mobile screen device  */

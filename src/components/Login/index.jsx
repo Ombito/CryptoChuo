@@ -28,7 +28,7 @@ const LogIn = ({setUser}) => {
         const data = await response.json();
         localStorage.setItem('token', data.token);
         enqueueSnackbar('Login successful!', { variant: 'success' });
-        navigate('/courses');
+        navigate('/');
       } else {
         console.log("Login failed!")
         enqueueSnackbar('Wrong email address or password', { variant: 'error' });
