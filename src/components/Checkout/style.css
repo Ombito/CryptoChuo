@@ -191,17 +191,18 @@ form h3 {
 }
 .info-box h6 {
     font-size: 1.2em;
-    margin-bottom: 5px;
 }
 .info-box div {
     display: flex;
     text-align: center;
     justify-content: center;
     align-items: center;
+    padding: 0 0 10px;
 }
 .info-box h5 {
-    margin: 5px 0;
-    color: #3498db
+    color: #3498db;
+    text-align: center;
+    margin: auto 0;
 }
 .delivery-img {
     display: flex;
