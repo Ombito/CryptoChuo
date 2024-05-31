@@ -84,13 +84,13 @@ const NavbarMenu = ({ user, setUser, cart, darkMode, toggleDarkMode }) => {
                 <div className="modal-content" onClick={(e) => e.stopPropagation()}>
                     <div className='modal-initials-div'>
                         <p className='modal-initials'>{getInitials(user.full_name)}</p>
-                        <h5 className="user-email">{user.email}</h5>
+                        <h6 className="user-email">{user.email}</h6>
                     </div>
                     <ul className="modal-menu">
-                        <li onClick={() => handleNavigate('/profile')}>Profile</li>
-                        <li onClick={() => handleNavigate('/courses')}>Courses</li>
-                        <li onClick={() => handleNavigate('/orders')}>Orders</li>
-                        <li onClick={handleLogout}>Logout</li>
+                        <li onClick={() => handleNavigate('/profile')}><ion-icon id='modal-icons' name="person-outline"></ion-icon> Profile</li>
+                        <li onClick={() => handleNavigate('/courses')}><ion-icon id='modal-icons1' name="book-outline"></ion-icon> Courses</li>
+                        <li onClick={() => handleNavigate('/orders')}><ion-icon id='modal-icons2' name="create-outline"></ion-icon> Orders</li>
+                        <li onClick={handleLogout}><ion-icon id='modal-icons3' name="log-out-outline"></ion-icon> Logout</li>
                     </ul>
                 </div>
             </div>
