@@ -143,7 +143,7 @@ const Checkout = ({ user }) => {
                         <div className="info-hero">
                             <div className="info-box">
                                 <h6>Need Help? Contact us</h6>
-                                <div>Please call:<h4>+254722222222</h4></div>
+                                <div>Please call: <h5>+254722222222</h5></div>
                                 <p>Monday-Friday 8:00-20:00</p>
                                 <p>Saturday 8:00-16:00</p>
                             </div>

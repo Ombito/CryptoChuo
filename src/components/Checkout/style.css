@@ -193,7 +193,13 @@ form h3 {
     font-size: 1.2em;
     margin-bottom: 5px;
 }
-.info-box h4 {
+.info-box div {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.info-box h5 {
     margin: 5px 0;
     color: #3498db
 }
