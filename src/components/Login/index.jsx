@@ -40,37 +40,39 @@ const LogIn = ({setUser}) => {
   };
 
   return (
-    <div id="login-form-container">
-      <h2>Login</h2>
-      <div className="login-form">
-        <form onSubmit={handleSubmit}>
-          <label>Email Address</label>
-          <input
-            type="email"
-            placeholder="Enter your email address"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <label>Password</label>
-          <input
-            type="password"
-            placeholder="Enter your password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <div className="checkbox-div">
-            <div id="checkbox-container">
-              <input type="checkbox" id="rememberMe" name="rememberMe" />
-              <label htmlFor="rememberMe" >Remember me</label>
-            </div>
-              <p className="account">
-                <Link to="/forgot-password">Forgot password?</Link>
-              </p>
-            </div>
-          <button type="submit" >Login</button>
-          {error && <p>{error}</p>}
-        </form>
-        <p className="account">Don't have an account? <Link to="/signup">Sign up</Link></p>
+    <div id='signin'>
+      <div id="login-form-container">
+        <h2>Login</h2>
+        <div className="login-form">
+          <form onSubmit={handleSubmit}>
+            <label>Email Address</label>
+            <input
+              type="email"
+              placeholder="Enter your email address"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <label>Password</label>
+            <input
+              type="password"
+              placeholder="Enter your password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <div className="checkbox-div">
+              <div id="checkbox-container">
+                <input type="checkbox" id="rememberMe" name="rememberMe" />
+                <label id='remember-me' htmlFor="rememberMe" >Remember me</label>
+              </div>
+                <p className="account">
+                  <Link to="/forgot-password">Forgot password?</Link>
+                </p>
+              </div>
+            <button id='login-btn' type="submit" >Login</button>
+            {error && <p>{error}</p>}
+          </form>
+          <p className="account">Don't have an account? <Link to="/signup"> Sign up</Link></p>
+        </div>
       </div>
     </div>
   );

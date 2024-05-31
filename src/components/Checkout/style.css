@@ -1,27 +1,69 @@
 #checkout {
     margin-top: 5%;
-    padding: 2% 0;
-    margin-bottom: 7%;
-    height: 165vh;
+    padding: 2% 5%;
+    height: auto;
+    margin-bottom: 5%;;
 }
 #checkout h2 {
     text-align: center;
 }
-.checkout-hero {
+.checkout-status-bar {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    width: 70%;
-    margin: auto;
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
 }
-.check-icon {
-    color: green;
-    font-size: 1.7em;
+.status-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    position: relative;
 }
-.checkout-hero p:nth-child(2) {
-    white-space: nowrap;
-    max-width: 100px;
+.status-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ccc;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
     font-weight: bold;
+    margin-bottom: 10px;
+}
+.status-label {
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+}
+/* .status-line {
+    width: 100%;
+    height: 2px;
+    background-color: #d71c1c;
+    position: absolute;
+    top: 20px;
+    z-index: -1;
+} */
+.status-step:first-child .status-line {
+    display: none;
+}
+.status-step.completed .status-icon {
+    background-color: #4caf50;
+}
+.status-step.completed .status-label {
+    color: #4caf50;
+}
+.status-step.active .status-icon {
+    background-color: #ff9800;
+}
+.status-step.active .status-label {
+    color: #ff9800;
+}
+.status-line.completed {
+    background-color: #4caf50;
 }
 #order-details {
     display: flex;
@@ -31,8 +73,8 @@
 .delivery-address-form {
     padding: 15px 25px;
     width: 100%;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
+    border-radius: 4px;
+    border: 1px solid gray;
 }
 .line {
     width: 100%;
@@ -40,23 +82,8 @@
     background-color: green;
     margin: -55px 10px 0 -25px;
 }
-.checkout-head {
-    border-radius: 50%;
-    height: 8vh;
-    width: 60%;
-    font-weight: bold;
-    padding-top: 14px;
-    text-align: center;
-    background-color: rgb(232, 216, 216);
-}
-#cart-checkout {
-    background-color: rgb(188, 165, 165);
-    height: 9vh;
-    width: 70%;
-    padding-top: 17px;
-}
 #checkout-form {
-    width: 85%;
+    width: 100%;
 }
 #name-div {
     display: flex;
@@ -79,6 +106,9 @@
 #payment {
     margin-top: 30px;
 }
+form h3 {
+    text-align: center;
+} 
 #order-summary {
     display: flex;
     flex-direction: column;
@@ -87,8 +117,8 @@
 }
 .order-summary-hero {
     padding: 10px 15px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
+    border-radius: 4px;
+    border: 1px solid gray;
 }
 .order-summary-hero h5 {
     text-align: center;
@@ -108,7 +138,7 @@
     padding: 3px 15px;
 }
 .horizontal-line {
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid gray;
     width: 100%;
     margin-bottom: 20px;
 }
@@ -123,34 +153,31 @@
 }
 .checkout-policy {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    margin: 20px;
+    width: 80%;
+    margin: auto;
+    margin-top: 3%;
 }
 .checkout-policy div {
+    height: 15vh;
     text-align: center;
-    margin: 05px;
     padding: 20px; 
-    border: 0px solid #ddd; 
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
 }
 .checkout-policy div:hover {
-    transform: scale(1.1);
+    transform: scale(1.01);
 }
-.checkout-policy h5 {
-    font-size: 1.2em;
-    margin-bottom: 10px;
+.checkout-policy h6 {
+    margin-top: 5px;
+    width: 120%;
 }
 .checkout-policy img {
-    max-width: 100%;
-    height: 20vh;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
+    width: 130px;
+    height: 15vh;
+    border-radius: 4px;
+    transition: transform 0.1s ease-in-out;
 }
-
 .info-hero {
     display: flex;
     flex-direction: column;
@@ -159,17 +186,23 @@
 .info-box {
     text-align: center;
     padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid gray;
+    border-radius: 4px;
 }
 .info-box h6 {
     font-size: 1.2em;
-    margin-bottom: 5px;
 }
-.info-box h4 {
-    margin: 5px 0;
-    color: #3498db
+.info-box div {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0 10px;
+}
+.info-box h5 {
+    color: #3498db;
+    text-align: center;
+    margin: auto 0;
 }
 .delivery-img {
     display: flex;
@@ -178,6 +211,7 @@
     height: 5vh;
     margin: 7px;
 }
+
 
 
 /* mobile screen device  */
