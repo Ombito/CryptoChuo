@@ -51,7 +51,6 @@ const NavbarMenu = ({ user, cart, darkMode, toggleDarkMode }) => {
         return (
             <div className="modal-overlay" onClick={handleModalToggle}>
                 <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-                    <button className="close-button" onClick={handleModalToggle}>&times;</button>
                     <div className='modal-initials-div'>
                         <p className='modal-initials'>{getInitials(user.full_name)}</p>
                         <h5 className="user-email">{user.email}</h5>
@@ -108,8 +107,8 @@ const NavbarMenu = ({ user, cart, darkMode, toggleDarkMode }) => {
                         </div>
                     </Link>
                     {user ? (
-                        <div onClick={handleModalToggle}>
-                            <div className='user-name-container'>
+                        <div>
+                            <div className='user-name-container' onClick={handleModalToggle}>
                                 <div className='initials-circle'>
                                     <p>{getInitials(user.full_name)}</p>
                                 </div>
