@@ -54,27 +54,23 @@ const About = () => {
             <div class="container" id="why-us">
               <h3>Why CryptoChuo</h3>
               <div className="why-us-div">
-                <div className="why-us-cards">
-                  {/* <FaGraduationCap className="why-icons"/> */}    
+                <div className="why-us-cards">   
                   <img src={certificate} alt='' height='180' width='180' />
                   <h6>Award winning education</h6>
                   {/* <p>Our certificates stand as a testament to the quality of education you receive. When you choose Cryptochuo, you're choosing a platform whose credentials are acknowledged and respected in the industry.</p> */}
                 </div>
-                <div className="why-us-cards">
-                  {/* <FaBookOpen className="why-icons"/> */}   
+                <div className="why-us-cards"> 
                   <img src={learning} alt='' height='180' width='180' />
                   <h6>Dynamic innovative learning</h6>
                   {/* <p>Our platform provides students with tailored curricula that align with their individual aspirations. We leverage cutting-edge technologies through simulations, interactive projects, and collaborative exercises to create an immersive learning experience.</p> */}
                 </div>
                 <div className="why-us-cards">
-                  {/* <FaBriefcase className="why-icons"/> */}
                   <img src={growth} alt='' height='180' width='180' />
                   <h6>Career growth</h6>
                   {/* <p>Cryptochuo equips students with the expertise needed to thrive in the competitive job market with confidence. Our commitment to staying current ensures that students are prepared for the challenges and opportunities of the future.</p> */}
                 </div>
                 <div className="why-us-cards">
                   <img src={alumni} alt='' height='180' width='180' />
-                {/* <FaUserFriends className="why-icons"/> */}
                   <h6>Extensive Alumni network</h6>
                   {/* <p>With our thriving Alumni network opening doors to a myriad of opportunities, this network serves as a valuable resource for connecting with like-minded professionals, industry leaders, and potential collaborators.</p> */}
                 </div>

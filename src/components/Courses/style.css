@@ -1,6 +1,7 @@
 .courses {
   margin: 5% 4.5%;
   padding: 2% 0;
+  height: auto;
 }
 .featured-course-description {
   display: flex;
@@ -168,19 +169,19 @@
   outline: none;
   cursor: pointer;
 }
-
 .checkbox-container input[type="checkbox"]:checked {
   background-color: #3498db; 
 }
-
 .checkbox-container label {
   margin: 0;
   font-size: 1em; 
   width: 130px;
-  margin-bottom: 3%;font-weight: 400;
+  margin-bottom: 3%;
+  font-weight: 400;
 }
 #learnwithus {
-  margin: 3% 0 15% 0;
+  height: auto;
+  margin: 4% auto;
 }
 .learn-headline {
   text-align: center;

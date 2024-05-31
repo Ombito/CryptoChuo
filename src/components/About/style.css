@@ -129,10 +129,9 @@
     gap: 80px;
     align-items: center;
     background-color: #252a43;
-    margin: 4% 0;
     height: 20vh;
     padding: 0 5%;
-    width: 100%;
+    margin-bottom: 3%;;
 }
 #about-contact-hero h6 {
     font-size: 1.4em;
