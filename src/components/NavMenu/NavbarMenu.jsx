@@ -28,6 +28,12 @@ const NavbarMenu = ({ user, cart, darkMode, toggleDarkMode }) => {
         }
     };
       
+    const getInitials = (fullName) => {
+        const names = fullName.split(' ');
+        const initials = names.map(name => name.charAt(0)).join('').substring(0, 2);
+        return initials.toUpperCase();
+    };
+
 
   return (
     <div className='navbar'>
@@ -69,8 +75,10 @@ const NavbarMenu = ({ user, cart, darkMode, toggleDarkMode }) => {
                     {user ? (
                         <Link to="/login">
                             <div className='user-name-container'>
+                                <div className='initials-circle'>
+                                    <p>{getInitials(user.full_name)}</p>
+                                </div>
                                 <ion-icon name="person-circle-outline" id="user-icon"></ion-icon>
-                                <h4>{user.username}</h4>
                             </div>
                         </Link>  
                     ) : (
