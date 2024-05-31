@@ -11,6 +11,11 @@ const NavbarMenu = ({ user, cart, darkMode, toggleDarkMode }) => {
     const navigate = useNavigate();
     const { enqueueSnackbar } = useSnackbar();
 
+    const handleNavigate = (route) => {
+        navigate(route);
+        setIsModalOpen(false);
+    };
+      
     const toggle = ()=> {
         setActive(!active);
     }
@@ -56,10 +61,10 @@ const NavbarMenu = ({ user, cart, darkMode, toggleDarkMode }) => {
                         <h5 className="user-email">{user.email}</h5>
                     </div>
                     <ul className="modal-menu">
-                        <li>Profile</li>
-                        <li>My Courses</li>
-                        <li>Orders</li>
-                        <li>Logout</li>
+                        <li onClick={() => handleNavigate('/profile')}>Profile</li>
+                        <li onClick={() => handleNavigate('/my-courses')}>My Courses</li>
+                        <li onClick={() => handleNavigate('/orders')}>Orders</li>
+                        <li onClick={handleLogout}>Logout</li>
                     </ul>
                 </div>
             </div>
