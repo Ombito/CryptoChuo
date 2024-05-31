@@ -6,7 +6,7 @@
 #login-form-container {
     width: 50%;
     max-width: 600px;
-    height: 60vh;
+    height: auto;
     margin: auto;
     padding-top: 5%;
     padding: 20px;
@@ -32,6 +32,7 @@
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 7%;
+    height: auto;
 }
 .form h2 {
     text-align: center;
@@ -47,28 +48,6 @@
     text-align: center;
     color: #004080;
 }
-.input-group {
-    margin-bottom: 20px;
-}
-.input-field {
-    width: 95%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #e5e8ee; 
-    border-radius: 15%;
-}
-.login-button {
-    background-color: #4CAF50;
-    color: #fff;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-}
-.login-button:hover {
-    color: blue; 
-}
 .checkbox-div {
     display: flex;
     justify-content: space-between;
@@ -80,12 +59,12 @@
 }
 #rememberMe{
     height: 2vh;
-    margin-top: 10%;
+    margin-top: 7%;
     margin-right: 1%;
 }
 #remember-me {
     width: 2250%;
-    margin-top: 10%;
+    margin-top: 6%;
 }
 .account {
     display: flex;
