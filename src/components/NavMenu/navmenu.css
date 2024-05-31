@@ -99,7 +99,8 @@
 }
 .user-name-container {
   display: flex;
-  align-items: center;
+  margin: auto;
+  margin-top: 5px;
 }
 .initials-circle {
   display: flex;
@@ -118,10 +119,9 @@
 .user-name-container p{
   margin: auto;
 }
-#user-icon {
-  font-size: 1.9em; 
-  margin-right: 0px;
-  margin-top: 8px;
+#notification-icon {
+  font-size: 1.6em; 
+  margin-top: 11px;
 }
 #count-number {
   background-color: red;

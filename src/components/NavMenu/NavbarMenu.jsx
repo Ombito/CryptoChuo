@@ -65,7 +65,10 @@ const NavbarMenu = ({ user, cart, darkMode, toggleDarkMode }) => {
                                 </svg>
                             </div>
                         </label>
-                    </div>  
+                    </div>
+                    <Link>
+                        <ion-icon id="notification-icon" name="notifications-outline"></ion-icon>
+                    </Link>  
                     <Link to="/cart">
                         <div className="count">
                             <ion-icon name="cart-outline" id="cart-icon"></ion-icon>
@@ -78,7 +81,6 @@ const NavbarMenu = ({ user, cart, darkMode, toggleDarkMode }) => {
                                 <div className='initials-circle'>
                                     <p>{getInitials(user.full_name)}</p>
                                 </div>
-                                <ion-icon name="person-circle-outline" id="user-icon"></ion-icon>
                             </div>
                         </Link>  
                     ) : (
