@@ -5,7 +5,7 @@ import logo from '../Assets/logo1.jpeg';
 import { FaShoppingCart, FaBars, FaTimes, FaUser } from  'react-icons/fa';
 import { useSnackbar } from 'notistack';
 
-const NavbarMenu = ({ user, cart, darkMode, toggleDarkMode }) => {
+const NavbarMenu = ({ user, setUser, cart, darkMode, toggleDarkMode }) => {
     const [ active, setActive ] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const navigate = useNavigate();
@@ -15,7 +15,33 @@ const NavbarMenu = ({ user, cart, darkMode, toggleDarkMode }) => {
         navigate(route);
         setIsModalOpen(false);
     };
-      
+
+    const handleLogout = async () => {
+        try {
+          const confirmed = window.confirm("Are you sure you want to logout?");
+          if (!confirmed) {
+            return;
+          }
+          localStorage.removeItem('token');
+          const response = await fetch('http://127.0.0.1:5555/logout_user', {
+            method: 'DELETE',
+          });
+          if (response.ok) {
+            localStorage.removeItem('token');
+            setUser(null);
+            enqueueSnackbar('Logout successful!', { variant: 'success' });
+            navigate('/');
+            return response.json();
+          } else {
+            console.error('Failed to logout:', response.status);
+            enqueueSnackbar('Failed to logout', { variant: 'error' });
+          }
+        } catch (error) {
+          console.error('Error during logout:', error.message);
+          enqueueSnackbar('An error occurred while logging out', { variant: 'error' });
+        }
+    };
+
     const toggle = ()=> {
         setActive(!active);
     }
@@ -62,7 +88,7 @@ const NavbarMenu = ({ user, cart, darkMode, toggleDarkMode }) => {
                     </div>
                     <ul className="modal-menu">
                         <li onClick={() => handleNavigate('/profile')}>Profile</li>
-                        <li onClick={() => handleNavigate('/my-courses')}>My Courses</li>
+                        <li onClick={() => handleNavigate('/courses')}>Courses</li>
                         <li onClick={() => handleNavigate('/orders')}>Orders</li>
                         <li onClick={handleLogout}>Logout</li>
                     </ul>
