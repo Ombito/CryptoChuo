@@ -7,6 +7,7 @@ import { useSnackbar } from 'notistack';
 
 const NavbarMenu = ({ user, cart, darkMode, toggleDarkMode }) => {
     const [ active, setActive ] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const navigate = useNavigate();
     const { enqueueSnackbar } = useSnackbar();
 
@@ -34,6 +35,37 @@ const NavbarMenu = ({ user, cart, darkMode, toggleDarkMode }) => {
         return initials.toUpperCase();
     };
 
+    const handleModalToggle = () => {
+        setIsModalOpen(!isModalOpen);
+    };
+
+    const UserModal = () => {
+        if (!isModalOpen) return null;
+    
+        const getInitials = (fullName) => {
+            const names = fullName.split(' ');
+            const initials = names.map(name => name.charAt(0)).join('').substring(0, 2);
+            return initials.toUpperCase();
+        };
+    
+        return (
+            <div className="modal-overlay" onClick={handleModalToggle}>
+                <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+                    <button className="close-button" onClick={handleModalToggle}>&times;</button>
+                    <div className='modal-initials-div'>
+                        <p className='modal-initials'>{getInitials(user.full_name)}</p>
+                        <h5 className="user-email">{user.email}</h5>
+                    </div>
+                    <ul className="modal-menu">
+                        <li>Profile</li>
+                        <li>My Courses</li>
+                        <li>Orders</li>
+                        <li>Logout</li>
+                    </ul>
+                </div>
+            </div>
+        );
+    };
 
   return (
     <div className='navbar'>
@@ -76,13 +108,14 @@ const NavbarMenu = ({ user, cart, darkMode, toggleDarkMode }) => {
                         </div>
                     </Link>
                     {user ? (
-                        <Link to="/login">
+                        <div onClick={handleModalToggle}>
                             <div className='user-name-container'>
                                 <div className='initials-circle'>
                                     <p>{getInitials(user.full_name)}</p>
                                 </div>
                             </div>
-                        </Link>  
+                            <UserModal />
+                        </div>  
                     ) : (
                         <Link to="/login">
                             <button id='signin-button' type='submit'>Sign in</button>
