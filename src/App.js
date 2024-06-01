@@ -16,7 +16,7 @@ import Cart from './components/Cart';
 import Signup from './components/Signup';
 import Account from './components/Account';
 import Orders from './components/Orders';
-import Events from './components/Events';
+import Blogs from './components/Blogs';
 import Careers from './components/Careers';
 import Sponsorship from './components/Sponsorship';
 import CourseCategory from './components/CourseCategory';
@@ -197,6 +197,7 @@ function App() {
     window.scrollTo(0, 0);
   }, [location.pathname]);
   
+
   return (
     <div className={`app-${darkMode ? 'dark-mode' : ''}`}>
       {location.pathname !== '/login' && location.pathname !== '/signup' && location.pathname !== '/forgot-password' && <NavbarMenu  user={user} setUser={setUser} cart={cart} darkMode={darkMode} toggleDarkMode={toggleDarkMode} />}
@@ -213,7 +214,7 @@ function App() {
           <Route path="/shop" element={<Shop handleAddToCart={handleAddToCart} merchandiseItems={merchandiseItems}/>} />
           <Route path="checkout" element={<Checkout user={user}/>} />
           <Route path="cart" element={<Cart cart={cart} setCart={setCart} user={user} refresh={refresh} handleAddToCart={handleAddToCart} />} />
-          <Route path="/events" element={<Events />} />
+          <Route path="/blogs" element={<Blogs />} />
           <Route path="/profile" element={<Account user={user}/>} />
           <Route path="/orders" element={<Orders user={user}/>} />
           <Route path="/careers" element={<Careers />} />

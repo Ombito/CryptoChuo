@@ -35,6 +35,26 @@ const Markets = ({ markets }) => {
   const endIndex = startIndex + itemsPerPage;
   const currentItems = filteredMarkets.slice(startIndex, endIndex);
 
+  const totalMarketCap = markets.reduce((acc, market) => acc + market.market_cap, 0);
+    const averageMarketCap = totalMarketCap / markets.length;
+
+    const highestMarketCapCoin = markets.reduce((prev, current) => {
+        return prev.market_cap > current.market_cap ? prev : current;
+    });
+
+    const lowestMarketCapCoin = markets.reduce((prev, current) => {
+        return prev.market_cap < current.market_cap ? prev : current;
+    });
+
+    const highestPriceCoin = markets.reduce((prev, current) => {
+        return prev.current_price > current.current_price ? prev : current;
+    });
+
+    const lowestPriceCoin = markets.reduce((prev, current) => {
+        return prev.current_price < current.current_price ? prev : current;
+    });
+  
+    
   return (
     <div id="market">
       <div className='market-summary'>
@@ -45,6 +65,7 @@ const Markets = ({ markets }) => {
         <p>This page displays the latest prices, 24-hour trading volume, price changes, and market capitalizations for all cryptocurrencies on CoinmarketCap.</p>
       </div>
       <div>
+        
         {/* {loading || markets.length === 0 ? (
           <div className="loader-container">
             <div class="loader">
@@ -63,6 +84,44 @@ const Markets = ({ markets }) => {
             </div>
           </div>
         ) : ( */}
+        <div className='market-analytics'>
+          <div className='analytics-item'>
+            <h3>Total Market Cap</h3>
+            <p>${totalMarketCap}</p>
+          </div>
+          <div className='analytics-item'>
+            <h3>Highest Market Cap Coin</h3>
+            <div className='coin-analytics-div'>
+              <div className='coin-analytics-summary'>
+                <img src={highestMarketCapCoin.image} alt="Coin Image" />
+                <p>{highestMarketCapCoin.name}</p>
+              </div>
+              <p>${highestMarketCapCoin.market_cap}</p>
+            </div>
+          </div>
+          <div className='price-analytics'>
+            <div className='analytics-item'>
+              <h3>Highest Price Coin</h3>
+              <div className='coin-analytics-div'>
+                <div className='coin-analytics-summary'>
+                  <img src={highestPriceCoin.image} alt="Coin Image" />
+                  <p>{highestPriceCoin.name}</p>
+                </div>
+                <p>${highestPriceCoin.current_price}</p>
+              </div>
+            </div>
+            <div className='analytics-item'>
+              <h3>Lowest Price Coin</h3>
+              <div className='coin-analytics-div'>
+                <div className='coin-analytics-summary'>
+                  <img src={lowestPriceCoin.image} alt="Coin Image" />
+                  <p>{lowestPriceCoin.name}</p>
+                </div>
+                <p>${lowestPriceCoin.current_price}</p>
+              </div>
+            </div>
+          </div>
+        </div>
           <>
             <table className="crypto-table">
               <thead>
