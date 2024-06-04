@@ -160,50 +160,43 @@ function App() {
 
   const calculateStatistics = (data) => {
     const totalMarketCap = data.reduce((acc, market) => acc + market.market_cap, 0);
-  const averageMarketCap = totalMarketCap / data.length;
+    const averageMarketCap = totalMarketCap / data.length;
 
-  const highestMarketCapCoin = data.reduce((prev, current) => {
+    const highestMarketCapCoin = data.reduce((prev, current) => {
       return prev.market_cap > current.market_cap ? prev : current;
-  });
+    });
 
-  const highestVolumeCoin = data.reduce((prev, current) => 
-    (prev.total_volume > current.total_volume ? prev : current)
-  );
-  const highestPriceCoin = data.reduce((prev, current) => {
+    const highestVolumeCoin = data.reduce((prev, current) => 
+      (prev.total_volume > current.total_volume ? prev : current)
+    );
+    const highestPriceCoin = data.reduce((prev, current) => {
       return prev.current_price > current.current_price ? prev : current;
-  });
+    });
 
-  const biggestGainerCoin = data.reduce((prev, current) => 
-    (prev.price_change_percentage_24h > current.price_change_percentage_24h ? prev : current)
-  );
+    const biggestGainerCoin = data.reduce((prev, current) => 
+      (prev.price_change_percentage_24h > current.price_change_percentage_24h ? prev : current)
+    );
 
-  const biggestLoserCoin = data.reduce((prev, current) => 
-    (prev.price_change_percentage_24h < current.price_change_percentage_24h ? prev : current)
-  );
+    const biggestLoserCoin = data.reduce((prev, current) => 
+      (prev.price_change_percentage_24h < current.price_change_percentage_24h ? prev : current)
+    );
 
-  const mostCirculatingSupplyCoin = data.reduce((prev, current) => 
-    (prev.circulating_supply > current.circulating_supply ? prev : current)
-  );
+    const mostCirculatingSupplyCoin = data.reduce((prev, current) => 
+      (prev.circulating_supply > current.circulating_supply ? prev : current)
+    );
 
-  setStatistics({
-    totalMarketCap,
-    averageMarketCap,
-    highestMarketCapCoin,
-    highestVolumeCoin,
-    highestPriceCoin,
-    biggestGainerCoin,
-    biggestLoserCoin,
-    mostCirculatingSupplyCoin,
-  });
-};
-  const {
-    highestMarketCapCoin,
-    highestVolumeCoin,
-    highestPriceCoin,
-    biggestGainerCoin,
-    biggestLoserCoin,
-    mostCirculatingSupplyCoin,
-  } = statistics;
+    setStatistics({
+      totalMarketCap,
+      averageMarketCap,
+      highestMarketCapCoin,
+      highestVolumeCoin,
+      highestPriceCoin,
+      biggestGainerCoin,
+      biggestLoserCoin,
+      mostCirculatingSupplyCoin,
+    });
+  };
+
 
   useEffect(() => {
     if (merchandiseItems.length === 0) {
@@ -288,14 +281,14 @@ function App() {
             <Route path="/signup" element={<Signup />} />
             <Route path="/markets" element={<Markets 
               markets={markets}
-              // totalMarketCap={totalMarketCap}
-              // averageMarketCap={averageMarketCap}
-              highestMarketCapCoin={highestMarketCapCoin}
-              highestVolumeCoin={highestVolumeCoin}
-              highestPriceCoin={highestPriceCoin}
-              biggestGainerCoin={biggestGainerCoin}
-              biggestLoserCoin={biggestLoserCoin}
-              mostCirculatingSupplyCoin={mostCirculatingSupplyCoin}
+              totalMarketCap={statistics.totalMarketCap}
+              averageMarketCap={statistics.averageMarketCap}
+              highestMarketCapCoin={statistics.highestMarketCapCoin}
+              highestVolumeCoin={statistics.highestVolumeCoin}
+              highestPriceCoin={statistics.highestPriceCoin}
+              biggestGainerCoin={statistics.biggestGainerCoin}
+              biggestLoserCoin={statistics.biggestLoserCoin}
+              mostCirculatingSupplyCoin={statistics.mostCirculatingSupplyCoin}
             />} />
             <Route path="/news" element={<News />} />
             <Route path="/shop" element={<Shop handleAddToCart={handleAddToCart} merchandiseItems={merchandiseItems}/>} />
