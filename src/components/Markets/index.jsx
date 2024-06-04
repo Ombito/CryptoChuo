@@ -44,67 +44,26 @@ const Markets = ({ markets }) => {
         return prev.market_cap > current.market_cap ? prev : current;
     });
 
-    const lowestMarketCapCoin = markets.reduce((prev, current) => {
-        return prev.market_cap < current.market_cap ? prev : current;
-    });
-
+    const highestVolumeCoin = markets.reduce((prev, current) => 
+      (prev.total_volume > current.total_volume ? prev : current)
+    );
     const highestPriceCoin = markets.reduce((prev, current) => {
         return prev.current_price > current.current_price ? prev : current;
     });
 
-    const lowestPriceCoin = markets.reduce((prev, current) => {
-        return prev.current_price < current.current_price ? prev : current;
-    });
-  
-    const isMarketCapIncreased = () => {
-      if (totalMarketCapData && totalMarketCapData.marketCapChange > 0) {
-        return true;
-      }
-      return false;
-    };
+    const biggestGainerCoin = markets.reduce((prev, current) => 
+    (prev.price_change_percentage_24h > current.price_change_percentage_24h ? prev : current)
+  );
 
-    const chartOptions = {
-      scales: {
-          x: {
-              title: {
-                  display: true,
-                  text: 'Month'
-              },
-              grid: {
-                  display: false
-              }
-          },
-          y: {
-              title: {
-                  display: true,
-                  text: 'Number of Orders'
-              },
-              grid: {
-                  display: false,
-                  beginAtZero: true,
-              }
-          }
-      }
-  };
+  const biggestLoserCoin = markets.reduce((prev, current) => 
+    (prev.price_change_percentage_24h < current.price_change_percentage_24h ? prev : current)
+  );
 
-      // Generate chart data
-      const chartData = {
-        labels: ['Label1', 'Label2', 'Label3'], // Replace with actual labels
-        datasets: [
-          {
-            label: 'Total Market Cap',
-            data: [100, 200, 150], // Replace with actual data
-            backgroundColor: isMarketCapIncreased() ? 'green' : 'red',
-            borderColor: 'transparent',
-            borderWidth: 2,
-            fill: true,
-          },
-        ],
-      };
-  
+  const mostCirculatingSupplyCoin = markets.reduce((prev, current) => 
+    (prev.circulating_supply > current.circulating_supply ? prev : current)
+  );
 
-
-    
+ 
   return (
     <div id="market">
       <div className='market-summary'>
@@ -138,14 +97,29 @@ const Markets = ({ markets }) => {
           <div className='analytics-item'>
             <h3>Total Market Cap</h3>
             <p>${totalMarketCap}</p>
-            {totalMarketCapData && (
-            <div className="line-chart-container">
-              <Line data={chartData} options={chartOptions} />
-            </div>
-          )}
           </div>
           <div className='analytics-item'>
-            <h3>Highest Market Cap Coin</h3>
+            <h3>Most Circulating Supply</h3>
+            <div className='coin-analytics-div'>
+              <div className='coin-analytics-summary'>
+                <img src={mostCirculatingSupplyCoin.image} alt="Coin Image" />
+                <p>{mostCirculatingSupplyCoin.name}</p>
+              </div>
+              <p>${mostCirculatingSupplyCoin.market_cap}</p>
+            </div>
+          </div>
+          <div className='analytics-item'>
+            <h3>Highest Volume Coin</h3>
+            <div className='coin-analytics-div'>
+              <div className='coin-analytics-summary'>
+                <img src={highestVolumeCoin.image} alt="Coin Image" />
+                <p>{highestVolumeCoin.name}</p>
+              </div>
+              <p>${highestVolumeCoin.market_cap}</p>
+            </div>
+          </div>
+          <div className='analytics-item'>
+            <h3>Highest Market Cap</h3>
             <div className='coin-analytics-div'>
               <div className='coin-analytics-summary'>
                 <img src={highestMarketCapCoin.image} alt="Coin Image" />
@@ -156,23 +130,23 @@ const Markets = ({ markets }) => {
           </div>
           <div className='price-analytics'>
             <div className='analytics-item'>
-              <h3>Highest Price Coin</h3>
+              <h3>Biggest Gainer Coin</h3>
               <div className='coin-analytics-div'>
                 <div className='coin-analytics-summary'>
-                  <img src={highestPriceCoin.image} alt="Coin Image" />
-                  <p>{highestPriceCoin.name}</p>
+                  <img src={biggestGainerCoin.image} alt="Coin Image" />
+                  <p>{biggestGainerCoin.name}</p>
                 </div>
-                <p>${highestPriceCoin.current_price}</p>
+                <p>${biggestGainerCoin.current_price}</p>
               </div>
             </div>
             <div className='analytics-item'>
-              <h3>Lowest Price Coin</h3>
+              <h3>Biggest Loser Coin</h3>
               <div className='coin-analytics-div'>
                 <div className='coin-analytics-summary'>
-                  <img src={lowestPriceCoin.image} alt="Coin Image" />
-                  <p>{lowestPriceCoin.name}</p>
+                  <img src={biggestLoserCoin.image} alt="Coin Image" />
+                  <p>{biggestLoserCoin.name}</p>
                 </div>
-                <p>${lowestPriceCoin.current_price}</p>
+                <p>${biggestLoserCoin.current_price}</p>
               </div>
             </div>
           </div>

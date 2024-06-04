@@ -196,7 +196,7 @@ function App() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
-  
+  console.log(markets)
 
   return (
     <div className={`app-${darkMode ? 'dark-mode' : ''}`}>
