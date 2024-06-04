@@ -19,7 +19,7 @@ const Account = ({user}) => {
 const currentDate = new Date().toLocaleDateString();
 
   return (
-    <div className='account'>
+    <div className='account-container'>
       <div className="profile-banner">
         <div className="user-profile-banner">
           <div className='user-account-details'>
@@ -55,15 +55,15 @@ const currentDate = new Date().toLocaleDateString();
         </div>
         <div className="account-section">
           <div className="account-item-hero">
-            <h3><ion-icon name="star-outline"></ion-icon> Favourites</h3>
+            <h4><ion-icon name="star-outline"></ion-icon> Favourites</h4>
             <p>You have not favourited any courses yet</p>
           </div>
           <div className="account-item-hero">
-            <h3><ion-icon name="alert-circle-outline"></ion-icon> Job alerts</h3>
+            <h4><ion-icon name="alert-circle-outline"></ion-icon> Job alerts</h4>
             <p>You have not signed up for any job alerts yet</p>
           </div>
           <div className="account-item-hero">
-            <h3><ion-icon name="laptop-outline"></ion-icon> Devices</h3>
+            <h4><ion-icon name="laptop-outline"></ion-icon> Devices</h4>
             <p>Connected in current browser</p>
             <p><FaCalendarAlt className="calendar-icon" /> <span>{currentDate}</span></p>
           </div>
