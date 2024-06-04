@@ -236,7 +236,17 @@ function App() {
           <Route path="/login" element={<LogIn setUser={setUser} />} />
           <Route path="/about" element={<About />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/markets" element={<Markets markets={markets}/>} />
+          <Route path="/markets" element={<Markets 
+            markets={markets}
+            totalMarketCap={totalMarketCap}
+            averageMarketCap={averageMarketCap}
+            highestMarketCapCoin={highestMarketCapCoin}
+            highestVolumeCoin={highestVolumeCoin}
+            highestPriceCoin={highestPriceCoin}
+            biggestGainerCoin={biggestGainerCoin}
+            biggestLoserCoin={biggestLoserCoin}
+            mostCirculatingSupplyCoin={mostCirculatingSupplyCoin}
+          />} />
           <Route path="/news" element={<News />} />
           <Route path="/shop" element={<Shop handleAddToCart={handleAddToCart} merchandiseItems={merchandiseItems}/>} />
           <Route path="checkout" element={<Checkout user={user}/>} />

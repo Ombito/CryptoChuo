@@ -10,7 +10,7 @@ import { FaBackward, FaForward } from  'react-icons/fa';
 import WhatsAppChat from '../WhatsAppChat/index.jsx';
 
 
-const Markets = ({ markets }) => {
+const Markets = ({ markets, totalMarketCap, averageMarketCap, highestMarketCapCoin, highestVolumeCoin, highestPriceCoin, biggestGainerCoin, biggestLoserCoin, mostCirculatingSupplyCoin }) => {
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
@@ -36,32 +36,6 @@ const Markets = ({ markets }) => {
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const currentItems = filteredMarkets.slice(startIndex, endIndex);
-
-  const totalMarketCap = markets.reduce((acc, market) => acc + market.market_cap, 0);
-    const averageMarketCap = totalMarketCap / markets.length;
-
-    const highestMarketCapCoin = markets.reduce((prev, current) => {
-        return prev.market_cap > current.market_cap ? prev : current;
-    });
-
-    const highestVolumeCoin = markets.reduce((prev, current) => 
-      (prev.total_volume > current.total_volume ? prev : current)
-    );
-    const highestPriceCoin = markets.reduce((prev, current) => {
-        return prev.current_price > current.current_price ? prev : current;
-    });
-
-    const biggestGainerCoin = markets.reduce((prev, current) => 
-    (prev.price_change_percentage_24h > current.price_change_percentage_24h ? prev : current)
-  );
-
-  const biggestLoserCoin = markets.reduce((prev, current) => 
-    (prev.price_change_percentage_24h < current.price_change_percentage_24h ? prev : current)
-  );
-
-  const mostCirculatingSupplyCoin = markets.reduce((prev, current) => 
-    (prev.circulating_supply > current.circulating_supply ? prev : current)
-  );
 
  
   return (
