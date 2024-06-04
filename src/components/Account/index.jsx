@@ -20,11 +20,11 @@ const Account = ({user}) => {
     <div className='account'>
       <div className="profile-banner">
         <div className="user-profile-banner">
-          <div className='modal-initials-div'>
-            <p className='modal-initials'>{getInitials(user.full_name)}</p>
+          <div className='user-account-details'>
+            <p className='user-account-initials'>{getInitials(user.full_name)}</p>
             <div>
               <h3>{user.full_name}</h3>
-              <h6 className="user-email">{user.email}</h6>
+              <h6 className="user-account-email">{user.email}</h6>
             </div>
           </div>
           <img className='profile-img' src={banner} alt="" />

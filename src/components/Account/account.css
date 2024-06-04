@@ -8,8 +8,25 @@
     flex-direction: column;
     padding: 3% 7%;
     width: 100%;
-    gap: 20px;
     background-color: #0057d3;
+}
+.user-account-details {
+    display: flex;
+    color: white;
+    gap: 10px;
+}
+.user-account-initials {
+    margin: 0 auto;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #eba011;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.7rem;
+    font-weight: bold;
 }
 .user-profile-banner {
     display: flex;
