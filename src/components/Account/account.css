@@ -1,0 +1,33 @@
+.account {
+    margin: 5% 0% 3% 0%;
+    padding: 3% 0;
+    width: 100%;
+}
+.profile-banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f2f2f2;
+    padding: 20px;
+    width: 100%;
+  }
+.profile-stats {
+    display: flex;
+    align-items: center;
+  }
+  
+  .stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+  }
+  
+  .stat-count {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .stat-label {
+    color: #666;
+  }

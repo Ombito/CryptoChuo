@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Footer from '../Footer/index.jsx';
 import { Line } from 'react-chartjs-2';
+import { Chart as ChartJS } from 'chart.js/auto';
 import { FaSearch } from  'react-icons/fa';
 import { FaBackward, FaForward } from  'react-icons/fa';
 import WhatsAppChat from '../WhatsAppChat/index.jsx';
@@ -14,6 +15,7 @@ const Markets = ({ markets }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 50;
+  const [totalMarketCapData, setTotalMarketCapData] = useState(null);
   
 
   const filteredMarkets = markets.filter((market) =>
@@ -54,6 +56,54 @@ const Markets = ({ markets }) => {
         return prev.current_price < current.current_price ? prev : current;
     });
   
+    const isMarketCapIncreased = () => {
+      if (totalMarketCapData && totalMarketCapData.marketCapChange > 0) {
+        return true;
+      }
+      return false;
+    };
+
+    const chartOptions = {
+      scales: {
+          x: {
+              title: {
+                  display: true,
+                  text: 'Month'
+              },
+              grid: {
+                  display: false
+              }
+          },
+          y: {
+              title: {
+                  display: true,
+                  text: 'Number of Orders'
+              },
+              grid: {
+                  display: false,
+                  beginAtZero: true,
+              }
+          }
+      }
+  };
+
+      // Generate chart data
+      const chartData = {
+        labels: ['Label1', 'Label2', 'Label3'], // Replace with actual labels
+        datasets: [
+          {
+            label: 'Total Market Cap',
+            data: [100, 200, 150], // Replace with actual data
+            backgroundColor: isMarketCapIncreased() ? 'green' : 'red',
+            borderColor: 'transparent',
+            borderWidth: 2,
+            fill: true,
+          },
+        ],
+      };
+  
+
+
     
   return (
     <div id="market">
@@ -88,6 +138,11 @@ const Markets = ({ markets }) => {
           <div className='analytics-item'>
             <h3>Total Market Cap</h3>
             <p>${totalMarketCap}</p>
+            {totalMarketCapData && (
+            <div className="line-chart-container">
+              <Line data={chartData} options={chartOptions} />
+            </div>
+          )}
           </div>
           <div className='analytics-item'>
             <h3>Highest Market Cap Coin</h3>

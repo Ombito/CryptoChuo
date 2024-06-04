@@ -7,8 +7,37 @@ const Account = ({user}) => {
   if (!user) {
     navigate('/login');
   }
+
+  const getInitials = (fullName) => {
+    const names = fullName.split(' ');
+    const initials = names.map(name => name.charAt(0)).join('').substring(0, 2);
+    return initials.toUpperCase();
+};
+
   return (
-    <div>Account</div>
+    <div className='account'>
+      <div className="profile-banner">
+        <div className='modal-initials-div'>
+          <p className='modal-initials'>{getInitials(user.full_name)}</p>
+          <h3>{user.full_name}</h3>
+          <h6 className="user-email">{user.email}</h6>
+        </div>
+        <div className="profile-stats">
+          <div className="stat">
+            <span className="stat-count">{user.certificates}</span>
+            <span className="stat-label">Certificates</span>
+          </div>
+          <div className="stat">
+            <span className="stat-count">{user.trophies}</span>
+            <span className="stat-label">Trophies</span>
+          </div>
+          <div className="stat">
+            <span className="stat-count">{user.badges}</span>
+            <span className="stat-label">Badges</span>
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }
 
