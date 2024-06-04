@@ -33,6 +33,16 @@ function App() {
   });
   const [courses, setCourses] = useState([]);
   const [markets, setMarkets] = useState([]);
+  const [statistics, setStatistics] = useState({
+    highestMarketCapCoin: null,
+    highestVolumeCoin: null,
+    highestPriceCoin: null,
+    biggestGainerCoin: null,
+    biggestLoserCoin: null,
+    mostCirculatingSupplyCoin: null,
+    totalMarketCap: 0,
+    averageMarketCap: 0,
+  });
   const [merchandiseItems, setMerchandiseItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const { enqueueSnackbar } = useSnackbar();
@@ -135,6 +145,7 @@ function App() {
         })
         .then((data) => {
           setMarkets(data);
+          calculateStatistics(data);
           setLoading(false);
           console.log(data);
         })
@@ -147,31 +158,52 @@ function App() {
     }
   }, [markets]);
 
-  const totalMarketCap = markets.reduce((acc, market) => acc + market.market_cap, 0);
-  const averageMarketCap = totalMarketCap / markets.length;
+  const calculateStatistics = (data) => {
+    const totalMarketCap = data.reduce((acc, market) => acc + market.market_cap, 0);
+  const averageMarketCap = totalMarketCap / data.length;
 
-  const highestMarketCapCoin = markets.reduce((prev, current) => {
+  const highestMarketCapCoin = data.reduce((prev, current) => {
       return prev.market_cap > current.market_cap ? prev : current;
   });
 
-  const highestVolumeCoin = markets.reduce((prev, current) => 
+  const highestVolumeCoin = data.reduce((prev, current) => 
     (prev.total_volume > current.total_volume ? prev : current)
   );
-  const highestPriceCoin = markets.reduce((prev, current) => {
+  const highestPriceCoin = data.reduce((prev, current) => {
       return prev.current_price > current.current_price ? prev : current;
   });
 
-  const biggestGainerCoin = markets.reduce((prev, current) => 
+  const biggestGainerCoin = data.reduce((prev, current) => 
     (prev.price_change_percentage_24h > current.price_change_percentage_24h ? prev : current)
   );
 
-  const biggestLoserCoin = markets.reduce((prev, current) => 
+  const biggestLoserCoin = data.reduce((prev, current) => 
     (prev.price_change_percentage_24h < current.price_change_percentage_24h ? prev : current)
   );
 
-  const mostCirculatingSupplyCoin = markets.reduce((prev, current) => 
+  const mostCirculatingSupplyCoin = data.reduce((prev, current) => 
     (prev.circulating_supply > current.circulating_supply ? prev : current)
   );
+
+  setStatistics({
+    totalMarketCap,
+    averageMarketCap,
+    highestMarketCapCoin,
+    highestVolumeCoin,
+    highestPriceCoin,
+    biggestGainerCoin,
+    biggestLoserCoin,
+    mostCirculatingSupplyCoin,
+  });
+};
+  const {
+    highestMarketCapCoin,
+    highestVolumeCoin,
+    highestPriceCoin,
+    biggestGainerCoin,
+    biggestLoserCoin,
+    mostCirculatingSupplyCoin,
+  } = statistics;
 
   useEffect(() => {
     if (merchandiseItems.length === 0) {
@@ -228,35 +260,54 @@ function App() {
   return (
     <div className={`app-${darkMode ? 'dark-mode' : ''}`}>
       {location.pathname !== '/login' && location.pathname !== '/signup' && location.pathname !== '/forgot-password' && <NavbarMenu  user={user} setUser={setUser} cart={cart} darkMode={darkMode} toggleDarkMode={toggleDarkMode} />}
-        <Routes>
-          <Route path="/" element={<Home user={user} courses={courses} />} />
-          <Route path="/courses" element={user ? <Courses user={user} courses={courses} handleAddToCart={handleAddToCart} isInCart={isInCart} /> : <Navigate to="/login" />} />
-          <Route path="/course-details/:id" element={<CourseDetails courses={courses} user={user} handleAddToCart={handleAddToCart} isInCart={isInCart} />} />
-          <Route path="/courses/:category" element={<CourseCategory courses={courses}/>} />
-          <Route path="/login" element={<LogIn setUser={setUser} />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/markets" element={<Markets 
-            markets={markets}
-            totalMarketCap={totalMarketCap}
-            averageMarketCap={averageMarketCap}
-            highestMarketCapCoin={highestMarketCapCoin}
-            highestVolumeCoin={highestVolumeCoin}
-            highestPriceCoin={highestPriceCoin}
-            biggestGainerCoin={biggestGainerCoin}
-            biggestLoserCoin={biggestLoserCoin}
-            mostCirculatingSupplyCoin={mostCirculatingSupplyCoin}
-          />} />
-          <Route path="/news" element={<News />} />
-          <Route path="/shop" element={<Shop handleAddToCart={handleAddToCart} merchandiseItems={merchandiseItems}/>} />
-          <Route path="checkout" element={<Checkout user={user}/>} />
-          <Route path="cart" element={<Cart cart={cart} setCart={setCart} user={user} refresh={refresh} handleAddToCart={handleAddToCart} />} />
-          <Route path="/blogs" element={<Blogs />} />
-          <Route path="/profile" element={<Account user={user}/>} />
-          <Route path="/orders" element={<Orders user={user}/>} />
-          <Route path="/careers" element={<Careers />} />
-          <Route path="/sponsorship" element={<Sponsorship />} />
-      </Routes>
+        {loading ? (
+          <div className="loader-container">
+            <div class="loader">
+              <div class="load1"></div>
+              <div class="load2"></div>
+              <div class="load3"></div>
+              <div class="load4"></div>
+              <div class="load5"></div>
+              <div class="load6"></div>
+              <div class="load7"></div>
+              <div class="load8"></div>
+              <div class="load9"></div>
+            </div>
+            <div class="loader">
+              <p className="loading">Fetching market data...</p>
+            </div>
+          </div>
+        ) : (
+          <Routes>
+            <Route path="/" element={<Home user={user} courses={courses} />} />
+            <Route path="/courses" element={user ? <Courses user={user} courses={courses} handleAddToCart={handleAddToCart} isInCart={isInCart} /> : <Navigate to="/login" />} />
+            <Route path="/course-details/:id" element={<CourseDetails courses={courses} user={user} handleAddToCart={handleAddToCart} isInCart={isInCart} />} />
+            <Route path="/courses/:category" element={<CourseCategory courses={courses}/>} />
+            <Route path="/login" element={<LogIn setUser={setUser} />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/markets" element={<Markets 
+              markets={markets}
+              // totalMarketCap={totalMarketCap}
+              // averageMarketCap={averageMarketCap}
+              highestMarketCapCoin={highestMarketCapCoin}
+              highestVolumeCoin={highestVolumeCoin}
+              highestPriceCoin={highestPriceCoin}
+              biggestGainerCoin={biggestGainerCoin}
+              biggestLoserCoin={biggestLoserCoin}
+              mostCirculatingSupplyCoin={mostCirculatingSupplyCoin}
+            />} />
+            <Route path="/news" element={<News />} />
+            <Route path="/shop" element={<Shop handleAddToCart={handleAddToCart} merchandiseItems={merchandiseItems}/>} />
+            <Route path="checkout" element={<Checkout user={user}/>} />
+            <Route path="cart" element={<Cart cart={cart} setCart={setCart} user={user} refresh={refresh} handleAddToCart={handleAddToCart} />} />
+            <Route path="/blogs" element={<Blogs />} />
+            <Route path="/profile" element={<Account user={user}/>} />
+            <Route path="/orders" element={<Orders user={user}/>} />
+            <Route path="/careers" element={<Careers />} />
+            <Route path="/sponsorship" element={<Sponsorship />} />
+          </Routes>
+        )}
       {location.pathname !== '/login' && location.pathname !== '/signup' && location.pathname !== '/forgot-password' && <Footer />}
 
     </div>
