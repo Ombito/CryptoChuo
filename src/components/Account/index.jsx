@@ -44,23 +44,23 @@ const Account = ({user}) => {
           </div>
         </div>
       </div>
-      <div className="profile-summary">
-        <div>
+      <div className="account-summary">
+        <div className="account-nav">
           <li>My courses</li>
           <li>Achievements</li>
           <li>My Orders</li>
           <li>Help Center</li>
         </div>
-        <div className="profile-section">
-          <div className="section-item">
+        <div className="account-section">
+          <div className="account-item-hero">
             <h3>Favourites</h3>
             <p>You have not favourited any courses yet</p>
           </div>
-          <div className="section-item">
+          <div className="account-item-hero">
             <h3>Job alerts</h3>
             <p>You have not signed up for any job alerts yet</p>
           </div>
-          <div className="section-item">
+          <div className="account-item-hero">
             <h3>Devices</h3>
             <p>Current browser </p>
           </div>
