@@ -274,7 +274,7 @@ function App() {
               <div class="load9"></div>
             </div>
             <div class="loader">
-              <p className="loading">Fetching market data...</p>
+              <p className="loading">Loading...</p>
             </div>
           </div>
         ) : (
