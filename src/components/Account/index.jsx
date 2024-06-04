@@ -1,8 +1,8 @@
 import React from 'react';
-import './account.css';
-import { useLocation, useNavigate } from 'react-router-dom';
+import './style.css';
+import { useNavigate } from 'react-router-dom';
 import banner from '../Assets/banner4.jpg';
-
+import { FaCalendarAlt } from 'react-icons/fa';
 
 const Account = ({user}) => {
   const navigate = useNavigate();
@@ -15,6 +15,8 @@ const Account = ({user}) => {
     const initials = names.map(name => name.charAt(0)).join('').substring(0, 2);
     return initials.toUpperCase();
 };
+
+const currentDate = new Date().toLocaleDateString();
 
   return (
     <div className='account'>
@@ -53,16 +55,17 @@ const Account = ({user}) => {
         </div>
         <div className="account-section">
           <div className="account-item-hero">
-            <h3>Favourites</h3>
+            <h3><ion-icon name="star-outline"></ion-icon> Favourites</h3>
             <p>You have not favourited any courses yet</p>
           </div>
           <div className="account-item-hero">
-            <h3>Job alerts</h3>
+            <h3><ion-icon name="alert-circle-outline"></ion-icon> Job alerts</h3>
             <p>You have not signed up for any job alerts yet</p>
           </div>
           <div className="account-item-hero">
-            <h3>Devices</h3>
-            <p>Current browser </p>
+            <h3><ion-icon name="laptop-outline"></ion-icon> Devices</h3>
+            <p>Connected in current browser</p>
+            <p><FaCalendarAlt className="calendar-icon" /> <span>{currentDate}</span></p>
           </div>
         </div>
       </div>
