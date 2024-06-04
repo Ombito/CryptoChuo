@@ -1,13 +1,15 @@
 .account {
-    margin: 5% 3% 0% 3%;
-    padding: 3% 0;
+    margin: 5% 0% 0% 0%;
+    display: flex;
+    flex-direction: column;  
 }
 .profile-banner {
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding: 3% 7%;
     width: 100%;
     gap: 20px;
+    background-color: #0057d3;
 }
 .user-profile-banner {
     display: flex;
@@ -38,5 +40,18 @@
   }
   
   .stat-label {
-    color: #666;
+    color: white;
+  }
+  .profile-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+  
+  .section-item {
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 30%;
   }
