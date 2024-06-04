@@ -106,7 +106,7 @@ const Markets = ({ markets }) => {
 
     
   return (
-    <div id="market">
+    <div className="market">
       <div className='market-summary'>
         <div className='market-header'>
           <h3>Today's Cryptocurrency Prices by Market Cap</h3>

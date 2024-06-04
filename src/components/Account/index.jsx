@@ -17,9 +17,9 @@ const Account = ({user}) => {
 };
 
   return (
-    <div className='account'>
+    <div class='container' id='account'>
       <div className="profile-banner">
-        <div>
+        <div className="user-profile-banner">
           <div className='modal-initials-div'>
             <p className='modal-initials'>{getInitials(user.full_name)}</p>
             <div>
@@ -28,7 +28,7 @@ const Account = ({user}) => {
             </div>
           </div>
           <img className='profile-img' src={banner} alt="" />
-          </div>
+        </div>
         <div className="profile-stats">
           <div className="stat">
             <span className="stat-count">{user.certificates}</span>
