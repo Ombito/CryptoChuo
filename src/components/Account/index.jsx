@@ -17,7 +17,7 @@ const Account = ({user}) => {
 };
 
   return (
-    <div class='container' id='account'>
+    <div className='account'>
       <div className="profile-banner">
         <div className="user-profile-banner">
           <div className='modal-initials-div'>
