@@ -44,7 +44,7 @@ const Account = ({user}) => {
           </div>
         </div>
       </div>
-      <div>
+      <div className="profile-summary">
         <div>
           <li>My courses</li>
           <li>Achievements</li>
