@@ -402,7 +402,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     width: 260px;
-    margin: 20px 20px;
+    margin: 10px auto;
     transition: transform 0.3s ease-in-out;
     height: auto;
     cursor: pointer;
@@ -426,7 +426,7 @@
 .course-details p {
   font-size: 0.85em;
   font-weight: 500;
-  margin: 7px 0;
+  margin: 2px 0;
 }
 .course-description {
   font-size: 14px;
@@ -687,7 +687,9 @@ button:hover {
   @media screen and (min-width: 360px) and (max-width: 765px){
     #home-card-container {
       display: grid;
-      grid-template-columns: repeat(1, 1fr);
+      grid-template-columns: repeat(2, 1fr);
+      margin: auto;
+      gap: 10px;
     }
     #landing-img {
       display: none;
@@ -843,8 +845,8 @@ button:hover {
     }
     #home-card-container {
       display: grid;
-      grid-template-columns: repeat(1, 1fr);
-      gap: 20px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
     }
     .join { 
       margin-top: -620%;
@@ -887,6 +889,7 @@ button:hover {
     #home-container {
       width: 100%;
       text-overflow: hidden;
+      gap: 10px;
     }
     #banner-div {
       width: 100%;
