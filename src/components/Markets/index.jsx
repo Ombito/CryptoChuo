@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import "../Markets/style.css";
-import { NavLink } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-import Footer from '../Footer/index.jsx';
 import { Line } from 'react-chartjs-2';
+import { Chart as ChartJS } from 'chart.js/auto';
 import { FaSearch } from  'react-icons/fa';
 import { FaBackward, FaForward } from  'react-icons/fa';
 import WhatsAppChat from '../WhatsAppChat/index.jsx';
 
 
-const Markets = ({ markets }) => {
+const Markets = ({ markets, totalMarketCap, averageMarketCap, highestMarketCapCoin, highestVolumeCoin, highestPriceCoin, biggestGainerCoin, biggestLoserCoin, mostCirculatingSupplyCoin }) => {
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 50;
+  const [totalMarketCapData, setTotalMarketCapData] = useState(null);
   
 
   const filteredMarkets = markets.filter((market) =>
@@ -35,6 +34,7 @@ const Markets = ({ markets }) => {
   const endIndex = startIndex + itemsPerPage;
   const currentItems = filteredMarkets.slice(startIndex, endIndex);
 
+ 
   return (
     <div id="market">
       <div className='market-summary'>
@@ -45,24 +45,62 @@ const Markets = ({ markets }) => {
         <p>This page displays the latest prices, 24-hour trading volume, price changes, and market capitalizations for all cryptocurrencies on CoinmarketCap.</p>
       </div>
       <div>
-        {/* {loading || markets.length === 0 ? (
-          <div className="loader-container">
-            <div class="loader">
-              <div class="load1"></div>
-              <div class="load2"></div>
-              <div class="load3"></div>
-              <div class="load4"></div>
-              <div class="load5"></div>
-              <div class="load6"></div>
-              <div class="load7"></div>
-              <div class="load8"></div>
-              <div class="load9"></div>
-            </div>
-            <div class="loader">
-              <p className="loading">Fetching market data...</p>
+        <div className='market-analytics'>
+          <div className='analytics-item'>
+            <h3>Total Market Cap</h3>
+            <p>${totalMarketCap}</p>
+          </div>
+          <div className='analytics-item'>
+            <h3>Highest Market Cap</h3>
+            <div className='coin-analytics-div'>
+              <div className='coin-analytics-summary'>
+                <img src={highestMarketCapCoin.image} alt="Coin Image" />
+                <p>{highestMarketCapCoin.name}</p>
+              </div>
+              <p>${highestMarketCapCoin.market_cap}</p>
             </div>
           </div>
-        ) : ( */}
+          <div className='analytics-item'>
+            <h3>Most Circulating Supply</h3>
+            <div className='coin-analytics-div'>
+              <div className='coin-analytics-summary'>
+                <img src={mostCirculatingSupplyCoin.image} alt="Coin Image" />
+                <p>{mostCirculatingSupplyCoin.name}</p>
+              </div>
+              <p>${mostCirculatingSupplyCoin.market_cap}</p>
+            </div>
+          </div>
+          <div className='analytics-item'>
+            <h3>Highest Volume Coin</h3>
+            <div className='coin-analytics-div'>
+              <div className='coin-analytics-summary'>
+                <img src={highestVolumeCoin.image} alt="Coin Image" />
+                <p>{highestVolumeCoin.name}</p>
+              </div>
+              <p>${highestVolumeCoin.market_cap}</p>
+            </div>
+          </div>
+          <div className='analytics-item'>
+            <h3>Biggest Gainer Coin</h3>
+            <div className='coin-analytics-div'>
+              <div className='coin-analytics-summary'>
+                <img src={biggestGainerCoin.image} alt="Coin Image" />
+                <p>{biggestGainerCoin.name}</p>
+              </div>
+              <p>${biggestGainerCoin.current_price}</p>
+            </div>
+          </div>
+          <div className='analytics-item'>
+            <h3>Biggest Loser Coin</h3>
+            <div className='coin-analytics-div'>
+              <div className='coin-analytics-summary'>
+                <img src={biggestLoserCoin.image} alt="Coin Image" />
+                <p>{biggestLoserCoin.name}</p>
+              </div>
+              <p>${biggestLoserCoin.current_price}</p>
+            </div>
+          </div>
+        </div>
           <>
             <table className="crypto-table">
               <thead>
@@ -112,7 +150,6 @@ const Markets = ({ markets }) => {
               <button className="pagination-button" onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === 7}>&gt;</button>
             </div>
           </>
-        {/* )} */}
       </div>
       <WhatsAppChat />
     </div>

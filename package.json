@@ -12,7 +12,7 @@
     "axios": "^1.2.1",
     "bcryptjs": "^2.4.3",
     "caniuse-lite": "^1.0.30001570",
-    "chart.js": "^4.4.1",
+    "chart.js": "^4.4.3",
     "formik": "^2.4.5",
     "js-cookie": "^3.0.5",
     "notistack": "^3.0.1",

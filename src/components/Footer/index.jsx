@@ -28,14 +28,13 @@ const Footer = () => {
           <NavLink to='/shop'>Shop</NavLink>
           <NavLink to='/markets'>Markets</NavLink>
           <NavLink to='/login'>Login</NavLink>
-          <NavLink to='/careers'>Careers</NavLink>
+          
           
         </div>
         <div class="contactinfo">
           <h5>RESOURCES</h5>
-          <NavLink to='/news'>Newsroom</NavLink>
-          <NavLink to='/events'>Events</NavLink>
-          <NavLink to='/blogs'>Blog</NavLink>
+          <NavLink to='/orders'>Orders</NavLink>
+          <NavLink to='/blog'>Blogs</NavLink>
           <NavLink to='/sponsorship'>Sponsorship</NavLink>
           <NavLink to='/faqs'>FAQs</NavLink>
           <NavLink to='/privacypolicy'>Privacy policy</NavLink>
@@ -43,6 +42,7 @@ const Footer = () => {
         <div class="contactinfo">
           <h5>COMPANY</h5>
           <NavLink to='/about'>About Us</NavLink>
+          <NavLink to='/careers'>Careers</NavLink>
           <NavLink to='/partnership'>Become a Partner</NavLink>
           <NavLink to='/community'>Join Our Community</NavLink>
           <NavLink to='/termsofservice'>Terms of Service</NavLink>

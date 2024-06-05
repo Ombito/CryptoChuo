@@ -7,7 +7,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #023047;
+  background-color: #0057d3;
   color: #252a43;
   z-index: 1;
 }
@@ -91,7 +91,7 @@
 }
 .auth-button {
   display: flex;
-  gap: 32px;
+  gap: 22px;
 }
 #cart-icon {
   font-size: 1.6em;
@@ -159,7 +159,6 @@
   background-color: #f0f0f0;
   border-radius: 3px;
   padding: 3px 5px 3px 0;
-  gap: 4px;
 }
 .modal-initials-div h6{
   margin-top: -11px;
@@ -167,15 +166,15 @@
 }
 .modal-initials {
   margin: 0 auto;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background-color: #4CAF50;
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  /* font-size: 1.5rem; */
   font-weight: bold;
 }
 .user-email {

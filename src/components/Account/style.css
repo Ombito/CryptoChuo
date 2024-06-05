@@ -1,0 +1,95 @@
+.account-container {
+    margin: 5% 0% 0% 0%;
+    display: flex;
+    flex-direction: column;  
+}
+.profile-banner {
+    display: flex;
+    flex-direction: column;
+    padding: 3% 7%;
+    width: 100%;
+    background-color: #0057d3;
+}
+.user-account-details {
+    display: flex;
+    color: white;
+    gap: 10px;
+}
+.user-account-initials {
+    margin: 0 auto;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #eba011;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.7rem;
+    font-weight: bold;
+}
+.user-profile-banner {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.profile-stats {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+}
+.profile-img {
+    width: 200px;
+    height: 100px;
+    border-radius: 3px;
+    object-fit: cover;
+    margin-right: 20px;
+}  
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+}
+.stat-count {
+    font-size: 24px;
+    font-weight: bold;
+}
+.stat-label {
+    color: white;
+}
+.account-summary {
+    display: flex;
+    padding: 2% 7%;
+    width: 100%;
+}
+.account-nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 20px;
+    height: auto;
+    width: 20%;
+}
+.account-nav li {
+    height: auto;
+    margin-right: 20px;
+    padding: 10px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.account-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    width: 100%;
+    gap: 5px;
+}
+.account-item-hero {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
