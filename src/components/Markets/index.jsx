@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import "../Markets/style.css";
-import { NavLink } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-import Footer from '../Footer/index.jsx';
 import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS } from 'chart.js/auto';
 import { FaSearch } from  'react-icons/fa';
