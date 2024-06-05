@@ -48,29 +48,20 @@ const Markets = ({ markets, totalMarketCap, averageMarketCap, highestMarketCapCo
         <p>This page displays the latest prices, 24-hour trading volume, price changes, and market capitalizations for all cryptocurrencies on CoinmarketCap.</p>
       </div>
       <div>
-        
-        {/* {loading || markets.length === 0 ? (
-          <div className="loader-container">
-            <div class="loader">
-              <div class="load1"></div>
-              <div class="load2"></div>
-              <div class="load3"></div>
-              <div class="load4"></div>
-              <div class="load5"></div>
-              <div class="load6"></div>
-              <div class="load7"></div>
-              <div class="load8"></div>
-              <div class="load9"></div>
-            </div>
-            <div class="loader">
-              <p className="loading">Fetching market data...</p>
-            </div>
-          </div>
-        ) : ( */}
         <div className='market-analytics'>
           <div className='analytics-item'>
             <h3>Total Market Cap</h3>
             <p>${totalMarketCap}</p>
+          </div>
+          <div className='analytics-item'>
+            <h3>Highest Market Cap</h3>
+            <div className='coin-analytics-div'>
+              <div className='coin-analytics-summary'>
+                <img src={highestMarketCapCoin.image} alt="Coin Image" />
+                <p>{highestMarketCapCoin.name}</p>
+              </div>
+              <p>${highestMarketCapCoin.market_cap}</p>
+            </div>
           </div>
           <div className='analytics-item'>
             <h3>Most Circulating Supply</h3>
@@ -93,35 +84,23 @@ const Markets = ({ markets, totalMarketCap, averageMarketCap, highestMarketCapCo
             </div>
           </div>
           <div className='analytics-item'>
-            <h3>Highest Market Cap</h3>
+            <h3>Biggest Gainer Coin</h3>
             <div className='coin-analytics-div'>
               <div className='coin-analytics-summary'>
-                <img src={highestMarketCapCoin.image} alt="Coin Image" />
-                <p>{highestMarketCapCoin.name}</p>
+                <img src={biggestGainerCoin.image} alt="Coin Image" />
+                <p>{biggestGainerCoin.name}</p>
               </div>
-              <p>${highestMarketCapCoin.market_cap}</p>
+              <p>${biggestGainerCoin.current_price}</p>
             </div>
           </div>
-          <div className='price-analytics'>
-            <div className='analytics-item'>
-              <h3>Biggest Gainer Coin</h3>
-              <div className='coin-analytics-div'>
-                <div className='coin-analytics-summary'>
-                  <img src={biggestGainerCoin.image} alt="Coin Image" />
-                  <p>{biggestGainerCoin.name}</p>
-                </div>
-                <p>${biggestGainerCoin.current_price}</p>
+          <div className='analytics-item'>
+            <h3>Biggest Loser Coin</h3>
+            <div className='coin-analytics-div'>
+              <div className='coin-analytics-summary'>
+                <img src={biggestLoserCoin.image} alt="Coin Image" />
+                <p>{biggestLoserCoin.name}</p>
               </div>
-            </div>
-            <div className='analytics-item'>
-              <h3>Biggest Loser Coin</h3>
-              <div className='coin-analytics-div'>
-                <div className='coin-analytics-summary'>
-                  <img src={biggestLoserCoin.image} alt="Coin Image" />
-                  <p>{biggestLoserCoin.name}</p>
-                </div>
-                <p>${biggestLoserCoin.current_price}</p>
-              </div>
+              <p>${biggestLoserCoin.current_price}</p>
             </div>
           </div>
         </div>
@@ -174,7 +153,6 @@ const Markets = ({ markets, totalMarketCap, averageMarketCap, highestMarketCapCo
               <button className="pagination-button" onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === 7}>&gt;</button>
             </div>
           </>
-        {/* )} */}
       </div>
       <WhatsAppChat />
     </div>

@@ -19,17 +19,15 @@
   justify-content: space-between;
   margin-bottom: 20px;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 7px;
 }
 .analytics-item {
   border: 1px solid gray;
   border-radius: 5px;
   padding: 10px 20px;
-  /* margin: 0 10px; */
-  gap: 10px;
+  gap: 20px;
   flex: 1 1 30%;
   box-sizing: border-box;
-  /* max-width: 30%; */
 }
 .coin-analytics-div {
   display: flex;
@@ -41,6 +39,7 @@
   display: flex;
   gap: 10px;
   width: 100%;
+  padding: 5px 0 0 0;
 }
 .price-analytics {
   display: flex;
@@ -50,6 +49,7 @@
 }
 .coin-analytics-summary img{
   height: 30px;
+  border-radius: 50%;
 }
 .analytics-item h3 {
   font-size: 18px;
