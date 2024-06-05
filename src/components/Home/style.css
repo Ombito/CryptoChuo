@@ -691,6 +691,9 @@ button:hover {
       margin: auto;
       gap: 10px;
     }
+    .homepage {
+      margin: 25% 2% 0 2%;
+    }
     #landing-img {
       display: none;
     }
@@ -770,12 +773,12 @@ button:hover {
       width: 100%;
     }
   }
-  @media only screen and (min-width: 320px) and (max-width: 380px){
+  @media only screen and (min-width: 321px) and (max-width: 380px){
   .content {
     height: 100vh;
   }
   .homepage {
-    margin: -54% 2% 0 2%;
+    margin: 25% 2% 0 2%;
   }
   #landing-img {
     display: none;
@@ -817,11 +820,17 @@ button:hover {
   }
 
   @media only screen and (min-width: 200px) and (max-width: 320px){
+    #home-card-container {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      margin: auto;
+      gap: 10px;
+    }
     .content {
       height: 110vh;
     }
     .homepage {
-      margin: -75% 2% 0 2%;
+      margin: 25% 2% 0 2%;
     }
     #landing-img {
       display: none;
@@ -887,6 +896,7 @@ button:hover {
   }
   @media (max-width: 280px) {
     #home-container {
+      grid-template-columns: repeat(1, 1fr);
       width: 100%;
       text-overflow: hidden;
       gap: 10px;
@@ -932,5 +942,21 @@ button:hover {
     }
     .subscribe {
       margin-top: 490%;
+    }
+  }
+  @media screen and (min-width: 766px) and (max-width: 965px){
+    #landing-img {
+      display: none;
+    }
+  }
+  @media screen and (min-width: 766px) and (max-width: 1020px){
+    #home-card-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      margin: auto;
+      gap: 10px;
+    }
+    .homepage {
+      margin: 25% 2% 0 2%;
     }
   }
