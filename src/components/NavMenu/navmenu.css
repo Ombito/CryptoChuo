@@ -91,7 +91,7 @@
 }
 .auth-button {
   display: flex;
-  gap: 32px;
+  gap: 22px;
 }
 #cart-icon {
   font-size: 1.6em;
