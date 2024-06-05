@@ -689,6 +689,9 @@ button:hover {
       display: grid;
       grid-template-columns: repeat(1, 1fr);
     }
+    #landing-img {
+      display: none;
+    }
     #home-describe {
       display: flex;
       flex-direction: column;
@@ -772,6 +775,9 @@ button:hover {
   .homepage {
     margin: -54% 2% 0 2%;
   }
+  #landing-img {
+    display: none;
+  }
   /* #stats {
     margin: 0 0;
     height: 65vh;
@@ -814,6 +820,9 @@ button:hover {
     }
     .homepage {
       margin: -75% 2% 0 2%;
+    }
+    #landing-img {
+      display: none;
     }
     #stats {
       display: none;
@@ -884,6 +893,9 @@ button:hover {
     }
     #home-container {
       max-width: 100%;
+    }
+    #landing-img {
+      display: none;
     }
     #stats {
       display: none;
