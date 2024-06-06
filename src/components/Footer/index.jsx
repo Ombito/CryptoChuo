@@ -34,7 +34,7 @@ const Footer = () => {
         <div class="contactinfo">
           <h5>RESOURCES</h5>
           <NavLink to='/orders'>Orders</NavLink>
-          <NavLink to='/blog'>Blogs</NavLink>
+          <NavLink to='/blogs'>Blog</NavLink>
           <NavLink to='/sponsorship'>Sponsorship</NavLink>
           <NavLink to='/faqs'>FAQs</NavLink>
           <NavLink to='/privacypolicy'>Privacy policy</NavLink>
