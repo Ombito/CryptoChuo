@@ -673,7 +673,7 @@ button:hover {
 
 
   /* mobile screen device  */
-@media screen and (min-width: 360px) and (max-width: 765px){
+@media screen and (min-width: 320px) and (max-width: 765px){
   #home-container {
     padding-top: 35%;
     gap: 30px;
@@ -767,6 +767,9 @@ button:hover {
     margin-top: 0px;
     margin-right: 2px;
   }
+  #subscribe-div h5 {
+    text-align: center;
+  }
 }
   @media only screen and (min-width: 321px) and (max-width: 380px){
     #home-container {
@@ -781,6 +784,18 @@ button:hover {
   #stats {
     display: none;
   }
+  #home-describe {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .content-img {
+    height: 30vh;
+  }
+  .topics-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
   .join {
     height: 80vh;
   }
@@ -793,9 +808,6 @@ button:hover {
   .faq h3{
     font-size: 1.3em;
     text-align: center;
-  }
-  .subscribe {
-    
   }
   #subscribe-div h5{
     text-align: left;
@@ -891,6 +903,10 @@ button:hover {
       max-width: 90%;
       margin-right: 0;
     }
+    .topics-container {
+      display: flex;
+      flex-wrap: wrap;
+    }
     .topic {
       width: 120px;
       padding: 6% 5%;
@@ -907,15 +923,72 @@ button:hover {
     }
   }
   @media screen and (min-width: 766px) and (max-width: 965px){
+    #home-container {
+      padding-top: 5%;
+      gap: 30px;
+    }
+    .content {
+      height: 90vh;
+    }
+    #banner-div {
+      margin-top: 5%;
+    }
     #landing-img {
       display: none;
     }
+    .content-img {
+      display: none;
+    }
   }
-  @media screen and (min-width: 766px) and (max-width: 1020px){
+  @media screen and (min-width: 766px) and (max-width: 1025px){
+    #home-container {
+      padding-top: 3%;
+      gap: 30px;
+    }
+    .content {
+      height: 100vh;
+    }
+    #banner-div {
+      margin-top: 5%;
+      display: flex;
+      flex-direction: column;
+    }
+    .homepage {
+      height: auto;
+    }
+    #landing-img {
+      display: flex;
+      height: 30vh;
+      align-items: center;
+      margin: auto;
+      justify-content: center;
+    }
+    .content-img {
+      height: 30vh;
+      width: 300px;
+      margin: auto;
+    }
     #home-card-container {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       margin: auto;
       gap: 10px;
     }
+    .topics-container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    form.contact-form {
+      width: 100%;
+  }
+  .contact-container {
+    gap: 30px;
+  }
+  .contact-info {
+    width: 100%;
+    padding: 20px;
+  }
+  .subscribe {
+    height: auto;
+  }
   }

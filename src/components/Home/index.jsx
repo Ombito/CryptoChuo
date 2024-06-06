@@ -241,7 +241,7 @@ const Home = ({ user, courses }) => {
                         <h2 className="contact-p">Contact Us</h2>
                         <p className="contact-p">Reach out to us anytime, We are open for training, partnership, industry events hosting and your questions.
                         </p>
-                        <div class="contact-container">
+                        <div className="contact-container">
                             <form class="contact-form" onSubmit={handleSubmit}>
                                 <label>Full Name</label>
                                 <input type="text" id="fullName" placeholder="Enter your Full Name" value={name} onChange={(e) => setName(e.target.value)} required/>
