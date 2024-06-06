@@ -242,24 +242,6 @@ const Home = ({ user, courses }) => {
                         <p className="contact-p">Reach out to us anytime, We are open for training, partnership, industry events hosting and your questions.
                         </p>
                         <div class="contact-container">
-                            <div class="contact-info">
-                                <img id="contact-img" src={ContactUs} alt="contact" />
-                                <div>
-                                    <h6>Administrative Support</h6>
-                                    <p><a href="mailto:admin@cryptochuo.com">admin@cryptochuo.com</a></p>
-                                    <h6>Learner Support</h6>
-                                    <p><a href="mailto:admin@cryptochuo.com">student-support@cryptochuo.com</a></p>
-                                    <h6>Nairobi, Kenya</h6>
-                                    <div>
-                                        <div id="contact-icons">
-                                            <a href=""><FaLinkedin className="icons linkedin"/></a>
-                                            <a href=""><FaWhatsapp className="icons whatsapp"/></a>
-                                            <a href=""><FaTelegram className="icons telegram"/></a>
-                                            <a href=""><FaDiscord className="icons discord"/></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                             <form class="contact-form" onSubmit={handleSubmit}>
                                 <label>Full Name</label>
                                 <input type="text" id="fullName" placeholder="Enter your Full Name" value={name} onChange={(e) => setName(e.target.value)} required/>
@@ -278,6 +260,24 @@ const Home = ({ user, courses }) => {
 
                                 <button id="contact-btn" type="submit">Submit</button>
                             </form>
+                            <div class="contact-info">
+                                <img id="contact-img" src={ContactUs} alt="contact" />
+                                <div>
+                                    <h6>Administrative Support</h6>
+                                    <p><a href="mailto:admin@cryptochuo.com">admin@cryptochuo.com</a></p>
+                                    <h6>Learner Support</h6>
+                                    <p><a href="mailto:admin@cryptochuo.com">student-support@cryptochuo.com</a></p>
+                                    <h6>Nairobi, Kenya</h6>
+                                    <div>
+                                        <div id="contact-icons">
+                                            <a href=""><FaLinkedin className="icons linkedin"/></a>
+                                            <a href=""><FaWhatsapp className="icons whatsapp"/></a>
+                                            <a href=""><FaTelegram className="icons telegram"/></a>
+                                            <a href=""><FaDiscord className="icons discord"/></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -290,7 +290,7 @@ const Home = ({ user, courses }) => {
                                 <button type="submit" className="subscribe-button">Subscribe</button>
                             </div>
                             <div className='subscribe-checkbox'>
-                                <input type="checkbox" checked={isChecked} onChange={(e) => setIsChecked(e.target.checked)} required/>
+                                <input id='subscribe-checkbox-icon' type="checkbox" checked={isChecked} onChange={(e) => setIsChecked(e.target.checked)} required/>
                                 <label>I have read and agreed to the Terms of Service.</label>
                             </div>
                         </form>

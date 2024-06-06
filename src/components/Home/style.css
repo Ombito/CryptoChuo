@@ -85,7 +85,10 @@
 }
 .home-hero {
   display: flex;  
-  margin-top: 4%;  
+  margin: 4% 10%;
+}
+#course-div {
+  margin: 0 7%;
 }
 #course-div h3 {
   text-align: center;
@@ -347,6 +350,7 @@
 
 .topics {
   padding: 25px 0;
+  margin: 3% 10%;
   height: auto;
 }
 .topics h3 {
@@ -452,10 +456,12 @@
   border-radius: 6px;
   transition: background-color 0.3s ease-in-out;
 }
-
 .btn:hover {
   background-color: #2980b9;
   text-decoration: none;
+}
+#contact-div {
+  margin: 2% 7%;
 }
 .contact-container {
   display: flex;
@@ -473,7 +479,7 @@
   border: 1px solid gray;
 }
 #contact-img {
-  height: 40vh;
+  height: 35vh;
   width: 100%;
 }
 .contact-info h6 {
@@ -572,9 +578,9 @@ button:hover {
 }
 .join {
   background-color: #283618;
-  padding: 30px 20px;
+  padding: 3% 10%;
   color: white;
-  height: 55vh;
+  height: auto;
 }
 .join h1 {
   font-size: 36px;
@@ -654,11 +660,12 @@ button:hover {
   }
   
   .subscribe-checkbox input[type="checkbox"] {
-    margin-left: -49%;
+    width: 1%;
     margin-top: 15px;
+    margin-right: 5px;
   }
   .subscribe-checkbox label {
-    margin-left: -48%;
+    /* margin-left: -48%; */
   }
   .subscribe-button {
     background-color: #fb8500;
