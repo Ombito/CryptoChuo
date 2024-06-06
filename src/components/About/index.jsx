@@ -73,28 +73,6 @@ const About = () => {
                   {/* <p>With our thriving Alumni network opening doors to a myriad of opportunities, this network serves as a valuable resource for connecting with like-minded professionals, industry leaders, and potential collaborators.</p> */}
                 </div>             
             </div>
-            <div id="partners">
-              <div className="hero-partners">
-                <h3>Our Partners</h3>
-              </div>
-              <div id="logo-div">
-                <img src={binance} alt="" height="70" width="100" />
-                <img src={opensea} alt="" height="100" width="150" />
-                <img src={avalanche} alt="" height="70" width="70" />
-                <img src={polygon} alt="" height="70" width="70" />
-                <img src={ledger} alt="" height="90" width="120" />
-                <img src={bybit} alt="" height="70" width="100" />
-                <img src={avalanche} alt="" height="70" width="70" />
-                <img src={kraken} alt="" height="70" width="110" />
-                <img src={binance} alt="" height="70" width="100" />
-                <img src={opensea} alt="" height="100" width="150" />
-                <img src={polygon} alt="" height="70" width="70" />
-                <img src={ledger} alt="" height="90" width="120" />
-                <img src={bybit} alt="" height="70" width="100" />
-                <img src={avalanche} alt="" height="70" width="70" />
-                <img src={polygon} alt="" height="70" width="70" />
-              </div>
-            </div>
           </div>
           </div>
           <div id="our-success">
@@ -140,8 +118,30 @@ const About = () => {
               </div>
             </div>
           </div>
+          <div id="partners">
+              <div className="hero-partners">
+                <h3>Our Partners</h3>
+              </div>
+              <div id="logo-div">
+                <img src={binance} alt="Binance" />
+                <img src={opensea} alt="OpenSea" />
+                <img src={avalanche} alt="Avalanche" />
+                <img src={polygon} alt="Polygon" />
+                <img src={ledger} alt="Ledger" />
+                <img src={bybit} alt="Bybit" />
+                <img src={avalanche} alt="Avalanche" />
+                <img src={kraken} alt="Kraken" />
+                <img src={binance} alt="Binance" />
+                <img src={opensea} alt="OpenSea" />
+                <img src={polygon} alt="" />
+                <img src={ledger} alt="" />
+                <img src={bybit} alt="" />
+                <img src={avalanche} alt="" />
+                <img src={polygon} alt="" />
+              </div>
+            </div>
           <div id="subscribe">
-            <h2  style={{"text-align": "center"}}>Choose Your Subscription Plan</h2>
+            <h2 style={{"text-align": "center"}}>Choose Your Subscription Plan</h2>
             <div id="subscription-plan">
               <div className="subscription-card">
                 <h4>Basic Membership</h4>
