@@ -29,8 +29,9 @@ const About = () => {
         <div className='aboutus'>
           <div id="bannerimg">
             <img src={company} alt="" />
+            <h2 id='about-name'>About Us</h2>
           </div>
-          <div id="our-story" class="container">
+          <div id="our-story">
             <img src={ourstory} alt="" height="300" width="400"/>
             <div>
               <h2>Our Story</h2>
@@ -39,7 +40,7 @@ const About = () => {
             </div>
           </div>
           <div className="about-hero">
-            <div id="about-banner" class="container">
+            <div id="about-banner">
               <div> 
                 <p className='about'>At CryptoChuo, we go beyond the basics. Our curriculum is designed to equip you with the knowledge and skills needed to navigate the complexities of the crypto ecosystem. Our cutting-edge program goes beyond the basics empowering learners to delve into the essentials of blockchain and distributed ledger technology (DLT). Our graduates emerge as trailblazers ready to tackle the challenges and opportunities presented by the dynamic world of cryptocurrency. But wait, there's more! Our program isn't just about learning; it's an immersive journey into the future of finance. Join a community of forward-thinkers, disruptors, and visionaries who are reshaping the narrative of cryptocurrency. At CryptoChuo, we believe that knowledge is power, and we're here to empower you.
                 </p>
@@ -51,7 +52,7 @@ const About = () => {
           </div>
           <div id="partner-container">
             <div >
-            <div class="container" id="why-us">
+            <div id="why-us">
               <h3>Why CryptoChuo</h3>
               <div className="why-us-div">
                 <div className="why-us-cards">   
@@ -76,7 +77,7 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <div class="container" id="partners">
+            <div id="partners">
               <div className="hero-partners">
                 <h3>Our Partners</h3>
               </div>
@@ -100,7 +101,7 @@ const About = () => {
             </div>
           </div>
           </div>
-          <div class="container" id="our-success">
+          <div id="our-success">
             <h2>Success Stories</h2>
             <div id="testimonials-container">
               <div className="testimonials">
@@ -178,7 +179,7 @@ const About = () => {
               </div>
               </div>
           </div>
-          <div class="container" id="about-contact-hero">
+          <div id="about-contact-hero">
                 <img src={join} alt="" height="100" width="130" />
                 <h6>Ready to learn the world's most in-demand Blockchain, Web3 and AI skills?</h6>
                 <div id="about-contact">
