@@ -123,8 +123,8 @@ const Home = ({ user, courses }) => {
     return (
         <div>
             <div id="home-container">
-                <div class="container" className='content'>
-                    <div class="container"id="banner-div">
+                <div className='content'>
+                    <div id="banner-div">
                         <div className='homepage'>
                             <h2>Trusted platform <br/> for, <span className='crypto'>Web 3.0</span> Education.</h2>
                             <p className='paragraph'>Your one-stop place for learning everything from<br /> mastering the basics of blockchain to conquering the art of crypto trading and insightful on-chain analysis. Join us, and let's pioneer the future of decentralization together!
@@ -138,7 +138,7 @@ const Home = ({ user, courses }) => {
                         </div> 
                     </div>
                 </div>
-                <div class="container" id="stats">
+                <div id="stats">
                     <ScrollTrigger id="stats1" onEnter={()=> setCounterOn(true)} onExit={()=> setCounterOn(false)}>
                         <div>
                             <h5 className="numbers">{counterOn && <CountUp className="number-color" start={0} end={2000} duration={5}/>}+<br></br><br></br>  Students</h5>
@@ -159,7 +159,7 @@ const Home = ({ user, courses }) => {
                     </ScrollTrigger>
                 </div>
                 <div className="home-hero">
-                    <div class="container" id="home-describe">
+                    <div id="home-describe">
                         <img className="content-img" src={online} alt="" />
                         <div id="describe-hero">
                             <h4>Welcome to Web3.0 Learning Center</h4>
@@ -170,7 +170,7 @@ const Home = ({ user, courses }) => {
                         </div>
                     </div>
                 </div>
-                <div class="container" id="course-div">     
+                <div id="course-div">     
                     <h3>Trending Courses</h3>
                     {courses.length === 0  ? (
                         <div className="loadingTrendingCourses">
@@ -195,8 +195,8 @@ const Home = ({ user, courses }) => {
                         </div>
                     )}
                 </div>
-                <div class="container" className='topics'>
-                    <div class="container">
+                <div className='topics'>
+                    <div>
                         <h3>Our students also learn</h3>
                         <div className='topics-container'>
                             {topics.map((topic, index) => (
@@ -208,7 +208,7 @@ const Home = ({ user, courses }) => {
                     </div>
                 </div>
                 <div className='join'>
-                    <div class="container">
+                    <div>
                         <h1>Partner with us to educate the world about Web3.</h1>
                         <p>CryptoChuo offers tools and resources for your organization to skill up and scale up. Become a partner and get access to all these tools and more</p>
                         <div className='join-container'>
@@ -237,7 +237,7 @@ const Home = ({ user, courses }) => {
                     ))}
                 </div>
                 <div id="contact-div">
-                    <div class="container">
+                    <div>
                         <h2 className="contact-p">Contact Us</h2>
                         <p className="contact-p">Reach out to us anytime, We are open for training, partnership, industry events hosting and your questions.
                         </p>
@@ -282,7 +282,7 @@ const Home = ({ user, courses }) => {
                     </div>
                 </div>
                 <div className='subscribe'>
-                    <div class="container" id="subscribe-div">
+                    <div id="subscribe-div">
                         <h5>Subscribe to our newsletter</h5>
                         <form onSubmit={handleSubmitNewsletter}>
                             <div className="subscribe-hero">

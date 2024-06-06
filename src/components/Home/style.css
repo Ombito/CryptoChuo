@@ -87,9 +87,6 @@
   display: flex;  
   margin-top: 4%;  
 }
-#course-div {
-  margin-top: 23%;
-} 
 #course-div h3 {
   text-align: center;
 }
@@ -350,8 +347,6 @@
 
 .topics {
   padding: 25px 0;
-  margin-top: 51%;
-  margin-bottom: 10%;
   height: auto;
 }
 .topics h3 {
@@ -461,9 +456,6 @@
 .btn:hover {
   background-color: #2980b9;
   text-decoration: none;
-}
-#contact-div {
-  margin-top: -10%;
 }
 .contact-container {
   display: flex;
@@ -582,7 +574,6 @@ button:hover {
   background-color: #283618;
   padding: 30px 20px;
   color: white;
-  margin-top: 7%;
   height: 55vh;
 }
 .join h1 {
@@ -603,7 +594,7 @@ button:hover {
 .faq {
   padding: 50px 20px;
   max-width: 650px;
-  margin: 2% auto 14%;
+  margin: 2% auto;
   border: 1px solid gray;
   border-radius: 4px;
 }
@@ -635,7 +626,7 @@ button:hover {
   .subscribe {
     align-items: center;
     padding: 50px 20px;
-    margin-top: 53%;
+    margin-top: 3%;
     background-color: #023047;
     color: white;
     height: 35vh;
@@ -746,7 +737,7 @@ button:hover {
       width: 100%;
     }
     .topics {
-      margin: 740% 0;
+      margin: 330% 0;
     }
     .topics h3{
       text-align: center;
@@ -794,7 +785,7 @@ button:hover {
     margin-top: 270%;
   }
   .topics {
-    margin: 720% 0;
+    margin: 330% 0;
   }
   .join {
     margin-top: -660%;
@@ -877,7 +868,7 @@ button:hover {
     }
     .topics {
       padding: 0 10px;
-      margin-top: 745%;
+      margin-top: 330%;
     }
     .topics-container {
       display: grid;
@@ -922,7 +913,7 @@ button:hover {
     .topics {
       padding: 0;
       max-width: 90%;
-      margin-top: 855%;
+      margin-top: 330%;
       margin-right: 0;
     }
     .topic {
