@@ -682,9 +682,9 @@ button:hover {
       margin: auto;
       gap: 10px;
     }
-    .homepage {
+    /* .homepage {
       margin: 25% 2% 0 2%;
-    }
+    } */
     #landing-img {
       display: none;
     }
@@ -728,7 +728,7 @@ button:hover {
       } */
 
       #course-div {
-        margin-top: 220%;
+        /* margin-top: 220%; */
     } 
     #course-div h3{
       text-align: center;
@@ -736,9 +736,9 @@ button:hover {
     .course-card{
       width: 100%;
     }
-    .topics {
+    /* .topics {
       margin: 330% 0;
-    }
+    } */
     .topics h3{
       text-align: center;
     } 
@@ -747,7 +747,7 @@ button:hover {
       flex-wrap: wrap;
     }
     .join {
-      margin-top: -700%;
+      /* margin-top: -700%; */
       height: 70vh;
     }
     .contact-container {
@@ -758,7 +758,7 @@ button:hover {
       margin-top: 5%;
     }
     .subscribe {
-      margin-top: 350%;
+      /* margin-top: 350%; */
     }
     #subscribe-checkbox {
       width: 100%;
@@ -768,9 +768,9 @@ button:hover {
   .content {
     height: 100vh;
   }
-  .homepage {
+  /* .homepage {
     margin: 25% 2% 0 2%;
-  }
+  } */
   #landing-img {
     display: none;
   }
@@ -781,14 +781,14 @@ button:hover {
   #stats {
     display: none;
   }
-  #course-div {
+  /* #course-div {
     margin-top: 270%;
-  }
-  .topics {
+  } */
+  /* .topics {
     margin: 330% 0;
-  }
+  } */
   .join {
-    margin-top: -660%;
+    /* margin-top: -660%; */
     height: 80vh;
   }
   .join h1{
@@ -802,7 +802,7 @@ button:hover {
     text-align: center;
   }
   .subscribe {
-    margin-top: 370%;
+    /* margin-top: 370%; */
     padding-bottom: 75%;
   }
   #subscribe-div h5{
@@ -821,7 +821,7 @@ button:hover {
       height: 110vh;
     }
     .homepage {
-      margin: 25% 2% 0 2%;
+      /* margin: 25% 2% 0 2%; */
     }
     #landing-img {
       display: none;
@@ -834,7 +834,7 @@ button:hover {
       flex-direction: column;
     }
     #course-div {
-      margin-top: 310%;
+      /* margin-top: 310%; */
     }
     .course-card {
       margin: 0;
@@ -849,11 +849,11 @@ button:hover {
       gap: 10px;
     }
     .join { 
-      margin-top: -620%;
+      /* margin-top: -620%; */
       height: 90vh;
     }
     .subscribe {
-      margin-top: 430%;
+      /* margin-top: 430%; */
       height: 55vh;
     }
     .subscribe-hero {
@@ -908,12 +908,12 @@ button:hover {
       width: 100%;
     }
     #course-div {
-      margin-top: 390%;
+      /* margin-top: 390%; */
     }
     .topics {
       padding: 0;
       max-width: 90%;
-      margin-top: 330%;
+      /* margin-top: 330%; */
       margin-right: 0;
     }
     .topic {
@@ -921,7 +921,7 @@ button:hover {
       padding: 6% 5%;
     }
     .join { 
-      margin-top: 115%;
+      /* margin-top: 115%; */
       height: 120vh;
     }
     .join h1 {
@@ -932,7 +932,7 @@ button:hover {
       font-size: 1.3em;
     }
     .subscribe {
-      margin-top: 490%;
+      /* margin-top: 490%; */
     }
   }
   @media screen and (min-width: 766px) and (max-width: 965px){
@@ -948,6 +948,6 @@ button:hover {
       gap: 10px;
     }
     .homepage {
-      margin: 25% 2% 0 2%;
+      /* margin: 25% 2% 0 2%; */
     }
   }
