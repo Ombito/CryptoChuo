@@ -653,12 +653,10 @@ button:hover {
     border-radius: 5px;
     margin-right: 30px;
   }
-  
   .subscribe-checkbox {
     display: flex;
     align-items: center;
   }
-  
   .subscribe-checkbox input[type="checkbox"] {
     width: 1%;
     margin-top: 15px;
@@ -683,15 +681,15 @@ button:hover {
 
   /* mobile screen device  */
   @media screen and (min-width: 360px) and (max-width: 765px){
+    #home-container {
+      padding-top: 35%;
+    }
     #home-card-container {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       margin: auto;
       gap: 10px;
     }
-    /* .homepage {
-      margin: 25% 2% 0 2%;
-    } */
     #landing-img {
       display: none;
     }
@@ -772,12 +770,12 @@ button:hover {
     }
   }
   @media only screen and (min-width: 321px) and (max-width: 380px){
+    #home-container {
+      padding-top: 20%;
+    }
   .content {
     height: 100vh;
   }
-  /* .homepage {
-    margin: 25% 2% 0 2%;
-  } */
   #landing-img {
     display: none;
   }
@@ -818,12 +816,16 @@ button:hover {
   }
 
   @media only screen and (min-width: 200px) and (max-width: 320px){
-    #home-card-container {
+    #home-container {
+      padding-top: 20%;
+    }
+    /* #home-card-container {
       display: grid;
       grid-template-columns: repeat(1, 1fr);
       margin: auto;
+      margin-top: 4%;
       gap: 10px;
-    }
+    } */
     .content {
       height: 110vh;
     }
@@ -892,8 +894,13 @@ button:hover {
       width: 100%;
     }
   }
-  @media (max-width: 280px) {
+
+  @media (max-width: 280px) { 
     #home-container {
+      padding-top: 20%;
+      max-width: 100%;
+    }
+    #home-card-container {
       grid-template-columns: repeat(1, 1fr);
       width: 100%;
       text-overflow: hidden;
@@ -901,9 +908,6 @@ button:hover {
     }
     #banner-div {
       width: 100%;
-    }
-    #home-container {
-      max-width: 100%;
     }
     #landing-img {
       display: none;
