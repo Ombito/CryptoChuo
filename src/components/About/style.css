@@ -2,7 +2,7 @@
     display: flex;
     gap: 50px;
     height: auto;
-    padding: 4%;
+    padding: 2% 4%;
 }
 .about {
     width: 90%;
@@ -25,7 +25,7 @@
     object-fit: cover;
 }
 .about-hero {
-    height: 60vh;
+    height: auto;
     z-index: -1;
     clip-path: polygon(
         0 0,
@@ -82,7 +82,9 @@
     align-items: center;
 }
 #why-us {
-    margin-top: 0%;
+    margin-top: 1%;
+    width: 70%;
+    margin: auto;
 }
 #why-us h3 {
     text-align: center;
@@ -92,6 +94,7 @@
     display: flex;
     text-align: center;
     gap: 40px;
+    margin: 2% 0;
 }
 .why-us-cards {
     border-radius: 4px;

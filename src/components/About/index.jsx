@@ -45,37 +45,33 @@ const About = () => {
                 <p className='about'>At CryptoChuo, we go beyond the basics. Our curriculum is designed to equip you with the knowledge and skills needed to navigate the complexities of the crypto ecosystem. Our cutting-edge program goes beyond the basics empowering learners to delve into the essentials of blockchain and distributed ledger technology (DLT). Our graduates emerge as trailblazers ready to tackle the challenges and opportunities presented by the dynamic world of cryptocurrency. But wait, there's more! Our program isn't just about learning; it's an immersive journey into the future of finance. Join a community of forward-thinkers, disruptors, and visionaries who are reshaping the narrative of cryptocurrency. At CryptoChuo, we believe that knowledge is power, and we're here to empower you.
                 </p>
               </div>
-              <div>
-                <img src={banner} alt="" className="about-banner-img"/>
-              </div>
+              <img src={banner} alt="" className="about-banner-img"/>
             </div>
           </div>
-          <div id="partner-container">
-            <div >
+          <div id="partner-container">           
             <div id="why-us">
               <h3>Why CryptoChuo</h3>
               <div className="why-us-div">
                 <div className="why-us-cards">   
-                  <img src={certificate} alt='' height='180' width='180' />
+                  <img src={certificate} alt='' height='100' width='100' />
                   <h6>Award winning education</h6>
                   {/* <p>Our certificates stand as a testament to the quality of education you receive. When you choose Cryptochuo, you're choosing a platform whose credentials are acknowledged and respected in the industry.</p> */}
                 </div>
                 <div className="why-us-cards"> 
-                  <img src={learning} alt='' height='180' width='180' />
+                  <img src={learning} alt='' height='100' width='100' />
                   <h6>Dynamic innovative learning</h6>
                   {/* <p>Our platform provides students with tailored curricula that align with their individual aspirations. We leverage cutting-edge technologies through simulations, interactive projects, and collaborative exercises to create an immersive learning experience.</p> */}
                 </div>
                 <div className="why-us-cards">
-                  <img src={growth} alt='' height='180' width='180' />
+                  <img src={growth} alt='' height='100' width='100' />
                   <h6>Career growth</h6>
                   {/* <p>Cryptochuo equips students with the expertise needed to thrive in the competitive job market with confidence. Our commitment to staying current ensures that students are prepared for the challenges and opportunities of the future.</p> */}
                 </div>
                 <div className="why-us-cards">
-                  <img src={alumni} alt='' height='180' width='180' />
+                  <img src={alumni} alt='' height='100' width='100' />
                   <h6>Extensive Alumni network</h6>
                   {/* <p>With our thriving Alumni network opening doors to a myriad of opportunities, this network serves as a valuable resource for connecting with like-minded professionals, industry leaders, and potential collaborators.</p> */}
-                </div>
-              </div>
+                </div>             
             </div>
             <div id="partners">
               <div className="hero-partners">
