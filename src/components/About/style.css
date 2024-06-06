@@ -4,10 +4,9 @@
     height: auto;
     padding: 2% 4%;
 }
-.about {
-    width: 90%;
-    font-size: 1.1em;
-    text-align: center;
+#about {
+    width: 100%;
+    overflow: hidden;
 }
 #bannerimg {
     position: relative;
@@ -95,7 +94,7 @@
     display: flex;
     text-align: center;
     gap: 40px;
-    margin: 2% 0;
+    margin: 1% 0;
 }
 .why-us-cards {
     border-radius: 4px;
@@ -110,17 +109,19 @@
     font-size: 2em;
     color: #252a43;
 }
+#our-success {
+    margin: 0 8%;
+}
 #our-success h2 {
     text-align: center;
 }
 #testimonials-container {
     display: flex;
     gap: 40px;
-    margin-left: 15%;
-    padding: 1% 0;
+    margin: auto;
+    width: 100%;
 }
 .testimonials {
-    width: 40%;
     text-align: center;
     border: 1px solid gray;
     border-radius: 4px;
