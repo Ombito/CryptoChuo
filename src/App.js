@@ -254,7 +254,7 @@ function App() {
     <div className={`app-${darkMode ? 'dark-mode' : ''}`}>
       {location.pathname !== '/login' && location.pathname !== '/signup' && location.pathname !== '/forgot-password' && <NavbarMenu  user={user} setUser={setUser} cart={cart} darkMode={darkMode} toggleDarkMode={toggleDarkMode} />}
         {loading ? (
-          <div className="loader-container">
+          <div className="app-loader-container">
             <div class="loader">
               <div class="load1"></div>
               <div class="load2"></div>

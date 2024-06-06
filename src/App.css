@@ -6,9 +6,9 @@
   background-color: #ffffff; 
   color: #000000; 
 }
-.loader-container {
+.app-loader-container {
   width: 100%;
-  height: 65vh;
+  height: 75vh;
   display: flex;
   flex-direction: column-reverse;
   justify-content: center;
@@ -235,5 +235,16 @@
 
   100% {
     transform: translateX(0em) translateY(0em);
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 765px){
+  .app-loader-container {
+    width: 100%;
+    height: 85vh;
+    margin: auto;
+  }
+  .loader {
+    margin: auto;
   }
 }
