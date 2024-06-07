@@ -215,7 +215,7 @@
     }
     #about-banner {
         display: flex;
-        flex-direction: column;
+        flex-direction: column-reverse;
         padding-top: 6%;
     }
     #bannerimg {
