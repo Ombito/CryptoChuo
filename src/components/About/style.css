@@ -202,7 +202,7 @@
 }
 
  /* mobile screen device  */
- @media (max-width: 768px) {
+ @media (max-width: 766px) {
     #about {
         padding-top: 11%;
     }
@@ -315,7 +315,7 @@
     }
 }
 
-@media screen and (min-width: 766px) and (max-width: 1025px){
+@media screen and (min-width: 767px) and (max-width: 1025px){
     #about {
         padding-top: 11%;
     }
@@ -339,6 +339,9 @@
     }
     .why-us-cards img {
         height: 8vh; 
+    }
+    #our-success {
+        margin: 4% 5%;
     }
     #partners{
         display: flex;
