@@ -46,7 +46,7 @@ const Shop = ({ handleAddToCart, merchandiseItems }) => {
             <input type="text" placeholder="Search for a product..." value={searchTerm} onChange={handleSearch}/>
           </div>
         </div>
-        <div class="container" id="trending-container">
+        <div id="trending-container">
           <h2>Top Deals</h2>
             {merchandiseItems.length === 0  ? (
               <div className="loadingTrendingCourses">
@@ -88,7 +88,7 @@ const Shop = ({ handleAddToCart, merchandiseItems }) => {
               </div>  
             )}
         </div>
-        <div class="container" id="accessories">
+        <div id="accessories">
           <h2>Accessories</h2>
             {merchandiseItems.length === 0  ? (
               <div className="loadingTrendingCourses">
@@ -134,7 +134,7 @@ const Shop = ({ handleAddToCart, merchandiseItems }) => {
           <h4>Up to 35% off discount</h4>
           <p>SHOP NOW</p>
         </div>
-        <div class="container" id="best-sellers">
+        <div id="best-sellers">
           <h2>Flash sales</h2>
             {merchandiseItems.length === 0  ? (
               <div className="loadingTrendingCourses">
