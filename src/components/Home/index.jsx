@@ -126,8 +126,8 @@ const Home = ({ user, courses }) => {
                 <div className='content'>
                     <div id="banner-div">
                         <div className='homepage'>
-                            <h2>Trusted platform <br/> for, <span className='crypto'>Web 3.0</span> Education.</h2>
-                            <p className='paragraph'>Your one-stop place for learning everything from<br /> mastering the basics of blockchain to conquering the art of crypto trading and insightful on-chain analysis. Join us, and let's pioneer the future of decentralization together!
+                            <h2>Trusted platform <br/> for <span className='crypto'>Web 3.0</span> Education.</h2>
+                            <p className='paragraph'>Your one stop place for learning everything from<br /> mastering the basics of blockchain to conquering the art of crypto trading and insightful on chain analysis. Join us, and let's pioneer the future of decentralization together!
                             </p>
                             <Link to="/login">
                                 <button className="enroll-button" type='submit'>Let's Go</button>
@@ -163,8 +163,8 @@ const Home = ({ user, courses }) => {
                         <img className="content-img" src={online} alt="" />
                         <div id="describe-hero">
                             <h4>Welcome to Web3.0 Learning Center</h4>
-                            <p>Cryptochuo stands at the forefront of a revolutionary educational realm redefining how students engage with the digital frontier. Our online platform is not merely an educational portal but a dynamic space where learners embark on a journey of web 3.0 skill development, embracing opportunities, mentorship, and a customized curriculum. Cryptochuo goes beyond the traditional confines of education, fostering an environment where students become global change-makers.
-                            <br></br><br></br>Recognizing that each student is unique, the platform designs learning paths that cater to individual strengths, interests, and goals. This personalized approach ensures that students not only acquire knowledge but also develop skills that are relevant and impactful. Don't just adapt to the future, thrive in it. Join us on this exciting adventure towards a brighter and more empowered future.                  
+                            <p>Cryptochuo stands at the forefront of a revolutionary educational realm redefining how students engage with the digital frontier. Our online platform is not merely an educational portal but a dynamic space where learners embark on a journey of web 3.0 skill development, embracing opportunities, mentorship and a customized curriculum. Cryptochuo goes beyond the traditional confines of education fostering an environment where students become global change makers.
+                            <br></br><br></br>Recognizing that each student is unique, the platform designs learning paths that cater to individual strengths, interests and goals. This personalized approach ensures that students not only acquire knowledge but also develop skills that are relevant and impactful. Don't just adapt to the future, thrive in it. Join us on this exciting adventure towards a brighter and more empowered future.                  
                             </p>
                             <button className='join-community-btn'>Join our community</button>
                         </div>
