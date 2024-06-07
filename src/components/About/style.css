@@ -84,7 +84,7 @@
 }
 #why-us {
     margin-top: 1%;
-    width: 70%;
+    width: 80%;
     margin: auto;
 }
 #why-us h3 {
@@ -93,9 +93,13 @@
 .why-us-div {
     display: flex;
     text-align: center;
-    gap: 40px;
+    gap: 0px;
     margin: 1% 0;
 }
+.why-us-cards img {
+    height: 13vh; 
+}
+
 .why-us-cards {
     border-radius: 4px;
     height: auto;
@@ -196,7 +200,6 @@
     width: 100%;
     margin-bottom: 0;
 }
-
 .check {
     color: green;
 }
