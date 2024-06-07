@@ -110,7 +110,7 @@
     color: #252a43;
 }
 #our-success {
-    margin: 0 8%;
+    margin: 2% 8%;
 }
 #our-success h2 {
     text-align: center;
@@ -203,13 +203,19 @@
 
  /* mobile screen device  */
  @media (max-width: 768px) {
+    #about {
+        padding-top: 11%;
+    }
+    .about-us {
+        margin: 0 5%;
+    }
     #about-banner {
         display: flex;
         flex-direction: column;
         padding-top: 6%;
     }
     .about-hero {
-        height: 135vh;
+        height: auto;
         clip-path: polygon(
             0 0,
             100% 0,
@@ -217,71 +223,83 @@
             0 100%
         )
     }
-    .about {
-        width: 100%;
-    }
     .about-banner-img {
         width: 95%;
     }
     #our-story {
         display: flex;
         flex-direction: column;
-        margin-top: 15%;
+        width: 93%;
+        margin: 2% 5%;
     }
     #our-story img{
         display: none;
     }
     #partner-container {
-        margin-top: 240%;
-        height: 65vh;
+        height: auto;
+        margin: 5% 0;
     }
     #partners{
         display: flex;
         flex-direction: column;
-        gap: 80px;
-        width: 100%;
+        gap: 10px;
+        margin: auto;
+        align-items: center;
+        margin: 10% 7%;
+        justify-content: center;
     }
     .hero-partners {
         width: 100%;
     }
-    #logo-div img{
-        width: 80%;
+    #logo-div {
+        margin: auto;
+        width: 100%;
     }
-    #why-us {
-        margin-top: 140%;
+    #logo-div img{
+        width: auto;
+        height: 5vh;
     }
     .why-us-div {
         display: grid;
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
     #our-success {
-        margin-top: 408%;
+        margin: 5% auto;
+        width: 100%;
+    }
+    .why-us-cards img {
+        height: 10vh; 
     }
     #testimonials-container {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
+        display: flex;
+        flex-wrap: wrap;
     }
     .testimonials {
         width: 100%;
-        margin: 0 5% 0 -9%;
+        margin: 2% 5%;
     }
     #subscribe {
-        margin-top: 155%;
+        margin: 20% 1% 20% 1%;
+        width: 98%;
+        height: auto;
+        align-items: center;
+        justify-content: center;
     }
     #subscription-plan {
-        margin-top: 10%;
-        margin-bottom: 0;
+        margin: 3% auto;
         display: grid;
+        width: 90%;
+        height: auto;
         grid-template-columns: repeat(1, 1fr);
     }
     .subscription-card {
         width: 100%;
-        height: 46vh;
+        height: auto;
     }
     #about-contact-hero {
         display: flex;
         flex-direction: column;
-        margin-top: 47%;
+        margin: 30% 0 10% 0;
         gap: 20px;
         padding: 3% 2%;
     }
