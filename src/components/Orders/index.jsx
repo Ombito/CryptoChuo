@@ -5,7 +5,9 @@ const Orders = ({ user }) => {
     const [orders, setOrders] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-
+    if (!user) {
+      navigate('/login');
+    }
     // useEffect(() => {
     //     const fetchOrders = async () => {
     //         try {
