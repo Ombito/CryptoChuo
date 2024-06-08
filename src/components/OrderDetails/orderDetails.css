@@ -123,3 +123,10 @@
         font-size: 14px;
     }
 }
+
+@media screen and (min-width: 540px) and (max-width: 1025px){
+    .order-details-container {
+        margin-top: 15%;
+        padding: 10% 3%;
+    }
+}
