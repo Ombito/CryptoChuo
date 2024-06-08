@@ -36,9 +36,8 @@ const Footer = () => {
           <NavLink to='/cart'>Shopping Cart</NavLink>
           <NavLink to='/orders'>Orders</NavLink>
           <NavLink to='/blogs'>Blog</NavLink>
-          <NavLink to='/sponsorship'>Sponsorship</NavLink>
           <NavLink to='/faqs'>FAQs</NavLink>
-          <NavLink to='/privacypolicy'>Privacy policy</NavLink>
+          <NavLink to='/privacy-policy'>Privacy policy</NavLink>
         </div>
         <div class="contactinfo">
           <h5>COMPANY</h5>
