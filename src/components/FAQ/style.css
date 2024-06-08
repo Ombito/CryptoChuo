@@ -34,3 +34,26 @@
   .plus {
     color: #fb8500;
   } 
+
+
+  @media screen and (max-width: 765px){
+    .faq-container {
+      margin: 21% 1% 1% 1%;
+      padding: 14% 1%;
+    }
+  
+}
+
+@media screen and (min-width: 320px) and (max-width: 368px){
+  .faq-container {
+    margin-top: 21%;
+    padding-top: 14%;
+  }
+}
+
+@media screen and (min-width: 540px) and (max-width: 1025px){
+    .faq-container {
+        margin: 14% 2% 1% 2%;
+        padding: 10% 2%;
+    }
+  }
