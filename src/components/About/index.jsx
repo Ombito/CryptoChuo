@@ -130,7 +130,6 @@ const About = () => {
               <div id="logo-div">
                 <img src={binance} alt="Binance" />
                 <img src={chainguardians} alt="Chainguardians" />
-                <img src={avalanche} alt="Avalanche" />
                 <img src={polygon} alt="Polygon" />
                 <img src={ledger} alt="Ledger" />
                 <img src={bybit} alt="Bybit" />
