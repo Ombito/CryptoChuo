@@ -91,36 +91,36 @@ const Orders = ({ user }) => {
     }
 
     return (
-        <div className="orders-container">
-            <h1>My Orders</h1>
-            {orders.length === 0 ? (
-                <p>You have no orders yet.</p>
-            ) : (
-                <div className="orders-list">
-                    {orders.map((order) => (
-                        <div key={order.id} className="order-card">
-                            <h2>Order #{order.id}</h2>
-                            <p><strong>Date:</strong> {new Date(order.date).toLocaleDateString()}</p>
-                            <p><strong>Status:</strong> {order.status}</p>
-                            <div className="order-items">
-                                {order.items.map((item) => (
-                                    <div key={item.id} className="order-item">
-                                        <img src={item.image} alt={item.title} className="order-item-image" />
-                                        <div className="order-item-details">
-                                            <h3>{item.title}</h3>
-                                            <p><strong>Quantity:</strong> {item.quantity}</p>
-                                            <p><strong>Price:</strong> ${item.price}</p>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                            <h3 className="order-total">Total: ${order.total}</h3>
-                        </div>
-                    ))}
-                </div>
-            )}
-        </div>
-    );
+      <div className="orders-container">
+      <h1>My Orders</h1>
+      {orders.length === 0 ? (
+          <p>You have no orders yet.</p>
+      ) : (
+          <div className="orders-list">
+              {orders.map((order) => (
+                  <div key={order.id} className="order-card">
+                      <h2>Order #{order.id}</h2>
+                      <p><strong>Date:</strong> {new Date(order.date).toLocaleDateString()}</p>
+                      <p><strong>Status:</strong> {order.status}</p>
+                      <div className="order-items">
+                          {order.items.map((item) => (
+                              <div key={item.id} className="order-item">
+                                  <img src={item.image} alt={item.title} className="order-item-image" />
+                                  <div className="order-item-details">
+                                      <h3>{item.title}</h3>
+                                      <p><strong>Quantity:</strong> {item.quantity}</p>
+                                      <p><strong>Price:</strong> ${item.price}</p>
+                                  </div>
+                              </div>
+                          ))}
+                      </div>
+                      <h3 className="order-total">Total: ${order.total}</h3>
+                  </div>
+              ))}
+          </div>
+      )}
+  </div>
+);
 };
 
 export default Orders;
