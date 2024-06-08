@@ -16,6 +16,7 @@ import Cart from './components/Cart';
 import Signup from './components/Signup';
 import Account from './components/Account';
 import Orders from './components/Orders';
+import OrderDetails from './components/OrderDetails';
 import Blogs from './components/Blogs';
 import Careers from './components/Careers';
 import FAQ from './components/FAQ';
@@ -300,6 +301,7 @@ function App() {
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/profile" element={<Account user={user}/>} />
             <Route path="/orders" element={<Orders user={user}/>} />
+            <Route path="/orders/:orderId" element={<OrderDetails />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/partnership" element={<BecomePartner />} />
             <Route path="/contact" element={<ContactUs />} />

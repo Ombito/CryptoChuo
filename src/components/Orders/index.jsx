@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import './orders.css';
+import { useNavigate } from 'react-router-dom';
 
 const Orders = ({ user }) => {
     const [orders, setOrders] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const navigate = useNavigate();
+
     if (!user) {
       navigate('/login');
     }
+
     // useEffect(() => {
     //     const fetchOrders = async () => {
     //         try {
@@ -84,6 +88,10 @@ const Orders = ({ user }) => {
       fetchOrders();
   }, []);
 
+  const handleOrderClick = (order) => {
+    navigate(`/orders/${order.id}`, { state: { order } });
+  };
+
     if (loading) {
         return <div className="orders-container"><p>Loading orders...</p></div>;
     }
@@ -100,7 +108,7 @@ const Orders = ({ user }) => {
       ) : (
           <div className="orders-list">
               {orders.map((order) => (
-                  <div key={order.id} className="order-card">
+                  <div key={order.id} className="order-card" onClick={() => handleOrderClick(order)}>
                       <h2>Order #{order.id}</h2>
                       <p><strong>Date:</strong> {new Date(order.date).toLocaleDateString()}</p>
                       <p><strong>Status:</strong> {order.status}</p>
