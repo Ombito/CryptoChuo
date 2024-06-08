@@ -24,7 +24,7 @@ const Footer = () => {
         <div class="contactinfo">
           <h5>ACADEMY</h5>
           <NavLink to='/courses'>Courses</NavLink>
-          <NavLink to='/courses/blockchain'>Web3 Masterclass</NavLink>
+          <NavLink to='/courses/Web3'>Web3 Masterclass</NavLink>
           <NavLink to='/shop'>Shop</NavLink>
           <NavLink to='/markets'>Markets</NavLink>
           <NavLink to='/login'>Login</NavLink>
@@ -45,7 +45,6 @@ const Footer = () => {
           <NavLink to='/careers'>Careers</NavLink>
           <NavLink to='/partnership'>Become a Partner</NavLink>
           <NavLink to='/community'>Join Our Community</NavLink>
-          <NavLink to='/termsofservice'>Terms of Service</NavLink>
           <NavLink to='/contact'>Contact Us</NavLink>
         </div>
       </div>
