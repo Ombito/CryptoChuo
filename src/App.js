@@ -18,6 +18,7 @@ import Account from './components/Account';
 import Orders from './components/Orders';
 import Blogs from './components/Blogs';
 import Careers from './components/Careers';
+import ContactUs from './components/Contact';
 import Sponsorship from './components/Sponsorship';
 import CourseCategory from './components/CourseCategory';
 import { useSnackbar } from 'notistack';
@@ -298,6 +299,7 @@ function App() {
             <Route path="/profile" element={<Account user={user}/>} />
             <Route path="/orders" element={<Orders user={user}/>} />
             <Route path="/careers" element={<Careers />} />
+            <Route path="/contact" element={<ContactUs />} />
             <Route path="/sponsorship" element={<Sponsorship />} />
           </Routes>
         )}
