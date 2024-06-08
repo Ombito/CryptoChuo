@@ -101,7 +101,7 @@ const Courses = ({ courses, handleAddToCart, isInCart }) => {
   return (
     <div> 
         <div className='courses'>
-            <div class="container">
+            <div>
                 <h2>Featured Course</h2>
                 {filterItemsByCategory('featured').slice(0, 1).map(course => (
                     <div className="featured-course-description" key={course.id} onClick={() => navigate(`/course-details/${course.id}`)}>
@@ -236,7 +236,7 @@ const Courses = ({ courses, handleAddToCart, isInCart }) => {
               </div>
             </div>
             </div>
-            <div class="container" id="learnwithus">
+            <div id="learnwithus">
                 <h5 style={{"text-align": "center"}}>Learn. Trade. Invest. Play</h5>
                 <p className="learn-headline">CryptoChuo presents the most comprehensive educational courses lineup for beginners, intermediate and advanced learners.</p>
                 <div id="learnandtrade">

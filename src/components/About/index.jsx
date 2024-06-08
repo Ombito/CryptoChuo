@@ -11,9 +11,14 @@ import binance from "../Assets/binance.png";
 import bybit from "../Assets/bybit.png";
 import avalanche from "../Assets/avalanche.png";
 import polygon from "../Assets/polygon.png";
-import opensea from "../Assets/opensea.png";
+import chainguardians from "../Assets/chainguardians.png";
 import ledger from "../Assets/ledger.png";
 import kraken from "../Assets/kraken1.png";
+import blockchaincapital from "../Assets/blockchaincapital.png";
+import dorafactory from "../Assets/dorafactory.png";
+import okxventures from "../Assets/okxventures.png";
+import pantera from "../Assets/pantera.png";
+import polymarket from "../Assets/polymarket.png";
 import join from '../Assets/joinnow.png';
 import company from '../Assets/student4.jpg';
 import certificate from "../Assets/certificate1.png";
@@ -124,20 +129,17 @@ const About = () => {
               </div>
               <div id="logo-div">
                 <img src={binance} alt="Binance" />
-                <img src={opensea} alt="OpenSea" />
-                <img src={avalanche} alt="Avalanche" />
+                <img src={chainguardians} alt="Chainguardians" />
                 <img src={polygon} alt="Polygon" />
                 <img src={ledger} alt="Ledger" />
                 <img src={bybit} alt="Bybit" />
                 <img src={avalanche} alt="Avalanche" />
                 <img src={kraken} alt="Kraken" />
-                <img src={binance} alt="Binance" />
-                <img src={opensea} alt="OpenSea" />
-                <img src={polygon} alt="" />
-                <img src={ledger} alt="" />
-                <img src={bybit} alt="" />
-                <img src={avalanche} alt="" />
-                <img src={polygon} alt="" />
+                <img src={blockchaincapital} alt="Blockchaincapital" />
+                <img src={dorafactory} alt="Dorafactory" />
+                <img src={okxventures} alt="Okx Ventures" />
+                <img src={pantera} alt="Pantera" />
+                <img src={polymarket} alt="Polymarket" />
               </div>
             </div>
           <div id="subscribe">

@@ -16,9 +16,13 @@ import Cart from './components/Cart';
 import Signup from './components/Signup';
 import Account from './components/Account';
 import Orders from './components/Orders';
+import OrderDetails from './components/OrderDetails';
 import Blogs from './components/Blogs';
 import Careers from './components/Careers';
-import Sponsorship from './components/Sponsorship';
+import FAQ from './components/FAQ';
+import ContactUs from './components/Contact';
+import BecomePartner from './components/Partner';
+import PrivacyPolicy from './components/PrivacyPolicy';
 import CourseCategory from './components/CourseCategory';
 import { useSnackbar } from 'notistack';
 import Cookies from 'js-cookie';
@@ -297,8 +301,12 @@ function App() {
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/profile" element={<Account user={user}/>} />
             <Route path="/orders" element={<Orders user={user}/>} />
+            <Route path="/orders/:orderId" element={<OrderDetails />} />
             <Route path="/careers" element={<Careers />} />
-            <Route path="/sponsorship" element={<Sponsorship />} />
+            <Route path="/partnership" element={<BecomePartner />} />
+            <Route path="/contact" element={<ContactUs />} />
+            <Route path="/faqs" element={<FAQ />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           </Routes>
         )}
       {location.pathname !== '/login' && location.pathname !== '/signup' && location.pathname !== '/forgot-password' && <Footer />}

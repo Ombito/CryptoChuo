@@ -329,10 +329,6 @@
 
  /* mobile screen device  */
  @media screen and (min-width: 360px) and (max-width: 765px){
-    section {
-        margin-top: 100px;
-        margin-bottom: 4380px;
-    }
     #banner {
         height: 35vh;
     }

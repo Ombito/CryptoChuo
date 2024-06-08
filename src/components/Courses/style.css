@@ -1,6 +1,6 @@
 .courses {
-  margin: 5% 4.5%;
-  padding: 2% 0;
+  margin: 5% 5% 1% 5%;
+  padding: 5% 0;
   height: auto;
 }
 .featured-course-description {
@@ -50,7 +50,7 @@
 .tabs-container {
   display: flex;
   margin-bottom: 20px;
-  margin-top: 29%;
+  margin-top: 2%;
 }
 .tab-content.active {
   max-width: 100%;
