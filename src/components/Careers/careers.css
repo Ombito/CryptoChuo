@@ -1,0 +1,75 @@
+.careers-container {
+    margin: 4% 5% 1% 5%;
+    padding: 3% 0;
+    text-align: center;
+    border-radius: 4px;
+}
+.careers-content {
+    justify-content: space-around;
+    margin-top: 20px;
+    width: 80%;
+    margin: auto;
+}
+
+.careers-info, .careers-openings, .careers-form {
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.careers-info h2, .careers-openings h2, .careers-form h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.careers-info p, .careers-openings ul {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.careers-openings ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.careers-openings li {
+    margin: 10px 0;
+    font-weight: bold;
+}
+#careerForm {
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    border-radius: 4px;
+    border: 1px solid gray;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.form-group {
+    margin-bottom: 5px;
+}
+.form-group label {
+    display: block;
+    font-weight: bold;
+}
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.form-group textarea {
+    resize: vertical;
+}
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #007BFF;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+button:hover {
+    background: #0056b3;
+}
