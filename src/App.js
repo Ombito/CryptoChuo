@@ -18,6 +18,7 @@ import Account from './components/Account';
 import Orders from './components/Orders';
 import Blogs from './components/Blogs';
 import Careers from './components/Careers';
+import FAQ from './components/FAQ';
 import ContactUs from './components/Contact';
 import BecomePartner from './components/Partner';
 import PrivacyPolicy from './components/PrivacyPolicy';
@@ -302,7 +303,8 @@ function App() {
             <Route path="/careers" element={<Careers />} />
             <Route path="/partnership" element={<BecomePartner />} />
             <Route path="/contact" element={<ContactUs />} />
-            <Route path="/privacy-policy" element={<PrivacyPolicy />} /> />
+            <Route path="/faqs" element={<FAQ />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           </Routes>
         )}
       {location.pathname !== '/login' && location.pathname !== '/signup' && location.pathname !== '/forgot-password' && <Footer />}
