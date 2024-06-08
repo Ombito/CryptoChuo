@@ -69,9 +69,10 @@
 }
 
 /* Responsive Styles */
-@media (max-width: 768px) {
+@media screen and (max-width: 765px){
     .orders-container {
-        padding: 10px;
+        margin-top: 25%;
+        padding: 10% 3%;
     }
 
     .orders-container h1 {
@@ -108,7 +109,11 @@
     }
 }
 
-@media (max-width: 480px) {
+@media screen and (min-width: 167px) and (max-width: 425px){
+    .orders-container {
+        margin-top: 20%;
+        padding: 10% 2%;
+    }
     .orders-container h1 {
         font-size: 22px;
     }
@@ -131,5 +136,12 @@
 
     .order-total {
         font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 540px) and (max-width: 1025px){
+    .orders-container {
+        margin-top: 15%;
+        padding: 10% 3%;
     }
 }
