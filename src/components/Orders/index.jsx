@@ -92,9 +92,6 @@ const Orders = ({ user }) => {
     navigate(`/orders/${order.id}`, { state: { order } });
   };
 
-    if (loading) {
-        return <div className="orders-container"><p>Loading orders...</p></div>;
-    }
 
     if (error) {
         return <div className="orders-container"><p>{error}</p></div>;
