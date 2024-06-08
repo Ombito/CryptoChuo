@@ -60,3 +60,53 @@ button {
 button:hover {
     background: #0056b3;
 }
+
+@media screen and (max-width: 765px){
+    .become-partner-container {
+        margin: 21% 2% 1% 2%;
+        padding: 9% 2%;
+    }
+    .partner-content {
+        margin-top: 10px;
+        width: 100%;
+        margin: auto;
+    }
+    #partner-form {
+        width: 100%;
+        padding: 10px;
+    }
+    .partner-info, .partner-form {
+        flex: 1;
+        margin: 0px;
+        padding: 10px 0;
+    }
+    
+}
+
+@media screen and (min-width: 320px) and (max-width: 368px){
+    .become-partner-container {
+        margin-top: 21%;
+        padding-top: 10%;
+    }
+}
+
+@media screen and (min-width: 540px) and (max-width: 1025px){
+    .become-partner-container {
+        margin: 14% 2% 1% 2%;
+        padding: 7% 2%;
+    }
+    .partner-content {
+        margin-top: 10px;
+        width: 100%;
+        margin: auto;
+    }
+    #partner-form {
+        width: 100%;
+        padding: 10px;
+    }
+    .partner-info, .partner-form {
+        flex: 1;
+        margin: 0px;
+        padding: 10px 0;
+    }
+}
