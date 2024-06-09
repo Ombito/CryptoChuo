@@ -31,7 +31,11 @@ a {
 a:hover {
     text-decoration: underline;
 }
-
+.contactinfo .active {
+    border-bottom: 2px solid #fb8500;
+    max-width: fit-content;
+    width: auto;
+}
 .footer-contact p {
     margin: 5px 0;
 }
@@ -92,6 +96,11 @@ a:hover {
         width: 90%;
         margin: 0 auto;
     }
+    .contactinfo .active {
+        border-bottom: 2px solid #fb8500;
+        max-width: fit-content;
+        margin: auto;
+      }
  }
 
  @media screen and (min-width: 375px) and (max-width: 425px){
@@ -118,6 +127,11 @@ a:hover {
     .social-links {
         width: 90%;
         margin: 0 auto;
+    }
+    .contactinfo .active {
+        border-bottom: 2px solid #fb8500;
+        max-width: fit-content;
+        margin: auto;
     }
  }
  

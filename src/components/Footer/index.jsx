@@ -1,7 +1,7 @@
 import "../Footer/style.css"
 import { NavLink } from 'react-router-dom';
 import { FaCopyright } from  'react-icons/fa';
-import logo from '../Assets/logo1.jpeg';
+import logo from '../Assets/logo11.png';
 import { FaTwitter, FaDiscord, FaTelegram, FaFacebook, FaInstagram } from  'react-icons/fa';
 
 
@@ -21,7 +21,7 @@ const Footer = () => {
             <a href="https://discord.gg/kUapzzg7" target="blank" className='discord'><FaInstagram /></a> 
           </div>
         </div>
-        <div class="contactinfo">
+        <div className="contactinfo">
           <h5>ACADEMY</h5>
           <NavLink to='/courses'>Courses</NavLink>
           <NavLink to='/courses/Web3'>Web3 Masterclass</NavLink>
@@ -31,7 +31,7 @@ const Footer = () => {
           
           
         </div>
-        <div class="contactinfo">
+        <div className="contactinfo">
           <h5>RESOURCES</h5>
           <NavLink to='/cart'>Shopping Cart</NavLink>
           <NavLink to='/orders'>Orders</NavLink>
