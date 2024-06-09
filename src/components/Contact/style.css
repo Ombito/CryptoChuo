@@ -51,8 +51,8 @@
 
 @media screen and (max-width: 765px){
     .contact-us-container {
-        margin: 21% 1% 1% 1%;
-        padding: 9% 1%;
+        margin: 21% 0%;
+        padding: 9% 0%;
     }
     .contact-content {
         margin-top: 10px;
@@ -65,7 +65,7 @@
     }
     .contact-form-submit, .map-container {
         flex: 1;
-        margin: 5px;
+        margin: 5px 0;
         padding: 10px;
         border-radius: 0px;
     }

@@ -62,8 +62,7 @@
   transition: border-bottom 0.3s ease-in-out;
 }
 .active {
-  border-bottom: 2px solid #fb8500;
-  max-width: fit-content;
+  border-bottom: 1px solid #fb8500;
 }
 .tab-content {
   max-width: 600px;
